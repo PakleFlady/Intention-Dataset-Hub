@@ -1,0 +1,17 @@
+name: Broken link
+description: Report a link that needs manual review; an HTTP failure is not proof of dataset withdrawal.
+title: 'Broken link: '
+labels: ['broken-link']
+body:
+  - type: input
+    id: page
+    attributes: {label: Hub page or YAML record containing the link}
+    validations: {required: true}
+  - type: input
+    id: url
+    attributes: {label: Affected URL}
+    validations: {required: true}
+  - type: textarea
+    id: observed
+    attributes: {label: "What happened and when?", description: Include status or error and whether access needs a login.}
+    validations: {required: true}

@@ -1,0 +1,82 @@
+schema_version: '0.1'
+id: assembly101
+name: Assembly101
+year: 2022
+description: Multi-view procedural assembly videos with annotated actions and anticipation tasks.
+intention_relevance: implicit
+intention_definition: Anticipate the next hand-object assembly action from a video prefix; action labels
+  proxy the participant's immediate plan.
+domains:
+- daily_activities
+- human_object_interaction
+intention_types:
+- object_interaction
+tasks:
+- action_anticipation
+modalities:
+- rgb
+- pose
+data_formats:
+- video
+- structured_annotation
+data_origin: real
+annotations:
+- id: future_assembly_action
+  semantic: future_action
+  description: Subsequent annotated fine or coarse assembly action.
+  provenance: behavior_derived
+  scope: Assembly activity sequences
+  source_ids:
+  - official
+releases:
+- id: v1
+  label: Assembly101 release documented by original source
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  notes: Exact annotation revision is not identified by this source.
+access:
+  status: open
+  url: https://assembly-101.github.io/
+  checked_at: '2026-09-30'
+  source_ids:
+  - project
+  conditions: Official page says the data moved to Hugging Face in May 2026; individual files were not
+    downloaded or tested.
+licenses:
+- component: Assembly101 dataset
+  status: known
+  name: CC BY-NC 4.0
+  url: https://creativecommons.org/licenses/by-nc/4.0/
+  source_ids:
+  - project
+sources:
+- id: official
+  type: paper
+  title: Assembly101 original project or publication
+  url: https://openaccess.thecvf.com/content/CVPR2022/html/Sener_Assembly101_A_Large-Scale_Multi-View_Video_Dataset_for_Understanding_Procedural_Activities_CVPR_2022_paper.html
+  accessed_at: '2026-09-30'
+  locator:
+    section: Abstract; benchmark tasks
+- id: project
+  type: official_project
+  title: Assembly101 official project and download page
+  url: https://assembly-101.github.io/
+  accessed_at: '2026-09-30'
+  locator:
+    section: News; License; Abstract
+verification:
+  status: verified
+  checked_at: '2026-09-30'
+  source_ids:
+  - official
+  - project
+  notes: Original paper and current author project reviewed for task, scope, access entry and license;
+    files not downloaded.
+viewpoints:
+- egocentric
+- exocentric
+capture_setup:
+- fixed_camera
+- wearable
+- multi_camera

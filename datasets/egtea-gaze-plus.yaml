@@ -1,0 +1,81 @@
+schema_version: '0.1'
+id: egtea-gaze-plus
+name: EGTEA Gaze+
+year: 2018
+description: First-person food preparation videos with gaze and action annotations used in action anticipation
+  research.
+intention_relevance: implicit
+intention_definition: Anticipate a subsequent manipulation action using past first-person observations;
+  the future action is a proxy rather than an explicit goal label.
+domains:
+- daily_activities
+- human_object_interaction
+intention_types:
+- object_interaction
+tasks:
+- action_anticipation
+modalities:
+- rgb
+- audio
+- gaze
+data_formats:
+- video
+- time_series
+- structured_annotation
+data_origin: real
+annotations:
+- id: action_segment
+  semantic: future_action
+  description: Later kitchen action segment used in anticipation protocols.
+  provenance: behavior_derived
+  scope: First-person activity videos
+  source_ids: &id001
+  - official
+  - author_protocol
+releases:
+- id: v1
+  label: EGTEA Gaze+ release documented by original source
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  notes: Exact annotation revision is not identified by this source.
+access:
+  status: unknown
+  url: https://cbs.ic.gatech.edu/fpv/
+  checked_at: '2026-09-30'
+  source_ids:
+  - official
+  conditions: Official dataset page returned a gateway error during this review; current download status
+    remains unknown.
+licenses:
+- component: dataset media and annotations
+  status: unknown
+  source_ids:
+  - official
+sources:
+- id: official
+  type: official_project
+  title: EGTEA Gaze+ original project or publication
+  url: https://cbs.ic.gatech.edu/fpv/
+  accessed_at: '2026-09-30'
+  locator:
+    section: EGTEA Gaze+
+- id: author_protocol
+  type: author_code
+  title: EGTEA Gaze+ author protocol or annotation guide
+  url: https://github.com/fpv-iplab/rulstm
+  accessed_at: '2026-09-30'
+  locator:
+    section: EGTEA Gaze+ anticipation setup
+verification:
+  status: verified
+  checked_at: '2026-09-30'
+  source_ids: *id001
+  notes: Original project/task evidence checked from available indexed source material; live access could
+    not be confirmed. Dataset files were not downloaded.
+viewpoints:
+- egocentric
+capture_setup:
+- wearable
+notes: The author dataset page centers on action and gaze; an author-released anticipation protocol supports
+  inclusion.

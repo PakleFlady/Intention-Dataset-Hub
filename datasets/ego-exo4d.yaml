@@ -1,0 +1,78 @@
+schema_version: '0.1'
+id: ego-exo4d
+name: Ego-Exo4D
+year: 2024
+description: Synchronized first- and third-person recordings of skilled human activities with narrations
+  and task annotations.
+intention_relevance: related
+intention_definition: Participant narrations about why and how a task is performed can support studying
+  goals, but not every recording supplies an evaluated intention target.
+domains:
+- daily_activities
+- embodied_interaction
+intention_types:
+- task_goal
+tasks: []
+modalities:
+- rgb
+- audio
+- text
+- imu
+- gaze
+- pose
+data_formats:
+- video
+- text
+- time_series
+- structured_annotation
+data_origin: real
+annotations:
+- id: participant_narration
+  semantic: cue
+  description: Participant descriptions of why and how a skilled action is performed.
+  provenance: self_report
+  scope: Narrate and Act subset
+  source_ids: &id001
+  - official
+releases:
+- id: v1
+  label: Ego-Exo4D release documented by original source
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  notes: Exact annotation revision is not identified by this source.
+access:
+  status: registration
+  url: https://docs.ego-exo4d-data.org/overview/
+  checked_at: '2026-09-30'
+  source_ids:
+  - official
+  conditions: See the source for current download conditions; raw files were not downloaded for this
+    catalog.
+licenses:
+- component: dataset media and annotations
+  status: unknown
+  source_ids:
+  - official
+sources:
+- id: official
+  type: official_project
+  title: Ego-Exo4D original project or publication
+  url: https://docs.ego-exo4d-data.org/overview/
+  accessed_at: '2026-09-30'
+  locator:
+    section: Narrate and Act; Task Labels
+verification:
+  status: verified
+  checked_at: '2026-09-30'
+  source_ids: *id001
+  notes: Core scope, annotation meaning, and access entry were checked against the linked original resources;
+    dataset files were not downloaded.
+viewpoints:
+- egocentric
+- exocentric
+capture_setup:
+- wearable
+- multi_camera
+notes: Intention reasoning is a possible research use of participant narration, not claimed as an official
+  leaderboard task.

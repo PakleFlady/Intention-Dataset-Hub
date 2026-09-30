@@ -1,0 +1,185 @@
+schema_version: '0.1'
+id: pie-intention-loc-iccv2019
+dataset_id: pie
+release_id: v1
+annotation_version: author-release-unspecified
+task: intention_recognition
+original_task_name: pedestrian intention estimation
+target_id: crossing_intention
+protocol:
+  name: PIE ICCV 2019 intention estimation, location-only inputs
+  source_ids:
+  - paper
+split:
+  name: Author 50% train / 10% validation / 40% test pedestrian split
+  source_ids:
+  - paper
+sample_selection:
+  description: Pedestrian tracks sampled with 0.5 overlap; report the two location-only Table 2 rows,
+    not later crossing-action results.
+  source_ids:
+  - paper
+inputs:
+  modalities:
+  - trajectory
+  representation: Normalized pedestrian bounding-box coordinates (loc).
+  available_information: Observed track only; crossing action after observation is not an input.
+temporal:
+  observation_window:
+    kind: fixed
+    anchor: observation end
+    description: Past 0.5 seconds of pedestrian track.
+    unit: seconds
+    value: 0.5
+  anticipation_gap:
+    kind: not_applicable
+    anchor: task target
+    description: Current observer-judged intention, not a future crossing-action label.
+  prediction_horizon:
+    kind: not_applicable
+    anchor: task target
+    description: Current intention classification.
+training_policy:
+  external_data: forbidden
+  pretraining: allowed
+  extra_supervision: forbidden
+  source_ids:
+  - paper
+  notes: Location-only rows do not report external dataset training; paper permits ImageNet features for
+    separate image-based rows, which are excluded.
+  ensemble: forbidden
+evaluation:
+  description: Binary classification of author intention labels.
+  aggregation: Reported single test score for each model row.
+  parameters: {}
+  source_ids:
+  - paper
+metrics:
+- id: accuracy
+  name: Accuracy
+  direction: higher
+  unit: ratio
+  definition: Correct binary classifications divided by all test examples.
+  aggregation: overall
+  evaluation_subset: author test split
+  source_ids:
+  - paper
+  valid_range:
+  - 0
+  - 1
+- id: f1
+  name: F1
+  direction: higher
+  unit: ratio
+  definition: Harmonic mean of binary precision and recall.
+  aggregation: overall
+  evaluation_subset: author test split
+  source_ids:
+  - paper
+  valid_range:
+  - 0
+  - 1
+sources:
+- id: paper
+  type: paper
+  title: 'PIE: A Large-Scale Dataset and Models for Pedestrian Intention Estimation and Trajectory Prediction'
+  url: https://openaccess.thecvf.com/content_ICCV_2019/papers/Rasouli_PIE_A_Large-Scale_Dataset_and_Models_for_Pedestrian_Intention_Estimation_ICCV_2019_paper.pdf
+  accessed_at: '2026-09-30'
+  locator:
+    section: 5.2 Pedestrian intention estimation
+    table: Table 2
+- id: annotations
+  type: author_code
+  title: PIE annotation guide
+  url: https://github.com/aras62/PIE/blob/master/annotations/README.md
+  accessed_at: '2026-09-30'
+  locator:
+    section: Action versus intention note
+verification:
+  status: verified
+  checked_at: '2026-09-30'
+  source_ids:
+  - paper
+  - annotations
+  notes: Compared Table 2 target, split, modality and observation window against the paper; labels are
+    observer intention judgments, not actual crossing actions.
+results:
+- id: lstm_loc
+  method_id: lstm
+  configuration:
+    description: Normalized bounding-box locations; vanilla LSTM.
+    modalities:
+    - trajectory
+    external_data: none reported
+    pretraining: none reported
+    ensemble: false
+  scores:
+    accuracy:
+      value: 0.63
+      source_ids: &id001
+      - paper
+      locator: &id002
+        table: Table 2
+        row: LSTM / loc
+    f1:
+      value: 0.73
+      source_ids: *id001
+      locator: *id002
+  source_ids: *id001
+  protocol_match:
+    status: confirmed
+    source_ids: *id001
+    locator: *id002
+    notes: The cited row belongs to the stated within-source comparison cohort.
+  verification:
+    status: verified
+    checked_at: '2026-09-30'
+    source_ids: *id001
+    notes: Checked against the identified primary source; results were not independently reproduced.
+  status: active
+  baseline_origin: dataset_authors
+- id: lstm_ed_loc
+  method_id: lstm_ed
+  configuration:
+    description: Normalized bounding-box locations; encoder-decoder LSTM.
+    modalities:
+    - trajectory
+    external_data: none reported
+    pretraining: none reported
+    ensemble: false
+  scores:
+    accuracy:
+      value: 0.67
+      source_ids: &id003
+      - paper
+      locator: &id004
+        table: Table 2
+        row: LSTM_ed / loc
+    f1:
+      value: 0.76
+      source_ids: *id003
+      locator: *id004
+  source_ids: *id003
+  protocol_match:
+    status: confirmed
+    source_ids: *id003
+    locator: *id004
+    notes: The cited row belongs to the stated within-source comparison cohort.
+  verification:
+    status: verified
+    checked_at: '2026-09-30'
+    source_ids: *id003
+    notes: Checked against the identified primary source; results were not independently reproduced.
+  status: active
+  baseline_origin: dataset_authors
+snapshots:
+- id: paper_snapshot_2026_09_30
+  checked_at: '2026-09-30'
+  scope: paper_reported
+  source_ids:
+  - paper
+  result_ids:
+  - lstm_loc
+  - lstm_ed_loc
+  coverage_notes: Only the two location-only baselines in original paper Table 2; no claim of exhaustive
+    literature coverage.

@@ -1,0 +1,48 @@
+# Copy to datasets/<stable-kebab-id>.yaml. Replace every example value and source locator.
+schema_version: '0.1'
+id: example-human-intention
+name: Example Human Intention Dataset
+year: 2024
+description: A concise description of the released data and its human subjects or scenarios.
+intention_relevance: explicit
+intention_definition: Explain precisely whose goal or intention the target represents and what it cannot prove.
+domains: [human_robot_interaction]
+intention_types: [task_goal]
+tasks: [goal_recognition]
+modalities: [rgb]
+data_formats: [video, structured_annotation]
+data_origin: real
+annotations:
+  - id: goal_label
+    semantic: goal
+    description: Explain the actual label values and how they were assigned.
+    provenance: observer_judgment
+    scope: State which samples carry this label.
+    source_ids: [original]
+releases:
+  - id: v1
+    label: State the official release name.
+    annotation_version: state-exact-version-or-mark-unknown
+    source_ids: [original]
+access:
+  status: unknown
+  checked_at: 'YYYY-MM-DD'
+  source_ids: [original]
+  conditions: State what was actually checked; add a URL if one exists.
+licenses:
+  - component: video and annotations
+    status: unknown
+    source_ids: [original]
+sources:
+  - id: original
+    type: official_project
+    title: Official dataset project title
+    url: https://example.org/replace-this
+    accessed_at: 'YYYY-MM-DD'
+    locator: {section: Replace with a precise section}
+verification:
+  status: pending
+  checked_at: 'YYYY-MM-DD'
+  source_ids: [original]
+  notes: Keep pending until an original source has been reviewed.
+

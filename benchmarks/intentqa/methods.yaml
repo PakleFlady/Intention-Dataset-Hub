@@ -1,0 +1,50 @@
+schema_version: '0.1'
+dataset_id: intentqa
+methods:
+- id: context_model
+  name: Context-aware IntentQA model
+  reference:
+    type: paper
+    title: 'IntentQA: Context-aware Video Intent Reasoning'
+    url: https://openaccess.thecvf.com/content/ICCV2023/papers/Li_IntentQA_Context-aware_Video_Intent_Reasoning_ICCV_2023_paper.pdf
+    year: 2023
+    venue: ICCV
+  source_ids:
+  - paper
+  code:
+    url: https://github.com/JoseponLee/IntentQA
+    origin: authors
+    checked_at: '2026-09-30'
+  model_family: intentqa_context
+- id: vgt
+  name: VGT (BERT text)
+  reference:
+    type: paper
+    title: Video Graph Transformer for Video Question Answering
+    url: https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/1735_ECCV_2022_paper.php
+    year: 2022
+    venue: ECCV
+  code:
+    url: https://github.com/sail-sg/VGT
+    origin: authors
+    checked_at: '2026-09-30'
+  model_family: vgt
+  source_ids:
+  - vgt_original
+  - paper
+sources:
+- id: paper
+  type: paper
+  title: 'IntentQA: Context-aware Video Intent Reasoning'
+  url: https://openaccess.thecvf.com/content/ICCV2023/papers/Li_IntentQA_Context-aware_Video_Intent_Reasoning_ICCV_2023_paper.pdf
+  accessed_at: '2026-09-30'
+  locator:
+    section: 5 Experiments
+    table: Tables 2 and 3
+- id: vgt_original
+  type: paper
+  title: Video Graph Transformer for Video Question Answering
+  url: https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/1735_ECCV_2022_paper.php
+  accessed_at: '2026-09-30'
+  locator:
+    section: Model; Experiments

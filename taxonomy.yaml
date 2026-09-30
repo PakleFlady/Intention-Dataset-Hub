@@ -1,0 +1,69 @@
+schema_version: "0.1"
+domains:
+  daily_activities: {name: Daily activities, definition: Everyday human tasks in home or routine settings.}
+  pedestrian: {name: Pedestrian, definition: Human behavior near roads and crossings.}
+  autonomous_driving: {name: Autonomous driving, definition: Human behavior interpreted for automated driving.}
+  driver_behavior: {name: Driver behavior, definition: Intentions and maneuvers of human drivers.}
+  human_robot_interaction: {name: Human-robot interaction, definition: Human goals and actions relevant to robot collaboration.}
+  human_computer_interaction: {name: Human-computer interaction, definition: Human aims in interaction with computing systems.}
+  social_interaction: {name: Social interaction, definition: Goals and behaviors between people or humanlike agents.}
+  human_object_interaction: {name: Human-object interaction, definition: Intended interactions with physical objects.}
+  navigation: {name: Navigation, definition: Human destination or path choices.}
+  industrial_collaboration: {name: Industrial collaboration, definition: Human goals in shared industrial work.}
+  healthcare: {name: Healthcare, definition: Human intentions in health and care settings.}
+  embodied_interaction: {name: Embodied interaction, definition: Human goals expressed through bodily interaction.}
+  other: {name: Other, definition: Supported intention domain not captured by existing values.}
+intention_types:
+  action: {name: Action intention, definition: An intended next human action.}
+  driving_maneuver: {name: Driving maneuver, parent: action, definition: A planned vehicle maneuver by a human driver.}
+  pedestrian_crossing: {name: Pedestrian crossing, parent: action, definition: A pedestrian's intention to cross a road.}
+  object_interaction: {name: Object interaction, parent: action, definition: An intended manipulation or interaction with an object.}
+  goal: {name: Goal, definition: A desired human outcome.}
+  navigation_goal: {name: Navigation goal, parent: goal, definition: A destination or location sought by a human.}
+  task_goal: {name: Task goal, parent: goal, definition: A task-level outcome sought by a human.}
+  interaction: {name: Interaction intention, definition: A purpose involving another actor.}
+  social: {name: Social intention, parent: interaction, definition: A socially directed purpose.}
+  communicative: {name: Communicative intention, parent: interaction, definition: A purpose expressed through communication.}
+  collaborative: {name: Collaborative intention, parent: interaction, definition: An intention to coordinate with another actor.}
+tasks:
+  intention_recognition: {name: Intention recognition, definition: Infer an intention from current observations.}
+  intention_prediction: {name: Intention prediction, definition: Predict a future intention state.}
+  intention_reasoning: {name: Intention reasoning, definition: "Infer or explain goals, motives, or their relations."}
+  goal_recognition: {name: Goal recognition, definition: Infer a current latent goal.}
+  goal_prediction: {name: Goal prediction, definition: Predict a later goal.}
+  action_anticipation: {name: Action anticipation, definition: Predict an action before it begins.}
+  early_action_recognition: {name: Early action recognition, definition: Classify an action from a prefix after it begins.}
+  future_activity_prediction: {name: Future activity prediction, definition: Predict a future sequence of activities.}
+  behavior_prediction: {name: Behavior prediction, definition: Predict a future behavior state or pattern.}
+  trajectory_prediction: {name: Trajectory prediction, definition: Predict future movement.}
+  human_object_interaction_prediction: {name: Human-object interaction prediction, definition: Predict a future object and human interaction.}
+modalities:
+  rgb: {name: RGB, definition: Color image observations.}
+  depth: {name: Depth, definition: Depth image observations.}
+  optical_flow: {name: Optical flow, definition: Motion field derived from images.}
+  pose: {name: Pose, definition: Body or hand pose and skeleton data.}
+  gaze: {name: Gaze, definition: Observed gaze direction or fixation.}
+  audio: {name: Audio, definition: Acoustic observations.}
+  text: {name: Text, definition: Written or transcribed language.}
+  eeg: {name: EEG, definition: Electroencephalography signals.}
+  physiological: {name: Physiological, definition: Other human physiological signals.}
+  imu: {name: IMU, definition: Inertial sensor readings.}
+  trajectory: {name: Trajectory, definition: Spatial positions over time.}
+  lidar: {name: LiDAR, definition: LiDAR point observations.}
+  vehicle_telemetry: {name: Vehicle telemetry, definition: Vehicle state such as speed and heading.}
+  object_state: {name: Object state, definition: Object locations or state observations.}
+data_formats:
+  image: {name: Image, definition: Individual still images.}
+  video: {name: Video, definition: Image sequences.}
+  time_series: {name: Time series, definition: Ordered measurements.}
+  text: {name: Text, definition: Written or transcribed language records.}
+  structured_annotation: {name: Structured annotation, definition: Discrete labels or structured records.}
+viewpoints:
+  egocentric: {name: Egocentric, definition: From the acting person's perspective.}
+  exocentric: {name: Exocentric, definition: From outside the acting person's perspective.}
+capture_setup:
+  fixed_camera: {name: Fixed camera, definition: Stationary camera setup.}
+  vehicle_mounted: {name: Vehicle-mounted, definition: Camera or sensor carried by a vehicle.}
+  wearable: {name: Wearable, definition: Sensor worn by a participant.}
+  handheld: {name: Handheld, definition: Handheld capture device.}
+  multi_camera: {name: Multi-camera, definition: Multiple synchronized or complementary cameras.}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "id", "name", "year", "description", "intention_relevance", "intention_definition", "domains", "intention_types", "tasks", "modalities", "data_formats", "data_origin", "annotations", "releases", "access", "licenses", "sources", "verification"],
+  "properties": {
+    "schema_version": {"const": "0.1"}, "id": {"$ref": "#/$defs/id"}, "name": {"type": "string", "minLength": 2}, "full_name": {"type": "string"},
+    "aliases": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}, "family_id": {"$ref": "#/$defs/id"},
+    "year": {"type": "integer", "minimum": 1990, "maximum": 2100}, "description": {"type": "string", "minLength": 20},
+    "intention_relevance": {"enum": ["explicit", "implicit", "related"]}, "intention_definition": {"type": "string", "minLength": 30},
+    "domains": {"$ref": "#/$defs/terms"}, "intention_types": {"$ref": "#/$defs/terms"}, "tasks": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/key"}},
+    "modalities": {"$ref": "#/$defs/terms"}, "data_formats": {"$ref": "#/$defs/terms"},
+    "data_origin": {"enum": ["real", "synthetic", "mixed"]},
+    "viewpoints": {"$ref": "#/$defs/terms"}, "capture_setup": {"$ref": "#/$defs/terms"},
+    "environment": {"type": "string"}, "notes": {"type": "string"},
+    "paper": {"type": "object", "additionalProperties": false, "required": ["title", "url", "year"], "properties": {"title": {"type": "string"}, "url": {"$ref": "#/$defs/url"}, "year": {"type": "integer"}, "venue": {"type": "string"}}},
+    "citation": {"type": "string"}, "project_url": {"$ref": "#/$defs/url"}, "code_url": {"$ref": "#/$defs/url"},
+    "related_datasets": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+    "annotations": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["id", "semantic", "description", "provenance", "scope", "source_ids"], "properties": {"id": {"$ref": "#/$defs/key"}, "semantic": {"enum": ["intention", "goal", "future_action", "ongoing_action", "trajectory", "cue", "explanation"]}, "description": {"type": "string", "minLength": 12}, "provenance": {"enum": ["self_report", "observer_judgment", "experiment_assigned", "behavior_derived", "simulated", "model_generated"]}, "scope": {"type": "string", "minLength": 3}, "source_ids": {"$ref": "#/$defs/source_ids"}}}},
+    "releases": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["id", "label", "annotation_version", "source_ids"], "properties": {"id": {"$ref": "#/$defs/key"}, "label": {"type": "string"}, "annotation_version": {"type": "string"}, "source_ids": {"$ref": "#/$defs/source_ids"}, "notes": {"type": "string"}}}},
+    "access": {"type": "object", "additionalProperties": false, "required": ["status", "checked_at", "source_ids"], "properties": {"status": {"enum": ["open", "registration", "request", "restricted", "unavailable", "unknown"]}, "url": {"$ref": "#/$defs/url"}, "conditions": {"type": "string"}, "checked_at": {"$ref": "#/$defs/date"}, "source_ids": {"$ref": "#/$defs/source_ids"}}},
+    "licenses": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["component", "status", "source_ids"], "properties": {"component": {"type": "string"}, "status": {"enum": ["known", "unknown"]}, "name": {"type": "string"}, "url": {"$ref": "#/$defs/url"}, "source_ids": {"$ref": "#/$defs/source_ids"}}}},
+    "statistics": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["name", "value", "unit", "release_id", "scope", "source_ids"], "properties": {"name": {"type": "string"}, "value": {"type": "number", "minimum": 0}, "unit": {"type": "string"}, "release_id": {"$ref": "#/$defs/key"}, "scope": {"type": "string"}, "source_ids": {"$ref": "#/$defs/source_ids"}}}},
+    "sources": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/source"}},
+    "verification": {"$ref": "#/$defs/verification"}
+  },
+  "$defs": {"terms": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/key"}}}
+}

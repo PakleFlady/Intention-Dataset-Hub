@@ -1,0 +1,85 @@
+schema_version: '0.1'
+id: loki-traffic
+name: 'LOKI: Long Term and Key Intentions'
+year: 2021
+description: Traffic-agent trajectories with labeled key intentions for pedestrians and vehicles.
+intention_relevance: explicit
+intention_definition: Model annotated intended actions and potential destinations of pedestrians and vehicles
+  alongside their trajectories; these are observer-assigned traffic-agent labels, not agent self-reports
+  or direct access to mental state.
+domains:
+- pedestrian
+- autonomous_driving
+intention_types:
+- driving_maneuver
+- pedestrian_crossing
+tasks:
+- intention_prediction
+- trajectory_prediction
+modalities:
+- rgb
+- trajectory
+- object_state
+- lidar
+data_formats:
+- video
+- time_series
+- structured_annotation
+data_origin: real
+annotations:
+- id: key_intention
+  semantic: intention
+  description: Frame-wise intended actions and potential destinations for heterogeneous traffic agents,
+    distinct from current motion and road context.
+  provenance: observer_judgment
+  scope: Pedestrian and vehicle tracks
+  source_ids:
+  - official
+  - paper
+releases:
+- id: v1
+  label: 'LOKI: Long Term and Key Intentions release documented by original source'
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  notes: Exact annotation revision is not identified by this source.
+access:
+  status: open
+  url: https://usa.honda-ri.com/loki
+  checked_at: '2026-09-30'
+  source_ids:
+  - official
+  conditions: See the source for current download conditions; raw files were not downloaded for this catalog.
+licenses:
+- component: dataset media and annotations
+  status: unknown
+  source_ids:
+  - official
+sources:
+- id: official
+  type: official_project
+  title: 'LOKI: Long Term and Key Intentions original project or publication'
+  url: https://usa.honda-ri.com/loki
+  accessed_at: '2026-09-30'
+  locator:
+    section: Dataset Annotation; Intention labels; annotation file layout
+- id: paper
+  type: paper
+  title: 'LOKI: Long Term and Key Intentions for Trajectory Prediction'
+  url: https://openaccess.thecvf.com/content/ICCV2021/papers/Girase_LOKI_Long_Term_and_Key_Intentions_for_Trajectory_Prediction_ICCV_2021_paper.pdf
+  accessed_at: '2026-09-30'
+  locator:
+    section: Dataset Annotation; Intention labels
+verification:
+  status: verified
+  checked_at: '2026-09-30'
+  source_ids:
+  - official
+  - paper
+  notes: Official project and original paper descriptions checked for intention labels, sensor modalities,
+    and access entry; raw files were not downloaded.
+viewpoints:
+- exocentric
+capture_setup:
+- vehicle_mounted
+notes: This ID disambiguates the traffic dataset from unrelated projects named LOKI.

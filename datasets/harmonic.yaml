@@ -1,0 +1,74 @@
+schema_version: '0.1'
+id: harmonic
+name: HARMONIC
+year: 2021
+description: Multimodal recordings of people and assistive robots collaborating on tasks.
+intention_relevance: related
+intention_definition: Human gaze, motion and task context may support prediction of a collaborator's
+  goal; the dataset page presents this as a research use, not a universal direct intention label.
+domains:
+- human_robot_interaction
+- human_object_interaction
+intention_types:
+- collaborative
+- task_goal
+tasks: []
+modalities:
+- rgb
+- gaze
+- pose
+- object_state
+data_formats:
+- video
+- time_series
+- structured_annotation
+data_origin: real
+annotations:
+- id: gaze_and_pose
+  semantic: cue
+  description: Synchronized gaze and pose observations during collaboration.
+  provenance: behavior_derived
+  scope: Assistive collaboration runs
+  source_ids: &id001
+  - official
+releases:
+- id: v1
+  label: HARMONIC release documented by original source
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  notes: Exact annotation revision is not identified by this source.
+access:
+  status: open
+  url: https://harplab.github.io/harmonic/
+  checked_at: '2026-09-30'
+  source_ids:
+  - official
+  conditions: See the source for current download conditions; raw files were not downloaded for this
+    catalog.
+licenses:
+- component: dataset media and annotations
+  status: unknown
+  source_ids:
+  - official
+sources:
+- id: official
+  type: official_project
+  title: HARMONIC original project or publication
+  url: https://harplab.github.io/harmonic/
+  accessed_at: '2026-09-30'
+  locator:
+    section: Overview; Accessing the dataset
+verification:
+  status: verified
+  checked_at: '2026-09-30'
+  source_ids: *id001
+  notes: Core scope, annotation meaning, and access entry were checked against the linked original resources;
+    dataset files were not downloaded.
+viewpoints:
+- egocentric
+- exocentric
+capture_setup:
+- wearable
+- fixed_camera
+notes: Official page identifies intention prediction and mental-state modeling as possible uses.

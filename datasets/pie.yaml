@@ -1,0 +1,95 @@
+schema_version: '0.1'
+id: pie
+name: PIE
+year: 2019
+description: Pedestrian Intention Estimation footage and annotations from vehicle-mounted urban driving
+  video.
+intention_relevance: explicit
+intention_definition: Human observers estimate whether a pedestrian intends to cross the ego-vehicle's
+  path before crossing; this differs from whether the pedestrian later crosses.
+domains:
+- pedestrian
+- autonomous_driving
+intention_types:
+- pedestrian_crossing
+tasks:
+- intention_recognition
+- behavior_prediction
+- trajectory_prediction
+modalities:
+- rgb
+- trajectory
+- vehicle_telemetry
+data_formats:
+- video
+- time_series
+- structured_annotation
+data_origin: real
+annotations:
+- id: crossing_intention
+  semantic: intention
+  description: Human-judged pre-crossing intention probability for each pedestrian track.
+  provenance: observer_judgment
+  scope: Frames before the critical point
+  source_ids: &id001
+  - official
+  - author_protocol
+- id: crossing_action
+  semantic: future_action
+  description: Whether the pedestrian subsequently crosses the ego-vehicle's path.
+  provenance: behavior_derived
+  scope: Pedestrian tracks
+  source_ids: *id001
+releases:
+- id: v1
+  label: PIE release documented by original source
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  notes: Exact annotation revision is not identified by this source.
+access:
+  status: open
+  url: https://www.data.nvision2.eecs.yorku.ca/PIE_dataset/
+  checked_at: '2026-09-30'
+  source_ids:
+  - official
+  conditions: See the source for current download conditions; raw files were not downloaded for this
+    catalog.
+licenses:
+- component: dataset media and annotations
+  status: unknown
+  source_ids:
+  - official
+sources:
+- id: official
+  type: official_project
+  title: PIE original project or publication
+  url: https://www.data.nvision2.eecs.yorku.ca/PIE_dataset/
+  accessed_at: '2026-09-30'
+  locator:
+    section: Intention Annotations
+- id: author_protocol
+  type: author_code
+  title: PIE author protocol or annotation guide
+  url: https://github.com/aras62/PIE/blob/master/annotations/README.md
+  accessed_at: '2026-09-30'
+  locator:
+    section: Note regarding action/intention distinction
+verification:
+  status: verified
+  checked_at: '2026-09-30'
+  source_ids: *id001
+  notes: Core scope, annotation meaning, and access entry were checked against the linked original resources;
+    dataset files were not downloaded.
+viewpoints:
+- exocentric
+capture_setup:
+- vehicle_mounted
+statistics:
+- name: pedestrian_tracks
+  value: 1842
+  unit: tracks
+  release_id: v1
+  scope: annotated pedestrians
+  source_ids:
+  - official

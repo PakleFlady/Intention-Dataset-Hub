@@ -1,0 +1,11 @@
+schema_version: '0.1'
+dataset_id: epic-kitchens-100
+methods: []
+sources:
+- id: official
+  type: official_documentation
+  title: EPIC-KITCHENS-100 2021 challenge details
+  url: https://epic-kitchens.github.io/2020-100
+  accessed_at: '2026-09-30'
+  locator:
+    section: Action Anticipation

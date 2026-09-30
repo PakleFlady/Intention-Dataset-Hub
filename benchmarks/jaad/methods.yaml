@@ -1,0 +1,73 @@
+schema_version: '0.1'
+dataset_id: jaad
+methods:
+- id: pcpa
+  name: PCPA attention variants
+  reference:
+    type: paper
+    title: Benchmark for Evaluating Pedestrian Action Prediction
+    url: https://openaccess.thecvf.com/content/WACV2021/papers/Kotseruba_Benchmark_for_Evaluating_Pedestrian_Action_Prediction_WACV_2021_paper.pdf
+    year: 2021
+    venue: WACV
+  source_ids:
+  - paper
+  code:
+    url: https://github.com/ykotseruba/PedestrianActionBenchmark
+    origin: authors
+    checked_at: '2026-09-30'
+  model_family: pcpa
+- id: c3d
+  name: C3D RGB
+  reference:
+    type: paper
+    title: Learning Spatiotemporal Features With 3D Convolutional Networks
+    url: https://openaccess.thecvf.com/content_iccv_2015/papers/Tran_Learning_Spatiotemporal_Features_ICCV_2015_paper.pdf
+    year: 2015
+    venue: ICCV
+  code:
+    url: https://github.com/ykotseruba/PedestrianActionBenchmark
+    origin: third_party
+    checked_at: '2026-09-30'
+  model_family: c3d
+  source_ids:
+  - c3d_paper
+  - paper
+- id: i3d_rgb
+  name: I3D RGB
+  reference:
+    type: paper
+    title: Quo Vadis, Action Recognition? A New Model and the Kinetics Dataset
+    url: https://openaccess.thecvf.com/content_cvpr_2017/papers/Carreira_Quo_Vadis_Action_CVPR_2017_paper.pdf
+    year: 2017
+    venue: CVPR
+  code:
+    url: https://github.com/ykotseruba/PedestrianActionBenchmark
+    origin: third_party
+    checked_at: '2026-09-30'
+  model_family: i3d_rgb
+  source_ids:
+  - i3d_rgb_paper
+  - paper
+sources:
+- id: paper
+  type: paper
+  title: Benchmark for Evaluating Pedestrian Action Prediction
+  url: https://openaccess.thecvf.com/content/WACV2021/papers/Kotseruba_Benchmark_for_Evaluating_Pedestrian_Action_Prediction_WACV_2021_paper.pdf
+  accessed_at: '2026-09-30'
+  locator:
+    section: 4 Baselines; 5 Evaluation; 6 Proposed model
+    table: Tables 2 and 3
+- id: c3d_paper
+  type: paper
+  title: Learning Spatiotemporal Features With 3D Convolutional Networks
+  url: https://openaccess.thecvf.com/content_iccv_2015/papers/Tran_Learning_Spatiotemporal_Features_ICCV_2015_paper.pdf
+  accessed_at: '2026-09-30'
+  locator:
+    section: Model architecture
+- id: i3d_rgb_paper
+  type: paper
+  title: Quo Vadis, Action Recognition? A New Model and the Kinetics Dataset
+  url: https://openaccess.thecvf.com/content_cvpr_2017/papers/Carreira_Quo_Vadis_Action_CVPR_2017_paper.pdf
+  accessed_at: '2026-09-30'
+  locator:
+    section: Model architecture

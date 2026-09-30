@@ -1,0 +1,18 @@
+schema_version: '0.1'
+dataset_id: ego4d
+methods: []
+sources:
+- id: overview
+  type: official_documentation
+  title: Ego4D 2022 Long Term Action Anticipation challenge overview
+  url: https://eval.ai/web/challenges/challenge-page/1598/overview
+  accessed_at: '2026-09-30'
+  locator:
+    section: Task; Z=20 and K=5
+- id: evaluation
+  type: official_documentation
+  title: Ego4D 2022 Long Term Action Anticipation evaluation
+  url: https://eval.ai/web/challenges/challenge-page/1598/evaluation
+  accessed_at: '2026-09-30'
+  locator:
+    section: Evaluation Criteria; primary metric

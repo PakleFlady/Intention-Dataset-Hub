@@ -1,0 +1,68 @@
+schema_version: '0.1'
+id: phase
+name: PHASE
+year: 2021
+description: Procedurally generated two-agent social events validated with human judgments.
+intention_relevance: explicit
+intention_definition: Infer simulated agents' social purpose, such as helping or hindering, from their
+  motion and interactions; these are synthetic agent goals rather than real human self-reports.
+domains:
+- social_interaction
+- embodied_interaction
+intention_types:
+- social
+tasks:
+- intention_recognition
+- behavior_prediction
+modalities:
+- trajectory
+- object_state
+data_formats:
+- video
+- structured_annotation
+data_origin: synthetic
+annotations:
+- id: social_event
+  semantic: intention
+  description: Simulated social interaction concept assigned by the event generator.
+  provenance: simulated
+  scope: Synthetic social events
+  source_ids: &id001
+  - official
+releases:
+- id: v1
+  label: PHASE release documented by original source
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  notes: Exact annotation revision is not identified by this source.
+access:
+  status: open
+  url: https://tshu.io/PHASE/
+  checked_at: '2026-09-30'
+  source_ids:
+  - official
+  conditions: See the source for current download conditions; raw files were not downloaded for this
+    catalog.
+licenses:
+- component: dataset media and annotations
+  status: unknown
+  source_ids:
+  - official
+sources:
+- id: official
+  type: official_project
+  title: PHASE original project or publication
+  url: https://tshu.io/PHASE/
+  accessed_at: '2026-09-30'
+  locator:
+    section: Abstract; PHASE Dataset
+verification:
+  status: verified
+  checked_at: '2026-09-30'
+  source_ids: *id001
+  notes: Core scope, annotation meaning, and access entry were checked against the linked original resources;
+    dataset files were not downloaded.
+viewpoints:
+- exocentric
+notes: Human experiments validate social-event perception, but the observed agents are simulated.

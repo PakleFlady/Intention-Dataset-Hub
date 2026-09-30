@@ -1,0 +1,57 @@
+# Copy to benchmarks/<dataset-id>/<benchmark-id>.yaml after the dataset target/release exists.
+# Add methods to benchmarks/<dataset-id>/methods.yaml before adding results.
+schema_version: '0.1'
+id: example-protocol
+dataset_id: example-human-intention
+release_id: v1
+annotation_version: state-exact-version-or-mark-unknown
+task: goal_recognition
+original_task_name: Original author task name
+target_id: goal_label
+protocol: {name: Exact protocol and track, source_ids: [paper]}
+split: {name: Exact train validation test split, source_ids: [paper]}
+sample_selection: {description: Explain filters and target derivation., source_ids: [paper]}
+inputs:
+  modalities: [rgb]
+  representation: Explain the inference representation.
+  available_information: State what the model can see at inference.
+temporal:
+  observation_window: {kind: unknown, anchor: observation endpoint, description: Investigate original source.}
+  anticipation_gap: {kind: not_applicable, anchor: target event, description: Not a forecasting task.}
+  prediction_horizon: {kind: not_applicable, anchor: target event, description: Not a forecasting task.}
+training_policy:
+  external_data: unknown
+  pretraining: unknown
+  extra_supervision: unknown
+  ensemble: unknown
+  source_ids: [paper]
+evaluation:
+  description: Explain exact evaluation implementation.
+  aggregation: Explain how examples or runs are aggregated.
+  parameters: {}
+  source_ids: [paper]
+metrics:
+  - id: accuracy
+    name: Accuracy
+    direction: higher
+    unit: percent
+    definition: Fraction of correct predictions expressed from zero to one hundred.
+    aggregation: overall
+    evaluation_subset: named test split
+    valid_range: [0, 100]
+    source_ids: [paper]
+sources:
+  - id: paper
+    type: paper
+    title: Original protocol paper
+    url: https://example.org/replace-this
+    accessed_at: 'YYYY-MM-DD'
+    locator: {section: Exact protocol description}
+verification:
+  status: pending
+  checked_at: 'YYYY-MM-DD'
+  source_ids: [paper]
+  notes: An unknown comparison condition prevents ranking.
+results: []
+snapshots: []
+

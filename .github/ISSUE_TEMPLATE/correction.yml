@@ -1,0 +1,17 @@
+name: Correction
+description: Report a factual, structural, or comparison error.
+title: 'Correction: '
+labels: ['correction']
+body:
+  - type: input
+    id: record
+    attributes: {label: Dataset, benchmark, result ID, or page URL}
+    validations: {required: true}
+  - type: textarea
+    id: problem
+    attributes: {label: "What is incorrect and how should it read?"}
+    validations: {required: true}
+  - type: input
+    id: evidence
+    attributes: {label: Primary source URL and exact locator}
+    validations: {required: true}

@@ -1,0 +1,92 @@
+schema_version: '0.1'
+id: ek100-2021-test-action-anticipation
+dataset_id: epic-kitchens-100
+release_id: v100
+annotation_version: official-2020
+task: action_anticipation
+original_task_name: Action Anticipation Challenge
+target_id: next_action
+protocol:
+  name: EK100 challenge test action anticipation
+  source_ids:
+  - official
+split:
+  name: Official train/validation/test split; test phase
+  source_ids:
+  - official
+sample_selection:
+  description: All official test action segments; distinguish all, unseen participants and tail classes
+    in future metrics.
+  source_ids:
+  - official
+inputs:
+  modalities:
+  - rgb
+  representation: RGB video observed up to the official cutoff; observation duration may vary by method.
+  available_information: Frames strictly before action start minus one second; future action frames prohibited.
+temporal:
+  observation_window:
+    kind: variable
+    anchor: last permitted observation
+    description: Official rules allow arbitrary observation duration before cutoff.
+    unit: seconds
+  anticipation_gap:
+    kind: fixed
+    anchor: start of next action
+    description: Observed segment must end at least one second before target action.
+    unit: seconds
+    value: 1
+  prediction_horizon:
+    kind: fixed
+    anchor: next annotated action
+    description: Predict one future verb�Cnoun action.
+    unit: actions
+    value: 1
+training_policy:
+  external_data: unknown
+  pretraining: unknown
+  extra_supervision: unknown
+  source_ids:
+  - official
+  notes: Track restrictions and individual input windows require method-specific confirmation before results
+    can be ranked.
+  ensemble: unknown
+evaluation:
+  description: Official challenge class-mean top-5 recall; no result entered until exact track settings
+    are matched.
+  aggregation: Macro average over action classes.
+  parameters: {}
+  source_ids:
+  - official
+metrics:
+- id: action_cm_recall_at_5_all
+  name: Action class-mean recall@5, all test
+  direction: higher
+  unit: percent
+  definition: Mean class recall for top-five verb-noun action predictions.
+  aggregation: class mean
+  evaluation_subset: all test segments
+  source_ids:
+  - official
+  valid_range:
+  - 0
+  - 100
+  top_k: 5
+  label_space: verb-noun action
+sources:
+- id: official
+  type: official_documentation
+  title: EPIC-KITCHENS-100 2021 challenge details
+  url: https://epic-kitchens.github.io/2020-100
+  accessed_at: '2026-09-30'
+  locator:
+    section: Action Anticipation
+verification:
+  status: verified
+  checked_at: '2026-09-30'
+  source_ids:
+  - official
+  notes: Official 2021 test protocol documented; training policy and specific inference modality require
+    per-result confirmation, so no result is ranked yet.
+results: []
+snapshots: []

@@ -1,0 +1,9 @@
+[project]
+name = "intention-dataset-hub"
+version = "0.1.0.dev0"
+description = "A curated database and benchmark hub for human intention research"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--basetemp=.pytest_tmp"

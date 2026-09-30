@@ -1,0 +1,41 @@
+name: Benchmark or result update
+description: Submit a protocol or a paper/leaderboard result for review.
+title: 'Benchmark update: '
+labels: ['benchmark-update']
+body:
+  - type: input
+    id: dataset
+    attributes: {label: Dataset ID and exact release / annotation version}
+    validations: {required: true}
+  - type: input
+    id: target
+    attributes: {label: Target annotation and label semantics}
+    validations: {required: true}
+  - type: textarea
+    id: protocol
+    attributes: {label: Protocol, train/validation/test split, and sample selection}
+    validations: {required: true}
+  - type: input
+    id: inputs
+    attributes: {label: Inference modalities and available information}
+    validations: {required: true}
+  - type: input
+    id: temporal
+    attributes: {label: Observation window, anticipation gap, and prediction horizon, description: Include units or write not applicable with a reason.}
+    validations: {required: true}
+  - type: textarea
+    id: training
+    attributes: {label: Pretraining, external data, extra supervision, and ensemble status}
+    validations: {required: true}
+  - type: input
+    id: score
+    attributes: {label: Exact metric definition, value, unit, and evaluation subset}
+    validations: {required: true}
+  - type: input
+    id: evidence
+    attributes: {label: Original source URL and table/row or leaderboard entry}
+    validations: {required: true}
+  - type: input
+    id: code
+    attributes: {label: Author code URL or unavailable}
+    validations: {required: true}

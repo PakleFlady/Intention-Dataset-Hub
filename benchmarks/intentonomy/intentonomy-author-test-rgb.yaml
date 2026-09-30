@@ -1,0 +1,195 @@
+schema_version: '0.1'
+id: intentonomy-author-test-rgb
+dataset_id: intentonomy
+release_id: v1
+annotation_version: author-release-unspecified
+task: intention_recognition
+original_task_name: Intentonomy intent classification
+target_id: intent_category
+protocol:
+  name: Author repository test-set RGB baseline cohort
+  source_ids:
+  - author_readme
+split:
+  name: Author repository test set
+  source_ids:
+  - author_readme
+sample_selection:
+  description: Use the three baseline rows listed under Test set results in the author README; this record
+    includes two RGB-inference rows and excludes the hashtag-input row.
+  source_ids:
+  - author_readme
+inputs:
+  modalities:
+  - rgb
+  representation: Image RGB at inference; second configuration adds training localization loss.
+  available_information: Whole image; no text or hashtag supplied at inference for included rows.
+temporal:
+  observation_window:
+    kind: not_applicable
+    anchor: task target
+    description: Still-image task.
+  anticipation_gap:
+    kind: not_applicable
+    anchor: task target
+    description: Static image classification.
+  prediction_horizon:
+    kind: not_applicable
+    anchor: task target
+    description: Static image classification.
+training_policy:
+  external_data: allowed
+  pretraining: allowed
+  extra_supervision: allowed
+  source_ids:
+  - author_readme
+  notes: Localization masks are used as extra training supervision for L_loc; this is disclosed as a configuration
+    difference.
+  ensemble: forbidden
+evaluation:
+  description: Test-set intent category F1 as reported in the author repository.
+  aggregation: Reported mean across author runs; accompanying �� spread retained in source.
+  parameters: {}
+  source_ids:
+  - author_readme
+metrics:
+- id: macro_f1
+  name: Macro F1
+  direction: higher
+  unit: percent
+  definition: Unweighted mean of per-class F1 scores.
+  aggregation: mean of reported test runs
+  evaluation_subset: author test set
+  source_ids:
+  - author_readme
+  valid_range:
+  - 0
+  - 100
+- id: micro_f1
+  name: Micro F1
+  direction: higher
+  unit: percent
+  definition: F1 computed from pooled decisions.
+  aggregation: mean of reported test runs
+  evaluation_subset: author test set
+  source_ids:
+  - author_readme
+  valid_range:
+  - 0
+  - 100
+- id: samples_f1
+  name: Samples F1
+  direction: higher
+  unit: percent
+  definition: Mean of F1 computed per image sample.
+  aggregation: mean of reported test runs
+  evaluation_subset: author test set
+  source_ids:
+  - author_readme
+  valid_range:
+  - 0
+  - 100
+sources:
+- id: author_readme
+  type: official_project
+  title: Intentonomy author repository baseline results
+  url: https://github.com/KMnP/intentonomy
+  accessed_at: '2026-09-30'
+  locator:
+    section: Baseline results; Test set results
+verification:
+  status: verified
+  checked_at: '2026-09-30'
+  source_ids:
+  - author_readme
+  notes: Original protocol details checked; no independent implementation reproduction.
+results:
+- id: visual_test
+  method_id: visual
+  configuration:
+    description: Visual-only image classifier.
+    modalities:
+    - rgb
+    external_data: none reported
+    pretraining: Author visual backbone; exact checkpoint not confirmed in README
+    ensemble: false
+  scores:
+    macro_f1:
+      value: 22.77
+      source_ids: &id001
+      - author_readme
+      locator: &id002
+        section: Test set results
+        row: VISUAL
+      uncertainty: �� 0.59 as reported
+    micro_f1:
+      value: 30.23
+      source_ids: *id001
+      locator: *id002
+    samples_f1:
+      value: 28.45
+      source_ids: *id001
+      locator: *id002
+  source_ids: *id001
+  protocol_match:
+    status: confirmed
+    source_ids: *id001
+    locator: *id002
+    notes: The cited row belongs to the stated within-source comparison cohort.
+  verification:
+    status: verified
+    checked_at: '2026-09-30'
+    source_ids: *id001
+    notes: Checked against the identified primary source; results were not independently reproduced.
+  status: active
+  baseline_origin: dataset_authors
+- id: visual_loc_test
+  method_id: visual_loc
+  configuration:
+    description: Visual input; localization-loss masks used in training, not at test inference.
+    modalities:
+    - rgb
+    external_data: none reported
+    pretraining: Author visual backbone; exact checkpoint not confirmed in README
+    ensemble: false
+  scores:
+    macro_f1:
+      value: 24.37
+      source_ids: &id003
+      - author_readme
+      locator: &id004
+        section: Test set results
+        row: VISUAL + L_loc
+      uncertainty: �� 0.65 as reported
+    micro_f1:
+      value: 32.07
+      source_ids: *id003
+      locator: *id004
+    samples_f1:
+      value: 30.91
+      source_ids: *id003
+      locator: *id004
+  source_ids: *id003
+  protocol_match:
+    status: confirmed
+    source_ids: *id003
+    locator: *id004
+    notes: The cited row belongs to the stated within-source comparison cohort.
+  verification:
+    status: verified
+    checked_at: '2026-09-30'
+    source_ids: *id003
+    notes: Checked against the identified primary source; results were not independently reproduced.
+  status: active
+  baseline_origin: dataset_authors
+snapshots:
+- id: paper_snapshot_2026_09_30
+  checked_at: '2026-09-30'
+  scope: paper_reported
+  source_ids:
+  - author_readme
+  result_ids:
+  - visual_test
+  - visual_loc_test
+  coverage_notes: Two RGB-inference author baseline configurations from README test table; paper Table
+    2 uses different figures and is not merged.

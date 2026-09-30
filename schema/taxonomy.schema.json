@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "domains", "intention_types", "tasks", "modalities", "data_formats", "viewpoints", "capture_setup"],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "domains": {"$ref": "#/$defs/terms"}, "intention_types": {"$ref": "#/$defs/terms"},
+    "tasks": {"$ref": "#/$defs/terms"}, "modalities": {"$ref": "#/$defs/terms"},
+    "data_formats": {"$ref": "#/$defs/terms"}, "viewpoints": {"$ref": "#/$defs/terms"},
+    "capture_setup": {"$ref": "#/$defs/terms"}
+  },
+  "$defs": {"terms": {"type": "object", "minProperties": 1, "patternProperties": {"^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$": {"type": "object", "additionalProperties": false, "required": ["name", "definition"], "properties": {"name": {"type": "string", "minLength": 3}, "definition": {"type": "string", "minLength": 8}, "parent": {"type": "string"}, "aliases": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}, "boundary": {"type": "string"}}}}, "additionalProperties": false}}
+}

@@ -1,0 +1,9 @@
+# Coverage and release gate
+
+This checkout is a **research preview**. The generated README reports the live number of source-checked dataset records, documented protocols, and comparable result configurations. Those counts are not a v0.1 release declaration.
+
+Sixteen dataset records currently span first-person activities, pedestrians, driver behavior, human�Crobot collaboration, daily intentions, and social interaction. Coverage is uneven. Human�Crobot records are mostly related cues rather than direct intention targets, and several access or component-license statuses remain unknown. The two synthetic entries are separately marked. A second, independent pass over every dataset record is still required before a public v0.1 release.
+
+The seed result pages are deliberately narrow: PIE compares two location-only models from one paper; JAAD has a separate RGB-only C3D/I3D comparison as well as a PCPA ablation cohort; Intentonomy compares author RGB baseline configurations; IntentQA combines the BERT VGT baseline with within-paper no-GPT ablations. These are useful baseline entry points but do not establish an exhaustive or current field-wide best. PIE, JAAD, and IntentQA meet the count-based reduced v0.1 gate of three dataset protocols with two independent method families; the full target of five is not met. A named release still needs independent second-pass source review. The EPIC-KITCHENS-100 challenge protocol has no ranked result yet. The Ego4D LTA draft remains pending until its exact annotation release and training policy are mapped to the cited challenge.
+
+The [verification policy](verification.md) defines what `verified` does and does not mean. The next curation pass should prioritize direct human-goal labels, author access and license checks, exact protocol version mapping, and protocol-matched independent methods. No score will be copied into a table merely to meet a count.

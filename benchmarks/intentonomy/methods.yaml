@@ -1,0 +1,41 @@
+schema_version: '0.1'
+dataset_id: intentonomy
+methods:
+- id: visual
+  name: VISUAL
+  reference:
+    type: paper
+    title: 'Intentonomy: A Dataset and Study towards Human Intent Understanding'
+    url: https://openaccess.thecvf.com/content/CVPR2021/papers/Jia_Intentonomy_A_Dataset_and_Study_Towards_Human_Intent_Understanding_CVPR_2021_paper.pdf
+    year: 2021
+    venue: CVPR
+  source_ids:
+  - author_readme
+  code:
+    url: https://github.com/KMnP/intentonomy
+    origin: authors
+    checked_at: '2026-09-30'
+  model_family: intentonomy_visual
+- id: visual_loc
+  name: VISUAL + localization loss
+  reference:
+    type: paper
+    title: 'Intentonomy: A Dataset and Study towards Human Intent Understanding'
+    url: https://openaccess.thecvf.com/content/CVPR2021/papers/Jia_Intentonomy_A_Dataset_and_Study_Towards_Human_Intent_Understanding_CVPR_2021_paper.pdf
+    year: 2021
+    venue: CVPR
+  source_ids:
+  - author_readme
+  code:
+    url: https://github.com/KMnP/intentonomy
+    origin: authors
+    checked_at: '2026-09-30'
+  model_family: intentonomy_visual
+sources:
+- id: author_readme
+  type: official_project
+  title: Intentonomy author repository baseline results
+  url: https://github.com/KMnP/intentonomy
+  accessed_at: '2026-09-30'
+  locator:
+    section: Baseline results; Test set results

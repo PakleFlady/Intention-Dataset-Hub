@@ -1,0 +1,98 @@
+schema_version: '0.1'
+id: ego4d-2022-lta-test
+dataset_id: ego4d
+release_id: v1
+annotation_version: author-release-unspecified
+task: future_activity_prediction
+original_task_name: Long Term Action Anticipation
+target_id: future_action_sequence
+protocol:
+  name: Ego4D 2022 LTA challenge Z=20 K=5
+  source_ids:
+  - overview
+split:
+  name: Official 2022 challenge test phase
+  source_ids:
+  - overview
+sample_selection:
+  description: Prediction timestamps follow annotated object-interaction ends; exact annotation release
+    mapping still needs confirmation.
+  source_ids:
+  - overview
+inputs:
+  modalities:
+  - rgb
+  representation: Untrimmed egocentric video through the last visible action.
+  available_information: No frames from the 20 future actions; predict five possible sequences.
+temporal:
+  observation_window:
+    kind: variable
+    anchor: end of last observed action
+    description: Input video extends to a specified action boundary.
+    unit: seconds
+  anticipation_gap:
+    kind: not_applicable
+    anchor: task target
+    description: Future sequence begins after the last visible action.
+  prediction_horizon:
+    kind: fixed
+    anchor: after last observed action
+    description: Predict 20 future actions per candidate sequence.
+    unit: actions
+    value: 20
+training_policy:
+  external_data: unknown
+  pretraining: unknown
+  extra_supervision: unknown
+  source_ids:
+  - overview
+  notes: Confirm 2022 challenge training restrictions before attaching results.
+  ensemble: unknown
+evaluation:
+  description: Damerau-Levenshtein edit distance over 20 future actions; take best of five candidate sequences.
+  aggregation: Best of K=5, then challenge aggregation.
+  parameters:
+    z: 20
+    k: 5
+  source_ids:
+  - evaluation
+metrics:
+- id: edit_distance_z20_k5
+  name: Edit distance @20, best of 5
+  direction: lower
+  unit: edit_distance
+  definition: Damerau-Levenshtein distance of predicted and true future action sequences, selecting best
+    of five predictions.
+  aggregation: best of five per sample
+  evaluation_subset: official test phase
+  source_ids:
+  - evaluation
+  top_k: 5
+  parameters:
+    z: 20
+    k: 5
+sources:
+- id: overview
+  type: official_documentation
+  title: Ego4D 2022 Long Term Action Anticipation challenge overview
+  url: https://eval.ai/web/challenges/challenge-page/1598/overview
+  accessed_at: '2026-09-30'
+  locator:
+    section: Task; Z=20 and K=5
+- id: evaluation
+  type: official_documentation
+  title: Ego4D 2022 Long Term Action Anticipation evaluation
+  url: https://eval.ai/web/challenges/challenge-page/1598/evaluation
+  accessed_at: '2026-09-30'
+  locator:
+    section: Evaluation Criteria; primary metric
+verification:
+  status: pending
+  checked_at: '2026-09-30'
+  source_ids:
+  - overview
+  - evaluation
+  notes: Task, Z, K and metric confirmed from 2022 challenge. Exact annotation release and training policy
+    are not yet mapped, so protocol remains pending and no result is ranked.
+results: []
+snapshots: []

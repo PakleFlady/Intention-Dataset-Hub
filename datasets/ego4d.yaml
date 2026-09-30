@@ -1,0 +1,75 @@
+schema_version: '0.1'
+id: ego4d
+name: Ego4D
+year: 2021
+description: Large first-person video collection with short- and long-term forecasting tasks.
+intention_relevance: implicit
+intention_definition: Predict future camera-wearer actions and object interactions from prior first-person
+  observations; these future events are intention proxies.
+domains:
+- daily_activities
+- human_object_interaction
+intention_types:
+- action
+- object_interaction
+tasks:
+- action_anticipation
+- future_activity_prediction
+- trajectory_prediction
+- human_object_interaction_prediction
+modalities:
+- rgb
+- audio
+- trajectory
+- object_state
+data_formats:
+- video
+- time_series
+- structured_annotation
+data_origin: real
+annotations:
+- id: future_action_sequence
+  semantic: future_action
+  description: Sequence of later wearer verb-noun actions in the long-term anticipation task.
+  provenance: behavior_derived
+  scope: Forecasting benchmark clips
+  source_ids: &id001
+  - official
+releases:
+- id: v1
+  label: Ego4D release documented by original source
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  notes: Exact annotation revision is not identified by this source.
+access:
+  status: registration
+  url: https://ego4d-data.org/docs/benchmarks/forecasting/
+  checked_at: '2026-09-30'
+  source_ids:
+  - official
+  conditions: See the source for current download conditions; raw files were not downloaded for this
+    catalog.
+licenses:
+- component: dataset media and annotations
+  status: unknown
+  source_ids:
+  - official
+sources:
+- id: official
+  type: official_project
+  title: Ego4D original project or publication
+  url: https://ego4d-data.org/docs/benchmarks/forecasting/
+  accessed_at: '2026-09-30'
+  locator:
+    section: Task Definition; Annotations
+verification:
+  status: verified
+  checked_at: '2026-09-30'
+  source_ids: *id001
+  notes: Core scope, annotation meaning, and access entry were checked against the linked original resources;
+    dataset files were not downloaded.
+viewpoints:
+- egocentric
+capture_setup:
+- wearable

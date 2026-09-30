@@ -1,0 +1,233 @@
+schema_version: '0.1'
+id: jaad-all-wacv2021-rgb3d
+dataset_id: jaad
+release_id: jaad_2_0
+annotation_version: JAAD_2.0
+task: behavior_prediction
+original_task_name: pedestrian crossing action prediction
+target_id: crossing_action
+protocol:
+  name: WACV 2021 JAAD_all RGB 3D convolution comparison
+  source_ids:
+  - paper
+split:
+  name: 'WACV 2021 JAAD_all: 177 train / 29 validation / 117 test video clips'
+  source_ids:
+  - paper
+sample_selection:
+  description: Same 323 high-visibility JAAD_all clips, 177/29/117 split, 0.8 overlap and 30�C60-frame
+    time-to-event; Table 2 RGB-only C3D and I3D rows.
+  source_ids:
+  - paper
+inputs:
+  modalities:
+  - rgb
+  representation: Stack of 16 observed RGB frames; no optical flow, pose, bounding-box values or vehicle
+    labels supplied as separate features.
+  available_information: Only RGB frames up to the 30�C60-frame time-to-event cutoff.
+temporal:
+  observation_window:
+    kind: fixed
+    anchor: last observed frame
+    description: 16 frames sampled at 30 fps.
+    unit: frames
+    value: 16
+    frame_rate: 30
+  anticipation_gap:
+    kind: range
+    anchor: crossing event start
+    description: Sampled time-to-event range of 30�C60 frames for crossing samples.
+    unit: frames
+    min: 30
+    max: 60
+    frame_rate: 30
+  prediction_horizon:
+    kind: not_applicable
+    anchor: task target
+    description: Binary event label is evaluated over selected time-to-event samples.
+training_policy:
+  external_data: allowed
+  pretraining: allowed
+  extra_supervision: allowed
+  source_ids:
+  - paper
+  notes: Within-paper C3D and I3D RGB baselines use the WACV benchmark training procedure; pretrained
+    video backbones are permitted and disclosed per model.
+  ensemble: forbidden
+evaluation:
+  description: Binary crossing action classification on JAAD_all, Table 2 RGB-only 3D convolution rows.
+  aggregation: Overall test statistic in JAAD_all Table 3 column.
+  parameters: {}
+  source_ids:
+  - paper
+metrics:
+- id: accuracy
+  name: Accuracy
+  direction: higher
+  unit: ratio
+  definition: Fraction of correctly classified crossing and non-crossing samples.
+  aggregation: overall
+  evaluation_subset: JAAD_all
+  source_ids:
+  - paper
+  valid_range:
+  - 0
+  - 1
+- id: auc
+  name: AUC
+  direction: higher
+  unit: ratio
+  definition: Area under the ROC curve for crossing prediction.
+  aggregation: overall
+  evaluation_subset: JAAD_all
+  source_ids:
+  - paper
+  valid_range:
+  - 0
+  - 1
+- id: f1
+  name: F1
+  direction: higher
+  unit: ratio
+  definition: Harmonic mean of crossing precision and recall.
+  aggregation: overall
+  evaluation_subset: JAAD_all
+  source_ids:
+  - paper
+  valid_range:
+  - 0
+  - 1
+sources:
+- id: paper
+  type: paper
+  title: Benchmark for Evaluating Pedestrian Action Prediction
+  url: https://openaccess.thecvf.com/content/WACV2021/papers/Kotseruba_Benchmark_for_Evaluating_Pedestrian_Action_Prediction_WACV_2021_paper.pdf
+  accessed_at: '2026-09-30'
+  locator:
+    section: 3 Benchmark; 4 Baselines; 5 Evaluation
+    table: Table 2
+verification:
+  status: verified
+  checked_at: '2026-09-30'
+  source_ids:
+  - paper
+  notes: Exact JAAD_all split, sample timing, RGB variants and Table 2 cells checked in the original WACV
+    benchmark paper.
+results:
+- id: c3d_rgb
+  method_id: c3d
+  configuration:
+    description: C3D / RGB; 16 observed RGB frames.
+    modalities:
+    - rgb
+    external_data: Architecture-specific pretraining reported by WACV authors; no extra inference modality.
+    pretraining: Video backbone initialization follows author benchmark implementation.
+    ensemble: false
+  scores:
+    accuracy:
+      value: 0.84
+      source_ids:
+      - paper
+      locator:
+        table: Table 2
+        row: C3D / RGB
+        column: JAAD_all / accuracy
+    auc:
+      value: 0.81
+      source_ids:
+      - paper
+      locator:
+        table: Table 2
+        row: C3D / RGB
+        column: JAAD_all / auc
+    f1:
+      value: 0.65
+      source_ids:
+      - paper
+      locator:
+        table: Table 2
+        row: C3D / RGB
+        column: JAAD_all / f1
+  source_ids: &id001
+  - paper
+  protocol_match:
+    status: confirmed
+    source_ids:
+    - paper
+    locator:
+      table: Table 2
+      row: C3D / RGB
+      column: JAAD_all
+    notes: RGB variant and JAAD_all column checked in the original WACV 2021 comparison; optical-flow
+      I3D row excluded.
+  verification:
+    status: verified
+    checked_at: '2026-09-30'
+    source_ids: *id001
+    notes: Checked against the identified primary source; results were not independently reproduced.
+  status: active
+  baseline_origin: protocol_authors
+- id: i3d_rgb_rgb
+  method_id: i3d_rgb
+  configuration:
+    description: I3D / RGB; 16 observed RGB frames.
+    modalities:
+    - rgb
+    external_data: Architecture-specific pretraining reported by WACV authors; no extra inference modality.
+    pretraining: Video backbone initialization follows author benchmark implementation.
+    ensemble: false
+  scores:
+    accuracy:
+      value: 0.81
+      source_ids:
+      - paper
+      locator:
+        table: Table 2
+        row: I3D / RGB
+        column: JAAD_all / accuracy
+    auc:
+      value: 0.74
+      source_ids:
+      - paper
+      locator:
+        table: Table 2
+        row: I3D / RGB
+        column: JAAD_all / auc
+    f1:
+      value: 0.63
+      source_ids:
+      - paper
+      locator:
+        table: Table 2
+        row: I3D / RGB
+        column: JAAD_all / f1
+  source_ids: &id002
+  - paper
+  protocol_match:
+    status: confirmed
+    source_ids:
+    - paper
+    locator:
+      table: Table 2
+      row: I3D / RGB
+      column: JAAD_all
+    notes: RGB variant and JAAD_all column checked in the original WACV 2021 comparison; optical-flow
+      I3D row excluded.
+  verification:
+    status: verified
+    checked_at: '2026-09-30'
+    source_ids: *id002
+    notes: Checked against the identified primary source; results were not independently reproduced.
+  status: active
+  baseline_origin: protocol_authors
+snapshots:
+- id: paper_snapshot_2026_09_30
+  checked_at: '2026-09-30'
+  scope: paper_reported
+  source_ids:
+  - paper
+  result_ids:
+  - c3d_rgb
+  - i3d_rgb_rgb
+  coverage_notes: Only two RGB-only 3D convolution baselines in WACV 2021 Table 2 JAAD_all; no claim about
+    other modalities or later papers.

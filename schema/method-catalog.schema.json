@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "additionalProperties": false, "required": ["schema_version", "dataset_id", "methods", "sources"],
+  "properties": {
+    "schema_version": {"const": "0.1"}, "dataset_id": {"$ref": "#/$defs/id"},
+    "methods": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["id", "name", "reference", "source_ids"], "properties": {
+      "id": {"$ref": "#/$defs/key"}, "name": {"type": "string", "minLength": 2},
+      "reference": {"type": "object", "additionalProperties": false, "required": ["type", "title", "url", "year"], "properties": {"type": {"enum": ["paper", "official_project", "official_leaderboard"]}, "title": {"type": "string"}, "url": {"$ref": "#/$defs/url"}, "year": {"type": "integer", "minimum": 1990}, "venue": {"type": "string"}}},
+      "code": {"type": "object", "additionalProperties": false, "required": ["url", "origin", "checked_at"], "properties": {"url": {"$ref": "#/$defs/url"}, "origin": {"enum": ["authors", "third_party", "unknown"]}, "checked_at": {"$ref": "#/$defs/date"}, "weights_url": {"$ref": "#/$defs/url"}, "training_instructions_url": {"$ref": "#/$defs/url"}, "evaluation_instructions_url": {"$ref": "#/$defs/url"}}},
+      "model_family": {"type": "string"}, "source_ids": {"$ref": "#/$defs/source_ids"}
+    }}},
+    "sources": {"type": "array", "items": {"$ref": "#/$defs/source"}}
+  }
+}

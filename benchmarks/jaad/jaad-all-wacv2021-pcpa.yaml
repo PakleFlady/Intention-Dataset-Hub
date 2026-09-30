@@ -1,0 +1,295 @@
+schema_version: '0.1'
+id: jaad-all-wacv2021-pcpa
+dataset_id: jaad
+release_id: jaad_2_0
+annotation_version: JAAD_2.0
+task: behavior_prediction
+original_task_name: pedestrian crossing action prediction
+target_id: crossing_action
+protocol:
+  name: WACV 2021 JAAD_all PCPA attention comparison
+  source_ids:
+  - paper
+split:
+  name: 'WACV 2021 JAAD_all: 177 train / 29 validation / 117 test video clips'
+  source_ids:
+  - paper
+sample_selection:
+  description: 323 high-visibility clips after excluding 23 lower-resolution/adverse-weather/night clips;
+    JAAD_all includes additional bystander pedestrians; 0.8 sequence overlap, 16 observed frames and 30�C60-frame
+    time-to-event.
+  source_ids:
+  - paper
+inputs:
+  modalities:
+  - rgb
+  - trajectory
+  - vehicle_telemetry
+  representation: RGB context, pedestrian bounding boxes and qualitative JAAD ego-vehicle speed labels;
+    author model also extracts pose from RGB.
+  available_information: Only the 16-frame observed pedestrian segment; no post-event frames supplied.
+temporal:
+  observation_window:
+    kind: fixed
+    anchor: last observed frame
+    description: 16 frames sampled at 30 fps.
+    unit: frames
+    value: 16
+    frame_rate: 30
+  anticipation_gap:
+    kind: range
+    anchor: crossing event start
+    description: Sampled time-to-event range of 30�C60 frames for crossing samples.
+    unit: frames
+    min: 30
+    max: 60
+    frame_rate: 30
+  prediction_horizon:
+    kind: not_applicable
+    anchor: task target
+    description: Binary event label is evaluated over selected time-to-event samples.
+training_policy:
+  external_data: allowed
+  pretraining: allowed
+  extra_supervision: allowed
+  source_ids:
+  - paper
+  notes: Within-paper PCPA attention ablations share the author's training/evaluation pipeline.
+  ensemble: forbidden
+evaluation:
+  description: Binary crossing classification on JAAD_all samples.
+  aggregation: Overall test statistic in JAAD_all Table 3 column.
+  parameters: {}
+  source_ids:
+  - paper
+metrics:
+- id: accuracy
+  name: Accuracy
+  direction: higher
+  unit: ratio
+  definition: Fraction of correctly classified crossing and non-crossing samples.
+  aggregation: overall
+  evaluation_subset: JAAD_all
+  source_ids:
+  - paper
+  valid_range:
+  - 0
+  - 1
+- id: auc
+  name: AUC
+  direction: higher
+  unit: ratio
+  definition: Area under the ROC curve for crossing prediction.
+  aggregation: overall
+  evaluation_subset: JAAD_all
+  source_ids:
+  - paper
+  valid_range:
+  - 0
+  - 1
+- id: f1
+  name: F1
+  direction: higher
+  unit: ratio
+  definition: Harmonic mean of crossing precision and recall.
+  aggregation: overall
+  evaluation_subset: JAAD_all
+  source_ids:
+  - paper
+  valid_range:
+  - 0
+  - 1
+sources:
+- id: paper
+  type: paper
+  title: Benchmark for Evaluating Pedestrian Action Prediction
+  url: https://openaccess.thecvf.com/content/WACV2021/papers/Kotseruba_Benchmark_for_Evaluating_Pedestrian_Action_Prediction_WACV_2021_paper.pdf
+  accessed_at: '2026-09-30'
+  locator:
+    section: 3 Benchmark; 6 Proposed model
+    table: Table 3
+verification:
+  status: verified
+  checked_at: '2026-09-30'
+  source_ids:
+  - paper
+  notes: Original protocol details checked; no independent implementation reproduction.
+results:
+- id: no_attention
+  method_id: pcpa
+  configuration:
+    description: PCPA with no attention on JAAD_all; author model features held within Table 3 cohort.
+    modalities:
+    - rgb
+    - trajectory
+    - vehicle_telemetry
+    external_data: none reported
+    pretraining: Visual backbone as described in paper
+    ensemble: false
+  scores:
+    accuracy:
+      value: 0.78
+      source_ids: &id001
+      - paper
+      locator: &id002
+        table: Table 3
+        row: PCPA / No attention
+        column: JAAD_all
+    auc:
+      value: 0.8
+      source_ids: *id001
+      locator: *id002
+    f1:
+      value: 0.58
+      source_ids: *id001
+      locator: *id002
+  source_ids: *id001
+  protocol_match:
+    status: confirmed
+    source_ids: *id001
+    locator: *id002
+    notes: The cited row belongs to the stated within-source comparison cohort.
+  verification:
+    status: verified
+    checked_at: '2026-09-30'
+    source_ids: *id001
+    notes: Checked against the identified primary source; results were not independently reproduced.
+  status: active
+  baseline_origin: protocol_authors
+- id: temporal_attention
+  method_id: pcpa
+  configuration:
+    description: PCPA with temp. attention on JAAD_all; author model features held within Table 3 cohort.
+    modalities:
+    - rgb
+    - trajectory
+    - vehicle_telemetry
+    external_data: none reported
+    pretraining: Visual backbone as described in paper
+    ensemble: false
+  scores:
+    accuracy:
+      value: 0.81
+      source_ids: &id003
+      - paper
+      locator: &id004
+        table: Table 3
+        row: PCPA / temp. attention
+        column: JAAD_all
+    auc:
+      value: 0.83
+      source_ids: *id003
+      locator: *id004
+    f1:
+      value: 0.62
+      source_ids: *id003
+      locator: *id004
+  source_ids: *id003
+  protocol_match:
+    status: confirmed
+    source_ids: *id003
+    locator: *id004
+    notes: The cited row belongs to the stated within-source comparison cohort.
+  verification:
+    status: verified
+    checked_at: '2026-09-30'
+    source_ids: *id003
+    notes: Checked against the identified primary source; results were not independently reproduced.
+  status: active
+  baseline_origin: protocol_authors
+- id: modality_attention
+  method_id: pcpa
+  configuration:
+    description: PCPA with mod. attention on JAAD_all; author model features held within Table 3 cohort.
+    modalities:
+    - rgb
+    - trajectory
+    - vehicle_telemetry
+    external_data: none reported
+    pretraining: Visual backbone as described in paper
+    ensemble: false
+  scores:
+    accuracy:
+      value: 0.84
+      source_ids: &id005
+      - paper
+      locator: &id006
+        table: Table 3
+        row: PCPA / mod. Attention
+        column: JAAD_all
+    auc:
+      value: 0.79
+      source_ids: *id005
+      locator: *id006
+    f1:
+      value: 0.62
+      source_ids: *id005
+      locator: *id006
+  source_ids: *id005
+  protocol_match:
+    status: confirmed
+    source_ids: *id005
+    locator: *id006
+    notes: The cited row belongs to the stated within-source comparison cohort.
+  verification:
+    status: verified
+    checked_at: '2026-09-30'
+    source_ids: *id005
+    notes: Checked against the identified primary source; results were not independently reproduced.
+  status: active
+  baseline_origin: protocol_authors
+- id: combined_attention
+  method_id: pcpa
+  configuration:
+    description: PCPA with temp. + mod. attention on JAAD_all; author model features held within Table
+      3 cohort.
+    modalities:
+    - rgb
+    - trajectory
+    - vehicle_telemetry
+    external_data: none reported
+    pretraining: Visual backbone as described in paper
+    ensemble: false
+  scores:
+    accuracy:
+      value: 0.85
+      source_ids: &id007
+      - paper
+      locator: &id008
+        table: Table 3
+        row: PCPA / Temp. + mod. attention
+        column: JAAD_all
+    auc:
+      value: 0.86
+      source_ids: *id007
+      locator: *id008
+    f1:
+      value: 0.68
+      source_ids: *id007
+      locator: *id008
+  source_ids: *id007
+  protocol_match:
+    status: confirmed
+    source_ids: *id007
+    locator: *id008
+    notes: The cited row belongs to the stated within-source comparison cohort.
+  verification:
+    status: verified
+    checked_at: '2026-09-30'
+    source_ids: *id007
+    notes: Checked against the identified primary source; results were not independently reproduced.
+  status: active
+  baseline_origin: protocol_authors
+snapshots:
+- id: paper_snapshot_2026_09_30
+  checked_at: '2026-09-30'
+  scope: paper_reported
+  source_ids:
+  - paper
+  result_ids:
+  - no_attention
+  - temporal_attention
+  - modality_attention
+  - combined_attention
+  coverage_notes: Four PCPA attention configurations in WACV 2021 Table 3 JAAD_all column; one method
+    family only.

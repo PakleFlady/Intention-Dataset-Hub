@@ -1,0 +1,28 @@
+name: Dataset request
+description: Propose an original-source-backed human intention dataset.
+title: 'Dataset request: '
+labels: ['dataset-request']
+body:
+  - type: input
+    id: name
+    attributes: {label: Official dataset name}
+    validations: {required: true}
+  - type: input
+    id: source
+    attributes: {label: Original paper or official project URL}
+    validations: {required: true}
+  - type: textarea
+    id: relation
+    attributes: {label: Exact intention target or cue, description: Explain whether this is an explicit label, future-behavior proxy, or documented related cue.}
+    validations: {required: true}
+  - type: textarea
+    id: labels
+    attributes: {label: Annotation meaning and provenance, description: "Who assigned the label and what does it mean?"}
+    validations: {required: true}
+  - type: input
+    id: access
+    attributes: {label: Official access page or access status}
+    validations: {required: true}
+  - type: textarea
+    id: caveats
+    attributes: {label: Known limits or uncertainty}

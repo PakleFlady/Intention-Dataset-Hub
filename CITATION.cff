@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "Cite this catalog and the original datasets and methods used in your research."
+title: "Intention Dataset Hub"
+type: dataset
+authors:
+  - name: "Intention Dataset Hub contributors"
+version: "0.1.0.dev0"
+license: CC-BY-4.0
+repository-code: "https://github.com/PakleFlady/Intention-Dataset-Hub"
+keywords:
+  - human intention
+  - datasets
+  - benchmarks

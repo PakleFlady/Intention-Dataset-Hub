@@ -1,0 +1,270 @@
+schema_version: '0.1'
+id: intentqa-iccv2023-no-gpt-test
+dataset_id: intentqa
+release_id: v1
+annotation_version: author-release-unspecified
+task: intention_reasoning
+original_task_name: context-aware video intent reasoning
+target_id: intent_qa
+protocol:
+  name: ICCV 2023 BERT video-and-text no-GPT test cohort
+  source_ids:
+  - paper
+split:
+  name: Original paper test split
+  source_ids:
+  - paper
+sample_selection:
+  description: 'Original IntentQA test split: VGT with BERT text representation from Table 2 and four
+    cumulative context-model ablations from Table 3; GPT-assisted and text-only rows excluded.'
+  source_ids:
+  - paper
+inputs:
+  modalities:
+  - rgb
+  - text
+  representation: Video frame/region features derived from RGB and BERT question-answer representation;
+    model-internal feature fusion varies.
+  available_information: Full question and video clip at inference; no external GPT answer stage.
+temporal:
+  observation_window:
+    kind: variable
+    anchor: entire provided video clip
+    description: Clip length varies by example; complete supplied clip is observed.
+    unit: seconds
+  anticipation_gap:
+    kind: not_applicable
+    anchor: task target
+    description: Retrospective video question answering.
+  prediction_horizon:
+    kind: not_applicable
+    anchor: task target
+    description: Reasoning about the depicted event, not forecasting a future time.
+training_policy:
+  external_data: forbidden
+  pretraining: allowed
+  extra_supervision: allowed
+  source_ids:
+  - paper
+  notes: BERT and visual backbone pretraining allowed. No external GPT answers at inference; VQL/triplet
+    are within-paper training additions.
+  ensemble: forbidden
+evaluation:
+  description: Five-choice IntentQA answer classification; VGT BERT row in Table 2 and no-GPT model variants
+    in Table 3.
+  aggregation: Overall test accuracy.
+  parameters: {}
+  source_ids:
+  - paper
+metrics:
+- id: total_accuracy
+  name: Total test accuracy
+  direction: higher
+  unit: percent
+  definition: Correct multiple-choice answers over all test questions.
+  aggregation: overall
+  evaluation_subset: original test split / Total column
+  source_ids:
+  - paper
+  valid_range:
+  - 0
+  - 100
+sources:
+- id: paper
+  type: paper
+  title: 'IntentQA: Context-aware Video Intent Reasoning'
+  url: https://openaccess.thecvf.com/content/ICCV2023/papers/Li_IntentQA_Context-aware_Video_Intent_Reasoning_ICCV_2023_paper.pdf
+  accessed_at: '2026-09-30'
+  locator:
+    table: Tables 2 and 3
+    section: 5 Experiments
+verification:
+  status: verified
+  checked_at: '2026-09-30'
+  source_ids:
+  - paper
+  notes: Original paper Tables 2 and 3 checked for target, split, BERT text representation, video input
+    and no-GPT comparison scope.
+results:
+- id: base
+  method_id: context_model
+  configuration:
+    description: 'Table 3 cumulative ablation: Base Model; no GPT stage.'
+    modalities:
+    - rgb
+    - text
+    external_data: none reported
+    pretraining: Author model backbones; see paper implementation
+    ensemble: false
+  scores:
+    total_accuracy:
+      value: 51.36
+      source_ids: &id001
+      - paper
+      locator: &id002
+        table: Table 3
+        row: Base Model
+        column: Total / Test
+  source_ids: *id001
+  protocol_match:
+    status: confirmed
+    source_ids: *id001
+    locator: *id002
+    notes: The cited row belongs to the stated within-source comparison cohort.
+  verification:
+    status: verified
+    checked_at: '2026-09-30'
+    source_ids: *id001
+    notes: Checked against the identified primary source; results were not independently reproduced.
+  status: active
+  baseline_origin: protocol_authors
+- id: vql
+  method_id: context_model
+  configuration:
+    description: 'Table 3 cumulative ablation: + VQL; no GPT stage.'
+    modalities:
+    - rgb
+    - text
+    external_data: none reported
+    pretraining: Author model backbones; see paper implementation
+    ensemble: false
+  scores:
+    total_accuracy:
+      value: 52.34
+      source_ids: &id003
+      - paper
+      locator: &id004
+        table: Table 3
+        row: + VQL
+        column: Total / Test
+  source_ids: *id003
+  protocol_match:
+    status: confirmed
+    source_ids: *id003
+    locator: *id004
+    notes: The cited row belongs to the stated within-source comparison cohort.
+  verification:
+    status: verified
+    checked_at: '2026-09-30'
+    source_ids: *id003
+    notes: Checked against the identified primary source; results were not independently reproduced.
+  status: active
+  baseline_origin: protocol_authors
+- id: triplet_loader
+  method_id: context_model
+  configuration:
+    description: 'Table 3 cumulative ablation: + Triplet Loader; no GPT stage.'
+    modalities:
+    - rgb
+    - text
+    external_data: none reported
+    pretraining: Author model backbones; see paper implementation
+    ensemble: false
+  scores:
+    total_accuracy:
+      value: 53.8
+      source_ids: &id005
+      - paper
+      locator: &id006
+        table: Table 3
+        row: + Triplet Loader
+        column: Total / Test
+  source_ids: *id005
+  protocol_match:
+    status: confirmed
+    source_ids: *id005
+    locator: *id006
+    notes: The cited row belongs to the stated within-source comparison cohort.
+  verification:
+    status: verified
+    checked_at: '2026-09-30'
+    source_ids: *id005
+    notes: Checked against the identified primary source; results were not independently reproduced.
+  status: active
+  baseline_origin: protocol_authors
+- id: triplet_loss
+  method_id: context_model
+  configuration:
+    description: 'Table 3 cumulative ablation: + Triplet Loss; no GPT stage.'
+    modalities:
+    - rgb
+    - text
+    external_data: none reported
+    pretraining: Author model backbones; see paper implementation
+    ensemble: false
+  scores:
+    total_accuracy:
+      value: 54.5
+      source_ids: &id007
+      - paper
+      locator: &id008
+        table: Table 3
+        row: + Triplet Loss
+        column: Total / Test
+  source_ids: *id007
+  protocol_match:
+    status: confirmed
+    source_ids: *id007
+    locator: *id008
+    notes: The cited row belongs to the stated within-source comparison cohort.
+  verification:
+    status: verified
+    checked_at: '2026-09-30'
+    source_ids: *id007
+    notes: Checked against the identified primary source; results were not independently reproduced.
+  status: active
+  baseline_origin: protocol_authors
+- id: vgt_bert_test
+  method_id: vgt
+  configuration:
+    description: VGT with BERT text representation; video and five answer choices, no GPT stage.
+    modalities:
+    - rgb
+    - text
+    external_data: No additional IntentQA training dataset reported for this row.
+    pretraining: BERT text and video feature encoders as described by the benchmark paper.
+    ensemble: false
+  scores:
+    total_accuracy:
+      value: 51.27
+      source_ids:
+      - paper
+      locator:
+        table: Table 2
+        row: VGT / BERT
+        column: Total / Test
+  source_ids:
+  - paper
+  protocol_match:
+    status: confirmed
+    source_ids:
+    - paper
+    locator:
+      table: Table 2
+      row: VGT / BERT
+    notes: Same original IntentQA test split and five-choice task as the Table 3 ablations; BERT video-and-text
+      row, not GloVe or Blind GPT.
+  verification:
+    status: verified
+    checked_at: '2026-09-30'
+    source_ids:
+    - paper
+    notes: Table 2 VGT BERT total test value and source cohort checked in the original paper; not independently
+      reproduced.
+  status: active
+  baseline_origin: protocol_authors
+snapshots:
+- id: paper_snapshot_2026_09_30
+  checked_at: '2026-09-30'
+  scope: paper_reported
+  source_ids:
+  - paper
+  result_ids:
+  - base
+  - vql
+  - triplet_loader
+  - triplet_loss
+  - vgt_bert_test
+  coverage_notes: 'Five original-paper BERT video-and-text results: Table 2 VGT baseline and Table 3 four
+    cumulative no-GPT configurations. Other text encoders and GPT-assisted rows excluded; no exhaustive
+    literature claim.'

@@ -1,0 +1,38 @@
+schema_version: '0.1'
+dataset_id: pie
+methods:
+- id: lstm
+  name: LSTM (loc)
+  reference:
+    type: paper
+    title: 'PIE: A Large-Scale Dataset and Models for Pedestrian Intention Estimation and Trajectory Prediction'
+    url: https://openaccess.thecvf.com/content_ICCV_2019/papers/Rasouli_PIE_A_Large-Scale_Dataset_and_Models_for_Pedestrian_Intention_Estimation_ICCV_2019_paper.pdf
+    year: 2019
+    venue: ICCV
+  source_ids:
+  - paper
+  model_family: lstm
+- id: lstm_ed
+  name: LSTM encoder-decoder (loc)
+  reference:
+    type: paper
+    title: 'PIE: A Large-Scale Dataset and Models for Pedestrian Intention Estimation and Trajectory Prediction'
+    url: https://openaccess.thecvf.com/content_ICCV_2019/papers/Rasouli_PIE_A_Large-Scale_Dataset_and_Models_for_Pedestrian_Intention_Estimation_ICCV_2019_paper.pdf
+    year: 2019
+    venue: ICCV
+  source_ids:
+  - paper
+  code:
+    url: https://github.com/aras62/PIEPredict
+    origin: authors
+    checked_at: '2026-09-30'
+  model_family: lstm_encoder_decoder
+sources:
+- id: paper
+  type: paper
+  title: 'PIE: A Large-Scale Dataset and Models for Pedestrian Intention Estimation and Trajectory Prediction'
+  url: https://openaccess.thecvf.com/content_ICCV_2019/papers/Rasouli_PIE_A_Large-Scale_Dataset_and_Models_for_Pedestrian_Intention_Estimation_ICCV_2019_paper.pdf
+  accessed_at: '2026-09-30'
+  locator:
+    section: 5.2 Pedestrian intention estimation
+    table: Table 2

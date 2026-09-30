@@ -1,0 +1,70 @@
+schema_version: '0.1'
+id: brain4cars
+name: Brain4Cars
+year: 2015
+description: Natural driving data combining driver-facing and road-facing sensing for maneuver anticipation.
+intention_relevance: implicit
+intention_definition: Predict the driver's upcoming road maneuver before it occurs using observed driver
+  and vehicle context; maneuver outcomes proxy preparatory intent.
+domains:
+- driver_behavior
+- autonomous_driving
+intention_types:
+- driving_maneuver
+tasks:
+- action_anticipation
+modalities:
+- rgb
+- vehicle_telemetry
+data_formats:
+- video
+- time_series
+- structured_annotation
+data_origin: real
+annotations:
+- id: future_maneuver
+  semantic: future_action
+  description: Driving maneuver that takes place after the observed lead-in.
+  provenance: behavior_derived
+  scope: Maneuver clips
+  source_ids: &id001
+  - official
+releases:
+- id: v1
+  label: Brain4Cars release documented by original source
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  notes: Exact annotation revision is not identified by this source.
+access:
+  status: unknown
+  url: https://brain4cars.com/
+  checked_at: '2026-09-30'
+  source_ids:
+  - official
+  conditions: Official project page timed out during this review; current dataset download status remains
+    unknown.
+licenses:
+- component: dataset media and annotations
+  status: unknown
+  source_ids:
+  - official
+sources:
+- id: official
+  type: official_project
+  title: Brain4Cars original project or publication
+  url: https://brain4cars.com/
+  accessed_at: '2026-09-30'
+  locator:
+    section: Research; Code and Data set
+verification:
+  status: verified
+  checked_at: '2026-09-30'
+  source_ids: *id001
+  notes: Original project/task evidence checked from available indexed source material; live access could
+    not be confirmed. Dataset files were not downloaded.
+viewpoints:
+- exocentric
+capture_setup:
+- vehicle_mounted
+notes: Access link and exact release conditions require another check before recommending a download.

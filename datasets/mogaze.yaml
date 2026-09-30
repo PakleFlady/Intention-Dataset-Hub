@@ -1,0 +1,79 @@
+schema_version: '0.1'
+id: mogaze
+name: MoGaze
+year: 2020
+description: Human full-body motion, workspace geometry, and eye gaze during manipulation.
+intention_relevance: related
+intention_definition: Gaze and motion can help infer the next human object interaction in a shared workspace;
+  the project does not claim direct mental-intention labels.
+domains:
+- human_robot_interaction
+- human_object_interaction
+intention_types:
+- object_interaction
+tasks:
+- trajectory_prediction
+modalities:
+- pose
+- gaze
+- object_state
+data_formats:
+- time_series
+- structured_annotation
+data_origin: real
+annotations:
+- id: gaze
+  semantic: cue
+  description: Eye-gaze measurements collected alongside full-body motions.
+  provenance: behavior_derived
+  scope: Recorded manipulation sequences
+  source_ids: &id001
+  - official
+releases:
+- id: v1
+  label: MoGaze release documented by original source
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  notes: Exact annotation revision is not identified by this source.
+access:
+  status: open
+  url: https://humans-to-robots-motion.github.io/mogaze/
+  checked_at: '2026-09-30'
+  source_ids:
+  - official
+  conditions: See the source for current download conditions; raw files were not downloaded for this
+    catalog.
+licenses:
+- component: dataset media and annotations
+  status: unknown
+  source_ids:
+  - official
+sources:
+- id: official
+  type: official_project
+  title: MoGaze original project or publication
+  url: https://humans-to-robots-motion.github.io/mogaze/
+  accessed_at: '2026-09-30'
+  locator:
+    section: Dataset overview; Data
+verification:
+  status: verified
+  checked_at: '2026-09-30'
+  source_ids: *id001
+  notes: Core scope, annotation meaning, and access entry were checked against the linked original resources;
+    dataset files were not downloaded.
+viewpoints:
+- exocentric
+capture_setup:
+- wearable
+notes: The author project reports gaze as a predictor of human intent. No direct intent annotation is
+  claimed.
+statistics:
+- name: recorded_time
+  value: 180
+  unit: minutes
+  release_id: v1
+  scope: full-body motion
+  source_ids:
+  - official
