@@ -55,5 +55,10 @@ See the source for current download conditions; raw files were not downloaded fo
 ## Sources
 
 - **official**: [EPIC-KITCHENS-100 original project or publication](https://github.com/epic-kitchens/epic-kitchens-100-annotations) — section: Action Anticipation Challenge; checked 2026-09-30
+- **anticipation_paper**: [Prototypical Action Reasoning Facilitated by Vision-Language Alignment for Egocentric Action Anticipation](https://openaccess.thecvf.com/content/CVPR2026/papers/Shao_Prototypical_Action_Reasoning_Facilitated_by_Vision-Language_Alignment_for_Egocentric_Action_CVPR_2026_paper.pdf) — section: 4.1 Datasets; 4.2 Implementation Details, page: 6; checked 2026-10-08
 
 **Dataset metadata verified:** 2026-09-30 · [official](https://github.com/epic-kitchens/epic-kitchens-100-annotations)
+
+## Limits and notes
+
+PAR-VLA uses EPIC-KITCHENS-100 in an action anticipation setup. Its inputs and protocol require separate mapping before score comparison.

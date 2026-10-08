@@ -1,0 +1,133 @@
+schema_version: '0.1'
+id: daad-x
+name: DAAD-X
+year: 2025
+description: Explainable driver maneuver data extending DAAD with gaze-aligned and vehicle-context explanations.
+intention_relevance: explicit
+intention_definition: Observed future maneuvers proxy driver intention; human-authored gaze and ego explanations
+  express attributed reasons, not driver self-reports.
+domains:
+- driver_behavior
+intention_types:
+- driving_maneuver
+tasks:
+- action_anticipation
+- intention_reasoning
+modalities:
+- rgb
+- gaze
+- text
+data_formats:
+- video
+- text
+- structured_annotation
+data_origin: real
+annotations:
+- id: maneuver
+  semantic: future_action
+  description: Seven maneuver labels including straight, stop, turns, lane changes and U-turn.
+  provenance: behavior_derived
+  scope: Maneuver clips
+  source_ids:
+  - paper
+  - code
+- id: ego_explanation
+  semantic: explanation
+  description: Seventeen ego-vehicle explanation categories; multi-label.
+  provenance: observer_judgment
+  scope: Gaze-aligned selected clips
+  source_ids:
+  - paper
+- id: gaze_explanation
+  semantic: explanation
+  description: Fifteen gaze explanation categories; single-label.
+  provenance: observer_judgment
+  scope: Gaze-aligned selected clips
+  source_ids:
+  - paper
+releases:
+- id: paper_release
+  label: 'DAAD-X: author-described data'
+  annotation_version: author-release-unspecified
+  source_ids:
+  - data
+  - code
+  - paper
+  notes: Exact annotation revision is not established; downstream protocols require separate mapping.
+access:
+  status: open
+  url: https://huggingface.co/datasets/Skyrmion/DAAD-X
+  checked_at: '2026-10-08'
+  source_ids:
+  - data
+  - code
+  - paper
+  conditions: Public author-linked Hugging Face entry and annotation descriptions checked. Full raw-media
+    coverage was not tested.
+licenses:
+- component: 'Hugging Face-hosted release: publisher-declared license metadata'
+  status: known
+  name: Apache-2.0
+  source_ids:
+  - data
+  url: https://huggingface.co/datasets/Skyrmion/DAAD-X
+- component: Upstream DAAD raw media outside the hosted release
+  status: unknown
+  source_ids:
+  - paper
+sources:
+- id: data
+  type: official_data
+  title: DAAD-X author-linked dataset card
+  url: https://huggingface.co/datasets/Skyrmion/DAAD-X
+  accessed_at: '2026-10-08'
+  locator:
+    section: Dataset card; License; dataset rows
+- id: code
+  type: author_code
+  title: Explainable Driver Intention Prediction
+  url: https://github.com/Mukil07/Explainable-Driver-Intention-Prediction
+  accessed_at: '2026-10-08'
+  locator:
+    section: Dataset details; CSV descriptions
+- id: paper
+  type: paper
+  title: Towards Safer and Understandable Driver Intention Prediction
+  url: https://arxiv.org/abs/2510.09200
+  accessed_at: '2026-10-08'
+  locator:
+    section: 3 Dataset
+    page: 3-4
+verification:
+  status: verified
+  checked_at: '2026-10-08'
+  source_ids:
+  - data
+  - code
+  - paper
+  notes: Source descriptions and annotation meaning checked; no data download, reproduction, or independent
+    second-pass review.
+example:
+  kind: illustrative
+  input: Synchronized driver and surrounding-road clips with gaze observations before a maneuver.
+  output: The future maneuver and observer-annotated gaze/vehicle explanation categories.
+  source_ids:
+  - data
+  - code
+  - paper
+  checked_at: '2026-10-08'
+  sample_url: https://huggingface.co/datasets/Skyrmion/DAAD-X
+family_id: daad
+related_datasets:
+- daad
+code_url: https://github.com/Mukil07/Explainable-Driver-Intention-Prediction
+notes: The paper uses 1,568 gaze-aligned clips. The repository also lists 158 clips without synchronized
+  gaze; those counts describe different subsets.
+statistics:
+- name: Gaze-aligned clips
+  value: 1568
+  unit: clips
+  release_id: paper_release
+  scope: Paper subset
+  source_ids:
+  - paper

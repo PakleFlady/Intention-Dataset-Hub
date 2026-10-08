@@ -8,20 +8,20 @@ We include three evidence-based classes: **explicit** intention or goal targets;
 
 <!-- hub:overview:start -->
 
-**Verified datasets:** 16 | **Dataset families:** 16 | **Verified protocols:** 6 | **Datasets with at least two comparable results:** 4
+**Verified datasets:** 34 | **Dataset families:** 32 | **Verified protocols:** 6 | **Datasets with at least two comparable results:** 4
 
 ## Featured datasets
 
 | Dataset | Year | Domain | Relevance | Access |
 | --- | --- | --- | --- | --- |
-| [Intentonomy](docs/datasets/intentonomy.md) | 2021 | daily_activities, social_interaction | explicit | open |
-| [IntentQA](docs/datasets/intentqa.md) | 2023 | daily_activities, social_interaction | explicit | open |
-| [LOKI: Long Term and Key Intentions](docs/datasets/loki-traffic.md) | 2021 | pedestrian, autonomous_driving | explicit | request |
+| [BDD-X](docs/datasets/bdd-x.md) | 2018 | driver_behavior, autonomous_driving | explicit | open |
+| [CAMF industrial assembly study data (author-collected)](docs/datasets/camf-industrial-assembly.md) | 2026 | industrial_collaboration, human_robot_interaction | explicit | unknown |
+| [DAAD-X](docs/datasets/daad-x.md) | 2025 | driver_behavior | explicit | open |
+| [Aria Everyday Activities](docs/datasets/aria-everyday-activities.md) | 2024 | daily_activities, social_interaction | implicit | unknown |
 | [Assembly101](docs/datasets/assembly101.md) | 2022 | daily_activities, human_object_interaction | implicit | open |
 | [Brain4Cars](docs/datasets/brain4cars.md) | 2015 | driver_behavior, autonomous_driving | implicit | unknown |
-| [Ego4D](docs/datasets/ego4d.md) | 2021 | daily_activities, human_object_interaction | implicit | registration |
-| [Ego-Exo4D](docs/datasets/ego-exo4d.md) | 2024 | daily_activities, embodied_interaction | related | registration |
-| [HARMONIC](docs/datasets/harmonic.md) | 2021 | human_robot_interaction, human_object_interaction | related | open |
+| [Action Genome](docs/datasets/action-genome.md) | 2020 | daily_activities, human_object_interaction | related | open |
+| [AIDE](docs/datasets/aide.md) | 2023 | driver_behavior | related | open |
 
 [Complete dataset index](docs/datasets.md) | [By domain](docs/by-domain.md) | [By task](docs/by-task.md) | [By modality](docs/by-modality.md)
 

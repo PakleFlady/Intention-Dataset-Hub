@@ -1,0 +1,115 @@
+schema_version: '0.1'
+id: aria-everyday-activities
+name: Aria Everyday Activities
+year: 2024
+description: Wearable multisensory daily-life recordings used for behavior anticipation in EgoAdapt.
+intention_relevance: implicit
+intention_definition: Future behavioral measurements in the cited EgoAdapt setup are proxies for behavior
+  anticipation; the original collection has no verified semantic intention target.
+domains:
+- daily_activities
+- social_interaction
+intention_types:
+- action
+tasks:
+- behavior_prediction
+- trajectory_prediction
+modalities:
+- rgb
+- audio
+- gaze
+- imu
+- trajectory
+- text
+- pose
+data_formats:
+- video
+- time_series
+- text
+- structured_annotation
+data_origin: real
+annotations:
+- id: gaze_motion_products
+  semantic: cue
+  description: Machine perception outputs including gaze and device trajectories.
+  provenance: model_generated
+  scope: Processed wearable recordings
+  source_ids:
+  - official
+- id: future_behavior
+  semantic: trajectory
+  description: Future gaze direction, head orientation and wearer motion trajectory selected by EgoAdapt.
+  provenance: behavior_derived
+  scope: EgoAdapt anticipation evaluation
+  source_ids:
+  - anticipation_paper
+releases:
+- id: paper_release
+  label: 'Aria Everyday Activities: author-described data'
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  - anticipation_paper
+  notes: Exact annotation revision is not established; downstream protocols require separate mapping.
+access:
+  status: unknown
+  url: https://huggingface.co/datasets/projectaria/aria-everyday-activities
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  - anticipation_paper
+  conditions: Public author dataset card checked; binary download workflow and acceptance of the custom
+    dataset agreement were not confirmed.
+licenses:
+- component: dataset media and annotations
+  status: unknown
+  source_ids:
+  - official
+sources:
+- id: official
+  type: official_data
+  title: 'Project Aria: Aria Everyday Activities author dataset card'
+  url: https://huggingface.co/datasets/projectaria/aria-everyday-activities
+  accessed_at: '2026-10-08'
+  locator:
+    section: README; dataset content; license metadata
+- id: anticipation_paper
+  type: paper
+  title: 'EgoAdapt: Adaptive Multisensory Distillation and Policy Learning for Efficient Egocentric Perception'
+  url: https://arxiv.org/abs/2506.21080
+  accessed_at: '2026-10-08'
+  locator:
+    section: 3.3.3 Behavior Anticipation; 4.1; Table 3
+    page: 5-6
+verification:
+  status: verified
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  - anticipation_paper
+  notes: Source descriptions and annotation meaning checked; no data download, reproduction, or independent
+    second-pass review.
+example:
+  kind: illustrative
+  input: Recent egocentric sensor observations from everyday activities.
+  output: Future gaze, head orientation and motion trajectory; these are behavioral measurements, not
+    semantic intention labels.
+  source_ids:
+  - official
+  - anticipation_paper
+  checked_at: '2026-10-08'
+  sample_url: https://huggingface.co/datasets/projectaria/aria-everyday-activities
+viewpoints:
+- egocentric
+capture_setup:
+- wearable
+notes: Publisher lists a custom Aria Everyday Activities agreement. License text and downstream temporal
+  target mapping need review before reuse or benchmarking.
+statistics:
+- name: Recordings
+  value: 143
+  unit: recordings
+  release_id: paper_release
+  scope: Author collection
+  source_ids:
+  - official

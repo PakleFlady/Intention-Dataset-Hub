@@ -56,5 +56,10 @@ No verified benchmark protocol is currently documented.
 
 - **official**: [Assembly101 original project or publication](https://openaccess.thecvf.com/content/CVPR2022/html/Sener_Assembly101_A_Large-Scale_Multi-View_Video_Dataset_for_Understanding_Procedural_Activities_CVPR_2022_paper.html) — section: Abstract; benchmark tasks; checked 2026-09-30
 - **project**: [Assembly101 official project and download page](https://assembly-101.github.io/) — section: News; License; Abstract; checked 2026-09-30
+- **anticipation_paper**: [Action Anticipation at a Glimpse: Context-Aware Attention using Vision-Language Models](https://arxiv.org/abs/2512.02846) — section: 4.1 Datasets; 4.2 Evaluation protocol, page: 5; checked 2026-10-08
 
 **Dataset metadata verified:** 2026-09-30 · [official](https://openaccess.thecvf.com/content/CVPR2022/html/Sener_Assembly101_A_Large-Scale_Multi-View_Video_Dataset_for_Understanding_Procedural_Activities_CVPR_2022_paper.html), [project](https://assembly-101.github.io/)
+
+## Limits and notes
+
+AAG uses an Assembly101 anticipation subset. View selection and splits must be mapped before creating a benchmark or comparing scores.

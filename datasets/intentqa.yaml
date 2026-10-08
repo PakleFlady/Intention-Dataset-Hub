@@ -28,7 +28,7 @@ annotations:
   description: Question-answer judgments about latent goals and intentions behind visible actions.
   provenance: observer_judgment
   scope: Video question-answer pairs
-  source_ids: &id001
+  source_ids:
   - official
 releases:
 - id: v1
@@ -43,8 +43,7 @@ access:
   checked_at: '2026-09-30'
   source_ids:
   - official
-  conditions: See the source for current download conditions; raw files were not downloaded for this
-    catalog.
+  conditions: See the source for current download conditions; raw files were not downloaded for this catalog.
 licenses:
 - component: dataset media and annotations
   status: unknown
@@ -58,21 +57,30 @@ sources:
   accessed_at: '2026-09-30'
   locator:
     section: Introduction; Dataset
+- id: intentvlm_2026
+  type: paper
+  title: 'IntentVLM: Open-Vocabulary Intention Recognition from Videos via Multimodal Large Language Models'
+  url: https://arxiv.org/abs/2604.24002
+  accessed_at: '2026-10-08'
+  locator:
+    section: Experiments; IntentQA evaluation
 verification:
   status: verified
   checked_at: '2026-09-30'
-  source_ids: *id001
+  source_ids:
+  - official
   notes: Core scope, annotation meaning, and access entry were checked against the linked original resources;
     dataset files were not downloaded.
 viewpoints:
 - exocentric
 notes: The 2026 TPAMI expansion is a separate annotation revision and needs a distinct release ID when
-  benchmarked.
-
+  benchmarked. IntentVLM (2026) reuses IntentQA for intention evaluation; this is a downstream use, not
+  a new native annotation release.
 example:
   kind: illustrative
   input: A video clip together with a natural-language question about why a person acted.
-  output: A natural-language answer from the question-answer annotation; the answer is an interpretation of intent.
+  output: A natural-language answer from the question-answer annotation; the answer is an interpretation
+    of intent.
   checked_at: '2026-10-08'
   source_ids:
   - official

@@ -2,6 +2,8 @@
 
 ## Unreleased research preview
 
+- Added 18 source-checked records from the PDF-derived intention survey, supplemented five existing records, and documented scope decisions and unresolved access/license fields in the [curation audit](docs/zotero-curation-2026-10-08.md).
+
 - Added source-linked input/output examples to all dataset pages, with author-published visual previews where available and clear distinction between illustrative examples and exact source records.
 - Replaced overview separators that had rendered as replacement characters after upload; validation now rejects U+FFFD and invalid UTF-8.
 - Corrected LOKI access from open to request after rechecking the official access conditions.

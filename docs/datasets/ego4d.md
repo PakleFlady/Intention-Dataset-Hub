@@ -55,5 +55,10 @@ No verified benchmark protocol is currently documented.
 ## Sources
 
 - **official**: [Ego4D original project or publication](https://ego4d-data.org/docs/benchmarks/forecasting/) — section: Task Definition; Annotations; checked 2026-09-30
+- **visual_planning_2026**: [Enhancing Visual Planning with Auxiliary Tasks and Multi-token Prediction](https://arxiv.org/abs/2507.15130) — section: 4.1 Setup; Ego4D LTA, page: 5-6; checked 2026-10-08
 
 **Dataset metadata verified:** 2026-09-30 · [official](https://ego4d-data.org/docs/benchmarks/forecasting/)
+
+## Limits and notes
+
+Goal text inferred by an LLM in an anticipation method must not be treated as native human-intention ground truth; method-specific derived labels need separate release mapping. The cited visual planning study uses the Ego4D LTA subset; task-conditioned instructional planning and Ego4D forecasting are distinct setups.

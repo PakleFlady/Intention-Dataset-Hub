@@ -1,0 +1,115 @@
+schema_version: '0.1'
+id: meccano
+name: MECCANO
+year: 2021
+description: Egocentric industrial assembly data supporting action and next-active-object anticipation.
+intention_relevance: implicit
+intention_definition: Predict the next assembly action or interacted object. These future behavior labels
+  proxy object-directed intent and do not identify an independently reported goal.
+domains:
+- industrial_collaboration
+- human_object_interaction
+intention_types:
+- action
+- object_interaction
+tasks:
+- action_anticipation
+- human_object_interaction_prediction
+modalities:
+- rgb
+- depth
+- gaze
+data_formats:
+- video
+- structured_annotation
+- time_series
+data_origin: real
+annotations:
+- id: assembly_action
+  semantic: future_action
+  description: Temporally annotated assembly actions used for anticipation.
+  provenance: observer_judgment
+  scope: Annotated egocentric videos
+  source_ids:
+  - official
+- id: active_object
+  semantic: cue
+  description: Object annotations supporting next-active-object anticipation.
+  provenance: observer_judgment
+  scope: Object interaction frames
+  source_ids:
+  - official
+releases:
+- id: rgb_2021
+  label: Original RGB release
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+- id: multimodal_extension
+  label: Depth and gaze multimodal extension
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  - project
+access:
+  status: open
+  url: https://github.com/fpv-iplab/MECCANO
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  - project
+  conditions: Author-linked access entry inspected; raw data were not downloaded.
+licenses:
+- component: dataset media and annotations
+  status: unknown
+  source_ids:
+  - official
+sources:
+- id: official
+  type: author_code
+  title: MECCANO author repository
+  url: https://github.com/fpv-iplab/MECCANO
+  accessed_at: '2026-10-08'
+  locator:
+    section: Dataset; Multimodal extension; supported tasks
+- id: project
+  type: official_project
+  title: MECCANO project
+  url: https://iplab.dmi.unict.it/MECCANO/
+  accessed_at: '2026-10-08'
+  locator:
+    section: Dataset download; tasks
+verification:
+  status: verified
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  - project
+  notes: Source descriptions and annotation meaning checked; no data download, reproduction, or independent
+    second-pass review.
+example:
+  kind: illustrative
+  input: An egocentric assembly prefix, optionally with depth and gaze in the multimodal extension.
+  output: The upcoming action and next active object.
+  source_ids:
+  - official
+  - project
+  checked_at: '2026-10-08'
+  sample_url: https://github.com/fpv-iplab/MECCANO
+  media:
+    kind: animated_image
+    url: https://raw.githubusercontent.com/fpv-iplab/MECCANO/master/images/MECCANO_Multimodal.gif
+    alt: Author MECCANO multimodal assembly example
+    caption: Author demonstration of multimodal observations; the future-action output above is illustrative.
+viewpoints:
+- egocentric
+notes: The original 2021 RGB release and later multimodal extension require distinct release mapping for
+  benchmarks; listed depth and gaze belong to the extension.
+statistics:
+- name: Videos
+  value: 20
+  unit: videos
+  release_id: rgb_2021
+  scope: Author-described corpus
+  source_ids:
+  - official

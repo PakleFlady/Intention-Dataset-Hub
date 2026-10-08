@@ -4,23 +4,27 @@
 
 ## Action anticipation
 
-[Assembly101](datasets/assembly101.md), [Brain4Cars](datasets/brain4cars.md), [Ego4D](datasets/ego4d.md), [EGTEA Gaze+](datasets/egtea-gaze-plus.md), [EPIC-KITCHENS-100](datasets/epic-kitchens-100.md)
+[Assembly101](datasets/assembly101.md), [Brain4Cars](datasets/brain4cars.md), [DAAD](datasets/daad.md), [DAAD-X](datasets/daad-x.md), [Ego4D](datasets/ego4d.md), [EGTEA Gaze+](datasets/egtea-gaze-plus.md), [EPIC-KITCHENS-100](datasets/epic-kitchens-100.md), [EPIC-KITCHENS-55](datasets/epic-kitchens-55.md), [50 Salads](datasets/fifty-salads.md), [IKEA ASM](datasets/ikea-asm.md), [MECCANO](datasets/meccano.md), [VIENA2](datasets/viena2.md)
 
 ## Behavior prediction
 
-[JAAD](datasets/jaad.md), [PHASE](datasets/phase.md), [PIE](datasets/pie.md)
+[Aria Everyday Activities](datasets/aria-everyday-activities.md), [JAAD](datasets/jaad.md), [PHASE](datasets/phase.md), [PIE](datasets/pie.md), [VIENA2](datasets/viena2.md)
+
+## Early action recognition
+
+[CAMF industrial assembly study data (author-collected)](datasets/camf-industrial-assembly.md)
 
 ## Future activity prediction
 
-[Ego4D](datasets/ego4d.md)
+[COIN](datasets/coin.md), [CrossTask](datasets/crosstask.md), [Ego4D](datasets/ego4d.md), [STEP block assembly study data (extended annotations)](datasets/step-block-assembly.md)
 
 ## Goal recognition
 
-[SAGA: Goals, Actions and Plans](datasets/saga-goals.md)
+[CAMF industrial assembly study data (author-collected)](datasets/camf-industrial-assembly.md), [SAGA: Goals, Actions and Plans](datasets/saga-goals.md), [STEP block assembly study data (extended annotations)](datasets/step-block-assembly.md)
 
 ## Human-object interaction prediction
 
-[Ego4D](datasets/ego4d.md)
+[Ego4D](datasets/ego4d.md), [MECCANO](datasets/meccano.md)
 
 ## Intention prediction
 
@@ -28,12 +32,12 @@
 
 ## Intention reasoning
 
-[IntentQA](datasets/intentqa.md), [SAGA: Goals, Actions and Plans](datasets/saga-goals.md)
+[BDD-X](datasets/bdd-x.md), [DAAD-X](datasets/daad-x.md), [IntentQA](datasets/intentqa.md), [SAGA: Goals, Actions and Plans](datasets/saga-goals.md)
 
 ## Intention recognition
 
-[Intentonomy](datasets/intentonomy.md), [PHASE](datasets/phase.md), [PIE](datasets/pie.md)
+[DSG (Dynamic Scene Graph intention dataset)](datasets/dsg.md), [Intentonomy](datasets/intentonomy.md), [PHASE](datasets/phase.md), [PIE](datasets/pie.md)
 
 ## Trajectory prediction
 
-[Ego4D](datasets/ego4d.md), [JAAD](datasets/jaad.md), [LOKI: Long Term and Key Intentions](datasets/loki-traffic.md), [MoGaze](datasets/mogaze.md), [PIE](datasets/pie.md)
+[Aria Everyday Activities](datasets/aria-everyday-activities.md), [Ego4D](datasets/ego4d.md), [JAAD](datasets/jaad.md), [LOKI: Long Term and Key Intentions](datasets/loki-traffic.md), [MoGaze](datasets/mogaze.md), [PIE](datasets/pie.md)

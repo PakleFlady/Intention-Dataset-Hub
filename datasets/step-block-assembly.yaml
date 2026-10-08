@@ -1,0 +1,112 @@
+schema_version: '0.1'
+id: step-block-assembly
+name: STEP block assembly study data (extended annotations)
+year: 2026
+description: Task and state annotations added to human-teleoperated simulated block assembly sequences.
+intention_relevance: explicit
+intention_definition: The manually labeled final block structure represents the human operator task goal;
+  simulated robot plans are assistance outputs rather than autonomous-agent intentions.
+domains:
+- human_robot_interaction
+- industrial_collaboration
+intention_types:
+- task_goal
+- collaborative
+tasks:
+- goal_recognition
+- future_activity_prediction
+modalities:
+- rgb
+- text
+- object_state
+data_formats:
+- image
+- text
+- structured_annotation
+data_origin: synthetic
+annotations:
+- id: task_structure
+  semantic: goal
+  description: Final structure and possible tasks compatible with intermediate states.
+  provenance: observer_judgment
+  scope: Extended sequence instances
+  source_ids:
+  - paper
+- id: recorded_actions
+  semantic: ongoing_action
+  description: Human-operated left/right robot action history and workspace states.
+  provenance: behavior_derived
+  scope: Sequence steps
+  source_ids:
+  - paper
+releases:
+- id: paper_release
+  label: 'STEP block assembly study data (extended annotations): author-described data'
+  annotation_version: author-release-unspecified
+  source_ids:
+  - paper
+  notes: Exact annotation revision is not established; downstream protocols require separate mapping.
+access:
+  status: unknown
+  url: https://arxiv.org/html/2608.27225v1
+  checked_at: '2026-10-08'
+  source_ids:
+  - paper
+  conditions: Paper-described extension of Baskaran et al. (2025); no public distribution entry was established.
+licenses:
+- component: dataset media and annotations
+  status: unknown
+  source_ids:
+  - paper
+sources:
+- id: paper
+  type: paper
+  title: 'STEP: State-Aware Task Estimation and Planning with Multi-Modal LLMs for Human-Robot Collaboration'
+  url: https://arxiv.org/html/2608.27225v1
+  accessed_at: '2026-10-08'
+  locator:
+    section: IV-A Experimental Setup and Dataset; Figure 4
+verification:
+  status: verified
+  checked_at: '2026-10-08'
+  source_ids:
+  - paper
+  notes: Source descriptions and annotation meaning checked; no data download, reproduction, or independent
+    second-pass review.
+example:
+  kind: illustrative
+  input: Operator action history and a numbered-block workspace image.
+  output: A structure goal, such as Bridge, and remaining actions to complete it.
+  source_ids:
+  - paper
+  checked_at: '2026-10-08'
+  sample_url: https://arxiv.org/html/2608.27225v1
+  media:
+    kind: image
+    url: https://arxiv.org/html/2608.27225v1/Figures/goals.png
+    alt: Eight goal structures in the STEP simulated block assembly study
+    caption: Author Figure 4 shows goal structures; it is not a downloaded dataset input row.
+notes: Descriptive catalog name. Real human operators controlled simulated robots; this record identifies
+  the STEP annotation extension, not a newly collected independent corpus.
+statistics:
+- name: Instances
+  value: 495
+  unit: sequences
+  release_id: paper_release
+  scope: Underlying teleoperation corpus
+  source_ids:
+  - paper
+- name: Users
+  value: 19
+  unit: people
+  release_id: paper_release
+  scope: Underlying corpus
+  source_ids:
+  - paper
+- name: Structures
+  value: 8
+  unit: classes
+  release_id: paper_release
+  scope: Task labels
+  source_ids:
+  - paper

@@ -4,15 +4,15 @@
 
 ## Autonomous driving
 
-[Brain4Cars](datasets/brain4cars.md), [JAAD](datasets/jaad.md), [LOKI: Long Term and Key Intentions](datasets/loki-traffic.md), [PIE](datasets/pie.md)
+[BDD-X](datasets/bdd-x.md), [Brain4Cars](datasets/brain4cars.md), [DR(eye)VE](datasets/dreyeve.md), [JAAD](datasets/jaad.md), [LOKI: Long Term and Key Intentions](datasets/loki-traffic.md), [PIE](datasets/pie.md), [VIENA2](datasets/viena2.md)
 
 ## Daily activities
 
-[Assembly101](datasets/assembly101.md), [Ego-Exo4D](datasets/ego-exo4d.md), [Ego4D](datasets/ego4d.md), [EGTEA Gaze+](datasets/egtea-gaze-plus.md), [EPIC-KITCHENS-100](datasets/epic-kitchens-100.md), [Intentonomy](datasets/intentonomy.md), [IntentQA](datasets/intentqa.md), [SAGA: Goals, Actions and Plans](datasets/saga-goals.md)
+[Action Genome](datasets/action-genome.md), [Aria Everyday Activities](datasets/aria-everyday-activities.md), [Assembly101](datasets/assembly101.md), [COIN](datasets/coin.md), [CrossTask](datasets/crosstask.md), [DSG (Dynamic Scene Graph intention dataset)](datasets/dsg.md), [Ego-Exo4D](datasets/ego-exo4d.md), [Ego4D](datasets/ego4d.md), [EGTEA Gaze+](datasets/egtea-gaze-plus.md), [EPIC-KITCHENS-100](datasets/epic-kitchens-100.md), [EPIC-KITCHENS-55](datasets/epic-kitchens-55.md), [50 Salads](datasets/fifty-salads.md), [Intentonomy](datasets/intentonomy.md), [IntentQA](datasets/intentqa.md), [SAGA: Goals, Actions and Plans](datasets/saga-goals.md)
 
 ## Driver behavior
 
-[Brain4Cars](datasets/brain4cars.md)
+[AIDE](datasets/aide.md), [BDD-X](datasets/bdd-x.md), [Brain4Cars](datasets/brain4cars.md), [DAAD](datasets/daad.md), [DAAD-X](datasets/daad-x.md), [DR(eye)VE](datasets/dreyeve.md), [HDD (HRI Driving Dataset)](datasets/hdd.md), [VIENA2](datasets/viena2.md)
 
 ## Embodied interaction
 
@@ -20,16 +20,20 @@
 
 ## Human-object interaction
 
-[Assembly101](datasets/assembly101.md), [Ego4D](datasets/ego4d.md), [EGTEA Gaze+](datasets/egtea-gaze-plus.md), [EPIC-KITCHENS-100](datasets/epic-kitchens-100.md), [HARMONIC](datasets/harmonic.md), [MoGaze](datasets/mogaze.md)
+[Action Genome](datasets/action-genome.md), [Assembly101](datasets/assembly101.md), [COIN](datasets/coin.md), [CrossTask](datasets/crosstask.md), [DSG (Dynamic Scene Graph intention dataset)](datasets/dsg.md), [Ego4D](datasets/ego4d.md), [EGTEA Gaze+](datasets/egtea-gaze-plus.md), [EPIC-KITCHENS-100](datasets/epic-kitchens-100.md), [EPIC-KITCHENS-55](datasets/epic-kitchens-55.md), [50 Salads](datasets/fifty-salads.md), [HARMONIC](datasets/harmonic.md), [IKEA ASM](datasets/ikea-asm.md), [MECCANO](datasets/meccano.md), [MoGaze](datasets/mogaze.md)
 
 ## Human-robot interaction
 
-[HARMONIC](datasets/harmonic.md), [JRDB-Social](datasets/jrdb-social.md), [MoGaze](datasets/mogaze.md)
+[CAMF industrial assembly study data (author-collected)](datasets/camf-industrial-assembly.md), [HARMONIC](datasets/harmonic.md), [JRDB-Social](datasets/jrdb-social.md), [MoGaze](datasets/mogaze.md), [STEP block assembly study data (extended annotations)](datasets/step-block-assembly.md)
+
+## Industrial collaboration
+
+[CAMF industrial assembly study data (author-collected)](datasets/camf-industrial-assembly.md), [IKEA ASM](datasets/ikea-asm.md), [MECCANO](datasets/meccano.md), [STEP block assembly study data (extended annotations)](datasets/step-block-assembly.md)
 
 ## Pedestrian
 
-[JAAD](datasets/jaad.md), [LOKI: Long Term and Key Intentions](datasets/loki-traffic.md), [PIE](datasets/pie.md)
+[JAAD](datasets/jaad.md), [LOKI: Long Term and Key Intentions](datasets/loki-traffic.md), [PIE](datasets/pie.md), [VIENA2](datasets/viena2.md)
 
 ## Social interaction
 
-[Intentonomy](datasets/intentonomy.md), [IntentQA](datasets/intentqa.md), [JRDB-Social](datasets/jrdb-social.md), [PHASE](datasets/phase.md), [SAGA: Goals, Actions and Plans](datasets/saga-goals.md)
+[Aria Everyday Activities](datasets/aria-everyday-activities.md), [Intentonomy](datasets/intentonomy.md), [IntentQA](datasets/intentqa.md), [JRDB-Social](datasets/jrdb-social.md), [PHASE](datasets/phase.md), [SAGA: Goals, Actions and Plans](datasets/saga-goals.md)

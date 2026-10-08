@@ -33,7 +33,7 @@ annotations:
   description: Sequence of later wearer verb-noun actions in the long-term anticipation task.
   provenance: behavior_derived
   scope: Forecasting benchmark clips
-  source_ids: &id001
+  source_ids:
   - official
 releases:
 - id: v1
@@ -48,8 +48,7 @@ access:
   checked_at: '2026-09-30'
   source_ids:
   - official
-  conditions: See the source for current download conditions; raw files were not downloaded for this
-    catalog.
+  conditions: See the source for current download conditions; raw files were not downloaded for this catalog.
 licenses:
 - component: dataset media and annotations
   status: unknown
@@ -63,17 +62,25 @@ sources:
   accessed_at: '2026-09-30'
   locator:
     section: Task Definition; Annotations
+- id: visual_planning_2026
+  type: paper
+  title: Enhancing Visual Planning with Auxiliary Tasks and Multi-token Prediction
+  url: https://arxiv.org/abs/2507.15130
+  accessed_at: '2026-10-08'
+  locator:
+    section: 4.1 Setup; Ego4D LTA
+    page: 5-6
 verification:
   status: verified
   checked_at: '2026-09-30'
-  source_ids: *id001
+  source_ids:
+  - official
   notes: Core scope, annotation meaning, and access entry were checked against the linked original resources;
     dataset files were not downloaded.
 viewpoints:
 - egocentric
 capture_setup:
 - wearable
-
 example:
   kind: illustrative
   input: A first-person video clip ending before the camera wearer's next object interactions.
@@ -86,4 +93,9 @@ example:
     kind: image
     url: https://ego4d-data.org/assets/images/forecasting.png
     alt: Official Ego4D forecasting illustration of egocentric observations and future activity
-    caption: Author-published forecasting illustration; task-specific input and output details are in the linked protocol.
+    caption: Author-published forecasting illustration; task-specific input and output details are in
+      the linked protocol.
+notes: Goal text inferred by an LLM in an anticipation method must not be treated as native human-intention
+  ground truth; method-specific derived labels need separate release mapping. The cited visual planning
+  study uses the Ego4D LTA subset; task-conditioned instructional planning and Ego4D forecasting are distinct
+  setups.

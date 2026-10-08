@@ -1,0 +1,91 @@
+schema_version: '0.1'
+id: epic-kitchens-55
+name: EPIC-KITCHENS-55
+year: 2018
+description: Original first-person kitchen action release with an action anticipation task.
+intention_relevance: implicit
+intention_definition: Predict the next annotated verb-noun action before its onset. Action labels are
+  behavioral proxies rather than explicit intention labels.
+domains:
+- daily_activities
+- human_object_interaction
+intention_types:
+- action
+- object_interaction
+tasks:
+- action_anticipation
+modalities:
+- rgb
+- audio
+data_formats:
+- video
+- structured_annotation
+- text
+data_origin: real
+annotations:
+- id: verb_noun_action
+  semantic: future_action
+  description: Temporally localized verb-noun actions used as future labels in anticipation.
+  provenance: behavior_derived
+  scope: Anticipation samples
+  source_ids:
+  - official
+releases:
+- id: paper_release
+  label: 'EPIC-KITCHENS-55: author-described data'
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  notes: Exact annotation revision is not established; downstream protocols require separate mapping.
+access:
+  status: open
+  url: https://epic-kitchens.github.io/2018
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  conditions: Author-linked access entry inspected; raw data were not downloaded.
+licenses:
+- component: dataset media and annotations
+  status: known
+  source_ids:
+  - official
+  name: CC-BY-NC-4.0
+  url: https://epic-kitchens.github.io/2018
+sources:
+- id: official
+  type: official_project
+  title: EPIC-KITCHENS 2018 release
+  url: https://epic-kitchens.github.io/2018
+  accessed_at: '2026-10-08'
+  locator:
+    section: Dataset; Action Anticipation; License
+verification:
+  status: verified
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  notes: Source descriptions and annotation meaning checked; no data download, reproduction, or independent
+    second-pass review.
+example:
+  kind: illustrative
+  input: A first-person clip ending before the next kitchen action begins.
+  output: The upcoming verb and object category.
+  source_ids:
+  - official
+  checked_at: '2026-10-08'
+  sample_url: https://epic-kitchens.github.io/2018
+family_id: epic-kitchens
+related_datasets:
+- epic-kitchens-100
+viewpoints:
+- egocentric
+notes: Separate from EPIC-KITCHENS-100. Long-horizon procedure setups require their own protocol and label
+  vocabulary mapping.
+statistics:
+- name: Video duration
+  value: 55
+  unit: hours
+  release_id: paper_release
+  scope: 2018 release
+  source_ids:
+  - official

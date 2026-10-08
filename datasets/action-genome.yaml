@@ -1,0 +1,94 @@
+schema_version: '0.1'
+id: action-genome
+name: Action Genome
+year: 2020
+description: Human-object relationship annotations over Charades video frames.
+intention_relevance: related
+intention_definition: Scene relationships provide contextual intention cues in the DSG construction. Original
+  Action Genome labels are not human intention ground truth.
+domains:
+- daily_activities
+- human_object_interaction
+intention_types:
+- object_interaction
+tasks: []
+modalities:
+- rgb
+- object_state
+data_formats:
+- video
+- structured_annotation
+data_origin: real
+annotations:
+- id: human_object_relation
+  semantic: cue
+  description: Attention, spatial and contact relationship annotations.
+  provenance: observer_judgment
+  scope: Selected Charades frames
+  source_ids:
+  - official
+- id: person_box
+  semantic: cue
+  description: Person detections generated using Faster R-CNN.
+  provenance: model_generated
+  scope: Detected person boxes
+  source_ids:
+  - official
+releases:
+- id: paper_release
+  label: 'Action Genome: author-described data'
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  - intention_use
+  notes: Exact annotation revision is not established; downstream protocols require separate mapping.
+access:
+  status: open
+  url: https://github.com/JingweiJ/ActionGenome
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  - intention_use
+  conditions: Author-linked annotation download and Charades video source checked; complete media reconstruction
+    was not tested.
+licenses:
+- component: dataset media and annotations
+  status: unknown
+  source_ids:
+  - official
+sources:
+- id: official
+  type: author_code
+  title: Action Genome author repository
+  url: https://github.com/JingweiJ/ActionGenome
+  accessed_at: '2026-10-08'
+  locator:
+    section: Dataset; v1.0; annotation structure
+- id: intention_use
+  type: paper
+  title: DSG construction
+  url: https://orca.cardiff.ac.uk/174841/1/1-s2.0-S0957417424030148-main.pdf
+  accessed_at: '2026-10-08'
+  locator:
+    section: 3.1-3.3
+    page: 3-6
+verification:
+  status: verified
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  - intention_use
+  notes: Source descriptions and annotation meaning checked; no data download, reproduction, or independent
+    second-pass review.
+example:
+  kind: illustrative
+  input: A Charades clip and person-object boxes with relationship annotations.
+  output: Relationship cues such as looking at or holding an object; no original intention target.
+  source_ids:
+  - official
+  - intention_use
+  checked_at: '2026-10-08'
+  sample_url: https://github.com/JingweiJ/ActionGenome
+related_datasets:
+- dsg
+notes: Included as a documented intention cue source, without a standalone intention benchmark.
