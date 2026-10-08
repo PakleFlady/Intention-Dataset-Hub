@@ -52,6 +52,13 @@ See the source for current download conditions; raw files were not downloaded fo
 
 No verified benchmark protocol is currently documented.
 
+## Best verified values in recorded snapshots
+
+These values apply only to the linked comparison protocol and snapshot; they are not a claim of current field-wide SOTA.
+
+No protocol-matched result has passed verification yet.
+
+
 ## Sources
 
 - **official**: [JRDB-Social original project or publication](https://jrdb.erc.monash.edu/dataset/) — section: JRDB-Social; Dataset Contents; checked 2026-09-30

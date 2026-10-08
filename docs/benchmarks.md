@@ -5,6 +5,8 @@ Each linked protocol is a separate comparison setting. Counts include only verif
 
 | Dataset | Task | Protocol | Results | Snapshot checked |
 | --- | --- | --- | --- | --- |
+| [Assembly101](datasets/assembly101.md) | action_anticipation | [ICIP 2023 Assembly101 validation, all-view fused anticipation](benchmarks/assembly101.md#assembly101-icip2023-val-multiview) | 4 | 2026-10-08 |
+| [Brain4Cars](datasets/brain4cars.md) | action_anticipation | [ICCV 2015 five-fold all-maneuver HMM cohort](benchmarks/brain4cars.md#brain4cars-iccv2015-all-maneuvers-cv) | 3 | 2026-10-08 |
 | [EPIC-KITCHENS-100](datasets/epic-kitchens-100.md) | action_anticipation | [EK100 challenge test action anticipation](benchmarks/epic-kitchens-100.md#ek100-2021-test-action-anticipation) | 0 | — |
 | [Intentonomy](datasets/intentonomy.md) | intention_recognition | [Author repository test-set RGB baseline cohort](benchmarks/intentonomy.md#intentonomy-author-test-rgb) | 2 | 2026-09-30 |
 | [IntentQA](datasets/intentqa.md) | intention_reasoning | [ICCV 2023 BERT video-and-text no-GPT test cohort](benchmarks/intentqa.md#intentqa-iccv2023-no-gpt-test) | 5 | 2026-09-30 |

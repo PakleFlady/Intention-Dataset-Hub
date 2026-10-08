@@ -58,6 +58,17 @@ See the source for current download conditions; raw files were not downloaded fo
 
 - [Author repository test-set RGB baseline cohort](../benchmarks/intentonomy.md#intentonomy-author-test-rgb) — `intention_recognition`
 
+## Best verified values in recorded snapshots
+
+These values apply only to the linked comparison protocol and snapshot; they are not a claim of current field-wide SOTA.
+
+| Protocol | Metric | Best value | Method | Checked |
+| --- | --- | --- | --- | --- |
+| [Author repository test-set RGB baseline cohort](../benchmarks/intentonomy.md#intentonomy-author-test-rgb) | Macro F1 | 24.37 percent | VISUAL + localization loss | 2026-09-30 |
+| [Author repository test-set RGB baseline cohort](../benchmarks/intentonomy.md#intentonomy-author-test-rgb) | Micro F1 | 32.07 percent | VISUAL + localization loss | 2026-09-30 |
+| [Author repository test-set RGB baseline cohort](../benchmarks/intentonomy.md#intentonomy-author-test-rgb) | Samples F1 | 30.91 percent | VISUAL + localization loss | 2026-09-30 |
+
+
 ## Sources
 
 - **official**: [Intentonomy original project or publication](https://github.com/KMnP/intentonomy) — section: Intentonomy Dataset; checked 2026-09-30

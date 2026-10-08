@@ -59,6 +59,16 @@ See the source for current download conditions; raw files were not downloaded fo
 
 - [PIE ICCV 2019 intention estimation, location-only inputs](../benchmarks/pie.md#pie-intention-loc-iccv2019) — `intention_recognition`
 
+## Best verified values in recorded snapshots
+
+These values apply only to the linked comparison protocol and snapshot; they are not a claim of current field-wide SOTA.
+
+| Protocol | Metric | Best value | Method | Checked |
+| --- | --- | --- | --- | --- |
+| [PIE ICCV 2019 intention estimation, location-only inputs](../benchmarks/pie.md#pie-intention-loc-iccv2019) | Accuracy | 0.67 ratio | LSTM encoder-decoder (loc) | 2026-09-30 |
+| [PIE ICCV 2019 intention estimation, location-only inputs](../benchmarks/pie.md#pie-intention-loc-iccv2019) | F1 | 0.76 ratio | LSTM encoder-decoder (loc) | 2026-09-30 |
+
+
 ## Sources
 
 - **official**: [PIE original project or publication](https://www.data.nvision2.eecs.yorku.ca/PIE_dataset/) — section: Intention Annotations; checked 2026-09-30

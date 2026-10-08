@@ -8,7 +8,7 @@ We include three evidence-based classes: **explicit** intention or goal targets;
 
 <!-- hub:overview:start -->
 
-**Verified datasets:** 16 | **Dataset families:** 16 | **Verified protocols:** 6 | **Datasets with at least two comparable results:** 4
+**Verified datasets:** 16 | **Dataset families:** 16 | **Verified protocols:** 8 | **Datasets with at least two comparable results:** 6
 
 ## Featured datasets
 
@@ -29,6 +29,8 @@ We include three evidence-based classes: **explicit** intention or goal targets;
 
 | Dataset | Task | Protocol | Results | Snapshot checked |
 | --- | --- | --- | --- | --- |
+| [Assembly101](docs/datasets/assembly101.md) | action_anticipation | [ICIP 2023 Assembly101 validation, all-view fused anticipation](docs/benchmarks/assembly101.md#assembly101-icip2023-val-multiview) | 4 | 2026-10-08 |
+| [Brain4Cars](docs/datasets/brain4cars.md) | action_anticipation | [ICCV 2015 five-fold all-maneuver HMM cohort](docs/benchmarks/brain4cars.md#brain4cars-iccv2015-all-maneuvers-cv) | 3 | 2026-10-08 |
 | [EPIC-KITCHENS-100](docs/datasets/epic-kitchens-100.md) | action_anticipation | [EK100 challenge test action anticipation](docs/benchmarks/epic-kitchens-100.md#ek100-2021-test-action-anticipation) | 0 | — |
 | [Intentonomy](docs/datasets/intentonomy.md) | intention_recognition | [Author repository test-set RGB baseline cohort](docs/benchmarks/intentonomy.md#intentonomy-author-test-rgb) | 2 | 2026-09-30 |
 | [IntentQA](docs/datasets/intentqa.md) | intention_reasoning | [ICCV 2023 BERT video-and-text no-GPT test cohort](docs/benchmarks/intentqa.md#intentqa-iccv2023-no-gpt-test) | 5 | 2026-09-30 |
@@ -36,7 +38,7 @@ We include three evidence-based classes: **explicit** intention or goal targets;
 | [JAAD](docs/datasets/jaad.md) | behavior_prediction | [WACV 2021 JAAD_all RGB 3D convolution comparison](docs/benchmarks/jaad.md#jaad-all-wacv2021-rgb3d) | 2 | 2026-09-30 |
 | [PIE](docs/datasets/pie.md) | intention_recognition | [PIE ICCV 2019 intention estimation, location-only inputs](docs/benchmarks/pie.md#pie-intention-loc-iccv2019) | 2 | 2026-09-30 |
 
-[Complete benchmark index](docs/benchmarks.md)
+[Verified best values and coverage gaps](docs/results.md) | [Complete benchmark index](docs/benchmarks.md)
 
 <!-- hub:overview:end -->
 

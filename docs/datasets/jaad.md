@@ -61,6 +61,20 @@ See the source for current download conditions; raw files were not downloaded fo
 - [WACV 2021 JAAD_all PCPA attention comparison](../benchmarks/jaad.md#jaad-all-wacv2021-pcpa) — `behavior_prediction`
 - [WACV 2021 JAAD_all RGB 3D convolution comparison](../benchmarks/jaad.md#jaad-all-wacv2021-rgb3d) — `behavior_prediction`
 
+## Best verified values in recorded snapshots
+
+These values apply only to the linked comparison protocol and snapshot; they are not a claim of current field-wide SOTA.
+
+| Protocol | Metric | Best value | Method | Checked |
+| --- | --- | --- | --- | --- |
+| [WACV 2021 JAAD_all PCPA attention comparison](../benchmarks/jaad.md#jaad-all-wacv2021-pcpa) | Accuracy | 0.85 ratio | PCPA attention variants | 2026-09-30 |
+| [WACV 2021 JAAD_all PCPA attention comparison](../benchmarks/jaad.md#jaad-all-wacv2021-pcpa) | AUC | 0.86 ratio | PCPA attention variants | 2026-09-30 |
+| [WACV 2021 JAAD_all PCPA attention comparison](../benchmarks/jaad.md#jaad-all-wacv2021-pcpa) | F1 | 0.68 ratio | PCPA attention variants | 2026-09-30 |
+| [WACV 2021 JAAD_all RGB 3D convolution comparison](../benchmarks/jaad.md#jaad-all-wacv2021-rgb3d) | Accuracy | 0.84 ratio | C3D RGB | 2026-09-30 |
+| [WACV 2021 JAAD_all RGB 3D convolution comparison](../benchmarks/jaad.md#jaad-all-wacv2021-rgb3d) | AUC | 0.81 ratio | C3D RGB | 2026-09-30 |
+| [WACV 2021 JAAD_all RGB 3D convolution comparison](../benchmarks/jaad.md#jaad-all-wacv2021-rgb3d) | F1 | 0.65 ratio | C3D RGB | 2026-09-30 |
+
+
 ## Sources
 
 - **official**: [JAAD original project or publication](https://github.com/ykotseruba/JAAD) — section: Sequence analysis; Annotations; checked 2026-09-30

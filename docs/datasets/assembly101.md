@@ -50,7 +50,18 @@ Official page says the data moved to Hugging Face in May 2026; individual files 
 
 ## Benchmarks
 
-No verified benchmark protocol is currently documented.
+- [ICIP 2023 Assembly101 validation, all-view fused anticipation](../benchmarks/assembly101.md#assembly101-icip2023-val-multiview) — `action_anticipation`
+
+## Best verified values in recorded snapshots
+
+These values apply only to the linked comparison protocol and snapshot; they are not a claim of current field-wide SOTA.
+
+| Protocol | Metric | Best value | Method | Checked |
+| --- | --- | --- | --- | --- |
+| [ICIP 2023 Assembly101 validation, all-view fused anticipation](../benchmarks/assembly101.md#assembly101-icip2023-val-multiview) | Action class-mean recall@5 | 12.07 percent | Goal Consistency (two goals) | 2026-10-08 |
+| [ICIP 2023 Assembly101 validation, all-view fused anticipation](../benchmarks/assembly101.md#assembly101-icip2023-val-multiview) | Object class-mean recall@5 | 28.38 percent | Goal Consistency (two goals) | 2026-10-08 |
+| [ICIP 2023 Assembly101 validation, all-view fused anticipation](../benchmarks/assembly101.md#assembly101-icip2023-val-multiview) | Verb class-mean recall@5 | 60.04 percent | Goal Consistency (two goals) | 2026-10-08 |
+
 
 ## Sources
 

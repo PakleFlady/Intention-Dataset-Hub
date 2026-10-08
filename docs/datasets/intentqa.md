@@ -48,6 +48,15 @@ See the source for current download conditions; raw files were not downloaded fo
 
 - [ICCV 2023 BERT video-and-text no-GPT test cohort](../benchmarks/intentqa.md#intentqa-iccv2023-no-gpt-test) — `intention_reasoning`
 
+## Best verified values in recorded snapshots
+
+These values apply only to the linked comparison protocol and snapshot; they are not a claim of current field-wide SOTA.
+
+| Protocol | Metric | Best value | Method | Checked |
+| --- | --- | --- | --- | --- |
+| [ICCV 2023 BERT video-and-text no-GPT test cohort](../benchmarks/intentqa.md#intentqa-iccv2023-no-gpt-test) | Total test accuracy | 54.5 percent | Context-aware IntentQA model | 2026-09-30 |
+
+
 ## Sources
 
 - **official**: [IntentQA original project or publication](https://github.com/JoseponLee/IntentQA) — section: Introduction; Dataset; checked 2026-09-30

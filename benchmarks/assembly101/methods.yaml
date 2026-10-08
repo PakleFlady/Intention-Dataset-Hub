@@ -1,0 +1,80 @@
+schema_version: '0.1'
+dataset_id: assembly101
+methods:
+- id: tempagg
+  name: TempAgg
+  reference:
+    type: paper
+    title: 'Assembly101: A Large-Scale Multi-View Video Dataset for Understanding Procedural Activities'
+    url: https://assembly-101.github.io/assets/Assembly101.pdf
+    year: 2022
+    venue: CVPR
+  code:
+    url: https://github.com/assembly-101/assembly101-action-anticipation
+    origin: authors
+    checked_at: '2026-10-08'
+    training_instructions_url: https://github.com/assembly-101/assembly101-action-anticipation/tree/main/tempAgg-action-anticipation
+    evaluation_instructions_url: https://github.com/assembly-101/assembly101-action-anticipation/tree/main/tempAgg-action-anticipation
+  source_ids: [official_code, goal_paper]
+- id: goal_no_goal
+  name: Goal Consistency ablation (no goal)
+  reference:
+    type: paper
+    title: Action Anticipation with Goal Consistency
+    url: https://gall.cv-uni-bonn.de/download/jgall_latentanticipation_icip23.pdf
+    year: 2023
+    venue: ICIP
+  code:
+    url: https://github.com/olga-zats/goal_consistency
+    origin: authors
+    checked_at: '2026-10-08'
+  source_ids: [goal_paper, goal_code]
+- id: goal_one
+  name: Goal Consistency (one goal)
+  reference:
+    type: paper
+    title: Action Anticipation with Goal Consistency
+    url: https://gall.cv-uni-bonn.de/download/jgall_latentanticipation_icip23.pdf
+    year: 2023
+    venue: ICIP
+  code:
+    url: https://github.com/olga-zats/goal_consistency
+    origin: authors
+    checked_at: '2026-10-08'
+    training_instructions_url: https://github.com/olga-zats/goal_consistency#assembly101
+    evaluation_instructions_url: https://github.com/olga-zats/goal_consistency#assembly101
+  source_ids: [goal_paper, goal_code]
+- id: goal_two
+  name: Goal Consistency (two goals)
+  reference:
+    type: paper
+    title: Action Anticipation with Goal Consistency
+    url: https://gall.cv-uni-bonn.de/download/jgall_latentanticipation_icip23.pdf
+    year: 2023
+    venue: ICIP
+  code:
+    url: https://github.com/olga-zats/goal_consistency
+    origin: authors
+    checked_at: '2026-10-08'
+    training_instructions_url: https://github.com/olga-zats/goal_consistency#assembly101
+    evaluation_instructions_url: https://github.com/olga-zats/goal_consistency#assembly101
+  source_ids: [goal_paper, goal_code]
+sources:
+- id: official_code
+  type: official_project
+  title: Assembly101 author action anticipation code and validation results
+  url: https://github.com/assembly-101/assembly101-action-anticipation/tree/main/tempAgg-action-anticipation
+  accessed_at: '2026-10-08'
+  locator: {section: Evaluate / Validation; Train}
+- id: goal_paper
+  type: paper
+  title: Action Anticipation with Goal Consistency
+  url: https://gall.cv-uni-bonn.de/download/jgall_latentanticipation_icip23.pdf
+  accessed_at: '2026-10-08'
+  locator: {section: '4.3 Results', table: '1'}
+- id: goal_code
+  type: official_project
+  title: Goal Consistency author implementation and Assembly101 instructions
+  url: https://github.com/olga-zats/goal_consistency
+  accessed_at: '2026-10-08'
+  locator: {section: Assembly101}

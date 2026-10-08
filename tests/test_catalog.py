@@ -146,6 +146,20 @@ def test_snapshot_result_set_does_not_expand_when_new_result_is_added():
     assert [r["id"] for r in _best(b, snapshot, b["metrics"][0])] == ["lstm_ed_loc"]
 
 
+def test_verified_results_overview_keeps_protocols_and_gaps_visible():
+    catalog = load_catalog(ROOT)
+    pages, _ = render_all(catalog)
+    overview = pages[ROOT / "docs/results.md"]
+    assert "12.07 percent" in overview
+    assert "77.4 percent" in overview
+    assert "ICIP 2023 Assembly101 validation" in overview
+    assert "No verified result protocol yet" in overview
+    assert "Official leaderboard first" not in overview
+    assembly_page = pages[ROOT / "docs/datasets/assembly101.md"]
+    assert "## Best verified values in recorded snapshots" in assembly_page
+    assert "12.07 percent" in assembly_page
+
+
 def test_yaml_duplicate_keys_and_nonfinite_numbers_are_rejected(tmp_path):
     root = sandbox(tmp_path)
     path = root / "datasets/pie.yaml"

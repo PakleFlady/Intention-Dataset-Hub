@@ -1,0 +1,51 @@
+schema_version: '0.1'
+dataset_id: brain4cars
+methods:
+- id: hmm_ef
+  name: HMM E + F
+  reference:
+    type: paper
+    title: 'Car that Knows Before You Do: Anticipating Maneuvers via Learning Temporal Driving Models'
+    url: https://brain4cars.com/pdfs/brain4cars.pdf
+    year: 2015
+    venue: ICCV
+  source_ids: [original_paper]
+- id: iohmm
+  name: IOHMM
+  reference:
+    type: paper
+    title: 'Car that Knows Before You Do: Anticipating Maneuvers via Learning Temporal Driving Models'
+    url: https://brain4cars.com/pdfs/brain4cars.pdf
+    year: 2015
+    venue: ICCV
+  code:
+    url: https://github.com/asheshjain399/ICCV2015_Brain4Cars
+    origin: authors
+    checked_at: '2026-10-08'
+  source_ids: [original_paper, author_code]
+- id: aiohmm
+  name: AIO-HMM
+  reference:
+    type: paper
+    title: 'Car that Knows Before You Do: Anticipating Maneuvers via Learning Temporal Driving Models'
+    url: https://brain4cars.com/pdfs/brain4cars.pdf
+    year: 2015
+    venue: ICCV
+  code:
+    url: https://github.com/asheshjain399/ICCV2015_Brain4Cars
+    origin: authors
+    checked_at: '2026-10-08'
+  source_ids: [original_paper, author_code]
+sources:
+- id: original_paper
+  type: paper
+  title: Brain4Cars ICCV 2015 author paper
+  url: https://brain4cars.com/pdfs/brain4cars.pdf
+  accessed_at: '2026-10-08'
+  locator: {section: VI Experiment, table: I}
+- id: author_code
+  type: official_project
+  title: Brain4Cars ICCV 2015 author implementation
+  url: https://github.com/asheshjain399/ICCV2015_Brain4Cars
+  accessed_at: '2026-10-08'
+  locator: {section: README}

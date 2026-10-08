@@ -34,7 +34,7 @@ def main() -> int:
         else:
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(content, encoding="utf-8", newline="\n")
-    managed = {root / "docs/datasets.md", root / "docs/benchmarks.md", root / "docs/by-domain.md", root / "docs/by-task.md", root / "docs/by-modality.md", root / "docs/taxonomy.md"}
+    managed = {root / "docs/datasets.md", root / "docs/benchmarks.md", root / "docs/results.md", root / "docs/by-domain.md", root / "docs/by-task.md", root / "docs/by-modality.md", root / "docs/taxonomy.md"}
     managed.update((root / "docs/datasets").glob("*.md"))
     managed.update((root / "docs/benchmarks").glob("*.md"))
     for path in managed - output.keys():

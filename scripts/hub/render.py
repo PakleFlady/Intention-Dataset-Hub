@@ -90,6 +90,18 @@ def _render_dataset(catalog: Catalog, data: dict) -> str:
     matching = [b for b in catalog.benchmarks.values() if b["dataset_id"] == dataset_id and b["verification"]["status"] == "verified"]
     lines.extend(["## Benchmarks", ""])
     lines.append("\n".join(f"- [{b['protocol']['name']}](../benchmarks/{dataset_id}.md#{b['id']}) — `{b['task']}`" for b in sorted(matching, key=lambda item: item["id"])) if matching else "No verified benchmark protocol is currently documented.")
+    lines.extend(["", "## Best verified values in recorded snapshots", "", "These values apply only to the linked comparison protocol and snapshot; they are not a claim of current field-wide SOTA.", ""])
+    best_rows = []
+    methods = {method["id"]: method for method in catalog.methods.get(dataset_id, {}).get("methods", [])}
+    for benchmark in sorted(matching, key=lambda item: item["id"]):
+        if not benchmark["snapshots"]:
+            continue
+        snapshot = max(benchmark["snapshots"], key=lambda item: (item["checked_at"], item["id"]))
+        for metric in benchmark["metrics"]:
+            for result in _best(benchmark, snapshot, metric):
+                score = result["scores"][metric["id"]]
+                best_rows.append([link(benchmark["protocol"]["name"], f"../benchmarks/{dataset_id}.md#{benchmark['id']}"), cell(metric["name"]), f"{score['value']} {cell(metric['unit'])}", cell(methods.get(result["method_id"], {}).get("name", result["method_id"])), snapshot["checked_at"]])
+    lines.append(table(["Protocol", "Metric", "Best value", "Method", "Checked"], best_rows) if best_rows else "No protocol-matched result has passed verification yet.\n")
     lines.extend(["", "## Sources", ""])
     lines.extend(f"- **{source['id']}**: {link(source['title'], source['url'])} — {cell(', '.join(f'{k}: {v}' for k, v in source['locator'].items()))}; checked {source['accessed_at']}" for source in data["sources"])
     lines.extend(["", f"**Dataset metadata verified:** {data['verification']['checked_at']} · {source_links(data['sources'], data['verification']['source_ids'])}", ""])
@@ -105,6 +117,47 @@ def _best(benchmark: dict, snapshot: dict, metric: dict) -> list[dict]:
     key = lambda result: result["scores"][metric["id"]]["value"]
     winning = (max if metric["direction"] == "higher" else min)(key(result) for result in eligible)
     return [result for result in eligible if key(result) == winning]
+
+
+def _render_results_overview(catalog: Catalog) -> str:
+    """Summarize snapshot-scoped metric winners without comparing protocols."""
+    lines = [GENERATED, "# Verified best results by protocol", "", "These are the best values among the cited, protocol-matched results in each recorded snapshot. They are not claims about the current field-wide state of the art. Different targets, splits, inputs, time windows, and metrics are not comparable.", ""]
+    covered: set[str] = set()
+    rows: list[list[str]] = []
+    for benchmark in sorted(catalog.benchmarks.values(), key=lambda item: (item["dataset_id"], item["id"])):
+        if benchmark["verification"]["status"] != "verified":
+            continue
+        dataset_id = benchmark["dataset_id"]
+        methods = {method["id"]: method for method in catalog.methods.get(dataset_id, {}).get("methods", [])}
+        for snapshot in benchmark["snapshots"]:
+            label = "Official leaderboard first" if snapshot["scope"] == "official_leaderboard" and snapshot.get("first_place_confirmed") else "Included official entries" if snapshot["scope"] == "official_leaderboard" else "Verified paper-reported set"
+            for metric in benchmark["metrics"]:
+                winners = _best(benchmark, snapshot, metric)
+                if not winners:
+                    continue
+                covered.add(dataset_id)
+                for result in winners:
+                    score = result["scores"][metric["id"]]
+                    rows.append([
+                        link(catalog.datasets[dataset_id]["name"], f"datasets/{dataset_id}.md"),
+                        link(benchmark["protocol"]["name"], f"benchmarks/{dataset_id}.md#{benchmark['id']}"),
+                        cell(metric["name"]),
+                        f"{score['value']} {cell(metric['unit'])}",
+                        cell(methods.get(result["method_id"], {}).get("name", result["method_id"])),
+                        f"{label}; {snapshot['checked_at']}",
+                        source_links(benchmark["sources"], score["source_ids"]),
+                    ])
+    lines.append(table(["Dataset", "Comparison protocol", "Metric", "Best value", "Method", "Scope / checked", "Evidence"], rows))
+    lines.extend(["## Results still to verify", "", "A missing value means that no result has passed this repository's source and protocol checks. It is not a zero score.", ""])
+    missing = []
+    for dataset in sorted(catalog.datasets.values(), key=lambda item: item["id"]):
+        if dataset["verification"]["status"] != "verified" or dataset["id"] in covered:
+            continue
+        protocols = [b for b in catalog.benchmarks.values() if b["dataset_id"] == dataset["id"] and b["verification"]["status"] == "verified"]
+        status = "Protocol documented; result conditions or scores still pending" if protocols else "No verified result protocol yet"
+        missing.append([link(dataset["name"], f"datasets/{dataset['id']}.md"), status])
+    lines.append(table(["Dataset", "Status"], missing))
+    return "\n".join(lines).rstrip() + "\n"
 
 
 def _render_benchmark(catalog: Catalog, benchmark: dict) -> list[str]:
@@ -163,6 +216,7 @@ def render_all(catalog: Catalog) -> tuple[dict[Path, str], str]:
     output[root / "docs/datasets.md"] = GENERATED + "# Dataset index\n\nOnly records checked against cited original sources appear here.\n\n" + table(["Dataset", "Year", "Domain", "Relevance", "Tasks", "Modalities", "Access"], _dataset_rows(catalog))
     benchmark_rows = _benchmark_rows(catalog, "benchmarks/", "datasets/")
     output[root / "docs/benchmarks.md"] = GENERATED + "# Benchmark index\n\nEach linked protocol is a separate comparison setting. Counts include only verified matching results.\n\n" + table(["Dataset", "Task", "Protocol", "Results", "Snapshot checked"], benchmark_rows)
+    output[root / "docs/results.md"] = _render_results_overview(catalog)
     taxonomy_lines = [GENERATED, "# Taxonomy", "", "Machine values are defined in [taxonomy.yaml](../taxonomy.yaml). Domains are flat and multi-select; intention types have at most one parent. Time scale belongs to a benchmark, not an intention type.", ""]
     for group in ("domains", "intention_types", "tasks", "modalities", "data_formats", "viewpoints", "capture_setup"):
         taxonomy_lines.extend([f"## {group.replace('_', ' ').title()}", "", table(["ID", "Meaning", "Definition", "Parent"], [[f"`{key}`", cell(term["name"]), cell(term["definition"]), cell(term.get("parent", "—"))] for key, term in sorted(catalog.taxonomy[group].items())])])
@@ -192,7 +246,7 @@ def render_all(catalog: Catalog) -> tuple[dict[Path, str], str]:
     featured = featured[:8]
     featured_rows = [[link(d["name"], f"docs/datasets/{d['id']}.md"), str(d["year"]), cell(", ".join(d["domains"])), cell(d["intention_relevance"]), cell(d["access"]["status"])] for d in featured]
     readme_benchmark_rows = _benchmark_rows(catalog, "docs/benchmarks/", "docs/datasets/")
-    overview = "\n".join([README_START, "", f"**Verified datasets:** {len(verified)} | **Dataset families:** {len(families)} | **Verified protocols:** {len(benchmark_rows)} | **Datasets with at least two comparable results:** {len(ranked_benchmarks)}", "", "## Featured datasets", "", table(["Dataset", "Year", "Domain", "Relevance", "Access"], featured_rows), "[Complete dataset index](docs/datasets.md) | [By domain](docs/by-domain.md) | [By task](docs/by-task.md) | [By modality](docs/by-modality.md)", "", "## Benchmark availability", "", table(["Dataset", "Task", "Protocol", "Results", "Snapshot checked"], readme_benchmark_rows[:8]), "[Complete benchmark index](docs/benchmarks.md)", "", README_END])
+    overview = "\n".join([README_START, "", f"**Verified datasets:** {len(verified)} | **Dataset families:** {len(families)} | **Verified protocols:** {len(benchmark_rows)} | **Datasets with at least two comparable results:** {len(ranked_benchmarks)}", "", "## Featured datasets", "", table(["Dataset", "Year", "Domain", "Relevance", "Access"], featured_rows), "[Complete dataset index](docs/datasets.md) | [By domain](docs/by-domain.md) | [By task](docs/by-task.md) | [By modality](docs/by-modality.md)", "", "## Benchmark availability", "", table(["Dataset", "Task", "Protocol", "Results", "Snapshot checked"], readme_benchmark_rows[:8]), "[Verified best values and coverage gaps](docs/results.md) | [Complete benchmark index](docs/benchmarks.md)", "", README_END])
     return output, overview
 
 

@@ -52,6 +52,13 @@ See the source for current download conditions; raw files were not downloaded fo
 
 - [EK100 challenge test action anticipation](../benchmarks/epic-kitchens-100.md#ek100-2021-test-action-anticipation) — `action_anticipation`
 
+## Best verified values in recorded snapshots
+
+These values apply only to the linked comparison protocol and snapshot; they are not a claim of current field-wide SOTA.
+
+No protocol-matched result has passed verification yet.
+
+
 ## Sources
 
 - **official**: [EPIC-KITCHENS-100 original project or publication](https://github.com/epic-kitchens/epic-kitchens-100-annotations) — section: Action Anticipation Challenge; checked 2026-09-30

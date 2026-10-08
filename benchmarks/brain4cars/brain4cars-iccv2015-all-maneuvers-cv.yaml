@@ -1,0 +1,147 @@
+schema_version: '0.1'
+id: brain4cars-iccv2015-all-maneuvers-cv
+dataset_id: brain4cars
+release_id: v1
+annotation_version: author-release-unspecified
+task: action_anticipation
+original_task_name: Maneuver anticipation
+target_id: future_maneuver
+protocol:
+  name: ICCV 2015 five-fold all-maneuver HMM cohort
+  source_ids: [original_paper]
+  notes: Only the three Table I methods using both inside-face and outside-road feature streams are compared here.
+split:
+  name: Author five-fold cross-validation over natural driving clips
+  source_ids: [original_paper]
+sample_selection:
+  description: All-maneuver five-class cohort from the original study; 274 lane changes, 131 turns and 295 straight-driving events. This is not a driver-held-out or later-paper split.
+  source_ids: [original_paper]
+inputs:
+  modalities: [rgb, vehicle_telemetry]
+  representation: Driver-face features from in-cabin video plus lane, road-context, GPS/map and speed features from the road-facing stream.
+  available_information: Context observed before maneuver onset; evaluation predicts one of four maneuvers or continuing straight every 0.8 seconds.
+temporal:
+  observation_window:
+    kind: variable
+    unit: seconds
+    anchor: each 0.8-second prediction step
+    description: Recent sequential context is updated at every prediction step; Table I does not use one fixed observation length for all three HMM variants.
+  anticipation_gap:
+    kind: variable
+    unit: seconds
+    anchor: maneuver onset
+    description: Predictions may occur at different lead times; Table I reports mean time-to-maneuver separately rather than imposing a fixed gap.
+  prediction_horizon:
+    kind: fixed
+    unit: seconds
+    value: 5
+    anchor: each prediction step
+    description: After predicting a maneuver, the system waits until it occurs or five seconds pass before making another maneuver prediction.
+training_policy:
+  external_data: allowed
+  pretraining: allowed
+  extra_supervision: allowed
+  ensemble: forbidden
+  source_ids: [original_paper]
+  notes: The cohort uses author-extracted inside/outside features; feature-extractor training provenance is not treated as a closed-data claim. No ensemble row is included.
+evaluation:
+  description: Author Table I five-fold cross-validation, all-maneuver columns; prediction threshold selected for F1 on validation data.
+  aggregation: Mean precision and recall across the five folds; parenthesized standard errors are preserved per score.
+  parameters: {cohort: all_maneuvers, folds: 5}
+  source_ids: [original_paper]
+metrics:
+- id: precision
+  name: All-maneuver precision
+  direction: higher
+  unit: percent
+  definition: Author-reported precision for anticipating all maneuver classes, averaged over five cross-validation folds.
+  aggregation: five-fold mean
+  evaluation_subset: all maneuvers
+  valid_range: [0, 100]
+  source_ids: [original_paper]
+- id: recall
+  name: All-maneuver recall
+  direction: higher
+  unit: percent
+  definition: Author-reported recall for anticipating all maneuver classes, averaged over five cross-validation folds.
+  aggregation: five-fold mean
+  evaluation_subset: all maneuvers
+  valid_range: [0, 100]
+  source_ids: [original_paper]
+sources:
+- id: original_paper
+  type: paper
+  title: Brain4Cars ICCV 2015 author paper
+  url: https://brain4cars.com/pdfs/brain4cars.pdf
+  accessed_at: '2026-10-08'
+  locator: {section: VI Experiment, table: I}
+- id: author_code
+  type: official_project
+  title: Brain4Cars ICCV 2015 author implementation
+  url: https://github.com/asheshjain399/ICCV2015_Brain4Cars
+  accessed_at: '2026-10-08'
+  locator: {section: README}
+verification:
+  status: verified
+  checked_at: '2026-10-08'
+  source_ids: [original_paper, author_code]
+  notes: Table I all-maneuver precision, recall and fold definition checked against author paper. Reported mean time-to-maneuver is kept in configuration notes, not conflated with the protocol prediction horizon. No independent reproduction.
+results:
+- id: hmm_ef_cv
+  method_id: hmm_ef
+  configuration:
+    description: HMM with both environment and driver-face feature streams; Table I mean time-to-maneuver 3.72 s.
+    modalities: [rgb, vehicle_telemetry]
+    external_data: Feature-extractor provenance not fully specified
+    pretraining: Author feature extraction
+    ensemble: false
+    evaluation_parameters: {cohort: all_maneuvers, folds: 5}
+  scores:
+    precision: {value: 67.8, uncertainty: 'standard error 2.0', source_ids: [original_paper], locator: {table: I, row: HMM E + F, column: All maneuvers Pr (%)}}
+    recall: {value: 67.7, uncertainty: 'standard error 2.5', source_ids: [original_paper], locator: {table: I, row: HMM E + F, column: All maneuvers Re (%)}}
+  source_ids: [original_paper]
+  protocol_match: {status: confirmed, source_ids: [original_paper], locator: {table: I, row: HMM E + F}, notes: Both inside and outside feature streams; five-fold all-maneuver row.}
+  verification: {status: verified, checked_at: '2026-10-08', source_ids: [original_paper], notes: Checked Table I all-maneuver cells.}
+  status: active
+  baseline_origin: protocol_authors
+- id: iohmm_cv
+  method_id: iohmm
+  configuration:
+    description: Input-output HMM with the same inside and outside features; Table I mean time-to-maneuver 3.83 s.
+    modalities: [rgb, vehicle_telemetry]
+    external_data: Feature-extractor provenance not fully specified
+    pretraining: Author feature extraction
+    ensemble: false
+    evaluation_parameters: {cohort: all_maneuvers, folds: 5}
+  scores:
+    precision: {value: 74.2, uncertainty: 'standard error 1.7', source_ids: [original_paper], locator: {table: I, row: IOHMM, column: All maneuvers Pr (%)}}
+    recall: {value: 71.2, uncertainty: 'standard error 1.6', source_ids: [original_paper], locator: {table: I, row: IOHMM, column: All maneuvers Re (%)}}
+  source_ids: [original_paper]
+  protocol_match: {status: confirmed, source_ids: [original_paper], locator: {table: I, row: IOHMM}, notes: Same author paper all-maneuver cohort and input feature extraction.}
+  verification: {status: verified, checked_at: '2026-10-08', source_ids: [original_paper], notes: Checked Table I all-maneuver cells.}
+  status: active
+  baseline_origin: protocol_authors
+- id: aiohmm_cv
+  method_id: aiohmm
+  configuration:
+    description: Autoregressive input-output HMM with both feature streams; Table I mean time-to-maneuver 3.53 s.
+    modalities: [rgb, vehicle_telemetry]
+    external_data: Feature-extractor provenance not fully specified
+    pretraining: Author feature extraction
+    ensemble: false
+    evaluation_parameters: {cohort: all_maneuvers, folds: 5}
+  scores:
+    precision: {value: 77.4, uncertainty: 'standard error 2.3', source_ids: [original_paper], locator: {table: I, row: AIO-HMM, column: All maneuvers Pr (%)}}
+    recall: {value: 71.2, uncertainty: 'standard error 1.3', source_ids: [original_paper], locator: {table: I, row: AIO-HMM, column: All maneuvers Re (%)}}
+  source_ids: [original_paper]
+  protocol_match: {status: confirmed, source_ids: [original_paper], locator: {table: I, row: AIO-HMM}, notes: Same author paper all-maneuver cohort and input feature extraction.}
+  verification: {status: verified, checked_at: '2026-10-08', source_ids: [original_paper], notes: Checked Table I all-maneuver cells.}
+  status: active
+  baseline_origin: dataset_authors
+snapshots:
+- id: paper_snapshot_2026_10_08
+  checked_at: '2026-10-08'
+  scope: paper_reported
+  source_ids: [original_paper]
+  result_ids: [hmm_ef_cv, iohmm_cv, aiohmm_cv]
+  coverage_notes: Three matched inside-plus-outside HMM-family rows from the original paper's Table I. Later RNN papers and other input-feature cohorts are not included. Recall is tied between IOHMM and AIO-HMM at reported precision.
