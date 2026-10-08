@@ -8,6 +8,8 @@ Each `datasets/<id>.yaml` documents one identifiable release. Required fields de
 
 `annotations` identify the target used by a benchmark. `semantic` records what the label represents; `provenance` records how it was obtained. For example, an observer judgment of intention has `semantic: intention` and `provenance: observer_judgment`. `releases` give the exact data and annotation version referenced by a benchmark.
 
+Every dataset has an `example` showing the shape of one input and the corresponding output or label near the top of its generated page. `source_record` is reserved for an exact, locatable row; `illustrative` explains a source-grounded task without pretending to be a copied sample. An optional image or animated image is hotlinked from an author-published source and captioned as a preview, while `sample_url` opens the original sample or demo. External videos are linked because GitHub does not reliably embed externally hosted players in Markdown. Preview media retains the source's terms and is not relicensed by this repository.
+
 ## Benchmark
 
 Each `benchmarks/<dataset-id>/<benchmark-id>.yaml` defines one comparison context: release and annotation version, exact target, task, split, sample selection, available inputs, time windows, training constraints, evaluation, and metrics. Any material difference calls for a separate benchmark. Method identities are reused within that dataset through `methods.yaml`; experiment configuration remains on each result.

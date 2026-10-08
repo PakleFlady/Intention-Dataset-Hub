@@ -4,11 +4,27 @@
 
 Traffic-agent trajectories with labeled key intentions for pedestrians and vehicles.
 
+## Example input and output
+
+This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+
+**Input:** A traffic scene observed through a vehicle camera and LiDAR, with tracked pedestrians and vehicles.
+
+**Output / label:** A tracked agent's key-intention or potential-destination annotation, alongside future trajectory information.
+
+![Official LOKI visualization of camera and LiDAR views with intention labels](https://usa.honda-ri.com/documents/248678/0/LOKI_data-visualization.jpg/ce417acc-01a6-c350-42ff-cf3aa6e89266?t=1643387470795)
+
+*Author-published label visualization; destination and maneuver fields differ by agent type.*
+
+[Open the author-provided sample or demo](https://usa.honda-ri.com/loki)
+
+**Example evidence:** [official](https://usa.honda-ri.com/loki)
+
 ## Intention in this dataset
 
 Model annotated intended actions and potential destinations of pedestrians and vehicles alongside their trajectories; these are observer-assigned traffic-agent labels, not agent self-reports or direct access to mental state.
 
-**Relevance:** `explicit` �� **Origin:** `real` �� **Year:** 2021
+**Relevance:** `explicit` · **Origin:** `real` · **Year:** 2021
 
 **Domains:** pedestrian, autonomous_driving  
 **Intention types:** driving_maneuver, pedestrian_crossing  
@@ -24,13 +40,13 @@ Model annotated intended actions and potential destinations of pedestrians and v
 
 ## Access and rights
 
-**Access:** open �� [entry point](https://usa.honda-ri.com/loki) �� checked 2026-09-30 �� [official](https://usa.honda-ri.com/loki)
+**Access:** request · [entry point](https://usa.honda-ri.com/loki) · checked 2026-10-08 · [official](https://usa.honda-ri.com/loki)
 
-See the source for current download conditions; raw files were not downloaded for this catalog.
+The official page limits access to non-commercial use and asks university-affiliated researchers to request the data using a university email address; raw files were not downloaded for this catalog.
 
 | Component | License status | License | Evidence |
 | --- | --- | --- | --- |
-| dataset media and annotations | unknown | �� | [official](https://usa.honda-ri.com/loki) |
+| dataset media and annotations | unknown | — | [official](https://usa.honda-ri.com/loki) |
 
 ## Benchmarks
 
@@ -38,10 +54,10 @@ No verified benchmark protocol is currently documented.
 
 ## Sources
 
-- **official**: [LOKI: Long Term and Key Intentions original project or publication](https://usa.honda-ri.com/loki) �� section: Dataset Annotation; Intention labels; annotation file layout; checked 2026-09-30
-- **paper**: [LOKI: Long Term and Key Intentions for Trajectory Prediction](https://openaccess.thecvf.com/content/ICCV2021/papers/Girase_LOKI_Long_Term_and_Key_Intentions_for_Trajectory_Prediction_ICCV_2021_paper.pdf) �� section: Dataset Annotation; Intention labels; checked 2026-09-30
+- **official**: [LOKI: Long Term and Key Intentions original project or publication](https://usa.honda-ri.com/loki) — section: Dataset Annotation; Intention labels; annotation file layout; checked 2026-10-08
+- **paper**: [LOKI: Long Term and Key Intentions for Trajectory Prediction](https://openaccess.thecvf.com/content/ICCV2021/papers/Girase_LOKI_Long_Term_and_Key_Intentions_for_Trajectory_Prediction_ICCV_2021_paper.pdf) — section: Dataset Annotation; Intention labels; checked 2026-09-30
 
-**Dataset metadata verified:** 2026-09-30 �� [official](https://usa.honda-ri.com/loki), [paper](https://openaccess.thecvf.com/content/ICCV2021/papers/Girase_LOKI_Long_Term_and_Key_Intentions_for_Trajectory_Prediction_ICCV_2021_paper.pdf)
+**Dataset metadata verified:** 2026-09-30 · [official](https://usa.honda-ri.com/loki), [paper](https://openaccess.thecvf.com/content/ICCV2021/papers/Girase_LOKI_Long_Term_and_Key_Intentions_for_Trajectory_Prediction_ICCV_2021_paper.pdf)
 
 ## Limits and notes
 

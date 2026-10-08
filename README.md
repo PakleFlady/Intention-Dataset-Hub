@@ -8,7 +8,7 @@ We include three evidence-based classes: **explicit** intention or goal targets;
 
 <!-- hub:overview:start -->
 
-**Verified datasets:** 16 �� **Dataset families:** 16 �� **Verified protocols:** 6 �� **Datasets with at least two comparable results:** 4
+**Verified datasets:** 16 | **Dataset families:** 16 | **Verified protocols:** 6 | **Datasets with at least two comparable results:** 4
 
 ## Featured datasets
 
@@ -16,20 +16,20 @@ We include three evidence-based classes: **explicit** intention or goal targets;
 | --- | --- | --- | --- | --- |
 | [Intentonomy](docs/datasets/intentonomy.md) | 2021 | daily_activities, social_interaction | explicit | open |
 | [IntentQA](docs/datasets/intentqa.md) | 2023 | daily_activities, social_interaction | explicit | open |
-| [LOKI: Long Term and Key Intentions](docs/datasets/loki-traffic.md) | 2021 | pedestrian, autonomous_driving | explicit | open |
+| [LOKI: Long Term and Key Intentions](docs/datasets/loki-traffic.md) | 2021 | pedestrian, autonomous_driving | explicit | request |
 | [Assembly101](docs/datasets/assembly101.md) | 2022 | daily_activities, human_object_interaction | implicit | open |
 | [Brain4Cars](docs/datasets/brain4cars.md) | 2015 | driver_behavior, autonomous_driving | implicit | unknown |
 | [Ego4D](docs/datasets/ego4d.md) | 2021 | daily_activities, human_object_interaction | implicit | registration |
 | [Ego-Exo4D](docs/datasets/ego-exo4d.md) | 2024 | daily_activities, embodied_interaction | related | registration |
 | [HARMONIC](docs/datasets/harmonic.md) | 2021 | human_robot_interaction, human_object_interaction | related | open |
 
-[Complete dataset index](docs/datasets.md) �� [By domain](docs/by-domain.md) �� [By task](docs/by-task.md) �� [By modality](docs/by-modality.md)
+[Complete dataset index](docs/datasets.md) | [By domain](docs/by-domain.md) | [By task](docs/by-task.md) | [By modality](docs/by-modality.md)
 
 ## Benchmark availability
 
 | Dataset | Task | Protocol | Results | Snapshot checked |
 | --- | --- | --- | --- | --- |
-| [EPIC-KITCHENS-100](docs/datasets/epic-kitchens-100.md) | action_anticipation | [EK100 challenge test action anticipation](docs/benchmarks/epic-kitchens-100.md#ek100-2021-test-action-anticipation) | 0 | �� |
+| [EPIC-KITCHENS-100](docs/datasets/epic-kitchens-100.md) | action_anticipation | [EK100 challenge test action anticipation](docs/benchmarks/epic-kitchens-100.md#ek100-2021-test-action-anticipation) | 0 | — |
 | [Intentonomy](docs/datasets/intentonomy.md) | intention_recognition | [Author repository test-set RGB baseline cohort](docs/benchmarks/intentonomy.md#intentonomy-author-test-rgb) | 2 | 2026-09-30 |
 | [IntentQA](docs/datasets/intentqa.md) | intention_reasoning | [ICCV 2023 BERT video-and-text no-GPT test cohort](docs/benchmarks/intentqa.md#intentqa-iccv2023-no-gpt-test) | 5 | 2026-09-30 |
 | [JAAD](docs/datasets/jaad.md) | behavior_prediction | [WACV 2021 JAAD_all PCPA attention comparison](docs/benchmarks/jaad.md#jaad-all-wacv2021-pcpa) | 4 | 2026-09-30 |
@@ -42,7 +42,7 @@ We include three evidence-based classes: **explicit** intention or goal targets;
 
 ## How to use this repository
 
-Start at the dataset index to find a target and its annotation provenance. Open a benchmark page to inspect the protocol and verified result sources. The baseline section favors original baselines and available author code; a code link does not imply that this project reproduced the result.
+Start at the dataset index to see an input/output example, an author-published visual or demo where available, the target, and its annotation provenance. Examples marked illustrative show the task shape and are not claimed to be copied dataset rows. Open a benchmark page to inspect the protocol and verified result sources. The baseline section favors original baselines and available author code; a code link does not imply that this project reproduced the result.
 
 Best-result labels are restricted to the result set and date shown in their snapshot. Empty or incomplete leaderboards are stated plainly.
 

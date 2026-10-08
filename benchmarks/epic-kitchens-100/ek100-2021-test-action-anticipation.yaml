@@ -39,7 +39,7 @@ temporal:
   prediction_horizon:
     kind: fixed
     anchor: next annotated action
-    description: Predict one future verb�Cnoun action.
+    description: Predict one future verb–noun action.
     unit: actions
     value: 1
 training_policy:

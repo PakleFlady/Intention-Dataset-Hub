@@ -4,11 +4,27 @@
 
 Robot-view observations and contextual social-group annotations in human environments.
 
+## Example input and output
+
+This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+
+**Input:** Robot-view panoramic video of people interacting in an indoor or outdoor public space.
+
+**Output / label:** Individual, pairwise interaction, or group-context annotations, including a group's aim where present.
+
+![Official JRDB-Social teaser showing people and social-group annotations](https://jrdb.erc.monash.edu/static/images/social/teaser.png)
+
+*Author-published teaser; which labels apply depends on the chosen annotation level.*
+
+[Open the author-provided sample or demo](https://jrdb.erc.monash.edu/dataset/social)
+
+**Example evidence:** [official](https://jrdb.erc.monash.edu/dataset/)
+
 ## Intention in this dataset
 
 Social grouping and interaction context can inform reasoning about human social purpose; group activity annotations are not direct intention reports.
 
-**Relevance:** `related` �� **Origin:** `real` �� **Year:** 2024
+**Relevance:** `related` · **Origin:** `real` · **Year:** 2024
 
 **Domains:** social_interaction, human_robot_interaction  
 **Intention types:** social  
@@ -24,13 +40,13 @@ Social grouping and interaction context can inform reasoning about human social 
 
 ## Access and rights
 
-**Access:** registration �� [entry point](https://jrdb.erc.monash.edu/dataset/) �� checked 2026-09-30 �� [official](https://jrdb.erc.monash.edu/dataset/)
+**Access:** registration · [entry point](https://jrdb.erc.monash.edu/dataset/) · checked 2026-09-30 · [official](https://jrdb.erc.monash.edu/dataset/)
 
 See the source for current download conditions; raw files were not downloaded for this catalog.
 
 | Component | License status | License | Evidence |
 | --- | --- | --- | --- |
-| dataset media and annotations | unknown | �� | [official](https://jrdb.erc.monash.edu/dataset/) |
+| dataset media and annotations | unknown | — | [official](https://jrdb.erc.monash.edu/dataset/) |
 
 ## Benchmarks
 
@@ -38,9 +54,9 @@ No verified benchmark protocol is currently documented.
 
 ## Sources
 
-- **official**: [JRDB-Social original project or publication](https://jrdb.erc.monash.edu/dataset/) �� section: JRDB-Social; Dataset Contents; checked 2026-09-30
+- **official**: [JRDB-Social original project or publication](https://jrdb.erc.monash.edu/dataset/) — section: JRDB-Social; Dataset Contents; checked 2026-09-30
 
-**Dataset metadata verified:** 2026-09-30 �� [official](https://jrdb.erc.monash.edu/dataset/)
+**Dataset metadata verified:** 2026-09-30 · [official](https://jrdb.erc.monash.edu/dataset/)
 
 ## Limits and notes
 

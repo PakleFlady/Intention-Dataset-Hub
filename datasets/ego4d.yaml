@@ -73,3 +73,17 @@ viewpoints:
 - egocentric
 capture_setup:
 - wearable
+
+example:
+  kind: illustrative
+  input: A first-person video clip ending before the camera wearer's next object interactions.
+  output: An ordered future sequence of action labels, each represented by a verb and noun.
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  sample_url: https://ego4d-data.org/docs/benchmarks/forecasting/
+  media:
+    kind: image
+    url: https://ego4d-data.org/assets/images/forecasting.png
+    alt: Official Ego4D forecasting illustration of egocentric observations and future activity
+    caption: Author-published forecasting illustration; task-specific input and output details are in the linked protocol.

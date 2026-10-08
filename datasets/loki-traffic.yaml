@@ -44,12 +44,12 @@ releases:
   - official
   notes: Exact annotation revision is not identified by this source.
 access:
-  status: open
+  status: request
   url: https://usa.honda-ri.com/loki
-  checked_at: '2026-09-30'
+  checked_at: '2026-10-08'
   source_ids:
   - official
-  conditions: See the source for current download conditions; raw files were not downloaded for this catalog.
+  conditions: The official page limits access to non-commercial use and asks university-affiliated researchers to request the data using a university email address; raw files were not downloaded for this catalog.
 licenses:
 - component: dataset media and annotations
   status: unknown
@@ -60,7 +60,7 @@ sources:
   type: official_project
   title: 'LOKI: Long Term and Key Intentions original project or publication'
   url: https://usa.honda-ri.com/loki
-  accessed_at: '2026-09-30'
+  accessed_at: '2026-10-08'
   locator:
     section: Dataset Annotation; Intention labels; annotation file layout
 - id: paper
@@ -76,10 +76,24 @@ verification:
   source_ids:
   - official
   - paper
-  notes: Official project and original paper descriptions checked for intention labels, sensor modalities,
-    and access entry; raw files were not downloaded.
+  notes: Official project and original paper descriptions checked for intention labels and sensor modalities;
+    the official access conditions were rechecked on 2026-10-08. Raw files were not downloaded.
 viewpoints:
 - exocentric
 capture_setup:
 - vehicle_mounted
 notes: This ID disambiguates the traffic dataset from unrelated projects named LOKI.
+
+example:
+  kind: illustrative
+  input: A traffic scene observed through a vehicle camera and LiDAR, with tracked pedestrians and vehicles.
+  output: A tracked agent's key-intention or potential-destination annotation, alongside future trajectory information.
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  sample_url: https://usa.honda-ri.com/loki
+  media:
+    kind: image
+    url: https://usa.honda-ri.com/documents/248678/0/LOKI_data-visualization.jpg/ce417acc-01a6-c350-42ff-cf3aa6e89266?t=1643387470795
+    alt: Official LOKI visualization of camera and LiDAR views with intention labels
+    caption: Author-published label visualization; destination and maneuver fields differ by agent type.

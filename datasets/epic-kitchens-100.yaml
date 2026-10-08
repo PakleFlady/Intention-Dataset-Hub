@@ -69,3 +69,17 @@ viewpoints:
 - egocentric
 capture_setup:
 - wearable
+
+example:
+  kind: illustrative
+  input: A first-person kitchen video segment ending before the next action begins.
+  output: The anticipated action as a verb-noun pair from the kitchen action vocabulary.
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  sample_url: https://epic-kitchens.github.io/2020-100#action-anticipation
+  media:
+    kind: image
+    url: https://epic-kitchens.github.io/static/img/challenges-epic-100/aa.png
+    alt: Official EPIC-KITCHENS-100 action anticipation qualitative example
+    caption: Author-published qualitative anticipation example; this is a figure, not a downloadable video record.

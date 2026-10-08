@@ -16,7 +16,7 @@ Only records checked against cited original sources appear here.
 | [IntentQA](datasets/intentqa.md) | 2023 | daily_activities, social_interaction | explicit | intention_reasoning | rgb, text | open |
 | [JAAD](datasets/jaad.md) | 2017 | pedestrian, autonomous_driving | implicit | behavior_prediction, trajectory_prediction | rgb, trajectory, vehicle_telemetry | open |
 | [JRDB-Social](datasets/jrdb-social.md) | 2024 | social_interaction, human_robot_interaction | related |  | rgb, lidar, trajectory | registration |
-| [LOKI: Long Term and Key Intentions](datasets/loki-traffic.md) | 2021 | pedestrian, autonomous_driving | explicit | intention_prediction, trajectory_prediction | rgb, trajectory, object_state, lidar | open |
+| [LOKI: Long Term and Key Intentions](datasets/loki-traffic.md) | 2021 | pedestrian, autonomous_driving | explicit | intention_prediction, trajectory_prediction | rgb, trajectory, object_state, lidar | request |
 | [MoGaze](datasets/mogaze.md) | 2020 | human_robot_interaction, human_object_interaction | related | trajectory_prediction | pose, gaze, object_state | open |
 | [PHASE](datasets/phase.md) | 2021 | social_interaction, embodied_interaction | explicit | intention_recognition, behavior_prediction | trajectory, object_state | open |
 | [PIE](datasets/pie.md) | 2019 | pedestrian, autonomous_driving | explicit | intention_recognition, behavior_prediction, trajectory_prediction | rgb, trajectory, vehicle_telemetry | open |

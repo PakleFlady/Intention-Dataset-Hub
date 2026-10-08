@@ -69,3 +69,17 @@ capture_setup:
 - multi_camera
 notes: Social context is included as an intention cue; action and group labels are not relabeled as
   intentions.
+
+example:
+  kind: illustrative
+  input: Robot-view panoramic video of people interacting in an indoor or outdoor public space.
+  output: Individual, pairwise interaction, or group-context annotations, including a group's aim where present.
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  sample_url: https://jrdb.erc.monash.edu/dataset/social
+  media:
+    kind: image
+    url: https://jrdb.erc.monash.edu/static/images/social/teaser.png
+    alt: Official JRDB-Social teaser showing people and social-group annotations
+    caption: Author-published teaser; which labels apply depends on the chosen annotation level.

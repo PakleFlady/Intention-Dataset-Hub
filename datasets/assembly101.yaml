@@ -80,3 +80,17 @@ capture_setup:
 - fixed_camera
 - wearable
 - multi_camera
+
+example:
+  kind: illustrative
+  input: A short prefix of synchronized wearable and fixed-camera video showing a person assembling a toy vehicle.
+  output: The next fine-grained hand-object action label before that action begins.
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  sample_url: https://assembly-101.github.io/
+  media:
+    kind: image
+    url: https://assembly-101.github.io/assets/assembly101_rig.png
+    alt: Official Assembly101 multi-camera capture rig around a toy assembly task
+    caption: Author-published capture setup; the input is video from these cameras, not this still image.

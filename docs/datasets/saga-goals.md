@@ -4,11 +4,23 @@
 
 Crowdsourced participant goals and plans in alternative human-centered stories.
 
+## Example input and output
+
+This example is taken from the linked original source.
+
+**Input:** Danny got down on one knee. He asked Beth to marry him. Beth felt very awkward. She didn't want to marry Danny! To be kind, she told him she needed some time to think.
+
+**Output / label:** Original goal: Get engaged to Beth.
+
+[Open the author-provided sample or demo](https://github.com/saiumbc/SAGA/blob/main/data/actual_qval.jsonl#L1)
+
+**Example evidence:** [official](https://github.com/saiumbc/SAGA)
+
 ## Intention in this dataset
 
 Infer the goal a story participant is striving to achieve from the participant's actions and context; labels are annotator interpretations of a character.
 
-**Relevance:** `explicit` �� **Origin:** `synthetic` �� **Year:** 2024
+**Relevance:** `explicit` · **Origin:** `synthetic` · **Year:** 2024
 
 **Domains:** daily_activities, social_interaction  
 **Intention types:** task_goal  
@@ -24,13 +36,13 @@ Infer the goal a story participant is striving to achieve from the participant's
 
 ## Access and rights
 
-**Access:** open �� [entry point](https://github.com/saiumbc/SAGA) �� checked 2026-09-30 �� [official](https://github.com/saiumbc/SAGA)
+**Access:** open · [entry point](https://github.com/saiumbc/SAGA) · checked 2026-09-30 · [official](https://github.com/saiumbc/SAGA)
 
 See the source for current download conditions; raw files were not downloaded for this catalog.
 
 | Component | License status | License | Evidence |
 | --- | --- | --- | --- |
-| dataset media and annotations | unknown | �� | [official](https://github.com/saiumbc/SAGA) |
+| dataset media and annotations | unknown | — | [official](https://github.com/saiumbc/SAGA) |
 
 ## Benchmarks
 
@@ -38,9 +50,9 @@ No verified benchmark protocol is currently documented.
 
 ## Sources
 
-- **official**: [SAGA: Goals, Actions and Plans original project or publication](https://github.com/saiumbc/SAGA) �� section: Dataset Information; Task 1 Goal Inference; checked 2026-09-30
+- **official**: [SAGA: Goals, Actions and Plans original project or publication](https://github.com/saiumbc/SAGA) — section: Dataset Information; Task 1 Goal Inference; checked 2026-09-30
 
-**Dataset metadata verified:** 2026-09-30 �� [official](https://github.com/saiumbc/SAGA)
+**Dataset metadata verified:** 2026-09-30 · [official](https://github.com/saiumbc/SAGA)
 
 ## Limits and notes
 

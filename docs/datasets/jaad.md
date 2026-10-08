@@ -4,11 +4,27 @@
 
 Joint Attention in Autonomous Driving video and pedestrian behavior annotations.
 
+## Example input and output
+
+This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+
+**Input:** A vehicle-mounted video prefix showing a pedestrian near the road with bounding boxes and behavioral context.
+
+**Output / label:** A future pedestrian behavior label, such as crossing versus not crossing, under the selected JAAD protocol.
+
+![Official JAAD behavior annotation illustration for pedestrians](https://raw.githubusercontent.com/ykotseruba/JAAD/JAAD_2.0/behavior.png)
+
+*Author-published behavior illustration; crossing behavior is not self-reported intention.*
+
+[Open the author-provided sample or demo](https://github.com/ykotseruba/JAAD)
+
+**Example evidence:** [official](https://github.com/ykotseruba/JAAD)
+
 ## Intention in this dataset
 
 Predict a pedestrian's future crossing behavior from preceding observations; a later crossing action is not a direct report of the pedestrian's mental intention.
 
-**Relevance:** `implicit` �� **Origin:** `real` �� **Year:** 2017
+**Relevance:** `implicit` · **Origin:** `real` · **Year:** 2017
 
 **Domains:** pedestrian, autonomous_driving  
 **Intention types:** pedestrian_crossing  
@@ -24,7 +40,7 @@ Predict a pedestrian's future crossing behavior from preceding observations; a l
 
 ## Access and rights
 
-**Access:** open �� [entry point](https://github.com/ykotseruba/JAAD) �� checked 2026-09-30 �� [official](https://github.com/ykotseruba/JAAD)
+**Access:** open · [entry point](https://github.com/ykotseruba/JAAD) · checked 2026-09-30 · [official](https://github.com/ykotseruba/JAAD)
 
 See the source for current download conditions; raw files were not downloaded for this catalog.
 
@@ -32,7 +48,7 @@ See the source for current download conditions; raw files were not downloaded fo
 | --- | --- | --- | --- |
 | annotation interface and repository code | known | [MIT](https://github.com/ykotseruba/JAAD/blob/JAAD_2.0/LICENSE) | [official](https://github.com/ykotseruba/JAAD) |
 | video clips | known | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | [official](https://github.com/ykotseruba/JAAD) |
-| annotations | unknown | �� | [official](https://github.com/ykotseruba/JAAD) |
+| annotations | unknown | — | [official](https://github.com/ykotseruba/JAAD) |
 
 ## Reported statistics
 
@@ -42,12 +58,12 @@ See the source for current download conditions; raw files were not downloaded fo
 
 ## Benchmarks
 
-- [WACV 2021 JAAD_all PCPA attention comparison](../benchmarks/jaad.md#jaad-all-wacv2021-pcpa) �� `behavior_prediction`
-- [WACV 2021 JAAD_all RGB 3D convolution comparison](../benchmarks/jaad.md#jaad-all-wacv2021-rgb3d) �� `behavior_prediction`
+- [WACV 2021 JAAD_all PCPA attention comparison](../benchmarks/jaad.md#jaad-all-wacv2021-pcpa) — `behavior_prediction`
+- [WACV 2021 JAAD_all RGB 3D convolution comparison](../benchmarks/jaad.md#jaad-all-wacv2021-rgb3d) — `behavior_prediction`
 
 ## Sources
 
-- **official**: [JAAD original project or publication](https://github.com/ykotseruba/JAAD) �� section: Sequence analysis; Annotations; checked 2026-09-30
-- **wacv_protocol**: [Benchmark for Evaluating Pedestrian Action Prediction](https://openaccess.thecvf.com/content/WACV2021/papers/Kotseruba_Benchmark_for_Evaluating_Pedestrian_Action_Prediction_WACV_2021_paper.pdf) �� section: 3 Benchmark; Datasets; Data sampling; checked 2026-09-30
+- **official**: [JAAD original project or publication](https://github.com/ykotseruba/JAAD) — section: Sequence analysis; Annotations; checked 2026-09-30
+- **wacv_protocol**: [Benchmark for Evaluating Pedestrian Action Prediction](https://openaccess.thecvf.com/content/WACV2021/papers/Kotseruba_Benchmark_for_Evaluating_Pedestrian_Action_Prediction_WACV_2021_paper.pdf) — section: 3 Benchmark; Datasets; Data sampling; checked 2026-09-30
 
-**Dataset metadata verified:** 2026-09-30 �� [official](https://github.com/ykotseruba/JAAD), [wacv_protocol](https://openaccess.thecvf.com/content/WACV2021/papers/Kotseruba_Benchmark_for_Evaluating_Pedestrian_Action_Prediction_WACV_2021_paper.pdf)
+**Dataset metadata verified:** 2026-09-30 · [official](https://github.com/ykotseruba/JAAD), [wacv_protocol](https://openaccess.thecvf.com/content/WACV2021/papers/Kotseruba_Benchmark_for_Evaluating_Pedestrian_Action_Prediction_WACV_2021_paper.pdf)

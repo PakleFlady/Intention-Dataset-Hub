@@ -4,11 +4,27 @@
 
 Large first-person video collection with short- and long-term forecasting tasks.
 
+## Example input and output
+
+This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+
+**Input:** A first-person video clip ending before the camera wearer's next object interactions.
+
+**Output / label:** An ordered future sequence of action labels, each represented by a verb and noun.
+
+![Official Ego4D forecasting illustration of egocentric observations and future activity](https://ego4d-data.org/assets/images/forecasting.png)
+
+*Author-published forecasting illustration; task-specific input and output details are in the linked protocol.*
+
+[Open the author-provided sample or demo](https://ego4d-data.org/docs/benchmarks/forecasting/)
+
+**Example evidence:** [official](https://ego4d-data.org/docs/benchmarks/forecasting/)
+
 ## Intention in this dataset
 
 Predict future camera-wearer actions and object interactions from prior first-person observations; these future events are intention proxies.
 
-**Relevance:** `implicit` �� **Origin:** `real` �� **Year:** 2021
+**Relevance:** `implicit` · **Origin:** `real` · **Year:** 2021
 
 **Domains:** daily_activities, human_object_interaction  
 **Intention types:** action, object_interaction  
@@ -24,13 +40,13 @@ Predict future camera-wearer actions and object interactions from prior first-pe
 
 ## Access and rights
 
-**Access:** registration �� [entry point](https://ego4d-data.org/docs/benchmarks/forecasting/) �� checked 2026-09-30 �� [official](https://ego4d-data.org/docs/benchmarks/forecasting/)
+**Access:** registration · [entry point](https://ego4d-data.org/docs/benchmarks/forecasting/) · checked 2026-09-30 · [official](https://ego4d-data.org/docs/benchmarks/forecasting/)
 
 See the source for current download conditions; raw files were not downloaded for this catalog.
 
 | Component | License status | License | Evidence |
 | --- | --- | --- | --- |
-| dataset media and annotations | unknown | �� | [official](https://ego4d-data.org/docs/benchmarks/forecasting/) |
+| dataset media and annotations | unknown | — | [official](https://ego4d-data.org/docs/benchmarks/forecasting/) |
 
 ## Benchmarks
 
@@ -38,6 +54,6 @@ No verified benchmark protocol is currently documented.
 
 ## Sources
 
-- **official**: [Ego4D original project or publication](https://ego4d-data.org/docs/benchmarks/forecasting/) �� section: Task Definition; Annotations; checked 2026-09-30
+- **official**: [Ego4D original project or publication](https://ego4d-data.org/docs/benchmarks/forecasting/) — section: Task Definition; Annotations; checked 2026-09-30
 
-**Dataset metadata verified:** 2026-09-30 �� [official](https://ego4d-data.org/docs/benchmarks/forecasting/)
+**Dataset metadata verified:** 2026-09-30 · [official](https://ego4d-data.org/docs/benchmarks/forecasting/)

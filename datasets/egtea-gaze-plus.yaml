@@ -79,3 +79,12 @@ capture_setup:
 - wearable
 notes: The author dataset page centers on action and gaze; an author-released anticipation protocol supports
   inclusion.
+
+example:
+  kind: illustrative
+  input: A first-person food-preparation video prefix with the wearer's eye-gaze signal.
+  output: A future kitchen action category predicted before the action starts; gaze is an input cue, not the intention label.
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  sample_url: https://iplab.dmi.unict.it/legacy/rulstm/

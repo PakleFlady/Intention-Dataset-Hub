@@ -4,11 +4,23 @@
 
 Video question answering dataset focused on latent human intentions and reasons for actions.
 
+## Example input and output
+
+This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+
+**Input:** A video clip together with a natural-language question about why a person acted.
+
+**Output / label:** A natural-language answer from the question-answer annotation; the answer is an interpretation of intent.
+
+[Open the author-provided sample or demo](https://vimeo.com/896083218)
+
+**Example evidence:** [official](https://github.com/JoseponLee/IntentQA)
+
 ## Intention in this dataset
 
 Answer observer-authored questions about why a person acts and which latent intention is suggested by video context; answers are judgments, not subject self-reports.
 
-**Relevance:** `explicit` �� **Origin:** `real` �� **Year:** 2023
+**Relevance:** `explicit` · **Origin:** `real` · **Year:** 2023
 
 **Domains:** daily_activities, social_interaction  
 **Intention types:** goal, social  
@@ -24,23 +36,23 @@ Answer observer-authored questions about why a person acts and which latent inte
 
 ## Access and rights
 
-**Access:** open �� [entry point](https://github.com/JoseponLee/IntentQA) �� checked 2026-09-30 �� [official](https://github.com/JoseponLee/IntentQA)
+**Access:** open · [entry point](https://github.com/JoseponLee/IntentQA) · checked 2026-09-30 · [official](https://github.com/JoseponLee/IntentQA)
 
 See the source for current download conditions; raw files were not downloaded for this catalog.
 
 | Component | License status | License | Evidence |
 | --- | --- | --- | --- |
-| dataset media and annotations | unknown | �� | [official](https://github.com/JoseponLee/IntentQA) |
+| dataset media and annotations | unknown | — | [official](https://github.com/JoseponLee/IntentQA) |
 
 ## Benchmarks
 
-- [ICCV 2023 BERT video-and-text no-GPT test cohort](../benchmarks/intentqa.md#intentqa-iccv2023-no-gpt-test) �� `intention_reasoning`
+- [ICCV 2023 BERT video-and-text no-GPT test cohort](../benchmarks/intentqa.md#intentqa-iccv2023-no-gpt-test) — `intention_reasoning`
 
 ## Sources
 
-- **official**: [IntentQA original project or publication](https://github.com/JoseponLee/IntentQA) �� section: Introduction; Dataset; checked 2026-09-30
+- **official**: [IntentQA original project or publication](https://github.com/JoseponLee/IntentQA) — section: Introduction; Dataset; checked 2026-09-30
 
-**Dataset metadata verified:** 2026-09-30 �� [official](https://github.com/JoseponLee/IntentQA)
+**Dataset metadata verified:** 2026-09-30 · [official](https://github.com/JoseponLee/IntentQA)
 
 ## Limits and notes
 

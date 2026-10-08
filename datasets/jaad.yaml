@@ -99,3 +99,17 @@ statistics:
   scope: JAAD 2.0
   source_ids:
   - official
+
+example:
+  kind: illustrative
+  input: A vehicle-mounted video prefix showing a pedestrian near the road with bounding boxes and behavioral context.
+  output: A future pedestrian behavior label, such as crossing versus not crossing, under the selected JAAD protocol.
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  sample_url: https://github.com/ykotseruba/JAAD
+  media:
+    kind: image
+    url: https://raw.githubusercontent.com/ykotseruba/JAAD/JAAD_2.0/behavior.png
+    alt: Official JAAD behavior annotation illustration for pedestrians
+    caption: Author-published behavior illustration; crossing behavior is not self-reported intention.

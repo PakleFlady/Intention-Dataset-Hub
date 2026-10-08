@@ -45,4 +45,17 @@ verification:
   checked_at: 'YYYY-MM-DD'
   source_ids: [original]
   notes: Keep pending until an original source has been reviewed.
+example:
+  kind: illustrative # Use source_record only for an exact row from the cited source.
+  input: Describe what one input looks like, including its actual modality.
+  output: Describe the corresponding target or annotation without inventing a label.
+  checked_at: 'YYYY-MM-DD'
+  source_ids: [original]
+  sample_url: https://example.org/replace-with-author-sample
+  # Optional author-published visual. Keep original media on the author's site.
+  # media:
+  #   kind: image # or animated_image
+  #   url: https://example.org/replace-with-image.png
+  #   alt: Accessible description of the visual
+  #   caption: Explain what the preview shows and what it does not show.
 

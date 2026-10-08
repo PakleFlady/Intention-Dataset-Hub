@@ -16,7 +16,7 @@ split:
   - paper
 sample_selection:
   description: 323 high-visibility clips after excluding 23 lower-resolution/adverse-weather/night clips;
-    JAAD_all includes additional bystander pedestrians; 0.8 sequence overlap, 16 observed frames and 30�C60-frame
+    JAAD_all includes additional bystander pedestrians; 0.8 sequence overlap, 16 observed frames and 30–60-frame
     time-to-event.
   source_ids:
   - paper
@@ -39,7 +39,7 @@ temporal:
   anticipation_gap:
     kind: range
     anchor: crossing event start
-    description: Sampled time-to-event range of 30�C60 frames for crossing samples.
+    description: Sampled time-to-event range of 30–60 frames for crossing samples.
     unit: frames
     min: 30
     max: 60

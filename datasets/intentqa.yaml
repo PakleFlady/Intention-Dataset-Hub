@@ -68,3 +68,12 @@ viewpoints:
 - exocentric
 notes: The 2026 TPAMI expansion is a separate annotation revision and needs a distinct release ID when
   benchmarked.
+
+example:
+  kind: illustrative
+  input: A video clip together with a natural-language question about why a person acted.
+  output: A natural-language answer from the question-answer annotation; the answer is an interpretation of intent.
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  sample_url: https://vimeo.com/896083218

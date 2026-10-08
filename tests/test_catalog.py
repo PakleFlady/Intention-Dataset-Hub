@@ -43,6 +43,34 @@ def test_seed_catalog_passes_all_declared_checks():
     assert len(catalog.benchmarks) >= 3
 
 
+def test_every_dataset_page_shows_an_example_with_honest_media():
+    catalog = load_catalog(ROOT)
+    pages, _ = render_all(catalog)
+    assert not catalog.errors
+    for dataset_id, dataset in catalog.datasets.items():
+        page = pages[ROOT / "docs/datasets" / f"{dataset_id}.md"]
+        example = dataset["example"]
+        assert "## Example input and output" in page
+        assert example["input"] in page and example["output"] in page
+        assert example["source_ids"]
+        if media := example.get("media"):
+            assert f"![{media['alt']}]({media['url']})" in page
+            assert media["caption"] in page
+        elif "image" in dataset["data_formats"]:
+            pytest.fail(f"{dataset_id}: an image dataset needs a visible example image")
+    assert catalog.datasets["saga-goals"]["example"]["kind"] == "source_record"
+    assert catalog.datasets["pie"]["example"]["kind"] == "illustrative"
+
+
+def test_replacement_character_fails_repository_validation(tmp_path):
+    root = sandbox(tmp_path, docs=True)
+    readme = root / "README.md"
+    readme.write_text(readme.read_text(encoding="utf-8") + "\ncorrupted: \ufffd\n", encoding="utf-8")
+    observed = subprocess.run([sys.executable, str(root / "scripts/validate.py")], cwd=root, capture_output=True, text=True)
+    assert observed.returncode == 1
+    assert "Unicode replacement character U+FFFD" in observed.stdout
+
+
 def test_intention_probability_cannot_be_replaced_by_crossing_action(tmp_path):
     root = sandbox(tmp_path)
     path = root / "benchmarks/pie/pie-intention-loc-iccv2019.yaml"

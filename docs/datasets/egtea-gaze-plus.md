@@ -4,11 +4,23 @@
 
 First-person food preparation videos with gaze and action annotations used in action anticipation research.
 
+## Example input and output
+
+This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+
+**Input:** A first-person food-preparation video prefix with the wearer's eye-gaze signal.
+
+**Output / label:** A future kitchen action category predicted before the action starts; gaze is an input cue, not the intention label.
+
+[Open the author-provided sample or demo](https://iplab.dmi.unict.it/legacy/rulstm/)
+
+**Example evidence:** [official](https://cbs.ic.gatech.edu/fpv/)
+
 ## Intention in this dataset
 
 Anticipate a subsequent manipulation action using past first-person observations; the future action is a proxy rather than an explicit goal label.
 
-**Relevance:** `implicit` �� **Origin:** `real` �� **Year:** 2018
+**Relevance:** `implicit` · **Origin:** `real` · **Year:** 2018
 
 **Domains:** daily_activities, human_object_interaction  
 **Intention types:** object_interaction  
@@ -24,13 +36,13 @@ Anticipate a subsequent manipulation action using past first-person observations
 
 ## Access and rights
 
-**Access:** unknown �� [entry point](https://cbs.ic.gatech.edu/fpv/) �� checked 2026-09-30 �� [official](https://cbs.ic.gatech.edu/fpv/)
+**Access:** unknown · [entry point](https://cbs.ic.gatech.edu/fpv/) · checked 2026-09-30 · [official](https://cbs.ic.gatech.edu/fpv/)
 
 Official dataset page returned a gateway error during this review; current download status remains unknown.
 
 | Component | License status | License | Evidence |
 | --- | --- | --- | --- |
-| dataset media and annotations | unknown | �� | [official](https://cbs.ic.gatech.edu/fpv/) |
+| dataset media and annotations | unknown | — | [official](https://cbs.ic.gatech.edu/fpv/) |
 
 ## Benchmarks
 
@@ -38,10 +50,10 @@ No verified benchmark protocol is currently documented.
 
 ## Sources
 
-- **official**: [EGTEA Gaze+ original project or publication](https://cbs.ic.gatech.edu/fpv/) �� section: EGTEA Gaze+; checked 2026-09-30
-- **author_protocol**: [EGTEA Gaze+ author protocol or annotation guide](https://github.com/fpv-iplab/rulstm) �� section: EGTEA Gaze+ anticipation setup; checked 2026-09-30
+- **official**: [EGTEA Gaze+ original project or publication](https://cbs.ic.gatech.edu/fpv/) — section: EGTEA Gaze+; checked 2026-09-30
+- **author_protocol**: [EGTEA Gaze+ author protocol or annotation guide](https://github.com/fpv-iplab/rulstm) — section: EGTEA Gaze+ anticipation setup; checked 2026-09-30
 
-**Dataset metadata verified:** 2026-09-30 �� [official](https://cbs.ic.gatech.edu/fpv/), [author_protocol](https://github.com/fpv-iplab/rulstm)
+**Dataset metadata verified:** 2026-09-30 · [official](https://cbs.ic.gatech.edu/fpv/), [author_protocol](https://github.com/fpv-iplab/rulstm)
 
 ## Limits and notes
 

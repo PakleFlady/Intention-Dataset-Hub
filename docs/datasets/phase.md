@@ -4,11 +4,27 @@
 
 Procedurally generated two-agent social events validated with human judgments.
 
+## Example input and output
+
+This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+
+**Input:** A procedurally generated 2D animation of two agents moving and interacting with objects and obstacles.
+
+**Output / label:** A generator-assigned social event category, such as helping, for social recognition or prediction.
+
+![Official PHASE introduction image of simulated two-agent social events](https://tshu.io/PHASE/intro.png)
+
+*Author-published simulation illustration; these agents are synthetic rather than recorded people.*
+
+[Open the author-provided sample or demo](https://tshu.io/PHASE/)
+
+**Example evidence:** [official](https://tshu.io/PHASE/)
+
 ## Intention in this dataset
 
 Infer simulated agents' social purpose, such as helping or hindering, from their motion and interactions; these are synthetic agent goals rather than real human self-reports.
 
-**Relevance:** `explicit` �� **Origin:** `synthetic` �� **Year:** 2021
+**Relevance:** `explicit` · **Origin:** `synthetic` · **Year:** 2021
 
 **Domains:** social_interaction, embodied_interaction  
 **Intention types:** social  
@@ -24,13 +40,13 @@ Infer simulated agents' social purpose, such as helping or hindering, from their
 
 ## Access and rights
 
-**Access:** open �� [entry point](https://tshu.io/PHASE/) �� checked 2026-09-30 �� [official](https://tshu.io/PHASE/)
+**Access:** open · [entry point](https://tshu.io/PHASE/) · checked 2026-09-30 · [official](https://tshu.io/PHASE/)
 
 See the source for current download conditions; raw files were not downloaded for this catalog.
 
 | Component | License status | License | Evidence |
 | --- | --- | --- | --- |
-| dataset media and annotations | unknown | �� | [official](https://tshu.io/PHASE/) |
+| dataset media and annotations | unknown | — | [official](https://tshu.io/PHASE/) |
 
 ## Benchmarks
 
@@ -38,9 +54,9 @@ No verified benchmark protocol is currently documented.
 
 ## Sources
 
-- **official**: [PHASE original project or publication](https://tshu.io/PHASE/) �� section: Abstract; PHASE Dataset; checked 2026-09-30
+- **official**: [PHASE original project or publication](https://tshu.io/PHASE/) — section: Abstract; PHASE Dataset; checked 2026-09-30
 
-**Dataset metadata verified:** 2026-09-30 �� [official](https://tshu.io/PHASE/)
+**Dataset metadata verified:** 2026-09-30 · [official](https://tshu.io/PHASE/)
 
 ## Limits and notes
 

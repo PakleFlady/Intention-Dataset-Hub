@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object", "additionalProperties": false,
-  "required": ["schema_version", "id", "name", "year", "description", "intention_relevance", "intention_definition", "domains", "intention_types", "tasks", "modalities", "data_formats", "data_origin", "annotations", "releases", "access", "licenses", "sources", "verification"],
+  "required": ["schema_version", "id", "name", "year", "description", "intention_relevance", "intention_definition", "domains", "intention_types", "tasks", "modalities", "data_formats", "data_origin", "annotations", "releases", "access", "licenses", "sources", "verification", "example"],
   "properties": {
     "schema_version": {"const": "0.1"}, "id": {"$ref": "#/$defs/id"}, "name": {"type": "string", "minLength": 2}, "full_name": {"type": "string"},
     "aliases": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}, "family_id": {"$ref": "#/$defs/id"},
@@ -12,6 +12,16 @@
     "data_origin": {"enum": ["real", "synthetic", "mixed"]},
     "viewpoints": {"$ref": "#/$defs/terms"}, "capture_setup": {"$ref": "#/$defs/terms"},
     "environment": {"type": "string"}, "notes": {"type": "string"},
+    "example": {"type": "object", "additionalProperties": false, "required": ["kind", "input", "output", "source_ids", "checked_at"], "properties": {
+      "kind": {"enum": ["illustrative", "source_record"]},
+      "input": {"type": "string", "minLength": 15}, "output": {"type": "string", "minLength": 15},
+      "source_ids": {"$ref": "#/$defs/source_ids"}, "checked_at": {"$ref": "#/$defs/date"},
+      "sample_url": {"$ref": "#/$defs/url"},
+      "media": {"type": "object", "additionalProperties": false, "required": ["kind", "url", "alt", "caption"], "properties": {
+        "kind": {"enum": ["image", "animated_image"]}, "url": {"$ref": "#/$defs/url"},
+        "alt": {"type": "string", "minLength": 10}, "caption": {"type": "string", "minLength": 15}
+      }}
+    }},
     "paper": {"type": "object", "additionalProperties": false, "required": ["title", "url", "year"], "properties": {"title": {"type": "string"}, "url": {"$ref": "#/$defs/url"}, "year": {"type": "integer"}, "venue": {"type": "string"}}},
     "citation": {"type": "string"}, "project_url": {"$ref": "#/$defs/url"}, "code_url": {"$ref": "#/$defs/url"},
     "related_datasets": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},

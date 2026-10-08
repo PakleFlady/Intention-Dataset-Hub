@@ -68,3 +68,12 @@ viewpoints:
 capture_setup:
 - vehicle_mounted
 notes: Access link and exact release conditions require another check before recommending a download.
+
+example:
+  kind: illustrative
+  input: A short in-cabin driver video together with the forward road view before a maneuver.
+  output: A future maneuver category such as a left turn, right turn, lane change, or continuing straight.
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  sample_url: https://brain4cars.com/pdfs/brain4cars.pdf#page=6

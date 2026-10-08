@@ -73,3 +73,18 @@ statistics:
   scope: official rounded total
   source_ids:
   - official
+
+example:
+  kind: illustrative
+  input: One image depicting a person in an everyday or social scene.
+  output: An observer-assigned human-intent category from the 28-category vocabulary, not a self-report from the pictured
+    person.
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  sample_url: https://github.com/KMnP/intentonomy/blob/master/DATA.md
+  media:
+    kind: image
+    url: https://raw.githubusercontent.com/KMnP/intentonomy/master/images/teaser.png
+    alt: Official Intentonomy teaser with example images and intent categories
+    caption: Author-published teaser of the image-intent task; it does not establish the private motives of the people pictured.

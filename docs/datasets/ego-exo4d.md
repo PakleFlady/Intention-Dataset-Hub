@@ -4,11 +4,27 @@
 
 Synchronized first- and third-person recordings of skilled human activities with narrations and task annotations.
 
+## Example input and output
+
+This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+
+**Input:** Time-synchronized first-person and third-person video of a person performing a skilled task, such as bicycle repair.
+
+**Output / label:** Time-aligned participant narration describing why and how the skilled action is performed.
+
+![Official Ego-Exo4D overview showing synchronized first- and third-person views](https://docs.ego-exo4d-data.org/assets/images/dataset_overview-a854fd263428c7e4a4834b7bfa2d92fd.jpg)
+
+*Author-published dataset overview; a single still cannot show the synchronized video streams.*
+
+[Open the author-provided sample or demo](https://docs.ego-exo4d-data.org/overview/)
+
+**Example evidence:** [official](https://docs.ego-exo4d-data.org/overview/)
+
 ## Intention in this dataset
 
 Participant narrations about why and how a task is performed can support studying goals, but not every recording supplies an evaluated intention target.
 
-**Relevance:** `related` �� **Origin:** `real` �� **Year:** 2024
+**Relevance:** `related` · **Origin:** `real` · **Year:** 2024
 
 **Domains:** daily_activities, embodied_interaction  
 **Intention types:** task_goal  
@@ -24,13 +40,13 @@ Participant narrations about why and how a task is performed can support studyin
 
 ## Access and rights
 
-**Access:** registration �� [entry point](https://docs.ego-exo4d-data.org/overview/) �� checked 2026-09-30 �� [official](https://docs.ego-exo4d-data.org/overview/)
+**Access:** registration · [entry point](https://docs.ego-exo4d-data.org/overview/) · checked 2026-09-30 · [official](https://docs.ego-exo4d-data.org/overview/)
 
 See the source for current download conditions; raw files were not downloaded for this catalog.
 
 | Component | License status | License | Evidence |
 | --- | --- | --- | --- |
-| dataset media and annotations | unknown | �� | [official](https://docs.ego-exo4d-data.org/overview/) |
+| dataset media and annotations | unknown | — | [official](https://docs.ego-exo4d-data.org/overview/) |
 
 ## Benchmarks
 
@@ -38,9 +54,9 @@ No verified benchmark protocol is currently documented.
 
 ## Sources
 
-- **official**: [Ego-Exo4D original project or publication](https://docs.ego-exo4d-data.org/overview/) �� section: Narrate and Act; Task Labels; checked 2026-09-30
+- **official**: [Ego-Exo4D original project or publication](https://docs.ego-exo4d-data.org/overview/) — section: Narrate and Act; Task Labels; checked 2026-09-30
 
-**Dataset metadata verified:** 2026-09-30 �� [official](https://docs.ego-exo4d-data.org/overview/)
+**Dataset metadata verified:** 2026-09-30 · [official](https://docs.ego-exo4d-data.org/overview/)
 
 ## Limits and notes
 

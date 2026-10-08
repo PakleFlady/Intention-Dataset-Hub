@@ -93,3 +93,17 @@ statistics:
   scope: annotated pedestrians
   source_ids:
   - official
+
+example:
+  kind: illustrative
+  input: Vehicle-mounted video frames of a pedestrian approaching a crossing, with the pedestrian's track and scene context.
+  output: An observer-judged crossing-intention probability; actual later crossing is a separate annotation target.
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  sample_url: https://github.com/aras62/PIE/tree/master/demos
+  media:
+    kind: animated_image
+    url: https://raw.githubusercontent.com/aras62/PIE/master/demos/beh_demo.gif
+    alt: Official PIE animated behavior demo showing a pedestrian in road video
+    caption: Author-published animated demo; intention estimates and observed crossing actions differ.

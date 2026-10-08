@@ -4,11 +4,23 @@
 
 Natural driving data combining driver-facing and road-facing sensing for maneuver anticipation.
 
+## Example input and output
+
+This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+
+**Input:** A short in-cabin driver video together with the forward road view before a maneuver.
+
+**Output / label:** A future maneuver category such as a left turn, right turn, lane change, or continuing straight.
+
+[Open the author-provided sample or demo](https://brain4cars.com/pdfs/brain4cars.pdf#page=6)
+
+**Example evidence:** [official](https://brain4cars.com/)
+
 ## Intention in this dataset
 
 Predict the driver's upcoming road maneuver before it occurs using observed driver and vehicle context; maneuver outcomes proxy preparatory intent.
 
-**Relevance:** `implicit` �� **Origin:** `real` �� **Year:** 2015
+**Relevance:** `implicit` · **Origin:** `real` · **Year:** 2015
 
 **Domains:** driver_behavior, autonomous_driving  
 **Intention types:** driving_maneuver  
@@ -24,13 +36,13 @@ Predict the driver's upcoming road maneuver before it occurs using observed driv
 
 ## Access and rights
 
-**Access:** unknown �� [entry point](https://brain4cars.com/) �� checked 2026-09-30 �� [official](https://brain4cars.com/)
+**Access:** unknown · [entry point](https://brain4cars.com/) · checked 2026-09-30 · [official](https://brain4cars.com/)
 
 Official project page timed out during this review; current dataset download status remains unknown.
 
 | Component | License status | License | Evidence |
 | --- | --- | --- | --- |
-| dataset media and annotations | unknown | �� | [official](https://brain4cars.com/) |
+| dataset media and annotations | unknown | — | [official](https://brain4cars.com/) |
 
 ## Benchmarks
 
@@ -38,9 +50,9 @@ No verified benchmark protocol is currently documented.
 
 ## Sources
 
-- **official**: [Brain4Cars original project or publication](https://brain4cars.com/) �� section: Research; Code and Data set; checked 2026-09-30
+- **official**: [Brain4Cars original project or publication](https://brain4cars.com/) — section: Research; Code and Data set; checked 2026-09-30
 
-**Dataset metadata verified:** 2026-09-30 �� [official](https://brain4cars.com/)
+**Dataset metadata verified:** 2026-09-30 · [official](https://brain4cars.com/)
 
 ## Limits and notes
 

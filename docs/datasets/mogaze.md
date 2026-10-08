@@ -4,11 +4,27 @@
 
 Human full-body motion, workspace geometry, and eye gaze during manipulation.
 
+## Example input and output
+
+This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+
+**Input:** A time series of full-body motion, eye-gaze direction, object states, and workspace geometry during manipulation.
+
+**Output / label:** Time-aligned gaze and full-body motion traces that can support motion prediction; gaze is a cue, not a direct goal report.
+
+![Official MoGaze visualization of full-body movement and gaze in a workspace](https://raw.githubusercontent.com/humans-to-robots-motion/mogaze/master/images/im2.png)
+
+*Author-published visualization; the underlying dataset is synchronized time-series data.*
+
+[Open the author-provided sample or demo](https://humans-to-robots-motion.github.io/mogaze/)
+
+**Example evidence:** [official](https://humans-to-robots-motion.github.io/mogaze/)
+
 ## Intention in this dataset
 
 Gaze and motion can help infer the next human object interaction in a shared workspace; the project does not claim direct mental-intention labels.
 
-**Relevance:** `related` �� **Origin:** `real` �� **Year:** 2020
+**Relevance:** `related` · **Origin:** `real` · **Year:** 2020
 
 **Domains:** human_robot_interaction, human_object_interaction  
 **Intention types:** object_interaction  
@@ -24,13 +40,13 @@ Gaze and motion can help infer the next human object interaction in a shared wor
 
 ## Access and rights
 
-**Access:** open �� [entry point](https://humans-to-robots-motion.github.io/mogaze/) �� checked 2026-09-30 �� [official](https://humans-to-robots-motion.github.io/mogaze/)
+**Access:** open · [entry point](https://humans-to-robots-motion.github.io/mogaze/) · checked 2026-09-30 · [official](https://humans-to-robots-motion.github.io/mogaze/)
 
 See the source for current download conditions; raw files were not downloaded for this catalog.
 
 | Component | License status | License | Evidence |
 | --- | --- | --- | --- |
-| dataset media and annotations | unknown | �� | [official](https://humans-to-robots-motion.github.io/mogaze/) |
+| dataset media and annotations | unknown | — | [official](https://humans-to-robots-motion.github.io/mogaze/) |
 
 ## Reported statistics
 
@@ -44,9 +60,9 @@ No verified benchmark protocol is currently documented.
 
 ## Sources
 
-- **official**: [MoGaze original project or publication](https://humans-to-robots-motion.github.io/mogaze/) �� section: Dataset overview; Data; checked 2026-09-30
+- **official**: [MoGaze original project or publication](https://humans-to-robots-motion.github.io/mogaze/) — section: Dataset overview; Data; checked 2026-09-30
 
-**Dataset metadata verified:** 2026-09-30 �� [official](https://humans-to-robots-motion.github.io/mogaze/)
+**Dataset metadata verified:** 2026-09-30 · [official](https://humans-to-robots-motion.github.io/mogaze/)
 
 ## Limits and notes
 

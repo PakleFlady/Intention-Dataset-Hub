@@ -4,11 +4,27 @@
 
 Unscripted first-person kitchen recordings with action segments and an official anticipation challenge.
 
+## Example input and output
+
+This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+
+**Input:** A first-person kitchen video segment ending before the next action begins.
+
+**Output / label:** The anticipated action as a verb-noun pair from the kitchen action vocabulary.
+
+![Official EPIC-KITCHENS-100 action anticipation qualitative example](https://epic-kitchens.github.io/static/img/challenges-epic-100/aa.png)
+
+*Author-published qualitative anticipation example; this is a figure, not a downloadable video record.*
+
+[Open the author-provided sample or demo](https://epic-kitchens.github.io/2020-100#action-anticipation)
+
+**Example evidence:** [official](https://github.com/epic-kitchens/epic-kitchens-100-annotations)
+
 ## Intention in this dataset
 
 Anticipate the camera wearer's next kitchen action before its annotated start; future action labels serve as a behavioral proxy, not a direct intention report.
 
-**Relevance:** `implicit` �� **Origin:** `real` �� **Year:** 2020
+**Relevance:** `implicit` · **Origin:** `real` · **Year:** 2020
 
 **Domains:** daily_activities, human_object_interaction  
 **Intention types:** object_interaction  
@@ -24,20 +40,20 @@ Anticipate the camera wearer's next kitchen action before its annotated start; f
 
 ## Access and rights
 
-**Access:** registration �� [entry point](https://github.com/epic-kitchens/epic-kitchens-100-annotations) �� checked 2026-09-30 �� [official](https://github.com/epic-kitchens/epic-kitchens-100-annotations)
+**Access:** registration · [entry point](https://github.com/epic-kitchens/epic-kitchens-100-annotations) · checked 2026-09-30 · [official](https://github.com/epic-kitchens/epic-kitchens-100-annotations)
 
 See the source for current download conditions; raw files were not downloaded for this catalog.
 
 | Component | License status | License | Evidence |
 | --- | --- | --- | --- |
-| dataset media and annotations | unknown | �� | [official](https://github.com/epic-kitchens/epic-kitchens-100-annotations) |
+| dataset media and annotations | unknown | — | [official](https://github.com/epic-kitchens/epic-kitchens-100-annotations) |
 
 ## Benchmarks
 
-- [EK100 challenge test action anticipation](../benchmarks/epic-kitchens-100.md#ek100-2021-test-action-anticipation) �� `action_anticipation`
+- [EK100 challenge test action anticipation](../benchmarks/epic-kitchens-100.md#ek100-2021-test-action-anticipation) — `action_anticipation`
 
 ## Sources
 
-- **official**: [EPIC-KITCHENS-100 original project or publication](https://github.com/epic-kitchens/epic-kitchens-100-annotations) �� section: Action Anticipation Challenge; checked 2026-09-30
+- **official**: [EPIC-KITCHENS-100 original project or publication](https://github.com/epic-kitchens/epic-kitchens-100-annotations) — section: Action Anticipation Challenge; checked 2026-09-30
 
-**Dataset metadata verified:** 2026-09-30 �� [official](https://github.com/epic-kitchens/epic-kitchens-100-annotations)
+**Dataset metadata verified:** 2026-09-30 · [official](https://github.com/epic-kitchens/epic-kitchens-100-annotations)

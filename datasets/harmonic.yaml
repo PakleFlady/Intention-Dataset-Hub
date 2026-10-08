@@ -72,3 +72,17 @@ capture_setup:
 - wearable
 - fixed_camera
 notes: Official page identifies intention prediction and mental-state modeling as possible uses.
+
+example:
+  kind: illustrative
+  input: Egocentric and third-person video plus eye gaze, joystick, muscle activity, and robot-arm state during assisted eating.
+  output: Time-aligned gaze fixation and body-pose annotations that can support target inference; these are cues, not intention labels.
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  sample_url: https://harplab.github.io/harmonic/
+  media:
+    kind: image
+    url: https://harplab.github.io/img/harmonic_task.png
+    alt: Official HARMONIC task illustration with a person and assistive robot arm
+    caption: Author-published task illustration; the released sample run includes the synchronized streams.

@@ -4,11 +4,27 @@
 
 Pedestrian Intention Estimation footage and annotations from vehicle-mounted urban driving video.
 
+## Example input and output
+
+This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+
+**Input:** Vehicle-mounted video frames of a pedestrian approaching a crossing, with the pedestrian's track and scene context.
+
+**Output / label:** An observer-judged crossing-intention probability; actual later crossing is a separate annotation target.
+
+![Official PIE animated behavior demo showing a pedestrian in road video](https://raw.githubusercontent.com/aras62/PIE/master/demos/beh_demo.gif)
+
+*Author-published animated demo; intention estimates and observed crossing actions differ.*
+
+[Open the author-provided sample or demo](https://github.com/aras62/PIE/tree/master/demos)
+
+**Example evidence:** [official](https://www.data.nvision2.eecs.yorku.ca/PIE_dataset/)
+
 ## Intention in this dataset
 
 Human observers estimate whether a pedestrian intends to cross the ego-vehicle's path before crossing; this differs from whether the pedestrian later crosses.
 
-**Relevance:** `explicit` �� **Origin:** `real` �� **Year:** 2019
+**Relevance:** `explicit` · **Origin:** `real` · **Year:** 2019
 
 **Domains:** pedestrian, autonomous_driving  
 **Intention types:** pedestrian_crossing  
@@ -25,13 +41,13 @@ Human observers estimate whether a pedestrian intends to cross the ego-vehicle's
 
 ## Access and rights
 
-**Access:** open �� [entry point](https://www.data.nvision2.eecs.yorku.ca/PIE_dataset/) �� checked 2026-09-30 �� [official](https://www.data.nvision2.eecs.yorku.ca/PIE_dataset/)
+**Access:** open · [entry point](https://www.data.nvision2.eecs.yorku.ca/PIE_dataset/) · checked 2026-09-30 · [official](https://www.data.nvision2.eecs.yorku.ca/PIE_dataset/)
 
 See the source for current download conditions; raw files were not downloaded for this catalog.
 
 | Component | License status | License | Evidence |
 | --- | --- | --- | --- |
-| dataset media and annotations | unknown | �� | [official](https://www.data.nvision2.eecs.yorku.ca/PIE_dataset/) |
+| dataset media and annotations | unknown | — | [official](https://www.data.nvision2.eecs.yorku.ca/PIE_dataset/) |
 
 ## Reported statistics
 
@@ -41,11 +57,11 @@ See the source for current download conditions; raw files were not downloaded fo
 
 ## Benchmarks
 
-- [PIE ICCV 2019 intention estimation, location-only inputs](../benchmarks/pie.md#pie-intention-loc-iccv2019) �� `intention_recognition`
+- [PIE ICCV 2019 intention estimation, location-only inputs](../benchmarks/pie.md#pie-intention-loc-iccv2019) — `intention_recognition`
 
 ## Sources
 
-- **official**: [PIE original project or publication](https://www.data.nvision2.eecs.yorku.ca/PIE_dataset/) �� section: Intention Annotations; checked 2026-09-30
-- **author_protocol**: [PIE author protocol or annotation guide](https://github.com/aras62/PIE/blob/master/annotations/README.md) �� section: Note regarding action/intention distinction; checked 2026-09-30
+- **official**: [PIE original project or publication](https://www.data.nvision2.eecs.yorku.ca/PIE_dataset/) — section: Intention Annotations; checked 2026-09-30
+- **author_protocol**: [PIE author protocol or annotation guide](https://github.com/aras62/PIE/blob/master/annotations/README.md) — section: Note regarding action/intention distinction; checked 2026-09-30
 
-**Dataset metadata verified:** 2026-09-30 �� [official](https://www.data.nvision2.eecs.yorku.ca/PIE_dataset/), [author_protocol](https://github.com/aras62/PIE/blob/master/annotations/README.md)
+**Dataset metadata verified:** 2026-09-30 · [official](https://www.data.nvision2.eecs.yorku.ca/PIE_dataset/), [author_protocol](https://github.com/aras62/PIE/blob/master/annotations/README.md)

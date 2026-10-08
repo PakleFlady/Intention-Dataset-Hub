@@ -48,7 +48,7 @@ training_policy:
   ensemble: forbidden
 evaluation:
   description: Test-set intent category F1 as reported in the author repository.
-  aggregation: Reported mean across author runs; accompanying �� spread retained in source.
+  aggregation: Reported mean across author runs; accompanying ± spread retained in source.
   parameters: {}
   source_ids:
   - author_readme
@@ -121,7 +121,7 @@ results:
       locator: &id002
         section: Test set results
         row: VISUAL
-      uncertainty: �� 0.59 as reported
+      uncertainty: ± 0.59 as reported
     micro_f1:
       value: 30.23
       source_ids: *id001
@@ -160,7 +160,7 @@ results:
       locator: &id004
         section: Test set results
         row: VISUAL + L_loc
-      uncertainty: �� 0.65 as reported
+      uncertainty: ± 0.65 as reported
     micro_f1:
       value: 32.07
       source_ids: *id003

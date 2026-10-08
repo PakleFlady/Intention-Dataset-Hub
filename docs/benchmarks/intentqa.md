@@ -9,8 +9,8 @@ Results are comparable only within the same protocol section. A code link is not
 <a id="intentqa-iccv2023-no-gpt-test"></a>
 
 **Task:** `intention_reasoning` (original: context-aware video intent reasoning)  
-**Dataset release:** `v1` �� **Annotation version:** `author-release-unspecified`  
-**Target:** `intent_qa` �� **Split:** Original paper test split
+**Dataset release:** `v1` · **Annotation version:** `author-release-unspecified`  
+**Target:** `intent_qa` · **Split:** Original paper test split
 
 ### Comparison setting
 
@@ -35,22 +35,22 @@ Results are comparable only within the same protocol section. A code link is not
 
 | Method | Configuration | Year | `total_accuracy` | Baseline origin | Result source / locator |
 | --- | --- | --- | --- | --- | --- |
-| Context-aware IntentQA model | Table 3 cumulative ablation: Base Model; no GPT stage. | 2023 | 51.36 | protocol_authors | [paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_IntentQA_Context-aware_Video_Intent_Reasoning_ICCV_2023_paper.pdf) �� total_accuracy: table Table 3, row Base Model, column Total / Test |
-| Context-aware IntentQA model | Table 3 cumulative ablation: + Triplet Loader; no GPT stage. | 2023 | 53.8 | protocol_authors | [paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_IntentQA_Context-aware_Video_Intent_Reasoning_ICCV_2023_paper.pdf) �� total_accuracy: table Table 3, row + Triplet Loader, column Total / Test |
-| Context-aware IntentQA model | Table 3 cumulative ablation: + Triplet Loss; no GPT stage. | 2023 | 54.5 | protocol_authors | [paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_IntentQA_Context-aware_Video_Intent_Reasoning_ICCV_2023_paper.pdf) �� total_accuracy: table Table 3, row + Triplet Loss, column Total / Test |
-| VGT (BERT text) | VGT with BERT text representation; video and five answer choices, no GPT stage. | 2022 | 51.27 | protocol_authors | [paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_IntentQA_Context-aware_Video_Intent_Reasoning_ICCV_2023_paper.pdf) �� total_accuracy: table Table 2, row VGT / BERT, column Total / Test |
-| Context-aware IntentQA model | Table 3 cumulative ablation: + VQL; no GPT stage. | 2023 | 52.34 | protocol_authors | [paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_IntentQA_Context-aware_Video_Intent_Reasoning_ICCV_2023_paper.pdf) �� total_accuracy: table Table 3, row + VQL, column Total / Test |
+| Context-aware IntentQA model | Table 3 cumulative ablation: Base Model; no GPT stage. | 2023 | 51.36 | protocol_authors | [paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_IntentQA_Context-aware_Video_Intent_Reasoning_ICCV_2023_paper.pdf) · total_accuracy: table Table 3, row Base Model, column Total / Test |
+| Context-aware IntentQA model | Table 3 cumulative ablation: + Triplet Loader; no GPT stage. | 2023 | 53.8 | protocol_authors | [paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_IntentQA_Context-aware_Video_Intent_Reasoning_ICCV_2023_paper.pdf) · total_accuracy: table Table 3, row + Triplet Loader, column Total / Test |
+| Context-aware IntentQA model | Table 3 cumulative ablation: + Triplet Loss; no GPT stage. | 2023 | 54.5 | protocol_authors | [paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_IntentQA_Context-aware_Video_Intent_Reasoning_ICCV_2023_paper.pdf) · total_accuracy: table Table 3, row + Triplet Loss, column Total / Test |
+| VGT (BERT text) | VGT with BERT text representation; video and five answer choices, no GPT stage. | 2022 | 51.27 | protocol_authors | [paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_IntentQA_Context-aware_Video_Intent_Reasoning_ICCV_2023_paper.pdf) · total_accuracy: table Table 2, row VGT / BERT, column Total / Test |
+| Context-aware IntentQA model | Table 3 cumulative ablation: + VQL; no GPT stage. | 2023 | 52.34 | protocol_authors | [paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_IntentQA_Context-aware_Video_Intent_Reasoning_ICCV_2023_paper.pdf) · total_accuracy: table Table 3, row + VQL, column Total / Test |
 
 ### Baseline starting points
 
 | Method | Origin | Code | Training | Evaluation |
 | --- | --- | --- | --- | --- |
-| Context-aware IntentQA model | protocol_authors | [code](https://github.com/JoseponLee/IntentQA) | �� | �� |
-| VGT (BERT text) | protocol_authors | [code](https://github.com/sail-sg/VGT) | �� | �� |
+| Context-aware IntentQA model | protocol_authors | [code](https://github.com/JoseponLee/IntentQA) | — | — |
+| VGT (BERT text) | protocol_authors | [code](https://github.com/sail-sg/VGT) | — | — |
 
 ### Best verified results found in recorded snapshots
 
-**Best verified paper-reported result found �� checked 2026-09-30.** Five original-paper BERT video-and-text results: Table 2 VGT baseline and Table 3 four cumulative no-GPT configurations. Other text encoders and GPT-assisted rows excluded; no exhaustive literature claim. Evidence: [paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_IntentQA_Context-aware_Video_Intent_Reasoning_ICCV_2023_paper.pdf).
+**Best verified paper-reported result found — checked 2026-09-30.** Five original-paper BERT video-and-text results: Table 2 VGT baseline and Table 3 four cumulative no-GPT configurations. Other text encoders and GPT-assisted rows excluded; no exhaustive literature claim. Evidence: [paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_IntentQA_Context-aware_Video_Intent_Reasoning_ICCV_2023_paper.pdf).
 
 | Metric | Value | Method | Evidence |
 | --- | --- | --- | --- |
@@ -58,6 +58,6 @@ Results are comparable only within the same protocol section. A code link is not
 
 ### Sources
 
-- **paper**: [IntentQA: Context-aware Video Intent Reasoning](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_IntentQA_Context-aware_Video_Intent_Reasoning_ICCV_2023_paper.pdf) �� table: Tables 2 and 3, section: 5 Experiments
+- **paper**: [IntentQA: Context-aware Video Intent Reasoning](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_IntentQA_Context-aware_Video_Intent_Reasoning_ICCV_2023_paper.pdf) — table: Tables 2 and 3, section: 5 Experiments
 
-**Protocol verified:** 2026-09-30 �� [paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_IntentQA_Context-aware_Video_Intent_Reasoning_ICCV_2023_paper.pdf)
+**Protocol verified:** 2026-09-30 · [paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_IntentQA_Context-aware_Video_Intent_Reasoning_ICCV_2023_paper.pdf)

@@ -4,11 +4,27 @@
 
 Images of everyday scenes manually assigned human-intent categories.
 
+## Example input and output
+
+This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+
+**Input:** One image depicting a person in an everyday or social scene.
+
+**Output / label:** An observer-assigned human-intent category from the 28-category vocabulary, not a self-report from the pictured person.
+
+![Official Intentonomy teaser with example images and intent categories](https://raw.githubusercontent.com/KMnP/intentonomy/master/images/teaser.png)
+
+*Author-published teaser of the image-intent task; it does not establish the private motives of the people pictured.*
+
+[Open the author-provided sample or demo](https://github.com/KMnP/intentonomy/blob/master/DATA.md)
+
+**Example evidence:** [official](https://github.com/KMnP/intentonomy)
+
 ## Intention in this dataset
 
 Classify the observer-attributed communicative or social motive conveyed by a social-media image; the label does not directly report the uploader's private mental state.
 
-**Relevance:** `explicit` �� **Origin:** `real` �� **Year:** 2021
+**Relevance:** `explicit` · **Origin:** `real` · **Year:** 2021
 
 **Domains:** daily_activities, social_interaction  
 **Intention types:** communicative, social  
@@ -24,13 +40,13 @@ Classify the observer-attributed communicative or social motive conveyed by a so
 
 ## Access and rights
 
-**Access:** open �� [entry point](https://github.com/KMnP/intentonomy) �� checked 2026-09-30 �� [official](https://github.com/KMnP/intentonomy)
+**Access:** open · [entry point](https://github.com/KMnP/intentonomy) · checked 2026-09-30 · [official](https://github.com/KMnP/intentonomy)
 
 See the source for current download conditions; raw files were not downloaded for this catalog.
 
 | Component | License status | License | Evidence |
 | --- | --- | --- | --- |
-| dataset media and annotations | unknown | �� | [official](https://github.com/KMnP/intentonomy) |
+| dataset media and annotations | unknown | — | [official](https://github.com/KMnP/intentonomy) |
 
 ## Reported statistics
 
@@ -40,10 +56,10 @@ See the source for current download conditions; raw files were not downloaded fo
 
 ## Benchmarks
 
-- [Author repository test-set RGB baseline cohort](../benchmarks/intentonomy.md#intentonomy-author-test-rgb) �� `intention_recognition`
+- [Author repository test-set RGB baseline cohort](../benchmarks/intentonomy.md#intentonomy-author-test-rgb) — `intention_recognition`
 
 ## Sources
 
-- **official**: [Intentonomy original project or publication](https://github.com/KMnP/intentonomy) �� section: Intentonomy Dataset; checked 2026-09-30
+- **official**: [Intentonomy original project or publication](https://github.com/KMnP/intentonomy) — section: Intentonomy Dataset; checked 2026-09-30
 
-**Dataset metadata verified:** 2026-09-30 �� [official](https://github.com/KMnP/intentonomy)
+**Dataset metadata verified:** 2026-09-30 · [official](https://github.com/KMnP/intentonomy)

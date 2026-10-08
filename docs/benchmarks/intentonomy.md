@@ -9,8 +9,8 @@ Results are comparable only within the same protocol section. A code link is not
 <a id="intentonomy-author-test-rgb"></a>
 
 **Task:** `intention_recognition` (original: Intentonomy intent classification)  
-**Dataset release:** `v1` �� **Annotation version:** `author-release-unspecified`  
-**Target:** `intent_category` �� **Split:** Author repository test set
+**Dataset release:** `v1` · **Annotation version:** `author-release-unspecified`  
+**Target:** `intent_category` · **Split:** Author repository test set
 
 ### Comparison setting
 
@@ -23,7 +23,7 @@ Results are comparable only within the same protocol section. A code link is not
 | Anticipation gap | not applicable |
 | Prediction horizon | not applicable |
 | Training policy | external_data: allowed, pretraining: allowed, extra_supervision: allowed, ensemble: forbidden |
-| Evaluation | Test-set intent category F1 as reported in the author repository.; Reported mean across author runs; accompanying �� spread retained in source. |
+| Evaluation | Test-set intent category F1 as reported in the author repository.; Reported mean across author runs; accompanying ± spread retained in source. |
 
 ### Metrics
 
@@ -37,19 +37,19 @@ Results are comparable only within the same protocol section. A code link is not
 
 | Method | Configuration | Year | `macro_f1` | `micro_f1` | `samples_f1` | Baseline origin | Result source / locator |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| VISUAL + localization loss | Visual input; localization-loss masks used in training, not at test inference. | 2021 | 24.37 | 32.07 | 30.91 | dataset_authors | [author_readme](https://github.com/KMnP/intentonomy) �� macro_f1: section Test set results, row VISUAL + L_loc; micro_f1: section Test set results, row VISUAL + L_loc; samples_f1: section Test set results, row VISUAL + L_loc |
-| VISUAL | Visual-only image classifier. | 2021 | 22.77 | 30.23 | 28.45 | dataset_authors | [author_readme](https://github.com/KMnP/intentonomy) �� macro_f1: section Test set results, row VISUAL; micro_f1: section Test set results, row VISUAL; samples_f1: section Test set results, row VISUAL |
+| VISUAL + localization loss | Visual input; localization-loss masks used in training, not at test inference. | 2021 | 24.37 | 32.07 | 30.91 | dataset_authors | [author_readme](https://github.com/KMnP/intentonomy) · macro_f1: section Test set results, row VISUAL + L_loc; micro_f1: section Test set results, row VISUAL + L_loc; samples_f1: section Test set results, row VISUAL + L_loc |
+| VISUAL | Visual-only image classifier. | 2021 | 22.77 | 30.23 | 28.45 | dataset_authors | [author_readme](https://github.com/KMnP/intentonomy) · macro_f1: section Test set results, row VISUAL; micro_f1: section Test set results, row VISUAL; samples_f1: section Test set results, row VISUAL |
 
 ### Baseline starting points
 
 | Method | Origin | Code | Training | Evaluation |
 | --- | --- | --- | --- | --- |
-| VISUAL | dataset_authors | [code](https://github.com/KMnP/intentonomy) | �� | �� |
-| VISUAL + localization loss | dataset_authors | [code](https://github.com/KMnP/intentonomy) | �� | �� |
+| VISUAL | dataset_authors | [code](https://github.com/KMnP/intentonomy) | — | — |
+| VISUAL + localization loss | dataset_authors | [code](https://github.com/KMnP/intentonomy) | — | — |
 
 ### Best verified results found in recorded snapshots
 
-**Best verified paper-reported result found �� checked 2026-09-30.** Two RGB-inference author baseline configurations from README test table; paper Table 2 uses different figures and is not merged. Evidence: [author_readme](https://github.com/KMnP/intentonomy).
+**Best verified paper-reported result found — checked 2026-09-30.** Two RGB-inference author baseline configurations from README test table; paper Table 2 uses different figures and is not merged. Evidence: [author_readme](https://github.com/KMnP/intentonomy).
 
 | Metric | Value | Method | Evidence |
 | --- | --- | --- | --- |
@@ -59,6 +59,6 @@ Results are comparable only within the same protocol section. A code link is not
 
 ### Sources
 
-- **author_readme**: [Intentonomy author repository baseline results](https://github.com/KMnP/intentonomy) �� section: Baseline results; Test set results
+- **author_readme**: [Intentonomy author repository baseline results](https://github.com/KMnP/intentonomy) — section: Baseline results; Test set results
 
-**Protocol verified:** 2026-09-30 �� [author_readme](https://github.com/KMnP/intentonomy)
+**Protocol verified:** 2026-09-30 · [author_readme](https://github.com/KMnP/intentonomy)

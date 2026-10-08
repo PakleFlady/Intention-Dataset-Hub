@@ -15,11 +15,11 @@ README_END = "<!-- hub:overview:end -->"
 
 
 def cell(value: object) -> str:
-    return str(value if value is not None else "��").replace("|", "\\|").replace("\r", " ").replace("\n", "<br>")
+    return str(value if value is not None else "—").replace("|", "\\|").replace("\r", " ").replace("\n", "<br>")
 
 
 def link(label: str, target: str | None) -> str:
-    return f"[{cell(label)}]({target})" if target else "��"
+    return f"[{cell(label)}]({target})" if target else "—"
 
 
 def table(headings: list[str], rows: list[list[object]]) -> str:
@@ -30,7 +30,7 @@ def table(headings: list[str], rows: list[list[object]]) -> str:
 
 def source_links(sources: list[dict], source_ids: list[str]) -> str:
     indexed = {source["id"]: source for source in sources}
-    return ", ".join(link(indexed[source_id]["id"], indexed[source_id]["url"]) for source_id in source_ids if source_id in indexed) or "��"
+    return ", ".join(link(indexed[source_id]["id"], indexed[source_id]["url"]) for source_id in source_ids if source_id in indexed) or "—"
 
 
 def _temporal(value: dict) -> str:
@@ -39,7 +39,7 @@ def _temporal(value: dict) -> str:
     if kind == "fixed":
         return f"{value['value']} {unit} ({value['anchor']})"
     if kind == "range":
-        return f"{value['min']}�C{value['max']} {unit} ({value['anchor']})"
+        return f"{value['min']}–{value['max']} {unit} ({value['anchor']})"
     if kind == "variable":
         return f"variable {unit} ({value['description']})"
     return kind.replace("_", " ")
@@ -59,7 +59,7 @@ def _benchmark_rows(catalog: Catalog, benchmark_prefix: str, dataset_prefix: str
     for benchmark in sorted(catalog.benchmarks.values(), key=lambda item: item["id"]):
         if benchmark["verification"]["status"] != "verified":
             continue
-        date = max((snapshot["checked_at"] for snapshot in benchmark["snapshots"]), default="��")
+        date = max((snapshot["checked_at"] for snapshot in benchmark["snapshots"]), default="—")
         count = sum(rankable(benchmark, result) for result in benchmark["results"])
         rows.append([link(catalog.datasets[benchmark["dataset_id"]]["name"], f"{dataset_prefix}{benchmark['dataset_id']}.md"), cell(benchmark["task"]), link(benchmark["protocol"]["name"], f"{benchmark_prefix}{benchmark['dataset_id']}.md#{benchmark['id']}"), str(count), date])
     return rows
@@ -67,9 +67,21 @@ def _benchmark_rows(catalog: Catalog, benchmark_prefix: str, dataset_prefix: str
 
 def _render_dataset(catalog: Catalog, data: dict) -> str:
     dataset_id = data["id"]
-    lines = [GENERATED, f"# {data['name']}", "", data["description"], "", "## Intention in this dataset", "", data["intention_definition"], "", f"**Relevance:** `{data['intention_relevance']}` �� **Origin:** `{data['data_origin']}` �� **Year:** {data['year']}", "", f"**Domains:** {', '.join(data['domains'])}  ", f"**Intention types:** {', '.join(data['intention_types'])}  ", f"**Tasks:** {', '.join(data['tasks'])}  ", f"**Modalities:** {', '.join(data['modalities'])}  ", f"**Formats:** {', '.join(data['data_formats'])}", "", "## Relevant annotations", ""]
+    example = data["example"]
+    lines = [GENERATED, f"# {data['name']}", "", data["description"], "", "## Example input and output", ""]
+    if example["kind"] == "illustrative":
+        lines.extend(["This is a source-grounded illustration of the task shape, not a copied or verified dataset row.", ""])
+    else:
+        lines.extend(["This example is taken from the linked original source.", ""])
+    lines.extend([f"**Input:** {example['input']}", "", f"**Output / label:** {example['output']}", ""])
+    if media := example.get("media"):
+        alt = media["alt"].replace("[", "\\[").replace("]", "\\]")
+        lines.extend([f"![{alt}]({media['url']})", "", f"*{media['caption']}*", ""])
+    if example.get("sample_url"):
+        lines.extend([f"[Open the author-provided sample or demo]({example['sample_url']})", ""])
+    lines.extend([f"**Example evidence:** {source_links(data['sources'], example['source_ids'])}", "", "## Intention in this dataset", "", data["intention_definition"], "", f"**Relevance:** `{data['intention_relevance']}` · **Origin:** `{data['data_origin']}` · **Year:** {data['year']}", "", f"**Domains:** {', '.join(data['domains'])}  ", f"**Intention types:** {', '.join(data['intention_types'])}  ", f"**Tasks:** {', '.join(data['tasks'])}  ", f"**Modalities:** {', '.join(data['modalities'])}  ", f"**Formats:** {', '.join(data['data_formats'])}", "", "## Relevant annotations", ""])
     lines.append(table(["Target ID", "Meaning", "Provenance", "Scope", "Evidence"], [[f"`{a['id']}`", cell(a["description"]), cell(a["provenance"]), cell(a["scope"]), source_links(data["sources"], a["source_ids"])] for a in data["annotations"]]))
-    lines.extend(["## Access and rights", "", f"**Access:** {data['access']['status']} �� {link('entry point', data['access'].get('url'))} �� checked {data['access']['checked_at']} �� {source_links(data['sources'], data['access']['source_ids'])}", ""])
+    lines.extend(["## Access and rights", "", f"**Access:** {data['access']['status']} · {link('entry point', data['access'].get('url'))} · checked {data['access']['checked_at']} · {source_links(data['sources'], data['access']['source_ids'])}", ""])
     if data["access"].get("conditions"):
         lines.append(data["access"]["conditions"] + "\n")
     lines.append(table(["Component", "License status", "License", "Evidence"], [[cell(item["component"]), cell(item["status"]), link(item.get("name", "unknown"), item.get("url")), source_links(data["sources"], item["source_ids"])] for item in data["licenses"]]))
@@ -77,10 +89,10 @@ def _render_dataset(catalog: Catalog, data: dict) -> str:
         lines.extend(["## Reported statistics", "", table(["Measure", "Value", "Release / scope", "Evidence"], [[cell(s["name"]), f"{s['value']} {cell(s['unit'])}", f"{s['release_id']} / {cell(s['scope'])}", source_links(data["sources"], s["source_ids"])] for s in data["statistics"]])])
     matching = [b for b in catalog.benchmarks.values() if b["dataset_id"] == dataset_id and b["verification"]["status"] == "verified"]
     lines.extend(["## Benchmarks", ""])
-    lines.append("\n".join(f"- [{b['protocol']['name']}](../benchmarks/{dataset_id}.md#{b['id']}) �� `{b['task']}`" for b in sorted(matching, key=lambda item: item["id"])) if matching else "No verified benchmark protocol is currently documented.")
+    lines.append("\n".join(f"- [{b['protocol']['name']}](../benchmarks/{dataset_id}.md#{b['id']}) — `{b['task']}`" for b in sorted(matching, key=lambda item: item["id"])) if matching else "No verified benchmark protocol is currently documented.")
     lines.extend(["", "## Sources", ""])
-    lines.extend(f"- **{source['id']}**: {link(source['title'], source['url'])} �� {cell(', '.join(f'{k}: {v}' for k, v in source['locator'].items()))}; checked {source['accessed_at']}" for source in data["sources"])
-    lines.extend(["", f"**Dataset metadata verified:** {data['verification']['checked_at']} �� {source_links(data['sources'], data['verification']['source_ids'])}", ""])
+    lines.extend(f"- **{source['id']}**: {link(source['title'], source['url'])} — {cell(', '.join(f'{k}: {v}' for k, v in source['locator'].items()))}; checked {source['accessed_at']}" for source in data["sources"])
+    lines.extend(["", f"**Dataset metadata verified:** {data['verification']['checked_at']} · {source_links(data['sources'], data['verification']['source_ids'])}", ""])
     if data.get("notes"):
         lines.extend(["## Limits and notes", "", data["notes"], ""])
     return "\n".join(lines).rstrip() + "\n"
@@ -99,7 +111,7 @@ def _render_benchmark(catalog: Catalog, benchmark: dict) -> list[str]:
     dataset_id = benchmark["dataset_id"]
     method_index = {method["id"]: method for method in catalog.methods.get(dataset_id, {}).get("methods", [])}
     source_list = benchmark["sources"]
-    lines = [f"## {benchmark['protocol']['name']}", "", f"<a id=\"{benchmark['id']}\"></a>", "", f"**Task:** `{benchmark['task']}` (original: {cell(benchmark['original_task_name'])})  ", f"**Dataset release:** `{benchmark['release_id']}` �� **Annotation version:** `{benchmark['annotation_version']}`  ", f"**Target:** `{benchmark['target_id']}` �� **Split:** {cell(benchmark['split']['name'])}", "", "### Comparison setting", ""]
+    lines = [f"## {benchmark['protocol']['name']}", "", f"<a id=\"{benchmark['id']}\"></a>", "", f"**Task:** `{benchmark['task']}` (original: {cell(benchmark['original_task_name'])})  ", f"**Dataset release:** `{benchmark['release_id']}` · **Annotation version:** `{benchmark['annotation_version']}`  ", f"**Target:** `{benchmark['target_id']}` · **Split:** {cell(benchmark['split']['name'])}", "", "### Comparison setting", ""]
     lines.append(table(["Dimension", "Value"], [["Sample selection", cell(benchmark["sample_selection"]["description"])], ["Inputs", cell(", ".join(benchmark["inputs"]["modalities"]) + "; " + benchmark["inputs"]["available_information"])], ["Representation", cell(benchmark["inputs"]["representation"])], ["Observation window", cell(_temporal(benchmark["temporal"]["observation_window"]))], ["Anticipation gap", cell(_temporal(benchmark["temporal"]["anticipation_gap"]))], ["Prediction horizon", cell(_temporal(benchmark["temporal"]["prediction_horizon"]))], ["Training policy", cell(", ".join(f"{k}: {v}" for k, v in benchmark["training_policy"].items() if k in {"external_data", "pretraining", "extra_supervision", "ensemble"}))], ["Evaluation", cell(benchmark["evaluation"]["description"] + "; " + benchmark["evaluation"]["aggregation"])]]))
     lines.extend(["### Metrics", "", table(["Metric", "Definition", "Direction", "Unit", "Subset", "Evidence"], [[f"`{m['id']}`", cell(m["definition"]), m["direction"], cell(m["unit"]), cell(m["evaluation_subset"]), source_links(source_list, m["source_ids"])] for m in benchmark["metrics"]])])
     metric_ids = [metric["id"] for metric in benchmark["metrics"]]
@@ -110,7 +122,7 @@ def _render_benchmark(catalog: Catalog, benchmark: dict) -> list[str]:
         for result in sorted(ranked, key=lambda item: item["id"]):
             method = method_index.get(result["method_id"], {})
             locations = "; ".join(f"{metric_id}: " + ", ".join(f"{key} {value}" for key, value in score["locator"].items()) for metric_id, score in result["scores"].items())
-            rows.append([cell(method.get("name", result["method_id"])), cell(result["configuration"]["description"]), cell(method.get("reference", {}).get("year", "��")), *[cell(result["scores"].get(metric_id, {}).get("value", "��")) for metric_id in metric_ids], cell(result.get("baseline_origin", "none")), source_links(source_list, result["source_ids"]) + " �� " + cell(locations)])
+            rows.append([cell(method.get("name", result["method_id"])), cell(result["configuration"]["description"]), cell(method.get("reference", {}).get("year", "—")), *[cell(result["scores"].get(metric_id, {}).get("value", "—")) for metric_id in metric_ids], cell(result.get("baseline_origin", "none")), source_links(source_list, result["source_ids"]) + " · " + cell(locations)])
         lines.append(table(["Method", "Configuration", "Year", *[f"`{mid}`" for mid in metric_ids], "Baseline origin", "Result source / locator"], rows))
     else:
         lines.extend(["No result has yet passed the protocol and source verification gate. This page does not claim a best result.", ""])
@@ -131,7 +143,7 @@ def _render_benchmark(catalog: Catalog, benchmark: dict) -> list[str]:
         lines.extend(["### Best verified results found in recorded snapshots", ""])
         for snapshot in benchmark["snapshots"]:
             label = "Official leaderboard best" if snapshot["scope"] == "official_leaderboard" and snapshot.get("first_place_confirmed") else "Best among the verified official entries included here" if snapshot["scope"] == "official_leaderboard" else "Best verified paper-reported result found"
-            lines.append(f"**{label} �� checked {snapshot['checked_at']}.** {snapshot['coverage_notes']} Evidence: {source_links(source_list, snapshot['source_ids'])}.\n")
+            lines.append(f"**{label} — checked {snapshot['checked_at']}.** {snapshot['coverage_notes']} Evidence: {source_links(source_list, snapshot['source_ids'])}.\n")
             best_rows = []
             for metric in benchmark["metrics"]:
                 for result in _best(benchmark, snapshot, metric):
@@ -139,8 +151,8 @@ def _render_benchmark(catalog: Catalog, benchmark: dict) -> list[str]:
                     best_rows.append([f"`{metric['id']}`", cell(result["scores"][metric["id"]]["value"]), cell(method.get("name", result["method_id"])), source_links(source_list, result["scores"][metric["id"]]["source_ids"])])
             lines.append(table(["Metric", "Value", "Method", "Evidence"], best_rows) if best_rows else "No rankable result in this snapshot.\n")
     lines.extend(["### Sources", ""])
-    lines.extend(f"- **{source['id']}**: {link(source['title'], source['url'])} �� {cell(', '.join(f'{k}: {v}' for k, v in source['locator'].items()))}" for source in source_list)
-    lines.extend(["", f"**Protocol verified:** {benchmark['verification']['checked_at']} �� {source_links(source_list, benchmark['verification']['source_ids'])}", ""])
+    lines.extend(f"- **{source['id']}**: {link(source['title'], source['url'])} — {cell(', '.join(f'{k}: {v}' for k, v in source['locator'].items()))}" for source in source_list)
+    lines.extend(["", f"**Protocol verified:** {benchmark['verification']['checked_at']} · {source_links(source_list, benchmark['verification']['source_ids'])}", ""])
     return lines
 
 
@@ -153,7 +165,7 @@ def render_all(catalog: Catalog) -> tuple[dict[Path, str], str]:
     output[root / "docs/benchmarks.md"] = GENERATED + "# Benchmark index\n\nEach linked protocol is a separate comparison setting. Counts include only verified matching results.\n\n" + table(["Dataset", "Task", "Protocol", "Results", "Snapshot checked"], benchmark_rows)
     taxonomy_lines = [GENERATED, "# Taxonomy", "", "Machine values are defined in [taxonomy.yaml](../taxonomy.yaml). Domains are flat and multi-select; intention types have at most one parent. Time scale belongs to a benchmark, not an intention type.", ""]
     for group in ("domains", "intention_types", "tasks", "modalities", "data_formats", "viewpoints", "capture_setup"):
-        taxonomy_lines.extend([f"## {group.replace('_', ' ').title()}", "", table(["ID", "Meaning", "Definition", "Parent"], [[f"`{key}`", cell(term["name"]), cell(term["definition"]), cell(term.get("parent", "��"))] for key, term in sorted(catalog.taxonomy[group].items())])])
+        taxonomy_lines.extend([f"## {group.replace('_', ' ').title()}", "", table(["ID", "Meaning", "Definition", "Parent"], [[f"`{key}`", cell(term["name"]), cell(term["definition"]), cell(term.get("parent", "—"))] for key, term in sorted(catalog.taxonomy[group].items())])])
     output[root / "docs/taxonomy.md"] = "\n".join(taxonomy_lines).rstrip() + "\n"
     for field_name, title in (("domains", "domain"), ("tasks", "task"), ("modalities", "modality")):
         groups: dict[str, list[dict]] = defaultdict(list)
@@ -180,7 +192,7 @@ def render_all(catalog: Catalog) -> tuple[dict[Path, str], str]:
     featured = featured[:8]
     featured_rows = [[link(d["name"], f"docs/datasets/{d['id']}.md"), str(d["year"]), cell(", ".join(d["domains"])), cell(d["intention_relevance"]), cell(d["access"]["status"])] for d in featured]
     readme_benchmark_rows = _benchmark_rows(catalog, "docs/benchmarks/", "docs/datasets/")
-    overview = "\n".join([README_START, "", f"**Verified datasets:** {len(verified)} �� **Dataset families:** {len(families)} �� **Verified protocols:** {len(benchmark_rows)} �� **Datasets with at least two comparable results:** {len(ranked_benchmarks)}", "", "## Featured datasets", "", table(["Dataset", "Year", "Domain", "Relevance", "Access"], featured_rows), "[Complete dataset index](docs/datasets.md) �� [By domain](docs/by-domain.md) �� [By task](docs/by-task.md) �� [By modality](docs/by-modality.md)", "", "## Benchmark availability", "", table(["Dataset", "Task", "Protocol", "Results", "Snapshot checked"], readme_benchmark_rows[:8]), "[Complete benchmark index](docs/benchmarks.md)", "", README_END])
+    overview = "\n".join([README_START, "", f"**Verified datasets:** {len(verified)} | **Dataset families:** {len(families)} | **Verified protocols:** {len(benchmark_rows)} | **Datasets with at least two comparable results:** {len(ranked_benchmarks)}", "", "## Featured datasets", "", table(["Dataset", "Year", "Domain", "Relevance", "Access"], featured_rows), "[Complete dataset index](docs/datasets.md) | [By domain](docs/by-domain.md) | [By task](docs/by-task.md) | [By modality](docs/by-modality.md)", "", "## Benchmark availability", "", table(["Dataset", "Task", "Protocol", "Results", "Snapshot checked"], readme_benchmark_rows[:8]), "[Complete benchmark index](docs/benchmarks.md)", "", README_END])
     return output, overview
 
 

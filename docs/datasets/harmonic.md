@@ -4,11 +4,27 @@
 
 Multimodal recordings of people and assistive robots collaborating on tasks.
 
+## Example input and output
+
+This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+
+**Input:** Egocentric and third-person video plus eye gaze, joystick, muscle activity, and robot-arm state during assisted eating.
+
+**Output / label:** Time-aligned gaze fixation and body-pose annotations that can support target inference; these are cues, not intention labels.
+
+![Official HARMONIC task illustration with a person and assistive robot arm](https://harplab.github.io/img/harmonic_task.png)
+
+*Author-published task illustration; the released sample run includes the synchronized streams.*
+
+[Open the author-provided sample or demo](https://harplab.github.io/harmonic/)
+
+**Example evidence:** [official](https://harplab.github.io/harmonic/)
+
 ## Intention in this dataset
 
 Human gaze, motion and task context may support prediction of a collaborator's goal; the dataset page presents this as a research use, not a universal direct intention label.
 
-**Relevance:** `related` �� **Origin:** `real` �� **Year:** 2021
+**Relevance:** `related` · **Origin:** `real` · **Year:** 2021
 
 **Domains:** human_robot_interaction, human_object_interaction  
 **Intention types:** collaborative, task_goal  
@@ -24,13 +40,13 @@ Human gaze, motion and task context may support prediction of a collaborator's g
 
 ## Access and rights
 
-**Access:** open �� [entry point](https://harplab.github.io/harmonic/) �� checked 2026-09-30 �� [official](https://harplab.github.io/harmonic/)
+**Access:** open · [entry point](https://harplab.github.io/harmonic/) · checked 2026-09-30 · [official](https://harplab.github.io/harmonic/)
 
 See the source for current download conditions; raw files were not downloaded for this catalog.
 
 | Component | License status | License | Evidence |
 | --- | --- | --- | --- |
-| dataset media and annotations | unknown | �� | [official](https://harplab.github.io/harmonic/) |
+| dataset media and annotations | unknown | — | [official](https://harplab.github.io/harmonic/) |
 
 ## Benchmarks
 
@@ -38,9 +54,9 @@ No verified benchmark protocol is currently documented.
 
 ## Sources
 
-- **official**: [HARMONIC original project or publication](https://harplab.github.io/harmonic/) �� section: Overview; Accessing the dataset; checked 2026-09-30
+- **official**: [HARMONIC original project or publication](https://harplab.github.io/harmonic/) — section: Overview; Accessing the dataset; checked 2026-09-30
 
-**Dataset metadata verified:** 2026-09-30 �� [official](https://harplab.github.io/harmonic/)
+**Dataset metadata verified:** 2026-09-30 · [official](https://harplab.github.io/harmonic/)
 
 ## Limits and notes
 

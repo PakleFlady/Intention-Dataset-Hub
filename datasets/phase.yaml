@@ -66,3 +66,17 @@ verification:
 viewpoints:
 - exocentric
 notes: Human experiments validate social-event perception, but the observed agents are simulated.
+
+example:
+  kind: illustrative
+  input: A procedurally generated 2D animation of two agents moving and interacting with objects and obstacles.
+  output: A generator-assigned social event category, such as helping, for social recognition or prediction.
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  sample_url: https://tshu.io/PHASE/
+  media:
+    kind: image
+    url: https://tshu.io/PHASE/intro.png
+    alt: Official PHASE introduction image of simulated two-agent social events
+    caption: Author-published simulation illustration; these agents are synthetic rather than recorded people.

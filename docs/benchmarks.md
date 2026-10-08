@@ -5,7 +5,7 @@ Each linked protocol is a separate comparison setting. Counts include only verif
 
 | Dataset | Task | Protocol | Results | Snapshot checked |
 | --- | --- | --- | --- | --- |
-| [EPIC-KITCHENS-100](datasets/epic-kitchens-100.md) | action_anticipation | [EK100 challenge test action anticipation](benchmarks/epic-kitchens-100.md#ek100-2021-test-action-anticipation) | 0 | �� |
+| [EPIC-KITCHENS-100](datasets/epic-kitchens-100.md) | action_anticipation | [EK100 challenge test action anticipation](benchmarks/epic-kitchens-100.md#ek100-2021-test-action-anticipation) | 0 | — |
 | [Intentonomy](datasets/intentonomy.md) | intention_recognition | [Author repository test-set RGB baseline cohort](benchmarks/intentonomy.md#intentonomy-author-test-rgb) | 2 | 2026-09-30 |
 | [IntentQA](datasets/intentqa.md) | intention_reasoning | [ICCV 2023 BERT video-and-text no-GPT test cohort](benchmarks/intentqa.md#intentqa-iccv2023-no-gpt-test) | 5 | 2026-09-30 |
 | [JAAD](datasets/jaad.md) | behavior_prediction | [WACV 2021 JAAD_all PCPA attention comparison](benchmarks/jaad.md#jaad-all-wacv2021-pcpa) | 4 | 2026-09-30 |

@@ -64,3 +64,13 @@ verification:
     dataset files were not downloaded.
 notes: Narrative characters, not recorded human subjects; include because the task explicitly models
   human goals.
+
+example:
+  kind: source_record
+  input: Danny got down on one knee. He asked Beth to marry him. Beth felt very awkward. She didn't want to marry Danny! To
+    be kind, she told him she needed some time to think.
+  output: 'Original goal: Get engaged to Beth.'
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  sample_url: https://github.com/saiumbc/SAGA/blob/main/data/actual_qval.jsonl#L1

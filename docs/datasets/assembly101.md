@@ -4,11 +4,27 @@
 
 Multi-view procedural assembly videos with annotated actions and anticipation tasks.
 
+## Example input and output
+
+This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+
+**Input:** A short prefix of synchronized wearable and fixed-camera video showing a person assembling a toy vehicle.
+
+**Output / label:** The next fine-grained hand-object action label before that action begins.
+
+![Official Assembly101 multi-camera capture rig around a toy assembly task](https://assembly-101.github.io/assets/assembly101_rig.png)
+
+*Author-published capture setup; the input is video from these cameras, not this still image.*
+
+[Open the author-provided sample or demo](https://assembly-101.github.io/)
+
+**Example evidence:** [official](https://openaccess.thecvf.com/content/CVPR2022/html/Sener_Assembly101_A_Large-Scale_Multi-View_Video_Dataset_for_Understanding_Procedural_Activities_CVPR_2022_paper.html)
+
 ## Intention in this dataset
 
 Anticipate the next hand-object assembly action from a video prefix; action labels proxy the participant's immediate plan.
 
-**Relevance:** `implicit` �� **Origin:** `real` �� **Year:** 2022
+**Relevance:** `implicit` · **Origin:** `real` · **Year:** 2022
 
 **Domains:** daily_activities, human_object_interaction  
 **Intention types:** object_interaction  
@@ -24,7 +40,7 @@ Anticipate the next hand-object assembly action from a video prefix; action labe
 
 ## Access and rights
 
-**Access:** open �� [entry point](https://assembly-101.github.io/) �� checked 2026-09-30 �� [project](https://assembly-101.github.io/)
+**Access:** open · [entry point](https://assembly-101.github.io/) · checked 2026-09-30 · [project](https://assembly-101.github.io/)
 
 Official page says the data moved to Hugging Face in May 2026; individual files were not downloaded or tested.
 
@@ -38,7 +54,7 @@ No verified benchmark protocol is currently documented.
 
 ## Sources
 
-- **official**: [Assembly101 original project or publication](https://openaccess.thecvf.com/content/CVPR2022/html/Sener_Assembly101_A_Large-Scale_Multi-View_Video_Dataset_for_Understanding_Procedural_Activities_CVPR_2022_paper.html) �� section: Abstract; benchmark tasks; checked 2026-09-30
-- **project**: [Assembly101 official project and download page](https://assembly-101.github.io/) �� section: News; License; Abstract; checked 2026-09-30
+- **official**: [Assembly101 original project or publication](https://openaccess.thecvf.com/content/CVPR2022/html/Sener_Assembly101_A_Large-Scale_Multi-View_Video_Dataset_for_Understanding_Procedural_Activities_CVPR_2022_paper.html) — section: Abstract; benchmark tasks; checked 2026-09-30
+- **project**: [Assembly101 official project and download page](https://assembly-101.github.io/) — section: News; License; Abstract; checked 2026-09-30
 
-**Dataset metadata verified:** 2026-09-30 �� [official](https://openaccess.thecvf.com/content/CVPR2022/html/Sener_Assembly101_A_Large-Scale_Multi-View_Video_Dataset_for_Understanding_Procedural_Activities_CVPR_2022_paper.html), [project](https://assembly-101.github.io/)
+**Dataset metadata verified:** 2026-09-30 · [official](https://openaccess.thecvf.com/content/CVPR2022/html/Sener_Assembly101_A_Large-Scale_Multi-View_Video_Dataset_for_Understanding_Procedural_Activities_CVPR_2022_paper.html), [project](https://assembly-101.github.io/)
