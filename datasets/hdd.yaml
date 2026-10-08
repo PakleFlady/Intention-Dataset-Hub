@@ -1,0 +1,97 @@
+schema_version: '0.1'
+id: hdd
+name: HDD (HRI Driving Dataset)
+year: 2018
+description: Instrumented real driving data with goal-oriented behavior examples and causal reasoning
+  annotations.
+intention_relevance: related
+intention_definition: Observed maneuvers and causal/context annotations support goal-oriented driver interpretation;
+  this record does not assert an original prospective intention benchmark.
+domains:
+- driver_behavior
+intention_types:
+- driving_maneuver
+tasks: []
+modalities:
+- rgb
+- vehicle_telemetry
+- trajectory
+data_formats:
+- video
+- time_series
+- structured_annotation
+data_origin: real
+annotations:
+- id: driver_behavior
+  semantic: ongoing_action
+  description: Annotated observed driving behaviors with goal-oriented interpretation.
+  provenance: observer_judgment
+  scope: Driving events
+  source_ids:
+  - official
+  - paper
+releases:
+- id: paper_release
+  label: 'HDD (HRI Driving Dataset): author-described data'
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  - paper
+  notes: Exact annotation revision is not established; downstream protocols require separate mapping.
+access:
+  status: request
+  url: https://usa.honda-ri.com/hdd
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  - paper
+  conditions: Official source requires university affiliation and a university email request; non-commercial
+    use only.
+licenses:
+- component: dataset media and annotations
+  status: unknown
+  source_ids:
+  - official
+sources:
+- id: official
+  type: official_project
+  title: 'Honda Research Institute: HDD'
+  url: https://usa.honda-ri.com/hdd
+  accessed_at: '2026-10-08'
+  locator:
+    section: Dataset; Videos; Download the dataset
+- id: paper
+  type: paper
+  title: 'Toward Driving Scene Understanding: A Dataset for Learning Driver Behavior and Causal Reasoning'
+  url: https://openaccess.thecvf.com/content_cvpr_2018/html/Ramanishka_Toward_Driving_Scene_CVPR_2018_paper.html
+  accessed_at: '2026-10-08'
+  locator:
+    section: Dataset and annotation scheme
+verification:
+  status: verified
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  - paper
+  notes: Source descriptions and annotation meaning checked; no data download, reproduction, or independent
+    second-pass review.
+example:
+  kind: illustrative
+  input: Front-facing driving video with GPS and CAN-bus measurements.
+  output: An observed goal-oriented behavior, such as a lane change; no separate future-intention label
+    is asserted.
+  source_ids:
+  - official
+  - paper
+  checked_at: '2026-10-08'
+  sample_url: https://usa.honda-ri.com/hdd
+statistics:
+- name: Driving duration
+  value: 104
+  unit: hours
+  release_id: paper_release
+  scope: Original collection
+  source_ids:
+  - official
+notes: Goal-oriented observed behavior and causal context support interpretation of driver aims. This
+  is related evidence, not an asserted prospective intention target or benchmark.

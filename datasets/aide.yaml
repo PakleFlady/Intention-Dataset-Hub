@@ -1,0 +1,98 @@
+schema_version: '0.1'
+id: aide
+name: AIDE
+year: 2023
+description: Multi-view driver behavior and emotion data with traffic and vehicle context cues.
+intention_relevance: related
+intention_definition: Traffic context, driver behavior and pose can support interpretation of driver intention;
+  original annotations describe current states rather than future maneuvers.
+domains:
+- driver_behavior
+intention_types:
+- driving_maneuver
+tasks: []
+modalities:
+- rgb
+- pose
+data_formats:
+- video
+- structured_annotation
+data_origin: real
+annotations:
+- id: context_behavior
+  semantic: cue
+  description: Manual behavior, emotion, traffic-context and vehicle-condition categories.
+  provenance: observer_judgment
+  scope: Multi-view three-second clips
+  source_ids:
+  - official
+- id: pose_keypoints
+  semantic: cue
+  description: Body, face and hand keypoints extracted by pose models.
+  provenance: model_generated
+  scope: Extracted clip frames
+  source_ids:
+  - official
+releases:
+- id: paper_release
+  label: 'AIDE: author-described data'
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  notes: Exact annotation revision is not established; downstream protocols require separate mapping.
+access:
+  status: open
+  url: https://github.com/ydk122024/AIDE
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  conditions: Author-linked access entry inspected; raw data were not downloaded.
+licenses:
+- component: dataset media and annotations
+  status: known
+  source_ids:
+  - official
+  name: Author research and education non-commercial terms
+  url: https://github.com/ydk122024/AIDE
+sources:
+- id: official
+  type: author_code
+  title: AIDE author repository
+  url: https://github.com/ydk122024/AIDE
+  accessed_at: '2026-10-08'
+  locator:
+    section: Dataset; annotations; download; terms
+- id: paper
+  type: paper
+  title: 'AIDE: A Vision-Driven Multi-View, Multi-Modal, Multi-Tasking Dataset for Assistive Driving Perception'
+  url: https://arxiv.org/abs/2307.13933
+  accessed_at: '2026-10-08'
+  locator:
+    section: 3.2 Annotation protocol; traffic context
+verification:
+  status: verified
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  - paper
+  notes: Source descriptions and annotation meaning checked; no data download, reproduction, or independent
+    second-pass review.
+example:
+  kind: illustrative
+  input: Four synchronized views of the driver and driving surroundings.
+  output: Current behavior and context cues; no original intention target is asserted.
+  source_ids:
+  - official
+  checked_at: '2026-10-08'
+  sample_url: https://github.com/ydk122024/AIDE
+notes: Related cue dataset only; no intention-recognition ranking or future-action protocol is added.
+  The original paper motivates traffic context as evidence for understanding driver intention; no future
+  maneuver labels are introduced.
+statistics:
+- name: Samples
+  value: 2898
+  unit: clips
+  release_id: paper_release
+  scope: Original collection
+  source_ids:
+  - official

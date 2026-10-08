@@ -1,0 +1,87 @@
+schema_version: '0.1'
+id: daad
+name: DAAD
+year: 2024
+description: Multi-view driving data designed for early anticipation of maneuvers.
+intention_relevance: implicit
+intention_definition: Before-maneuver observations predict the subsequently executed driving maneuver;
+  this behavioral target does not establish a privately held plan.
+domains:
+- driver_behavior
+intention_types:
+- driving_maneuver
+tasks:
+- action_anticipation
+modalities:
+- rgb
+- gaze
+data_formats:
+- video
+- structured_annotation
+data_origin: real
+annotations:
+- id: maneuver
+  semantic: future_action
+  description: Executed maneuver used as the target for before-maneuver anticipation.
+  provenance: behavior_derived
+  scope: Before/during-maneuver sequences
+  source_ids:
+  - paper
+  - extension
+releases:
+- id: paper_release
+  label: 'DAAD: author-described data'
+  annotation_version: author-release-unspecified
+  source_ids:
+  - paper
+  - extension
+  notes: Exact annotation revision is not established; downstream protocols require separate mapping.
+access:
+  status: unknown
+  url: https://cdn.iiit.ac.in/cdn/cvit.iiit.ac.in/images/ConferencePapers/2024/riving-Maneuvers.pdf
+  checked_at: '2026-10-08'
+  source_ids:
+  - paper
+  - extension
+  conditions: Paper and extension descriptions checked. A current valid download entry for the original
+    full DAAD release was not established; DAAD-X availability does not establish full DAAD access.
+licenses:
+- component: dataset media and annotations
+  status: unknown
+  source_ids:
+  - paper
+sources:
+- id: paper
+  type: paper
+  title: Early Anticipation of Driving Maneuvers
+  url: https://cdn.iiit.ac.in/cdn/cvit.iiit.ac.in/images/ConferencePapers/2024/riving-Maneuvers.pdf
+  accessed_at: '2026-10-08'
+  locator:
+    section: Dataset; before-maneuver and during-maneuver setup
+- id: extension
+  type: paper
+  title: Towards Safer and Understandable Driver Intention Prediction
+  url: https://arxiv.org/abs/2510.09200
+  accessed_at: '2026-10-08'
+  locator:
+    section: 3 DAAD and DAAD-X
+verification:
+  status: verified
+  checked_at: '2026-10-08'
+  source_ids:
+  - paper
+  - extension
+  notes: Source descriptions and annotation meaning checked; no data download, reproduction, or independent
+    second-pass review.
+example:
+  kind: illustrative
+  input: Driver, road and gaze views from a before-maneuver sequence.
+  output: The subsequent maneuver category, such as a turn or lane change.
+  source_ids:
+  - paper
+  - extension
+  checked_at: '2026-10-08'
+  sample_url: https://cdn.iiit.ac.in/cdn/cvit.iiit.ac.in/images/ConferencePapers/2024/riving-Maneuvers.pdf
+family_id: daad
+related_datasets:
+- daad-x

@@ -65,6 +65,14 @@ sources:
   accessed_at: '2026-09-30'
   locator:
     section: News; License; Abstract
+- id: anticipation_paper
+  type: paper
+  title: 'Action Anticipation at a Glimpse: Context-Aware Attention using Vision-Language Models'
+  url: https://arxiv.org/abs/2512.02846
+  accessed_at: '2026-10-08'
+  locator:
+    section: 4.1 Datasets; 4.2 Evaluation protocol
+    page: '5'
 verification:
   status: verified
   checked_at: '2026-09-30'
@@ -80,10 +88,10 @@ capture_setup:
 - fixed_camera
 - wearable
 - multi_camera
-
 example:
   kind: illustrative
-  input: A short prefix of synchronized wearable and fixed-camera video showing a person assembling a toy vehicle.
+  input: A short prefix of synchronized wearable and fixed-camera video showing a person assembling a
+    toy vehicle.
   output: The next fine-grained hand-object action label before that action begins.
   checked_at: '2026-10-08'
   source_ids:
@@ -94,3 +102,5 @@ example:
     url: https://assembly-101.github.io/assets/assembly101_rig.png
     alt: Official Assembly101 multi-camera capture rig around a toy assembly task
     caption: Author-published capture setup; the input is video from these cameras, not this still image.
+notes: AAG uses an Assembly101 anticipation subset. View selection and splits must be mapped before creating
+  a benchmark or comparing scores.

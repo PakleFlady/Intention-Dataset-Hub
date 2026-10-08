@@ -4,15 +4,19 @@
 
 ## Audio
 
-[Ego-Exo4D](datasets/ego-exo4d.md), [Ego4D](datasets/ego4d.md), [EGTEA Gaze+](datasets/egtea-gaze-plus.md), [EPIC-KITCHENS-100](datasets/epic-kitchens-100.md)
+[Aria Everyday Activities](datasets/aria-everyday-activities.md), [CrossTask](datasets/crosstask.md), [Ego-Exo4D](datasets/ego-exo4d.md), [Ego4D](datasets/ego4d.md), [EGTEA Gaze+](datasets/egtea-gaze-plus.md), [EPIC-KITCHENS-100](datasets/epic-kitchens-100.md), [EPIC-KITCHENS-55](datasets/epic-kitchens-55.md)
+
+## Depth
+
+[50 Salads](datasets/fifty-salads.md), [IKEA ASM](datasets/ikea-asm.md), [MECCANO](datasets/meccano.md)
 
 ## Gaze
 
-[Ego-Exo4D](datasets/ego-exo4d.md), [EGTEA Gaze+](datasets/egtea-gaze-plus.md), [HARMONIC](datasets/harmonic.md), [MoGaze](datasets/mogaze.md)
+[Aria Everyday Activities](datasets/aria-everyday-activities.md), [CAMF industrial assembly study data (author-collected)](datasets/camf-industrial-assembly.md), [DAAD](datasets/daad.md), [DAAD-X](datasets/daad-x.md), [DR(eye)VE](datasets/dreyeve.md), [Ego-Exo4D](datasets/ego-exo4d.md), [EGTEA Gaze+](datasets/egtea-gaze-plus.md), [HARMONIC](datasets/harmonic.md), [MECCANO](datasets/meccano.md), [MoGaze](datasets/mogaze.md)
 
 ## IMU
 
-[Ego-Exo4D](datasets/ego-exo4d.md)
+[Aria Everyday Activities](datasets/aria-everyday-activities.md), [CAMF industrial assembly study data (author-collected)](datasets/camf-industrial-assembly.md), [Ego-Exo4D](datasets/ego-exo4d.md), [50 Salads](datasets/fifty-salads.md)
 
 ## LiDAR
 
@@ -20,7 +24,7 @@
 
 ## Object state
 
-[Ego4D](datasets/ego4d.md), [EPIC-KITCHENS-100](datasets/epic-kitchens-100.md), [HARMONIC](datasets/harmonic.md), [LOKI: Long Term and Key Intentions](datasets/loki-traffic.md), [MoGaze](datasets/mogaze.md), [PHASE](datasets/phase.md)
+[Action Genome](datasets/action-genome.md), [CAMF industrial assembly study data (author-collected)](datasets/camf-industrial-assembly.md), [DSG (Dynamic Scene Graph intention dataset)](datasets/dsg.md), [Ego4D](datasets/ego4d.md), [EPIC-KITCHENS-100](datasets/epic-kitchens-100.md), [HARMONIC](datasets/harmonic.md), [IKEA ASM](datasets/ikea-asm.md), [LOKI: Long Term and Key Intentions](datasets/loki-traffic.md), [MoGaze](datasets/mogaze.md), [PHASE](datasets/phase.md), [STEP block assembly study data (extended annotations)](datasets/step-block-assembly.md)
 
 ## Optical flow
 
@@ -28,20 +32,20 @@
 
 ## Pose
 
-[Assembly101](datasets/assembly101.md), [Ego-Exo4D](datasets/ego-exo4d.md), [HARMONIC](datasets/harmonic.md), [MoGaze](datasets/mogaze.md)
+[AIDE](datasets/aide.md), [Aria Everyday Activities](datasets/aria-everyday-activities.md), [Assembly101](datasets/assembly101.md), [CAMF industrial assembly study data (author-collected)](datasets/camf-industrial-assembly.md), [Ego-Exo4D](datasets/ego-exo4d.md), [HARMONIC](datasets/harmonic.md), [IKEA ASM](datasets/ikea-asm.md), [MoGaze](datasets/mogaze.md)
 
 ## RGB
 
-[Assembly101](datasets/assembly101.md), [Brain4Cars](datasets/brain4cars.md), [Ego-Exo4D](datasets/ego-exo4d.md), [Ego4D](datasets/ego4d.md), [EGTEA Gaze+](datasets/egtea-gaze-plus.md), [EPIC-KITCHENS-100](datasets/epic-kitchens-100.md), [HARMONIC](datasets/harmonic.md), [Intentonomy](datasets/intentonomy.md), [IntentQA](datasets/intentqa.md), [JAAD](datasets/jaad.md), [JRDB-Social](datasets/jrdb-social.md), [LOKI: Long Term and Key Intentions](datasets/loki-traffic.md), [PIE](datasets/pie.md)
+[Action Genome](datasets/action-genome.md), [AIDE](datasets/aide.md), [Aria Everyday Activities](datasets/aria-everyday-activities.md), [Assembly101](datasets/assembly101.md), [BDD-X](datasets/bdd-x.md), [Brain4Cars](datasets/brain4cars.md), [COIN](datasets/coin.md), [CrossTask](datasets/crosstask.md), [DAAD](datasets/daad.md), [DAAD-X](datasets/daad-x.md), [DR(eye)VE](datasets/dreyeve.md), [DSG (Dynamic Scene Graph intention dataset)](datasets/dsg.md), [Ego-Exo4D](datasets/ego-exo4d.md), [Ego4D](datasets/ego4d.md), [EGTEA Gaze+](datasets/egtea-gaze-plus.md), [EPIC-KITCHENS-100](datasets/epic-kitchens-100.md), [EPIC-KITCHENS-55](datasets/epic-kitchens-55.md), [50 Salads](datasets/fifty-salads.md), [HARMONIC](datasets/harmonic.md), [HDD (HRI Driving Dataset)](datasets/hdd.md), [IKEA ASM](datasets/ikea-asm.md), [Intentonomy](datasets/intentonomy.md), [IntentQA](datasets/intentqa.md), [JAAD](datasets/jaad.md), [JRDB-Social](datasets/jrdb-social.md), [LOKI: Long Term and Key Intentions](datasets/loki-traffic.md), [MECCANO](datasets/meccano.md), [PIE](datasets/pie.md), [STEP block assembly study data (extended annotations)](datasets/step-block-assembly.md), [VIENA2](datasets/viena2.md)
 
 ## Text
 
-[Ego-Exo4D](datasets/ego-exo4d.md), [IntentQA](datasets/intentqa.md), [SAGA: Goals, Actions and Plans](datasets/saga-goals.md)
+[Aria Everyday Activities](datasets/aria-everyday-activities.md), [BDD-X](datasets/bdd-x.md), [COIN](datasets/coin.md), [CrossTask](datasets/crosstask.md), [DAAD-X](datasets/daad-x.md), [DSG (Dynamic Scene Graph intention dataset)](datasets/dsg.md), [Ego-Exo4D](datasets/ego-exo4d.md), [IntentQA](datasets/intentqa.md), [SAGA: Goals, Actions and Plans](datasets/saga-goals.md), [STEP block assembly study data (extended annotations)](datasets/step-block-assembly.md)
 
 ## Trajectory
 
-[Ego4D](datasets/ego4d.md), [JAAD](datasets/jaad.md), [JRDB-Social](datasets/jrdb-social.md), [LOKI: Long Term and Key Intentions](datasets/loki-traffic.md), [PHASE](datasets/phase.md), [PIE](datasets/pie.md)
+[Aria Everyday Activities](datasets/aria-everyday-activities.md), [BDD-X](datasets/bdd-x.md), [DR(eye)VE](datasets/dreyeve.md), [Ego4D](datasets/ego4d.md), [HDD (HRI Driving Dataset)](datasets/hdd.md), [JAAD](datasets/jaad.md), [JRDB-Social](datasets/jrdb-social.md), [LOKI: Long Term and Key Intentions](datasets/loki-traffic.md), [PHASE](datasets/phase.md), [PIE](datasets/pie.md)
 
 ## Vehicle telemetry
 
-[Brain4Cars](datasets/brain4cars.md), [JAAD](datasets/jaad.md), [PIE](datasets/pie.md)
+[BDD-X](datasets/bdd-x.md), [Brain4Cars](datasets/brain4cars.md), [DR(eye)VE](datasets/dreyeve.md), [HDD (HRI Driving Dataset)](datasets/hdd.md), [JAAD](datasets/jaad.md), [PIE](datasets/pie.md), [VIENA2](datasets/viena2.md)

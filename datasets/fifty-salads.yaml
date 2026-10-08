@@ -1,0 +1,103 @@
+schema_version: '0.1'
+id: fifty-salads
+name: 50 Salads
+year: 2013
+description: Synchronized food-preparation video and accelerometer data reused for future procedure prediction.
+intention_relevance: implicit
+intention_definition: Predict an upcoming recipe action from an observed prefix in PAR-VLA; original activity
+  intervals describe behavior rather than intention.
+domains:
+- daily_activities
+- human_object_interaction
+intention_types:
+- action
+- task_goal
+tasks:
+- action_anticipation
+modalities:
+- rgb
+- depth
+- imu
+data_formats:
+- video
+- time_series
+- structured_annotation
+data_origin: real
+annotations:
+- id: recipe_activity
+  semantic: future_action
+  description: Recipe step intervals and phases supply action targets; PAR-VLA selects subsequent labels
+    for anticipation.
+  provenance: observer_judgment
+  scope: Food preparation sequences
+  source_ids:
+  - official
+  - anticipation_paper
+releases:
+- id: paper_release
+  label: '50 Salads: author-described data'
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  - anticipation_paper
+  notes: Exact annotation revision is not established; downstream protocols require separate mapping.
+access:
+  status: unknown
+  url: https://discovery.dundee.ac.uk/files/10245400/50salads.pdf
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  - anticipation_paper
+  conditions: Institutional archived documentation inspected; a current working original bulk-download
+    endpoint was not confirmed.
+licenses:
+- component: dataset media and annotations
+  status: known
+  source_ids:
+  - official
+  name: CC-BY-NC-SA-4.0
+  url: https://discovery.dundee.ac.uk/files/10245400/50salads.pdf
+sources:
+- id: official
+  type: official_documentation
+  title: 'University of Dundee: 50 Salads archived dataset documentation'
+  url: https://discovery.dundee.ac.uk/files/10245400/50salads.pdf
+  accessed_at: '2026-10-08'
+  locator:
+    section: Dataset description; License; Annotations
+- id: anticipation_paper
+  type: paper
+  title: Prototypical Action Reasoning Facilitated by Vision-Language Alignment for Egocentric Action
+    Anticipation
+  url: https://openaccess.thecvf.com/content/CVPR2026/papers/Shao_Prototypical_Action_Reasoning_Facilitated_by_Vision-Language_Alignment_for_Egocentric_Action_CVPR_2026_paper.pdf
+  accessed_at: '2026-10-08'
+  locator:
+    section: 4.1 Datasets; 4.2 Implementation Details
+    page: '6'
+verification:
+  status: verified
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  - anticipation_paper
+  notes: Source descriptions and annotation meaning checked; no data download, reproduction, or independent
+    second-pass review.
+example:
+  kind: illustrative
+  input: An observed prefix of salad preparation with aligned sensor readings.
+  output: The upcoming annotated recipe action in the cited anticipation setup.
+  source_ids:
+  - official
+  - anticipation_paper
+  checked_at: '2026-10-08'
+  sample_url: https://discovery.dundee.ac.uk/files/10245400/50salads.pdf
+notes: Year identifies the original publication; institutional dataset metadata also records 2012. Action
+  vocabularies and forecasting splits vary by downstream protocol.
+statistics:
+- name: Participants
+  value: 25
+  unit: people
+  release_id: paper_release
+  scope: Original collection
+  source_ids:
+  - official

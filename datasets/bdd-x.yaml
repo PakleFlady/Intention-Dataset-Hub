@@ -1,0 +1,87 @@
+schema_version: '0.1'
+id: bdd-x
+name: BDD-X
+year: 2018
+description: Driving videos with textual descriptions and explanations of human driver actions.
+intention_relevance: explicit
+intention_definition: Observer-authored explanations attribute reasons to observed human driver behavior.
+  They provide motive judgments rather than driver self-reports or prospective intentions.
+domains:
+- driver_behavior
+- autonomous_driving
+intention_types:
+- driving_maneuver
+tasks:
+- intention_reasoning
+modalities:
+- rgb
+- text
+- vehicle_telemetry
+- trajectory
+data_formats:
+- video
+- text
+- time_series
+- structured_annotation
+data_origin: real
+annotations:
+- id: action_explanation
+  semantic: explanation
+  description: Temporally localized descriptions of what the driver does and why.
+  provenance: observer_judgment
+  scope: Annotated driving intervals
+  source_ids:
+  - official
+releases:
+- id: paper_release
+  label: 'BDD-X: author-described data'
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  notes: Exact annotation revision is not established; downstream protocols require separate mapping.
+access:
+  status: open
+  url: https://github.com/JinkyuKimUCB/BDD-X-dataset
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  conditions: Public author-linked annotation and split entries checked; upstream media conditions and
+    current full-video availability were not tested.
+licenses:
+- component: dataset media and annotations
+  status: unknown
+  source_ids:
+  - official
+sources:
+- id: official
+  type: author_code
+  title: BDD-X author dataset repository
+  url: https://github.com/JinkyuKimUCB/BDD-X-dataset
+  accessed_at: '2026-10-08'
+  locator:
+    section: Dataset; annotation instructions; annotation downloads
+verification:
+  status: verified
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  notes: Source descriptions and annotation meaning checked; no data download, reproduction, or independent
+    second-pass review.
+example:
+  kind: illustrative
+  input: A road video and the interval of a human driving action.
+  output: A textual action description and the observer-attributed reason.
+  source_ids:
+  - official
+  checked_at: '2026-10-08'
+  sample_url: https://github.com/JinkyuKimUCB/BDD-X-dataset
+notes: Software/documentation copyright terms do not establish a raw-video license. Distinct from BDD-OIA
+  appropriate-action decision labels.
+statistics:
+- name: Videos
+  value: 6970
+  unit: videos
+  release_id: paper_release
+  scope: Author-described corpus
+  source_ids:
+  - official

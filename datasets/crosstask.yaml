@@ -1,0 +1,97 @@
+schema_version: '0.1'
+id: crosstask
+name: CrossTask
+year: 2019
+description: Instructional tasks with step descriptions and primary-task temporal annotations.
+intention_relevance: implicit
+intention_definition: Forecast remaining primary-task steps under the cited procedure planning setup.
+  A task description defines a prescribed process rather than a private human goal.
+domains:
+- daily_activities
+- human_object_interaction
+intention_types:
+- action
+- task_goal
+tasks:
+- future_activity_prediction
+modalities:
+- rgb
+- audio
+- text
+data_formats:
+- video
+- text
+- structured_annotation
+data_origin: real
+annotations:
+- id: primary_steps
+  semantic: future_action
+  description: Primary-task step boundaries reused as future-step targets.
+  provenance: observer_judgment
+  scope: 18 manually annotated primary tasks
+  source_ids:
+  - official
+  - planning_paper
+releases:
+- id: paper_release
+  label: 'CrossTask: author-described data'
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  - planning_paper
+  notes: Exact annotation revision is not established; downstream protocols require separate mapping.
+access:
+  status: open
+  url: https://github.com/DmZhukov/CrossTask
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  - planning_paper
+  conditions: Author-linked annotation and feature archives plus video URLs; media were not downloaded.
+licenses:
+- component: dataset media and annotations
+  status: unknown
+  source_ids:
+  - official
+sources:
+- id: official
+  type: author_code
+  title: CrossTask author repository
+  url: https://github.com/DmZhukov/CrossTask
+  accessed_at: '2026-10-08'
+  locator:
+    section: Data; annotations; task descriptions
+- id: planning_paper
+  type: paper
+  title: Enhancing Visual Planning with Auxiliary Tasks and Multi-token Prediction
+  url: https://arxiv.org/abs/2507.15130
+  accessed_at: '2026-10-08'
+  locator:
+    section: Datasets; procedure planning experiments
+verification:
+  status: verified
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  - planning_paper
+  notes: Source descriptions and annotation meaning checked; no data download, reproduction, or independent
+    second-pass review.
+example:
+  kind: illustrative
+  input: A video prefix for a primary task and its completed step sequence.
+  output: Future steps completing the same procedure.
+  source_ids:
+  - official
+  - planning_paper
+  checked_at: '2026-10-08'
+  sample_url: https://github.com/DmZhukov/CrossTask
+notes: The original collection has 18 primary and 65 related tasks. Related-task videos do not have the
+  same manual step annotations; downstream subsets require separate protocol mapping.
+statistics:
+- name: Primary tasks
+  value: 18
+  unit: tasks
+  release_id: paper_release
+  scope: Manually annotated partition
+  source_ids:
+  - official

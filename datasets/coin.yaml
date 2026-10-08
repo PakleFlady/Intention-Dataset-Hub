@@ -1,0 +1,109 @@
+schema_version: '0.1'
+id: coin
+name: COIN
+year: 2019
+description: Instructional videos with task and step annotations used in procedure forecasting.
+intention_relevance: implicit
+intention_definition: Forecast later procedural steps from an observed prefix in the cited planning study.
+  Task categories supply procedure context, not self-reported personal intent.
+domains:
+- daily_activities
+- human_object_interaction
+intention_types:
+- action
+- task_goal
+tasks:
+- future_activity_prediction
+modalities:
+- rgb
+- text
+data_formats:
+- video
+- text
+- structured_annotation
+data_origin: real
+annotations:
+- id: procedure_steps
+  semantic: future_action
+  description: Manually annotated step intervals serve as future sequence targets after prefix selection.
+  provenance: observer_judgment
+  scope: Annotated instructional sequences
+  source_ids:
+  - official
+  - planning_paper
+releases:
+- id: paper_release
+  label: 'COIN: author-described data'
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  - planning_paper
+  notes: Exact annotation revision is not established; downstream protocols require separate mapping.
+access:
+  status: open
+  url: https://github.com/coin-dataset/annotations
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  - planning_paper
+  conditions: Public annotations and YouTube URLs; individual third-party videos may change availability.
+licenses:
+- component: Repository files and annotations
+  status: known
+  name: Author research-only terms
+  source_ids:
+  - official
+  url: https://github.com/coin-dataset/annotations
+- component: Third-party YouTube media
+  status: unknown
+  source_ids:
+  - official
+sources:
+- id: official
+  type: author_code
+  title: COIN author annotations
+  url: https://github.com/coin-dataset/annotations
+  accessed_at: '2026-10-08'
+  locator:
+    section: Introduction; annotation example; License
+- id: planning_paper
+  type: paper
+  title: Enhancing Visual Planning with Auxiliary Tasks and Multi-token Prediction
+  url: https://arxiv.org/abs/2507.15130
+  accessed_at: '2026-10-08'
+  locator:
+    section: Datasets; procedure planning experiments
+verification:
+  status: verified
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  - planning_paper
+  notes: Source descriptions and annotation meaning checked; no data download, reproduction, or independent
+    second-pass review.
+example:
+  kind: illustrative
+  input: An instructional-video prefix and already completed procedural steps.
+  output: The remaining procedure steps in the cited visual planning setup.
+  source_ids:
+  - official
+  - planning_paper
+  checked_at: '2026-10-08'
+  sample_url: https://github.com/coin-dataset/annotations
+notes: Original annotations support instructional analysis. Anticipation eligibility comes from the cited
+  future-step planning protocol.
+statistics:
+- name: Videos
+  value: 11827
+  unit: videos
+  release_id: paper_release
+  scope: Original corpus
+  source_ids:
+  - official
+- name: Tasks
+  value: 180
+  unit: tasks
+  release_id: paper_release
+  scope: Original corpus
+  source_ids:
+  - official

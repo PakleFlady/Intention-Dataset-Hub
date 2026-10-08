@@ -1,0 +1,94 @@
+schema_version: '0.1'
+id: camf-industrial-assembly
+name: CAMF industrial assembly study data (author-collected)
+year: 2026
+description: Multimodal study of intended workpiece selection for industrial human-robot assembly.
+intention_relevance: explicit
+intention_definition: The instructed target workpiece is an operational object goal. Recognition during
+  the reach is early action recognition; it is not evidence of spontaneous mental-state inference.
+domains:
+- industrial_collaboration
+- human_robot_interaction
+intention_types:
+- object_interaction
+- collaborative
+tasks:
+- goal_recognition
+- early_action_recognition
+modalities:
+- object_state
+- gaze
+- pose
+- imu
+data_formats:
+- time_series
+- structured_annotation
+data_origin: real
+annotations:
+- id: target_workpiece
+  semantic: goal
+  description: Target assembly component specified by the experimental instruction.
+  provenance: experiment_assigned
+  scope: Participant trials
+  source_ids:
+  - paper
+releases:
+- id: paper_release
+  label: 'CAMF industrial assembly study data (author-collected): author-described data'
+  annotation_version: author-release-unspecified
+  source_ids:
+  - paper
+  notes: Exact annotation revision is not established; downstream protocols require separate mapping.
+access:
+  status: unknown
+  url: https://arxiv.org/abs/2609.10339
+  checked_at: '2026-10-08'
+  source_ids:
+  - paper
+  conditions: Study data are described in the paper; no public dataset distribution entry was identified
+    in the inspected source.
+licenses:
+- component: dataset media and annotations
+  status: unknown
+  source_ids:
+  - paper
+sources:
+- id: paper
+  type: paper
+  title: A Confidence-Aware Multimodal Fusion Framework for Industrial Human-Robot Collaboration
+  url: https://arxiv.org/abs/2609.10339
+  accessed_at: '2026-10-08'
+  locator:
+    section: Dataset construction; experimental platform
+    page: 7-8
+verification:
+  status: verified
+  checked_at: '2026-10-08'
+  source_ids:
+  - paper
+  notes: Source descriptions and annotation meaning checked; no data download, reproduction, or independent
+    second-pass review.
+example:
+  kind: illustrative
+  input: Gaze, body/hand motion and object pose during an instructed reach.
+  output: The intended component among the seven assembly workpieces.
+  source_ids:
+  - paper
+  checked_at: '2026-10-08'
+  sample_url: https://arxiv.org/abs/2609.10339
+notes: Descriptive catalog name; CAMF names the method, not a verified official dataset release.
+statistics:
+- name: Participants
+  value: 5
+  unit: people
+  release_id: paper_release
+  scope: Reported experiment
+  source_ids:
+  - paper
+- name: Target components
+  value: 7
+  unit: components
+  release_id: paper_release
+  scope: Assembly workspace
+  source_ids:
+  - paper

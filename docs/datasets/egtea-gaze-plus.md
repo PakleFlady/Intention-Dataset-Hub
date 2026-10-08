@@ -52,9 +52,10 @@ No verified benchmark protocol is currently documented.
 
 - **official**: [EGTEA Gaze+ original project or publication](https://cbs.ic.gatech.edu/fpv/) — section: EGTEA Gaze+; checked 2026-09-30
 - **author_protocol**: [EGTEA Gaze+ author protocol or annotation guide](https://github.com/fpv-iplab/rulstm) — section: EGTEA Gaze+ anticipation setup; checked 2026-09-30
+- **anticipation_paper**: [Prototypical Action Reasoning Facilitated by Vision-Language Alignment for Egocentric Action Anticipation](https://openaccess.thecvf.com/content/CVPR2026/papers/Shao_Prototypical_Action_Reasoning_Facilitated_by_Vision-Language_Alignment_for_Egocentric_Action_CVPR_2026_paper.pdf) — section: 4.1 Datasets; 4.2 Implementation Details, page: 6; checked 2026-10-08
 
 **Dataset metadata verified:** 2026-09-30 · [official](https://cbs.ic.gatech.edu/fpv/), [author_protocol](https://github.com/fpv-iplab/rulstm)
 
 ## Limits and notes
 
-The author dataset page centers on action and gaze; an author-released anticipation protocol supports inclusion.
+The author dataset page centers on action and gaze; an author-released anticipation protocol supports inclusion. PAR-VLA uses EGTEA for action anticipation; action and gaze observations remain behavior proxies and cues, not directly reported intentions.

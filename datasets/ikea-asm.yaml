@@ -1,0 +1,102 @@
+schema_version: '0.1'
+id: ikea-asm
+name: IKEA ASM
+year: 2021
+description: Multi-view furniture assembly videos reused for action anticipation.
+intention_relevance: implicit
+intention_definition: Predict a subsequent assembly action before onset using the cited anticipation protocol.
+  The original atomic-action annotations are not direct mental-state labels.
+domains:
+- human_object_interaction
+- industrial_collaboration
+intention_types:
+- action
+- task_goal
+tasks:
+- action_anticipation
+modalities:
+- rgb
+- depth
+- pose
+- object_state
+data_formats:
+- video
+- structured_annotation
+data_origin: real
+annotations:
+- id: assembly_action
+  semantic: future_action
+  description: Atomic assembly action segments reused as upcoming-action labels.
+  provenance: observer_judgment
+  scope: Anticipation subset
+  source_ids:
+  - official
+  - anticipation_paper
+releases:
+- id: paper_release
+  label: 'IKEA ASM: author-described data'
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  - anticipation_paper
+  notes: Exact annotation revision is not established; downstream protocols require separate mapping.
+access:
+  status: open
+  url: https://github.com/IkeaASM/IKEA_ASM_Dataset
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  - anticipation_paper
+  conditions: Author-linked access entry inspected; raw data were not downloaded.
+licenses:
+- component: dataset media and annotations
+  status: unknown
+  source_ids:
+  - official
+sources:
+- id: official
+  type: author_code
+  title: IKEA ASM author repository
+  url: https://github.com/IkeaASM/IKEA_ASM_Dataset
+  accessed_at: '2026-10-08'
+  locator:
+    section: Dataset download; modalities; License
+- id: anticipation_paper
+  type: paper
+  title: 'Action Anticipation at a Glimpse: Context-Aware Attention using Vision-Language Models'
+  url: https://arxiv.org/abs/2512.02846
+  accessed_at: '2026-10-08'
+  locator:
+    section: 4.1 Datasets; 4.2 Evaluation protocol
+    page: '5'
+verification:
+  status: verified
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  - anticipation_paper
+  notes: Source descriptions and annotation meaning checked; no data download, reproduction, or independent
+    second-pass review.
+example:
+  kind: illustrative
+  input: Furniture assembly observations preceding the next action.
+  output: The next atomic assembly action in the specified anticipation subset.
+  source_ids:
+  - official
+  - anticipation_paper
+  checked_at: '2026-10-08'
+  sample_url: https://github.com/IkeaASM/IKEA_ASM_Dataset
+viewpoints:
+- exocentric
+capture_setup:
+- multi_camera
+notes: Source code MIT licensing does not establish a media or annotation license. Camera and split selection
+  in AAG must not be merged with other protocols.
+statistics:
+- name: Videos
+  value: 371
+  unit: videos
+  release_id: paper_release
+  scope: Original collection
+  source_ids:
+  - official

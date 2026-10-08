@@ -51,9 +51,10 @@ See the source for current download conditions; raw files were not downloaded fo
 ## Sources
 
 - **official**: [IntentQA original project or publication](https://github.com/JoseponLee/IntentQA) — section: Introduction; Dataset; checked 2026-09-30
+- **intentvlm_2026**: [IntentVLM: Open-Vocabulary Intention Recognition from Videos via Multimodal Large Language Models](https://arxiv.org/abs/2604.24002) — section: Experiments; IntentQA evaluation; checked 2026-10-08
 
 **Dataset metadata verified:** 2026-09-30 · [official](https://github.com/JoseponLee/IntentQA)
 
 ## Limits and notes
 
-The 2026 TPAMI expansion is a separate annotation revision and needs a distinct release ID when benchmarked.
+The 2026 TPAMI expansion is a separate annotation revision and needs a distinct release ID when benchmarked. IntentVLM (2026) reuses IntentQA for intention evaluation; this is a downstream use, not a new native annotation release.

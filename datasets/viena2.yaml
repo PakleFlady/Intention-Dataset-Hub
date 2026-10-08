@@ -1,0 +1,81 @@
+schema_version: '0.1'
+id: viena2
+name: VIENA2
+year: 2018
+description: Virtual driving scenarios designed for action anticipation.
+intention_relevance: implicit
+intention_definition: Predict simulated future actions in driver, pedestrian and front-car scenarios;
+  class labels encode future behavior rather than directly observed private intention.
+domains:
+- driver_behavior
+- pedestrian
+- autonomous_driving
+intention_types:
+- driving_maneuver
+- pedestrian_crossing
+- action
+tasks:
+- action_anticipation
+- behavior_prediction
+modalities:
+- rgb
+- vehicle_telemetry
+data_formats:
+- video
+- time_series
+- structured_annotation
+data_origin: synthetic
+annotations:
+- id: scenario_action
+  semantic: future_action
+  description: Scenario-specific future action labels generated with simulated recordings.
+  provenance: simulated
+  scope: Five scenario families
+  source_ids:
+  - official
+releases:
+- id: paper_release
+  label: 'VIENA2: author-described data'
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  notes: Exact annotation revision is not established; downstream protocols require separate mapping.
+access:
+  status: open
+  url: https://sites.google.com/view/viena2-project/home
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  conditions: Author-linked access entry inspected; raw data were not downloaded.
+licenses:
+- component: dataset media and annotations
+  status: known
+  source_ids:
+  - official
+  name: Author academic non-commercial terms
+  url: https://sites.google.com/view/viena2-project/home
+sources:
+- id: official
+  type: official_project
+  title: VIENA2 author project
+  url: https://sites.google.com/view/viena2-project/home
+  accessed_at: '2026-10-08'
+  locator:
+    section: Dataset description; download; usage terms
+verification:
+  status: verified
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  notes: Source descriptions and annotation meaning checked; no data download, reproduction, or independent
+    second-pass review.
+example:
+  kind: illustrative
+  input: A virtual driving clip with available steering and speed measurements.
+  output: An upcoming scenario action such as a driver maneuver or pedestrian event.
+  source_ids:
+  - official
+  checked_at: '2026-10-08'
+  sample_url: https://sites.google.com/view/viena2-project/home
+notes: The five scenarios include accidents and traffic-rule events as well as human behavior; not every
+  class is an intention label.

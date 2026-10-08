@@ -29,7 +29,7 @@ annotations:
   description: Later kitchen action segment used in anticipation protocols.
   provenance: behavior_derived
   scope: First-person activity videos
-  source_ids: &id001
+  source_ids:
   - official
   - author_protocol
 releases:
@@ -67,10 +67,21 @@ sources:
   accessed_at: '2026-09-30'
   locator:
     section: EGTEA Gaze+ anticipation setup
+- id: anticipation_paper
+  type: paper
+  title: Prototypical Action Reasoning Facilitated by Vision-Language Alignment for Egocentric Action
+    Anticipation
+  url: https://openaccess.thecvf.com/content/CVPR2026/papers/Shao_Prototypical_Action_Reasoning_Facilitated_by_Vision-Language_Alignment_for_Egocentric_Action_CVPR_2026_paper.pdf
+  accessed_at: '2026-10-08'
+  locator:
+    section: 4.1 Datasets; 4.2 Implementation Details
+    page: '6'
 verification:
   status: verified
   checked_at: '2026-09-30'
-  source_ids: *id001
+  source_ids:
+  - official
+  - author_protocol
   notes: Original project/task evidence checked from available indexed source material; live access could
     not be confirmed. Dataset files were not downloaded.
 viewpoints:
@@ -78,12 +89,13 @@ viewpoints:
 capture_setup:
 - wearable
 notes: The author dataset page centers on action and gaze; an author-released anticipation protocol supports
-  inclusion.
-
+  inclusion. PAR-VLA uses EGTEA for action anticipation; action and gaze observations remain behavior
+  proxies and cues, not directly reported intentions.
 example:
   kind: illustrative
   input: A first-person food-preparation video prefix with the wearer's eye-gaze signal.
-  output: A future kitchen action category predicted before the action starts; gaze is an input cue, not the intention label.
+  output: A future kitchen action category predicted before the action starts; gaze is an input cue, not
+    the intention label.
   checked_at: '2026-10-08'
   source_ids:
   - official

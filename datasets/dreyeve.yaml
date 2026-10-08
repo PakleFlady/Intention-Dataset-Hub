@@ -1,0 +1,76 @@
+schema_version: '0.1'
+id: dreyeve
+name: DR(eye)VE
+year: 2016
+description: Real driving recordings with gaze fixations, task-dependent saliency and telemetry.
+intention_relevance: related
+intention_definition: Gaze provides task-dependent attention cues relevant to driver intention modelling;
+  fixation and saliency maps themselves are not intention or maneuver labels.
+domains:
+- driver_behavior
+- autonomous_driving
+intention_types:
+- driving_maneuver
+tasks: []
+modalities:
+- rgb
+- gaze
+- trajectory
+- vehicle_telemetry
+data_formats:
+- video
+- time_series
+- structured_annotation
+data_origin: real
+annotations:
+- id: gaze_fixation
+  semantic: cue
+  description: Recorded gaze fixation and temporal integration into task-specific saliency maps.
+  provenance: behavior_derived
+  scope: Driving frames
+  source_ids:
+  - official
+releases:
+- id: paper_release
+  label: 'DR(eye)VE: author-described data'
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  notes: Exact annotation revision is not established; downstream protocols require separate mapping.
+access:
+  status: unknown
+  url: https://aimagelab-legacy.ing.unimore.it/imagelab/researchActivity.asp?idActivity=033
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  conditions: Author research page describes public data; its linked legacy download destination could
+    not be confirmed during this check.
+licenses:
+- component: dataset media and annotations
+  status: unknown
+  source_ids:
+  - official
+sources:
+- id: official
+  type: official_project
+  title: 'AImageLab: DR(eye)VE research and dataset'
+  url: https://aimagelab-legacy.ing.unimore.it/imagelab/researchActivity.asp?idActivity=033
+  accessed_at: '2026-10-08'
+  locator:
+    section: Dataset features; Learn More and Download
+verification:
+  status: verified
+  checked_at: '2026-10-08'
+  source_ids:
+  - official
+  notes: Source descriptions and annotation meaning checked; no data download, reproduction, or independent
+    second-pass review.
+example:
+  kind: illustrative
+  input: A road video with aligned gaze, GPS, speed and course observations.
+  output: Attention/fixation cues; no original intention class is asserted.
+  source_ids:
+  - official
+  checked_at: '2026-10-08'
+  sample_url: https://aimagelab-legacy.ing.unimore.it/imagelab/researchActivity.asp?idActivity=033
+notes: Included as related driver-attention evidence, without an intention benchmark.
