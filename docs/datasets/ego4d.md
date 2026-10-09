@@ -6,19 +6,21 @@ Large first-person video collection with short- and long-term forecasting tasks.
 
 ## Example input and output
 
-This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+Author-published figure. This is a depicted example, not a transcribed annotation row.
 
-**Input:** A first-person video clip ending before the camera wearer's next object interactions.
+**Input:** The observed egocentric food-preparation frames before the future actions shown in the paper's forecasting figure.
 
-**Output / label:** An ordered future sequence of action labels, each represented by a verb and noun.
+**Output / label:** The author figure depicts the model prediction 'knead dough + put dough + pack spice + pour spice' (future verb-noun actions), not a transcribed ground-truth row.
 
 ![Official Ego4D forecasting illustration of egocentric observations and future activity](https://ego4d-data.org/assets/images/forecasting.png)
 
 *Author-published forecasting illustration; task-specific input and output details are in the linked protocol.*
 
-[Open the author-provided sample or demo](https://ego4d-data.org/docs/benchmarks/forecasting/)
+[Open the original example](https://www.cs.utexas.edu/~grauman/papers/ego4d-cvpr2022.pdf)
 
-**Example evidence:** [official](https://ego4d-data.org/docs/benchmarks/forecasting/)
+**Location in source:** Ego4D paper, Figure 10, Long-Term Anticipation panel.
+
+**Example evidence:** [example_source](https://www.cs.utexas.edu/~grauman/papers/ego4d-cvpr2022.pdf)
 
 ## Intention in this dataset
 
@@ -62,5 +64,6 @@ No protocol-matched result has passed verification yet.
 ## Sources
 
 - **official**: [Ego4D original project or publication](https://ego4d-data.org/docs/benchmarks/forecasting/) — section: Task Definition; Annotations; checked 2026-09-30
+- **example_source**: [Ego4D author-published example](https://www.cs.utexas.edu/~grauman/papers/ego4d-cvpr2022.pdf) — section: Ego4D paper, Figure 10, Long-Term Anticipation panel.; checked 2026-10-09
 
 **Dataset metadata verified:** 2026-09-30 · [official](https://ego4d-data.org/docs/benchmarks/forecasting/)

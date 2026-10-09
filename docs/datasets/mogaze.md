@@ -6,19 +6,21 @@ Human full-body motion, workspace geometry, and eye gaze during manipulation.
 
 ## Example input and output
 
-This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+Author-published documentation example. It shows the data or task format, not a verified annotation row.
 
-**Input:** A time series of full-body motion, eye-gaze direction, object states, and workspace geometry during manipulation.
+**Input:** The official playback example loads p1_1_human_data.hdf5, p1_1_gaze_data.hdf5, p1_1_object_data.hdf5 and scene.xml; it demonstrates frame 3000.
 
-**Output / label:** Time-aligned gaze and full-body motion traces that can support motion prediction; gaze is a cue, not a direct goal report.
+**Output / label:** The paired p1_1_segmentations.hdf5 provides (startframe, endframe, object label) intervals; 'null' denotes a period when no object moves. Full-body and gaze trajectories remain continuous signals, not a direct intention class.
 
 ![Official MoGaze visualization of full-body movement and gaze in a workspace](https://raw.githubusercontent.com/humans-to-robots-motion/mogaze/master/images/im2.png)
 
 *Author-published visualization; the underlying dataset is synchronized time-series data.*
 
-[Open the author-provided sample or demo](https://humans-to-robots-motion.github.io/mogaze/)
+[Open the original example](https://github.com/humans-to-robots-motion/mogaze/blob/master/getting_started.md)
 
-**Example evidence:** [official](https://humans-to-robots-motion.github.io/mogaze/)
+**Location in source:** Official Getting Started tutorial, Playback Human data, Loading Gaze and Segmentations.
+
+**Example evidence:** [example_source](https://github.com/humans-to-robots-motion/mogaze/blob/master/getting_started.md)
 
 ## Intention in this dataset
 
@@ -68,6 +70,7 @@ No protocol-matched result has passed verification yet.
 ## Sources
 
 - **official**: [MoGaze original project or publication](https://humans-to-robots-motion.github.io/mogaze/) — section: Dataset overview; Data; checked 2026-09-30
+- **example_source**: [MoGaze author-published example](https://github.com/humans-to-robots-motion/mogaze/blob/master/getting_started.md) — section: Official Getting Started tutorial, Playback Human data, Loading Gaze and Segmentations.; checked 2026-10-09
 
 **Dataset metadata verified:** 2026-09-30 · [official](https://humans-to-robots-motion.github.io/mogaze/)
 

@@ -79,6 +79,13 @@ sources:
   accessed_at: '2026-09-30'
   locator:
     section: 3 Benchmark; Datasets; Data sampling
+- id: example_source
+  type: official_data
+  title: JAAD author-published example
+  url: https://github.com/ykotseruba/JAAD/blob/JAAD_2.0/annotations_attributes/video_0002_attributes.xml
+  accessed_at: '2026-10-09'
+  locator:
+    section: annotations_attributes/video_0002_attributes.xml, pedestrian id 0_2_6b.
 verification:
   status: verified
   checked_at: '2026-09-30'
@@ -101,15 +108,18 @@ statistics:
   - official
 
 example:
-  kind: illustrative
-  input: A vehicle-mounted video prefix showing a pedestrian near the road with bounding boxes and behavioral context.
-  output: A future pedestrian behavior label, such as crossing versus not crossing, under the selected JAAD protocol.
-  checked_at: '2026-10-08'
+  kind: source_record
+  input: Vehicle video video_0002, tracked pedestrian 0_2_6b observed before the annotation's crossing_point frame
+    81.
+  output: Pedestrian attribute crossing=1, crossing_point=81. This records observed crossing behavior; it is not
+    a self-reported wish to cross.
   source_ids:
-  - official
-  sample_url: https://github.com/ykotseruba/JAAD
+  - example_source
+  sample_url: https://github.com/ykotseruba/JAAD/blob/JAAD_2.0/annotations_attributes/video_0002_attributes.xml
+  source_locator: annotations_attributes/video_0002_attributes.xml, pedestrian id 0_2_6b.
   media:
     kind: image
     url: https://raw.githubusercontent.com/ykotseruba/JAAD/JAAD_2.0/behavior.png
     alt: Official JAAD behavior annotation illustration for pedestrians
     caption: Author-published behavior illustration; crossing behavior is not self-reported intention.
+  checked_at: '2026-10-09'

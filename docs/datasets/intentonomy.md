@@ -6,19 +6,21 @@ Images of everyday scenes manually assigned human-intent categories.
 
 ## Example input and output
 
-This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+Author-published figure. This is a depicted example, not a transcribed annotation row.
 
-**Input:** One image depicting a person in an everyday or social scene.
+**Input:** The social-media image of people holding hands in the author's Figure 1(b).
 
-**Output / label:** An observer-assigned human-intent category from the 28-category vocabulary, not a self-report from the pictured person.
+**Output / label:** The figure associates the image with the human-assigned category 'in love'. This is an interpretation of image-posting intent, not direct access to the photographed people's mental states.
 
 ![Official Intentonomy teaser with example images and intent categories](https://raw.githubusercontent.com/KMnP/intentonomy/master/images/teaser.png)
 
 *Author-published teaser of the image-intent task; it does not establish the private motives of the people pictured.*
 
-[Open the author-provided sample or demo](https://github.com/KMnP/intentonomy/blob/master/DATA.md)
+[Open the original example](https://vision.cornell.edu/se3/wp-content/uploads/2021/03/intentonomy.pdf)
 
-**Example evidence:** [official](https://github.com/KMnP/intentonomy)
+**Location in source:** Intentonomy paper, Figure 1(b), holding-hands image.
+
+**Example evidence:** [example_source](https://vision.cornell.edu/se3/wp-content/uploads/2021/03/intentonomy.pdf)
 
 ## Intention in this dataset
 
@@ -72,5 +74,6 @@ These values apply only to the linked comparison protocol and snapshot; they are
 ## Sources
 
 - **official**: [Intentonomy original project or publication](https://github.com/KMnP/intentonomy) — section: Intentonomy Dataset; checked 2026-09-30
+- **example_source**: [Intentonomy author-published example](https://vision.cornell.edu/se3/wp-content/uploads/2021/03/intentonomy.pdf) — section: Intentonomy paper, Figure 1(b), holding-hands image.; checked 2026-10-09
 
 **Dataset metadata verified:** 2026-09-30 · [official](https://github.com/KMnP/intentonomy)

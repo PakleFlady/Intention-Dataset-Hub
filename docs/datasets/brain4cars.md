@@ -6,15 +6,17 @@ Natural driving data combining driver-facing and road-facing sensing for maneuve
 
 ## Example input and output
 
-This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+Author-published figure. This is a depicted example, not a transcribed annotation row.
 
-**Input:** A short in-cabin driver video together with the forward road view before a maneuver.
+**Input:** The driver-facing and road-facing video plus GPS, speed and map context in the paper's system-overview example.
 
-**Output / label:** A future maneuver category such as a left turn, right turn, lane change, or continuing straight.
+**Output / label:** Left lane change is the maneuver anticipated in the author's example; Figure 2 depicts maneuver probabilities rather than a copied data row.
 
-[Open the author-provided sample or demo](https://brain4cars.com/pdfs/brain4cars.pdf#page=6)
+[Open the original example](https://brain4cars.com/pdfs/brain4cars.pdf)
 
-**Example evidence:** [official](https://brain4cars.com/)
+**Location in source:** Brain4Cars paper, Figure 2 (System Overview).
+
+**Example evidence:** [example_source](https://brain4cars.com/pdfs/brain4cars.pdf)
 
 ## Intention in this dataset
 
@@ -62,6 +64,7 @@ These values apply only to the linked comparison protocol and snapshot; they are
 ## Sources
 
 - **official**: [Brain4Cars original project or publication](https://brain4cars.com/) — section: Research; Code and Data set; checked 2026-09-30
+- **example_source**: [Brain4Cars author-published example](https://brain4cars.com/pdfs/brain4cars.pdf) — section: Brain4Cars paper, Figure 2 (System Overview).; checked 2026-10-09
 
 **Dataset metadata verified:** 2026-09-30 · [official](https://brain4cars.com/)
 

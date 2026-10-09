@@ -57,6 +57,13 @@ sources:
   accessed_at: '2026-09-30'
   locator:
     section: Dataset overview; Data
+- id: example_source
+  type: official_documentation
+  title: MoGaze author-published example
+  url: https://github.com/humans-to-robots-motion/mogaze/blob/master/getting_started.md
+  accessed_at: '2026-10-09'
+  locator:
+    section: Official Getting Started tutorial, Playback Human data, Loading Gaze and Segmentations.
 verification:
   status: verified
   checked_at: '2026-09-30'
@@ -79,15 +86,19 @@ statistics:
   - official
 
 example:
-  kind: illustrative
-  input: A time series of full-body motion, eye-gaze direction, object states, and workspace geometry during manipulation.
-  output: Time-aligned gaze and full-body motion traces that can support motion prediction; gaze is a cue, not a direct goal report.
-  checked_at: '2026-10-08'
+  kind: source_format
+  input: The official playback example loads p1_1_human_data.hdf5, p1_1_gaze_data.hdf5, p1_1_object_data.hdf5 and
+    scene.xml; it demonstrates frame 3000.
+  output: The paired p1_1_segmentations.hdf5 provides (startframe, endframe, object label) intervals; 'null' denotes
+    a period when no object moves. Full-body and gaze trajectories remain continuous signals, not a direct intention
+    class.
   source_ids:
-  - official
-  sample_url: https://humans-to-robots-motion.github.io/mogaze/
+  - example_source
+  sample_url: https://github.com/humans-to-robots-motion/mogaze/blob/master/getting_started.md
+  source_locator: Official Getting Started tutorial, Playback Human data, Loading Gaze and Segmentations.
   media:
     kind: image
     url: https://raw.githubusercontent.com/humans-to-robots-motion/mogaze/master/images/im2.png
     alt: Official MoGaze visualization of full-body movement and gaze in a workspace
     caption: Author-published visualization; the underlying dataset is synchronized time-series data.
+  checked_at: '2026-10-09'

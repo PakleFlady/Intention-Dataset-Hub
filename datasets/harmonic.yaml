@@ -59,6 +59,14 @@ sources:
   accessed_at: '2026-09-30'
   locator:
     section: Overview; Accessing the dataset
+- id: example_source
+  type: official_documentation
+  title: HARMONIC author-published example
+  url: https://harplab.github.io/harmonic/
+  accessed_at: '2026-10-09'
+  locator:
+    section: HARMONIC dataset page, sample archive and version 1.0.0 changelog; accompanying paper, Data / Eye Gaze
+      sections.
 verification:
   status: verified
   checked_at: '2026-09-30'
@@ -74,15 +82,19 @@ capture_setup:
 notes: Official page identifies intention prediction and mental-state modeling as possible uses.
 
 example:
-  kind: illustrative
-  input: Egocentric and third-person video plus eye gaze, joystick, muscle activity, and robot-arm state during assisted eating.
-  output: Time-aligned gaze fixation and body-pose annotations that can support target inference; these are cues, not intention labels.
-  checked_at: '2026-10-08'
+  kind: source_format
+  input: 'One author-released HARMONIC sample run: world.mp4 egocentric video aligned with joystick, robot joint-state
+    and other sensor streams by timestamps.'
+  output: The corresponding gaze_positions.csv contains normalized gaze coordinates (norm_pos_x, norm_pos_y); assistance_info.csv
+    records p_goal_* target probabilities. These are recorded/derived cues, not verified participant intentions.
   source_ids:
-  - official
+  - example_source
   sample_url: https://harplab.github.io/harmonic/
+  source_locator: HARMONIC dataset page, sample archive and version 1.0.0 changelog; accompanying paper, Data /
+    Eye Gaze sections.
   media:
     kind: image
     url: https://harplab.github.io/img/harmonic_task.png
     alt: Official HARMONIC task illustration with a person and assistive robot arm
     caption: Author-published task illustration; the released sample run includes the synchronized streams.
+  checked_at: '2026-10-09'

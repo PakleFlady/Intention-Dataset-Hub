@@ -6,19 +6,21 @@ Multimodal recordings of people and assistive robots collaborating on tasks.
 
 ## Example input and output
 
-This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+Author-published documentation example. It shows the data or task format, not a verified annotation row.
 
-**Input:** Egocentric and third-person video plus eye gaze, joystick, muscle activity, and robot-arm state during assisted eating.
+**Input:** One author-released HARMONIC sample run: world.mp4 egocentric video aligned with joystick, robot joint-state and other sensor streams by timestamps.
 
-**Output / label:** Time-aligned gaze fixation and body-pose annotations that can support target inference; these are cues, not intention labels.
+**Output / label:** The corresponding gaze_positions.csv contains normalized gaze coordinates (norm_pos_x, norm_pos_y); assistance_info.csv records p_goal_* target probabilities. These are recorded/derived cues, not verified participant intentions.
 
 ![Official HARMONIC task illustration with a person and assistive robot arm](https://harplab.github.io/img/harmonic_task.png)
 
 *Author-published task illustration; the released sample run includes the synchronized streams.*
 
-[Open the author-provided sample or demo](https://harplab.github.io/harmonic/)
+[Open the original example](https://harplab.github.io/harmonic/)
 
-**Example evidence:** [official](https://harplab.github.io/harmonic/)
+**Location in source:** HARMONIC dataset page, sample archive and version 1.0.0 changelog; accompanying paper, Data / Eye Gaze sections.
+
+**Example evidence:** [example_source](https://harplab.github.io/harmonic/)
 
 ## Intention in this dataset
 
@@ -62,6 +64,7 @@ No protocol-matched result has passed verification yet.
 ## Sources
 
 - **official**: [HARMONIC original project or publication](https://harplab.github.io/harmonic/) — section: Overview; Accessing the dataset; checked 2026-09-30
+- **example_source**: [HARMONIC author-published example](https://harplab.github.io/harmonic/) — section: HARMONIC dataset page, sample archive and version 1.0.0 changelog; accompanying paper, Data / Eye Gaze sections.; checked 2026-10-09
 
 **Dataset metadata verified:** 2026-09-30 · [official](https://harplab.github.io/harmonic/)
 

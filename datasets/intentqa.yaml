@@ -58,6 +58,13 @@ sources:
   accessed_at: '2026-09-30'
   locator:
     section: Introduction; Dataset
+- id: example_source
+  type: official_data
+  title: IntentQA author-published example
+  url: https://github.com/JoseponLee/IntentQA/blob/main/datasets/IntentQA/test.csv#L2
+  accessed_at: '2026-10-09'
+  locator:
+    section: datasets/IntentQA/test.csv, line 2, qid 2, answer 2 = a2.
 verification:
   status: verified
   checked_at: '2026-09-30'
@@ -70,10 +77,13 @@ notes: The 2026 TPAMI expansion is a separate annotation revision and needs a di
   benchmarked.
 
 example:
-  kind: illustrative
-  input: A video clip together with a natural-language question about why a person acted.
-  output: A natural-language answer from the question-answer annotation; the answer is an interpretation of intent.
-  checked_at: '2026-10-08'
+  kind: source_record
+  input: 'Video ID 6102982194; question: ''why does the man playing the white guitar go near the man playing the
+    keytar''; choices: want to talk to him / make music / to energise him / want to hit him / to annoy him.'
+  output: 'Answer index 2 (zero-based): ''to energise him''. The source is test.csv question ID 2; video files are
+    distributed separately by the authors.'
   source_ids:
-  - official
-  sample_url: https://vimeo.com/896083218
+  - example_source
+  sample_url: https://github.com/JoseponLee/IntentQA/blob/main/datasets/IntentQA/test.csv#L2
+  source_locator: datasets/IntentQA/test.csv, line 2, qid 2, answer 2 = a2.
+  checked_at: '2026-10-09'

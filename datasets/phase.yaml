@@ -57,6 +57,13 @@ sources:
   accessed_at: '2026-09-30'
   locator:
     section: Abstract; PHASE Dataset
+- id: example_source
+  type: paper
+  title: PHASE author-published example
+  url: https://tshu.io/PHASE/PHASE.pdf#page=1
+  accessed_at: '2026-10-09'
+  locator:
+    section: PHASE paper, Figure 1(B), helping scenario.
 verification:
   status: verified
   checked_at: '2026-09-30'
@@ -68,15 +75,18 @@ viewpoints:
 notes: Human experiments validate social-event perception, but the observed agents are simulated.
 
 example:
-  kind: illustrative
-  input: A procedurally generated 2D animation of two agents moving and interacting with objects and obstacles.
-  output: A generator-assigned social event category, such as helping, for social recognition or prediction.
-  checked_at: '2026-10-08'
+  kind: source_figure
+  input: 'The synthetic 2D event in Figure 1(B): a weak green agent struggles to move a pink object and a red agent
+    joins the interaction.'
+  output: The author describes the red agent's social relation as helping; Figure 1(C) contrasts a case where the
+    red agent takes an object away.
   source_ids:
-  - official
-  sample_url: https://tshu.io/PHASE/
+  - example_source
+  sample_url: https://tshu.io/PHASE/PHASE.pdf#page=1
+  source_locator: PHASE paper, Figure 1(B), helping scenario.
   media:
     kind: image
     url: https://tshu.io/PHASE/intro.png
     alt: Official PHASE introduction image of simulated two-agent social events
     caption: Author-published simulation illustration; these agents are synthetic rather than recorded people.
+  checked_at: '2026-10-09'

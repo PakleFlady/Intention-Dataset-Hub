@@ -6,15 +6,17 @@ First-person food preparation videos with gaze and action annotations used in ac
 
 ## Example input and output
 
-This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+Author-released annotation record. The input and label below refer to the same identified record.
 
-**Input:** A first-person food-preparation video prefix with the wearer's eye-gaze signal.
+**Input:** Egocentric video P07-R01-PastaSalad observed before frame 2751; the author protocol row identifies the next annotated segment as frames 2751–2808.
 
-**Output / label:** A future kitchen action category predicted before the action starts; gaze is an input cue, not the intention label.
+**Output / label:** Action ID 2, 'Take_eating:utensil' (verb ID 2, noun ID 2). The source row is from the RU-LSTM authors' EGTEA anticipation split.
 
-[Open the author-provided sample or demo](https://iplab.dmi.unict.it/legacy/rulstm/)
+[Open the original example](https://github.com/fpv-iplab/rulstm/blob/master/RULSTM/data/egtea/training1.csv#L1)
 
-**Example evidence:** [official](https://cbs.ic.gatech.edu/fpv/)
+**Location in source:** RULSTM/data/egtea/training1.csv, line 1 (annotation ID 2); action name from actions.csv line 3.
+
+**Example evidence:** [example_source](https://github.com/fpv-iplab/rulstm/blob/master/RULSTM/data/egtea/training1.csv#L1)
 
 ## Intention in this dataset
 
@@ -59,6 +61,7 @@ No protocol-matched result has passed verification yet.
 
 - **official**: [EGTEA Gaze+ original project or publication](https://cbs.ic.gatech.edu/fpv/) — section: EGTEA Gaze+; checked 2026-09-30
 - **author_protocol**: [EGTEA Gaze+ author protocol or annotation guide](https://github.com/fpv-iplab/rulstm) — section: EGTEA Gaze+ anticipation setup; checked 2026-09-30
+- **example_source**: [EGTEA Gaze+ author-published example](https://github.com/fpv-iplab/rulstm/blob/master/RULSTM/data/egtea/training1.csv#L1) — section: RULSTM/data/egtea/training1.csv, line 1 (annotation ID 2); action name from actions.csv line 3.; checked 2026-10-09
 
 **Dataset metadata verified:** 2026-09-30 · [official](https://cbs.ic.gatech.edu/fpv/), [author_protocol](https://github.com/fpv-iplab/rulstm)
 

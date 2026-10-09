@@ -57,6 +57,13 @@ sources:
   accessed_at: '2026-09-30'
   locator:
     section: Research; Code and Data set
+- id: example_source
+  type: paper
+  title: Brain4Cars author-published example
+  url: https://brain4cars.com/pdfs/brain4cars.pdf
+  accessed_at: '2026-10-09'
+  locator:
+    section: Brain4Cars paper, Figure 2 (System Overview).
 verification:
   status: verified
   checked_at: '2026-09-30'
@@ -70,10 +77,13 @@ capture_setup:
 notes: Access link and exact release conditions require another check before recommending a download.
 
 example:
-  kind: illustrative
-  input: A short in-cabin driver video together with the forward road view before a maneuver.
-  output: A future maneuver category such as a left turn, right turn, lane change, or continuing straight.
-  checked_at: '2026-10-08'
+  kind: source_figure
+  input: The driver-facing and road-facing video plus GPS, speed and map context in the paper's system-overview
+    example.
+  output: Left lane change is the maneuver anticipated in the author's example; Figure 2 depicts maneuver probabilities
+    rather than a copied data row.
   source_ids:
-  - official
-  sample_url: https://brain4cars.com/pdfs/brain4cars.pdf#page=6
+  - example_source
+  sample_url: https://brain4cars.com/pdfs/brain4cars.pdf
+  source_locator: Brain4Cars paper, Figure 2 (System Overview).
+  checked_at: '2026-10-09'

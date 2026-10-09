@@ -6,19 +6,21 @@ Joint Attention in Autonomous Driving video and pedestrian behavior annotations.
 
 ## Example input and output
 
-This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+Author-released annotation record. The input and label below refer to the same identified record.
 
-**Input:** A vehicle-mounted video prefix showing a pedestrian near the road with bounding boxes and behavioral context.
+**Input:** Vehicle video video_0002, tracked pedestrian 0_2_6b observed before the annotation's crossing_point frame 81.
 
-**Output / label:** A future pedestrian behavior label, such as crossing versus not crossing, under the selected JAAD protocol.
+**Output / label:** Pedestrian attribute crossing=1, crossing_point=81. This records observed crossing behavior; it is not a self-reported wish to cross.
 
 ![Official JAAD behavior annotation illustration for pedestrians](https://raw.githubusercontent.com/ykotseruba/JAAD/JAAD_2.0/behavior.png)
 
 *Author-published behavior illustration; crossing behavior is not self-reported intention.*
 
-[Open the author-provided sample or demo](https://github.com/ykotseruba/JAAD)
+[Open the original example](https://github.com/ykotseruba/JAAD/blob/JAAD_2.0/annotations_attributes/video_0002_attributes.xml)
 
-**Example evidence:** [official](https://github.com/ykotseruba/JAAD)
+**Location in source:** annotations_attributes/video_0002_attributes.xml, pedestrian id 0_2_6b.
+
+**Example evidence:** [example_source](https://github.com/ykotseruba/JAAD/blob/JAAD_2.0/annotations_attributes/video_0002_attributes.xml)
 
 ## Intention in this dataset
 
@@ -79,5 +81,6 @@ These values apply only to the linked comparison protocol and snapshot; they are
 
 - **official**: [JAAD original project or publication](https://github.com/ykotseruba/JAAD) — section: Sequence analysis; Annotations; checked 2026-09-30
 - **wacv_protocol**: [Benchmark for Evaluating Pedestrian Action Prediction](https://openaccess.thecvf.com/content/WACV2021/papers/Kotseruba_Benchmark_for_Evaluating_Pedestrian_Action_Prediction_WACV_2021_paper.pdf) — section: 3 Benchmark; Datasets; Data sampling; checked 2026-09-30
+- **example_source**: [JAAD author-published example](https://github.com/ykotseruba/JAAD/blob/JAAD_2.0/annotations_attributes/video_0002_attributes.xml) — section: annotations_attributes/video_0002_attributes.xml, pedestrian id 0_2_6b.; checked 2026-10-09
 
 **Dataset metadata verified:** 2026-09-30 · [official](https://github.com/ykotseruba/JAAD), [wacv_protocol](https://openaccess.thecvf.com/content/WACV2021/papers/Kotseruba_Benchmark_for_Evaluating_Pedestrian_Action_Prediction_WACV_2021_paper.pdf)

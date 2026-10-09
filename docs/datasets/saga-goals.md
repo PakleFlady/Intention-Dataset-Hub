@@ -6,15 +6,17 @@ Crowdsourced participant goals and plans in alternative human-centered stories.
 
 ## Example input and output
 
-This example is taken from the linked original source.
+Author-released annotation record. The input and label below refer to the same identified record.
 
 **Input:** Danny got down on one knee. He asked Beth to marry him. Beth felt very awkward. She didn't want to marry Danny! To be kind, she told him she needed some time to think.
 
 **Output / label:** Original goal: Get engaged to Beth.
 
-[Open the author-provided sample or demo](https://github.com/saiumbc/SAGA/blob/main/data/actual_qval.jsonl#L1)
+[Open the original example](https://github.com/saiumbc/SAGA/blob/main/data/actual_qval.jsonl#L1)
 
-**Example evidence:** [official](https://github.com/saiumbc/SAGA)
+**Location in source:** data/actual_qval.jsonl, line 1, instance_id 361a, original_goal.
+
+**Example evidence:** [example_source](https://github.com/saiumbc/SAGA/blob/main/data/actual_qval.jsonl#L1)
 
 ## Intention in this dataset
 
@@ -58,6 +60,7 @@ No protocol-matched result has passed verification yet.
 ## Sources
 
 - **official**: [SAGA: Goals, Actions and Plans original project or publication](https://github.com/saiumbc/SAGA) — section: Dataset Information; Task 1 Goal Inference; checked 2026-09-30
+- **example_source**: [SAGA: Goals, Actions and Plans author-published example](https://github.com/saiumbc/SAGA/blob/main/data/actual_qval.jsonl#L1) — section: data/actual_qval.jsonl, line 1, instance_id 361a, original_goal.; checked 2026-10-09
 
 **Dataset metadata verified:** 2026-09-30 · [official](https://github.com/saiumbc/SAGA)
 

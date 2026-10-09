@@ -75,6 +75,13 @@ sources:
   accessed_at: '2026-09-30'
   locator:
     section: Note regarding action/intention distinction
+- id: example_source
+  type: official_documentation
+  title: PIE author-published example
+  url: https://github.com/aras62/PIE/blob/master/annotations/README.md#object-attributes
+  accessed_at: '2026-10-09'
+  locator:
+    section: PIE annotations README, Object attributes, Note regarding action/intention distinction.
 verification:
   status: verified
   checked_at: '2026-09-30'
@@ -95,15 +102,19 @@ statistics:
   - official
 
 example:
-  kind: illustrative
-  input: Vehicle-mounted video frames of a pedestrian approaching a crossing, with the pedestrian's track and scene context.
-  output: An observer-judged crossing-intention probability; actual later crossing is a separate annotation target.
-  checked_at: '2026-10-08'
+  kind: source_format
+  input: 'The author''s documented crossing scenario: a pedestrian waits at a red traffic light in front of the
+    ego-vehicle.'
+  output: An intention model can label the pedestrian as intending to cross while the observed crossing-action label
+    is 'not crossing'. The documentation gives this semantic example without a numeric intention_prob or specific
+    track ID.
   source_ids:
-  - official
-  sample_url: https://github.com/aras62/PIE/tree/master/demos
+  - example_source
+  sample_url: https://github.com/aras62/PIE/blob/master/annotations/README.md#object-attributes
+  source_locator: PIE annotations README, Object attributes, Note regarding action/intention distinction.
   media:
     kind: animated_image
     url: https://raw.githubusercontent.com/aras62/PIE/master/demos/beh_demo.gif
     alt: Official PIE animated behavior demo showing a pedestrian in road video
     caption: Author-published animated demo; intention estimates and observed crossing actions differ.
+  checked_at: '2026-10-09'

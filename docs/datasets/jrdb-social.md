@@ -6,19 +6,21 @@ Robot-view observations and contextual social-group annotations in human environ
 
 ## Example input and output
 
-This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+Author-published figure. This is a depicted example, not a transcribed annotation row.
 
-**Input:** Robot-view panoramic video of people interacting in an indoor or outdoor public space.
+**Input:** Robot-view cafeteria image in Figure 1, with two people seated at a table near a pillar.
 
-**Output / label:** Individual, pairwise interaction, or group-context annotations, including a group's aim where present.
+**Output / label:** The group-level description assigns the aim 'working and socializing'. This is an annotator-written group purpose, alongside individual and pairwise annotations.
 
 ![Official JRDB-Social teaser showing people and social-group annotations](https://jrdb.erc.monash.edu/static/images/social/teaser.png)
 
 *Author-published teaser; which labels apply depends on the chosen annotation level.*
 
-[Open the author-provided sample or demo](https://jrdb.erc.monash.edu/dataset/social)
+[Open the original example](https://openaccess.thecvf.com/content/CVPR2024/papers/Jahangard_JRDB-Social_A_Multifaceted_Robotic_Dataset_for_Understanding_of_Context_and_CVPR_2024_paper.pdf)
 
-**Example evidence:** [official](https://jrdb.erc.monash.edu/dataset/)
+**Location in source:** JRDB-Social paper, Figure 1, seated two-person group in the cafeteria.
+
+**Example evidence:** [example_source](https://openaccess.thecvf.com/content/CVPR2024/papers/Jahangard_JRDB-Social_A_Multifaceted_Robotic_Dataset_for_Understanding_of_Context_and_CVPR_2024_paper.pdf)
 
 ## Intention in this dataset
 
@@ -62,6 +64,7 @@ No protocol-matched result has passed verification yet.
 ## Sources
 
 - **official**: [JRDB-Social original project or publication](https://jrdb.erc.monash.edu/dataset/) — section: JRDB-Social; Dataset Contents; checked 2026-09-30
+- **example_source**: [JRDB-Social author-published example](https://openaccess.thecvf.com/content/CVPR2024/papers/Jahangard_JRDB-Social_A_Multifaceted_Robotic_Dataset_for_Understanding_of_Context_and_CVPR_2024_paper.pdf) — section: JRDB-Social paper, Figure 1, seated two-person group in the cafeteria.; checked 2026-10-09
 
 **Dataset metadata verified:** 2026-09-30 · [official](https://jrdb.erc.monash.edu/dataset/)
 

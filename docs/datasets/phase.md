@@ -6,19 +6,21 @@ Procedurally generated two-agent social events validated with human judgments.
 
 ## Example input and output
 
-This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+Author-published figure. This is a depicted example, not a transcribed annotation row.
 
-**Input:** A procedurally generated 2D animation of two agents moving and interacting with objects and obstacles.
+**Input:** The synthetic 2D event in Figure 1(B): a weak green agent struggles to move a pink object and a red agent joins the interaction.
 
-**Output / label:** A generator-assigned social event category, such as helping, for social recognition or prediction.
+**Output / label:** The author describes the red agent's social relation as helping; Figure 1(C) contrasts a case where the red agent takes an object away.
 
 ![Official PHASE introduction image of simulated two-agent social events](https://tshu.io/PHASE/intro.png)
 
 *Author-published simulation illustration; these agents are synthetic rather than recorded people.*
 
-[Open the author-provided sample or demo](https://tshu.io/PHASE/)
+[Open the original example](https://tshu.io/PHASE/PHASE.pdf#page=1)
 
-**Example evidence:** [official](https://tshu.io/PHASE/)
+**Location in source:** PHASE paper, Figure 1(B), helping scenario.
+
+**Example evidence:** [example_source](https://tshu.io/PHASE/PHASE.pdf#page=1)
 
 ## Intention in this dataset
 
@@ -62,6 +64,7 @@ No protocol-matched result has passed verification yet.
 ## Sources
 
 - **official**: [PHASE original project or publication](https://tshu.io/PHASE/) — section: Abstract; PHASE Dataset; checked 2026-09-30
+- **example_source**: [PHASE author-published example](https://tshu.io/PHASE/PHASE.pdf#page=1) — section: PHASE paper, Figure 1(B), helping scenario.; checked 2026-10-09
 
 **Dataset metadata verified:** 2026-09-30 · [official](https://tshu.io/PHASE/)
 

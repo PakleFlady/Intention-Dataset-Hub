@@ -6,19 +6,21 @@ Traffic-agent trajectories with labeled key intentions for pedestrians and vehic
 
 ## Example input and output
 
-This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+Author-published figure. This is a depicted example, not a transcribed annotation row.
 
-**Input:** A traffic scene observed through a vehicle camera and LiDAR, with tracked pedestrians and vehicles.
+**Input:** Synchronized LiDAR scan and RGB traffic image showing the pedestrian in Figure 9(a) of the author's supplementary dataset description.
 
-**Output / label:** A tracked agent's key-intention or potential-destination annotation, alongside future trajectory information.
+**Output / label:** The depicted pedestrian has current status 'Stopped' and a separately annotated potential destination indicating where they may walk. This is an annotator-assigned destination, not a self-report.
 
 ![Official LOKI visualization of camera and LiDAR views with intention labels](https://usa.honda-ri.com/documents/248678/0/LOKI_data-visualization.jpg/ce417acc-01a6-c350-42ff-cf3aa6e89266?t=1643387470795)
 
 *Author-published label visualization; destination and maneuver fields differ by agent type.*
 
-[Open the author-provided sample or demo](https://usa.honda-ri.com/loki)
+[Open the original example](https://arxiv.org/pdf/2108.08236#page=12)
 
-**Example evidence:** [official](https://usa.honda-ri.com/loki)
+**Location in source:** LOKI supplementary material, Figure 9(a), intention and potential-destination visualization.
+
+**Example evidence:** [example_source](https://arxiv.org/pdf/2108.08236#page=12)
 
 ## Intention in this dataset
 
@@ -63,6 +65,7 @@ No protocol-matched result has passed verification yet.
 
 - **official**: [LOKI: Long Term and Key Intentions original project or publication](https://usa.honda-ri.com/loki) — section: Dataset Annotation; Intention labels; annotation file layout; checked 2026-10-08
 - **paper**: [LOKI: Long Term and Key Intentions for Trajectory Prediction](https://openaccess.thecvf.com/content/ICCV2021/papers/Girase_LOKI_Long_Term_and_Key_Intentions_for_Trajectory_Prediction_ICCV_2021_paper.pdf) — section: Dataset Annotation; Intention labels; checked 2026-09-30
+- **example_source**: [LOKI: Long Term and Key Intentions author-published example](https://arxiv.org/pdf/2108.08236#page=12) — section: LOKI supplementary material, Figure 9(a), intention and potential-destination visualization.; checked 2026-10-09
 
 **Dataset metadata verified:** 2026-09-30 · [official](https://usa.honda-ri.com/loki), [paper](https://openaccess.thecvf.com/content/ICCV2021/papers/Girase_LOKI_Long_Term_and_Key_Intentions_for_Trajectory_Prediction_ICCV_2021_paper.pdf)
 

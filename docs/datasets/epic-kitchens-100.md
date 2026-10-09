@@ -6,19 +6,21 @@ Unscripted first-person kitchen recordings with action segments and an official 
 
 ## Example input and output
 
-This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+Author-published documentation example. It shows the data or task format, not a verified annotation row.
 
-**Input:** A first-person kitchen video segment ending before the next action begins.
+**Input:** The official EPIC_100_train.csv format example identifies video P01_01 and an annotated action from 00:00:00.14 to 00:00:03.37.
 
-**Output / label:** The anticipated action as a verb-noun pair from the kitchen action vocabulary.
+**Output / label:** Narration 'open door', parsed as verb 'open' and noun 'door'. Because the action begins at 0.14 s, this row illustrates the annotation format, not a valid 5-second anticipation input window.
 
 ![Official EPIC-KITCHENS-100 action anticipation qualitative example](https://epic-kitchens.github.io/static/img/challenges-epic-100/aa.png)
 
 *Author-published qualitative anticipation example; this is a figure, not a downloadable video record.*
 
-[Open the author-provided sample or demo](https://epic-kitchens.github.io/2020-100#action-anticipation)
+[Open the original example](https://github.com/epic-kitchens/epic-kitchens-100-annotations/blob/master/README.md#epic_100_traincsv)
 
-**Example evidence:** [official](https://github.com/epic-kitchens/epic-kitchens-100-annotations)
+**Location in source:** Official annotations README, EPIC_100_train.csv column-example table, narration_id P01_01_0.
+
+**Example evidence:** [example_source](https://github.com/epic-kitchens/epic-kitchens-100-annotations/blob/master/README.md#epic_100_traincsv)
 
 ## Intention in this dataset
 
@@ -62,5 +64,6 @@ No protocol-matched result has passed verification yet.
 ## Sources
 
 - **official**: [EPIC-KITCHENS-100 original project or publication](https://github.com/epic-kitchens/epic-kitchens-100-annotations) — section: Action Anticipation Challenge; checked 2026-09-30
+- **example_source**: [EPIC-KITCHENS-100 author-published example](https://github.com/epic-kitchens/epic-kitchens-100-annotations/blob/master/README.md#epic_100_traincsv) — section: Official annotations README, EPIC_100_train.csv column-example table, narration_id P01_01_0.; checked 2026-10-09
 
 **Dataset metadata verified:** 2026-09-30 · [official](https://github.com/epic-kitchens/epic-kitchens-100-annotations)

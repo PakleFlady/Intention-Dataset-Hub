@@ -67,6 +67,13 @@ sources:
   accessed_at: '2026-09-30'
   locator:
     section: EGTEA Gaze+ anticipation setup
+- id: example_source
+  type: author_code
+  title: EGTEA Gaze+ author-published example
+  url: https://github.com/fpv-iplab/rulstm/blob/master/RULSTM/data/egtea/training1.csv#L1
+  accessed_at: '2026-10-09'
+  locator:
+    section: RULSTM/data/egtea/training1.csv, line 1 (annotation ID 2); action name from actions.csv line 3.
 verification:
   status: verified
   checked_at: '2026-09-30'
@@ -81,10 +88,13 @@ notes: The author dataset page centers on action and gaze; an author-released an
   inclusion.
 
 example:
-  kind: illustrative
-  input: A first-person food-preparation video prefix with the wearer's eye-gaze signal.
-  output: A future kitchen action category predicted before the action starts; gaze is an input cue, not the intention label.
-  checked_at: '2026-10-08'
+  kind: source_record
+  input: Egocentric video P07-R01-PastaSalad observed before frame 2751; the author protocol row identifies the
+    next annotated segment as frames 2751–2808.
+  output: Action ID 2, 'Take_eating:utensil' (verb ID 2, noun ID 2). The source row is from the RU-LSTM authors'
+    EGTEA anticipation split.
   source_ids:
-  - official
-  sample_url: https://iplab.dmi.unict.it/legacy/rulstm/
+  - example_source
+  sample_url: https://github.com/fpv-iplab/rulstm/blob/master/RULSTM/data/egtea/training1.csv#L1
+  source_locator: RULSTM/data/egtea/training1.csv, line 1 (annotation ID 2); action name from actions.csv line 3.
+  checked_at: '2026-10-09'

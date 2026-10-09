@@ -70,6 +70,13 @@ sources:
   accessed_at: '2026-09-30'
   locator:
     section: Dataset Annotation; Intention labels
+- id: example_source
+  type: paper
+  title: 'LOKI: Long Term and Key Intentions author-published example'
+  url: https://arxiv.org/pdf/2108.08236#page=12
+  accessed_at: '2026-10-09'
+  locator:
+    section: LOKI supplementary material, Figure 9(a), intention and potential-destination visualization.
 verification:
   status: verified
   checked_at: '2026-09-30'
@@ -85,15 +92,18 @@ capture_setup:
 notes: This ID disambiguates the traffic dataset from unrelated projects named LOKI.
 
 example:
-  kind: illustrative
-  input: A traffic scene observed through a vehicle camera and LiDAR, with tracked pedestrians and vehicles.
-  output: A tracked agent's key-intention or potential-destination annotation, alongside future trajectory information.
-  checked_at: '2026-10-08'
+  kind: source_figure
+  input: Synchronized LiDAR scan and RGB traffic image showing the pedestrian in Figure 9(a) of the author's supplementary
+    dataset description.
+  output: The depicted pedestrian has current status 'Stopped' and a separately annotated potential destination
+    indicating where they may walk. This is an annotator-assigned destination, not a self-report.
   source_ids:
-  - official
-  sample_url: https://usa.honda-ri.com/loki
+  - example_source
+  sample_url: https://arxiv.org/pdf/2108.08236#page=12
+  source_locator: LOKI supplementary material, Figure 9(a), intention and potential-destination visualization.
   media:
     kind: image
     url: https://usa.honda-ri.com/documents/248678/0/LOKI_data-visualization.jpg/ce417acc-01a6-c350-42ff-cf3aa6e89266?t=1643387470795
     alt: Official LOKI visualization of camera and LiDAR views with intention labels
     caption: Author-published label visualization; destination and maneuver fields differ by agent type.
+  checked_at: '2026-10-09'

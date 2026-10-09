@@ -65,6 +65,13 @@ sources:
   accessed_at: '2026-09-30'
   locator:
     section: News; License; Abstract
+- id: example_source
+  type: paper
+  title: Assembly101 author-published example
+  url: https://assembly-101.github.io/assets/Assembly101.pdf#page=2
+  accessed_at: '2026-10-09'
+  locator:
+    section: Assembly101 paper, Figure 1, fine and coarse action timeline.
 verification:
   status: verified
   checked_at: '2026-09-30'
@@ -82,15 +89,19 @@ capture_setup:
 - multi_camera
 
 example:
-  kind: illustrative
-  input: A short prefix of synchronized wearable and fixed-camera video showing a person assembling a toy vehicle.
-  output: The next fine-grained hand-object action label before that action begins.
-  checked_at: '2026-10-08'
+  kind: source_figure
+  input: Synchronized static and egocentric views of a participant assembling a take-apart toy vehicle in the sequence
+    pictured in Figure 1.
+  output: The author timeline includes the fine action label 'screw chassis with screwdriver' and the coarse label
+    'screw chassis'. These are observed action annotations; the anticipation task predicts such labels before they
+    begin.
   source_ids:
-  - official
-  sample_url: https://assembly-101.github.io/
+  - example_source
+  sample_url: https://assembly-101.github.io/assets/Assembly101.pdf#page=2
+  source_locator: Assembly101 paper, Figure 1, fine and coarse action timeline.
   media:
     kind: image
     url: https://assembly-101.github.io/assets/assembly101_rig.png
     alt: Official Assembly101 multi-camera capture rig around a toy assembly task
     caption: Author-published capture setup; the input is video from these cameras, not this still image.
+  checked_at: '2026-10-09'

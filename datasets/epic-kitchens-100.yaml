@@ -59,6 +59,13 @@ sources:
   accessed_at: '2026-09-30'
   locator:
     section: Action Anticipation Challenge
+- id: example_source
+  type: official_documentation
+  title: EPIC-KITCHENS-100 author-published example
+  url: https://github.com/epic-kitchens/epic-kitchens-100-annotations/blob/master/README.md#epic_100_traincsv
+  accessed_at: '2026-10-09'
+  locator:
+    section: Official annotations README, EPIC_100_train.csv column-example table, narration_id P01_01_0.
 verification:
   status: verified
   checked_at: '2026-09-30'
@@ -71,15 +78,18 @@ capture_setup:
 - wearable
 
 example:
-  kind: illustrative
-  input: A first-person kitchen video segment ending before the next action begins.
-  output: The anticipated action as a verb-noun pair from the kitchen action vocabulary.
-  checked_at: '2026-10-08'
+  kind: source_format
+  input: The official EPIC_100_train.csv format example identifies video P01_01 and an annotated action from 00:00:00.14
+    to 00:00:03.37.
+  output: Narration 'open door', parsed as verb 'open' and noun 'door'. Because the action begins at 0.14 s, this
+    row illustrates the annotation format, not a valid 5-second anticipation input window.
   source_ids:
-  - official
-  sample_url: https://epic-kitchens.github.io/2020-100#action-anticipation
+  - example_source
+  sample_url: https://github.com/epic-kitchens/epic-kitchens-100-annotations/blob/master/README.md#epic_100_traincsv
+  source_locator: Official annotations README, EPIC_100_train.csv column-example table, narration_id P01_01_0.
   media:
     kind: image
     url: https://epic-kitchens.github.io/static/img/challenges-epic-100/aa.png
     alt: Official EPIC-KITCHENS-100 action anticipation qualitative example
     caption: Author-published qualitative anticipation example; this is a figure, not a downloadable video record.
+  checked_at: '2026-10-09'

@@ -56,6 +56,13 @@ sources:
   accessed_at: '2026-09-30'
   locator:
     section: Intentonomy Dataset
+- id: example_source
+  type: paper
+  title: Intentonomy author-published example
+  url: https://vision.cornell.edu/se3/wp-content/uploads/2021/03/intentonomy.pdf
+  accessed_at: '2026-10-09'
+  locator:
+    section: Intentonomy paper, Figure 1(b), holding-hands image.
 verification:
   status: verified
   checked_at: '2026-09-30'
@@ -75,16 +82,18 @@ statistics:
   - official
 
 example:
-  kind: illustrative
-  input: One image depicting a person in an everyday or social scene.
-  output: An observer-assigned human-intent category from the 28-category vocabulary, not a self-report from the pictured
-    person.
-  checked_at: '2026-10-08'
+  kind: source_figure
+  input: The social-media image of people holding hands in the author's Figure 1(b).
+  output: The figure associates the image with the human-assigned category 'in love'. This is an interpretation
+    of image-posting intent, not direct access to the photographed people's mental states.
   source_ids:
-  - official
-  sample_url: https://github.com/KMnP/intentonomy/blob/master/DATA.md
+  - example_source
+  sample_url: https://vision.cornell.edu/se3/wp-content/uploads/2021/03/intentonomy.pdf
+  source_locator: Intentonomy paper, Figure 1(b), holding-hands image.
   media:
     kind: image
     url: https://raw.githubusercontent.com/KMnP/intentonomy/master/images/teaser.png
     alt: Official Intentonomy teaser with example images and intent categories
-    caption: Author-published teaser of the image-intent task; it does not establish the private motives of the people pictured.
+    caption: Author-published teaser of the image-intent task; it does not establish the private motives of the
+      people pictured.
+  checked_at: '2026-10-09'

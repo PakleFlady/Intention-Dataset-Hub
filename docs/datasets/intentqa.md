@@ -6,15 +6,17 @@ Video question answering dataset focused on latent human intentions and reasons 
 
 ## Example input and output
 
-This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+Author-released annotation record. The input and label below refer to the same identified record.
 
-**Input:** A video clip together with a natural-language question about why a person acted.
+**Input:** Video ID 6102982194; question: 'why does the man playing the white guitar go near the man playing the keytar'; choices: want to talk to him / make music / to energise him / want to hit him / to annoy him.
 
-**Output / label:** A natural-language answer from the question-answer annotation; the answer is an interpretation of intent.
+**Output / label:** Answer index 2 (zero-based): 'to energise him'. The source is test.csv question ID 2; video files are distributed separately by the authors.
 
-[Open the author-provided sample or demo](https://vimeo.com/896083218)
+[Open the original example](https://github.com/JoseponLee/IntentQA/blob/main/datasets/IntentQA/test.csv#L2)
 
-**Example evidence:** [official](https://github.com/JoseponLee/IntentQA)
+**Location in source:** datasets/IntentQA/test.csv, line 2, qid 2, answer 2 = a2.
+
+**Example evidence:** [example_source](https://github.com/JoseponLee/IntentQA/blob/main/datasets/IntentQA/test.csv#L2)
 
 ## Intention in this dataset
 
@@ -60,6 +62,7 @@ These values apply only to the linked comparison protocol and snapshot; they are
 ## Sources
 
 - **official**: [IntentQA original project or publication](https://github.com/JoseponLee/IntentQA) — section: Introduction; Dataset; checked 2026-09-30
+- **example_source**: [IntentQA author-published example](https://github.com/JoseponLee/IntentQA/blob/main/datasets/IntentQA/test.csv#L2) — section: datasets/IntentQA/test.csv, line 2, qid 2, answer 2 = a2.; checked 2026-10-09
 
 **Dataset metadata verified:** 2026-09-30 · [official](https://github.com/JoseponLee/IntentQA)
 

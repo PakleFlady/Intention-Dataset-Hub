@@ -59,7 +59,8 @@ def test_every_dataset_page_shows_an_example_with_honest_media():
         elif "image" in dataset["data_formats"]:
             pytest.fail(f"{dataset_id}: an image dataset needs a visible example image")
     assert catalog.datasets["saga-goals"]["example"]["kind"] == "source_record"
-    assert catalog.datasets["pie"]["example"]["kind"] == "illustrative"
+    assert all(dataset["example"]["kind"] in {"source_record", "source_figure", "source_format"} for dataset in catalog.datasets.values())
+    assert all(dataset["example"].get("sample_url") and dataset["example"].get("source_locator") for dataset in catalog.datasets.values())
 
 
 def test_replacement_character_fails_repository_validation(tmp_path):

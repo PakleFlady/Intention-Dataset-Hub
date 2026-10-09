@@ -6,19 +6,21 @@ Pedestrian Intention Estimation footage and annotations from vehicle-mounted urb
 
 ## Example input and output
 
-This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+Author-published documentation example. It shows the data or task format, not a verified annotation row.
 
-**Input:** Vehicle-mounted video frames of a pedestrian approaching a crossing, with the pedestrian's track and scene context.
+**Input:** The author's documented crossing scenario: a pedestrian waits at a red traffic light in front of the ego-vehicle.
 
-**Output / label:** An observer-judged crossing-intention probability; actual later crossing is a separate annotation target.
+**Output / label:** An intention model can label the pedestrian as intending to cross while the observed crossing-action label is 'not crossing'. The documentation gives this semantic example without a numeric intention_prob or specific track ID.
 
 ![Official PIE animated behavior demo showing a pedestrian in road video](https://raw.githubusercontent.com/aras62/PIE/master/demos/beh_demo.gif)
 
 *Author-published animated demo; intention estimates and observed crossing actions differ.*
 
-[Open the author-provided sample or demo](https://github.com/aras62/PIE/tree/master/demos)
+[Open the original example](https://github.com/aras62/PIE/blob/master/annotations/README.md#object-attributes)
 
-**Example evidence:** [official](https://www.data.nvision2.eecs.yorku.ca/PIE_dataset/)
+**Location in source:** PIE annotations README, Object attributes, Note regarding action/intention distinction.
+
+**Example evidence:** [example_source](https://github.com/aras62/PIE/blob/master/annotations/README.md#object-attributes)
 
 ## Intention in this dataset
 
@@ -73,5 +75,6 @@ These values apply only to the linked comparison protocol and snapshot; they are
 
 - **official**: [PIE original project or publication](https://www.data.nvision2.eecs.yorku.ca/PIE_dataset/) — section: Intention Annotations; checked 2026-09-30
 - **author_protocol**: [PIE author protocol or annotation guide](https://github.com/aras62/PIE/blob/master/annotations/README.md) — section: Note regarding action/intention distinction; checked 2026-09-30
+- **example_source**: [PIE author-published example](https://github.com/aras62/PIE/blob/master/annotations/README.md#object-attributes) — section: PIE annotations README, Object attributes, Note regarding action/intention distinction.; checked 2026-10-09
 
 **Dataset metadata verified:** 2026-09-30 · [official](https://www.data.nvision2.eecs.yorku.ca/PIE_dataset/), [author_protocol](https://github.com/aras62/PIE/blob/master/annotations/README.md)

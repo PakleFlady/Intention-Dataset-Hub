@@ -56,6 +56,13 @@ sources:
   accessed_at: '2026-09-30'
   locator:
     section: Dataset Information; Task 1 Goal Inference
+- id: example_source
+  type: official_data
+  title: 'SAGA: Goals, Actions and Plans author-published example'
+  url: https://github.com/saiumbc/SAGA/blob/main/data/actual_qval.jsonl#L1
+  accessed_at: '2026-10-09'
+  locator:
+    section: data/actual_qval.jsonl, line 1, instance_id 361a, original_goal.
 verification:
   status: verified
   checked_at: '2026-09-30'
@@ -67,10 +74,11 @@ notes: Narrative characters, not recorded human subjects; include because the ta
 
 example:
   kind: source_record
-  input: Danny got down on one knee. He asked Beth to marry him. Beth felt very awkward. She didn't want to marry Danny! To
-    be kind, she told him she needed some time to think.
+  input: Danny got down on one knee. He asked Beth to marry him. Beth felt very awkward. She didn't want to marry
+    Danny! To be kind, she told him she needed some time to think.
   output: 'Original goal: Get engaged to Beth.'
-  checked_at: '2026-10-08'
   source_ids:
-  - official
+  - example_source
   sample_url: https://github.com/saiumbc/SAGA/blob/main/data/actual_qval.jsonl#L1
+  source_locator: data/actual_qval.jsonl, line 1, instance_id 361a, original_goal.
+  checked_at: '2026-10-09'

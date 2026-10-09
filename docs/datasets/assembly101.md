@@ -6,19 +6,21 @@ Multi-view procedural assembly videos with annotated actions and anticipation ta
 
 ## Example input and output
 
-This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+Author-published figure. This is a depicted example, not a transcribed annotation row.
 
-**Input:** A short prefix of synchronized wearable and fixed-camera video showing a person assembling a toy vehicle.
+**Input:** Synchronized static and egocentric views of a participant assembling a take-apart toy vehicle in the sequence pictured in Figure 1.
 
-**Output / label:** The next fine-grained hand-object action label before that action begins.
+**Output / label:** The author timeline includes the fine action label 'screw chassis with screwdriver' and the coarse label 'screw chassis'. These are observed action annotations; the anticipation task predicts such labels before they begin.
 
 ![Official Assembly101 multi-camera capture rig around a toy assembly task](https://assembly-101.github.io/assets/assembly101_rig.png)
 
 *Author-published capture setup; the input is video from these cameras, not this still image.*
 
-[Open the author-provided sample or demo](https://assembly-101.github.io/)
+[Open the original example](https://assembly-101.github.io/assets/Assembly101.pdf#page=2)
 
-**Example evidence:** [official](https://openaccess.thecvf.com/content/CVPR2022/html/Sener_Assembly101_A_Large-Scale_Multi-View_Video_Dataset_for_Understanding_Procedural_Activities_CVPR_2022_paper.html)
+**Location in source:** Assembly101 paper, Figure 1, fine and coarse action timeline.
+
+**Example evidence:** [example_source](https://assembly-101.github.io/assets/Assembly101.pdf#page=2)
 
 ## Intention in this dataset
 
@@ -67,5 +69,6 @@ These values apply only to the linked comparison protocol and snapshot; they are
 
 - **official**: [Assembly101 original project or publication](https://openaccess.thecvf.com/content/CVPR2022/html/Sener_Assembly101_A_Large-Scale_Multi-View_Video_Dataset_for_Understanding_Procedural_Activities_CVPR_2022_paper.html) — section: Abstract; benchmark tasks; checked 2026-09-30
 - **project**: [Assembly101 official project and download page](https://assembly-101.github.io/) — section: News; License; Abstract; checked 2026-09-30
+- **example_source**: [Assembly101 author-published example](https://assembly-101.github.io/assets/Assembly101.pdf#page=2) — section: Assembly101 paper, Figure 1, fine and coarse action timeline.; checked 2026-10-09
 
 **Dataset metadata verified:** 2026-09-30 · [official](https://openaccess.thecvf.com/content/CVPR2022/html/Sener_Assembly101_A_Large-Scale_Multi-View_Video_Dataset_for_Understanding_Procedural_Activities_CVPR_2022_paper.html), [project](https://assembly-101.github.io/)

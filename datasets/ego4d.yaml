@@ -63,6 +63,13 @@ sources:
   accessed_at: '2026-09-30'
   locator:
     section: Task Definition; Annotations
+- id: example_source
+  type: paper
+  title: Ego4D author-published example
+  url: https://www.cs.utexas.edu/~grauman/papers/ego4d-cvpr2022.pdf
+  accessed_at: '2026-10-09'
+  locator:
+    section: Ego4D paper, Figure 10, Long-Term Anticipation panel.
 verification:
   status: verified
   checked_at: '2026-09-30'
@@ -75,15 +82,19 @@ capture_setup:
 - wearable
 
 example:
-  kind: illustrative
-  input: A first-person video clip ending before the camera wearer's next object interactions.
-  output: An ordered future sequence of action labels, each represented by a verb and noun.
-  checked_at: '2026-10-08'
+  kind: source_figure
+  input: The observed egocentric food-preparation frames before the future actions shown in the paper's forecasting
+    figure.
+  output: The author figure depicts the model prediction 'knead dough + put dough + pack spice + pour spice' (future
+    verb-noun actions), not a transcribed ground-truth row.
   source_ids:
-  - official
-  sample_url: https://ego4d-data.org/docs/benchmarks/forecasting/
+  - example_source
+  sample_url: https://www.cs.utexas.edu/~grauman/papers/ego4d-cvpr2022.pdf
+  source_locator: Ego4D paper, Figure 10, Long-Term Anticipation panel.
   media:
     kind: image
     url: https://ego4d-data.org/assets/images/forecasting.png
     alt: Official Ego4D forecasting illustration of egocentric observations and future activity
-    caption: Author-published forecasting illustration; task-specific input and output details are in the linked protocol.
+    caption: Author-published forecasting illustration; task-specific input and output details are in the linked
+      protocol.
+  checked_at: '2026-10-09'

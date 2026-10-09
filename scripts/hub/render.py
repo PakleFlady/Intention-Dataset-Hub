@@ -69,16 +69,20 @@ def _render_dataset(catalog: Catalog, data: dict) -> str:
     dataset_id = data["id"]
     example = data["example"]
     lines = [GENERATED, f"# {data['name']}", "", data["description"], "", "## Example input and output", ""]
-    if example["kind"] == "illustrative":
-        lines.extend(["This is a source-grounded illustration of the task shape, not a copied or verified dataset row.", ""])
-    else:
-        lines.extend(["This example is taken from the linked original source.", ""])
+    provenance = {
+        "source_record": "Author-released annotation record. The input and label below refer to the same identified record.",
+        "source_figure": "Author-published figure. This is a depicted example, not a transcribed annotation row.",
+        "source_format": "Author-published documentation example. It shows the data or task format, not a verified annotation row.",
+    }
+    lines.extend([provenance[example["kind"]], ""])
     lines.extend([f"**Input:** {example['input']}", "", f"**Output / label:** {example['output']}", ""])
     if media := example.get("media"):
         alt = media["alt"].replace("[", "\\[").replace("]", "\\]")
         lines.extend([f"![{alt}]({media['url']})", "", f"*{media['caption']}*", ""])
     if example.get("sample_url"):
-        lines.extend([f"[Open the author-provided sample or demo]({example['sample_url']})", ""])
+        lines.extend([f"[Open the original example]({example['sample_url']})", ""])
+    if example.get("source_locator"):
+        lines.extend([f"**Location in source:** {example['source_locator']}", ""])
     lines.extend([f"**Example evidence:** {source_links(data['sources'], example['source_ids'])}", "", "## Intention in this dataset", "", data["intention_definition"], "", f"**Relevance:** `{data['intention_relevance']}` · **Origin:** `{data['data_origin']}` · **Year:** {data['year']}", "", f"**Domains:** {', '.join(data['domains'])}  ", f"**Intention types:** {', '.join(data['intention_types'])}  ", f"**Tasks:** {', '.join(data['tasks'])}  ", f"**Modalities:** {', '.join(data['modalities'])}  ", f"**Formats:** {', '.join(data['data_formats'])}", "", "## Relevant annotations", ""])
     lines.append(table(["Target ID", "Meaning", "Provenance", "Scope", "Evidence"], [[f"`{a['id']}`", cell(a["description"]), cell(a["provenance"]), cell(a["scope"]), source_links(data["sources"], a["source_ids"])] for a in data["annotations"]]))
     lines.extend(["## Access and rights", "", f"**Access:** {data['access']['status']} · {link('entry point', data['access'].get('url'))} · checked {data['access']['checked_at']} · {source_links(data['sources'], data['access']['source_ids'])}", ""])

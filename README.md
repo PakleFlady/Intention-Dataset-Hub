@@ -44,7 +44,7 @@ We include three evidence-based classes: **explicit** intention or goal targets;
 
 ## How to use this repository
 
-Start at the dataset index to see an input/output example, an author-published visual or demo where available, the target, and its annotation provenance. Examples marked illustrative show the task shape and are not claimed to be copied dataset rows. Open a benchmark page to inspect the protocol and verified result sources. The baseline section favors original baselines and available author code; a code link does not imply that this project reproduced the result.
+Start at the dataset index to see an input/output example, an author-published visual or demo where available, the target, and its annotation provenance. Each example links to an original annotation record, paper figure, or official format example, with its source location and type stated. Open a benchmark page to inspect the protocol and verified result sources. The baseline section favors original baselines and available author code; a code link does not imply that this project reproduced the result.
 
 Best-result labels are restricted to the result set and date shown in their snapshot. Empty or incomplete leaderboards are stated plainly.
 

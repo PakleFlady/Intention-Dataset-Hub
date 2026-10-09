@@ -6,19 +6,21 @@ Synchronized first- and third-person recordings of skilled human activities with
 
 ## Example input and output
 
-This is a source-grounded illustration of the task shape, not a copied or verified dataset row.
+Author-published documentation example. It shows the data or task format, not a verified annotation row.
 
-**Input:** Time-synchronized first-person and third-person video of a person performing a skilled task, such as bicycle repair.
+**Input:** Ego- and exocentric video of take cmu_bike15_4, task 'Clean and Lubricate the Chain'; the expert pauses at video time 27.833885 s.
 
-**Output / label:** Time-aligned participant narration describing why and how the skilled action is performed.
+**Output / label:** The official JSON sample's expert commentary mentions a 15 mm ratcheting combination wrench and explains that the tool makes the job quicker and more efficient. This is a transcribed expert explanation, not the camera wearer's self-report.
 
 ![Official Ego-Exo4D overview showing synchronized first- and third-person views](https://docs.ego-exo4d-data.org/assets/images/dataset_overview-a854fd263428c7e4a4834b7bfa2d92fd.jpg)
 
 *Author-published dataset overview; a single still cannot show the synchronized video streams.*
 
-[Open the author-provided sample or demo](https://docs.ego-exo4d-data.org/overview/)
+[Open the original example](https://docs.ego-exo4d-data.org/annotations/expert_commentary/#sample-json)
 
-**Example evidence:** [official](https://docs.ego-exo4d-data.org/overview/)
+**Location in source:** Expert Commentary documentation, Sample JSON, take_uid 816c4bd2-a5ba-4e40-854f-c98d771d1060, commentary_data[0].
+
+**Example evidence:** [example_source](https://docs.ego-exo4d-data.org/annotations/expert_commentary/#sample-json)
 
 ## Intention in this dataset
 
@@ -62,6 +64,7 @@ No protocol-matched result has passed verification yet.
 ## Sources
 
 - **official**: [Ego-Exo4D original project or publication](https://docs.ego-exo4d-data.org/overview/) — section: Narrate and Act; Task Labels; checked 2026-09-30
+- **example_source**: [Ego-Exo4D author-published example](https://docs.ego-exo4d-data.org/annotations/expert_commentary/#sample-json) — section: Expert Commentary documentation, Sample JSON, take_uid 816c4bd2-a5ba-4e40-854f-c98d771d1060, commentary_data[0].; checked 2026-10-09
 
 **Dataset metadata verified:** 2026-09-30 · [official](https://docs.ego-exo4d-data.org/overview/)
 

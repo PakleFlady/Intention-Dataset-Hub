@@ -13,10 +13,11 @@
     "viewpoints": {"$ref": "#/$defs/terms"}, "capture_setup": {"$ref": "#/$defs/terms"},
     "environment": {"type": "string"}, "notes": {"type": "string"},
     "example": {"type": "object", "additionalProperties": false, "required": ["kind", "input", "output", "source_ids", "checked_at"], "properties": {
-      "kind": {"enum": ["illustrative", "source_record"]},
+      "kind": {"enum": ["source_record", "source_figure", "source_format"]},
       "input": {"type": "string", "minLength": 15}, "output": {"type": "string", "minLength": 15},
       "source_ids": {"$ref": "#/$defs/source_ids"}, "checked_at": {"$ref": "#/$defs/date"},
       "sample_url": {"$ref": "#/$defs/url"},
+      "source_locator": {"type": "string", "minLength": 5},
       "media": {"type": "object", "additionalProperties": false, "required": ["kind", "url", "alt", "caption"], "properties": {
         "kind": {"enum": ["image", "animated_image"]}, "url": {"$ref": "#/$defs/url"},
         "alt": {"type": "string", "minLength": 10}, "caption": {"type": "string", "minLength": 15}
