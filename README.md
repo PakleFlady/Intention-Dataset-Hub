@@ -8,15 +8,15 @@ We include three evidence-based classes: **explicit** intention or goal targets;
 
 <!-- hub:overview:start -->
 
-**Verified datasets:** 16 | **Dataset families:** 16 | **Verified protocols:** 8 | **Datasets with at least two comparable results:** 6
+**Verified datasets:** 21 | **Dataset families:** 20 | **Verified protocols:** 8 | **Datasets with at least two comparable results:** 6
 
 ## Featured datasets
 
 | Dataset | Year | Domain | Relevance | Access |
 | --- | --- | --- | --- | --- |
+| [DeceptionDecoded](docs/datasets/deceptiondecoded.md) | 2025 | social_interaction | explicit | restricted |
+| [Intend to Move (I2M)](docs/datasets/i2m.md) | 2025 | daily_activities, social_interaction, embodied_interaction | explicit | unavailable |
 | [Intentonomy](docs/datasets/intentonomy.md) | 2021 | daily_activities, social_interaction | explicit | open |
-| [IntentQA](docs/datasets/intentqa.md) | 2023 | daily_activities, social_interaction | explicit | open |
-| [LOKI: Long Term and Key Intentions](docs/datasets/loki-traffic.md) | 2021 | pedestrian, autonomous_driving | explicit | request |
 | [Assembly101](docs/datasets/assembly101.md) | 2022 | daily_activities, human_object_interaction | implicit | open |
 | [Brain4Cars](docs/datasets/brain4cars.md) | 2015 | driver_behavior, autonomous_driving | implicit | unknown |
 | [Ego4D](docs/datasets/ego4d.md) | 2021 | daily_activities, human_object_interaction | implicit | registration |

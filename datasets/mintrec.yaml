@@ -1,0 +1,106 @@
+schema_version: '0.1'
+id: mintrec
+name: MIntRec
+year: 2022
+description: Observer-labeled communicative purposes in audiovisual TV dialogue, with 20 intent categories covering
+  expressed attitudes and interpersonal goals. Labels describe portrayed social interaction, not the actors' private
+  intentions.
+intention_relevance: explicit
+intention_definition: Observer-labeled communicative purposes in audiovisual TV dialogue, with 20 intent categories
+  covering expressed attitudes and interpersonal goals. Labels describe portrayed social interaction, not the actors'
+  private intentions.
+domains:
+- social_interaction
+intention_types:
+- communicative
+tasks:
+- intention_recognition
+modalities:
+- rgb
+- audio
+- text
+data_formats:
+- video
+- text
+- structured_annotation
+data_origin: real
+annotations:
+- id: intention
+  semantic: intention
+  description: One of 20 fine-grained communicative-intent classes per utterance. Five annotators vote; retained
+    samples have at least three agreeing votes.
+  provenance: observer_judgment
+  scope: Author-described dataset release
+  source_ids:
+  - official
+releases:
+- id: original
+  label: Original author-described release
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  notes: No immutable annotation version was identified; benchmark protocols must resolve the precise files.
+access:
+  status: open
+  url: https://github.com/thuiar/MIntRec
+  conditions: Official README links Google Drive downloads for annotations, audiovisual features and raw clips.
+    Full archives were not downloaded; source TV-media rights remain with their owners.
+  checked_at: '2026-11-02'
+  source_ids:
+  - official
+licenses:
+- component: dataset media and annotations
+  status: unknown
+  source_ids:
+  - official
+sources:
+- id: official
+  type: official_project
+  title: 'Official project: dataset, annotation, access and examples'
+  url: https://github.com/thuiar/MIntRec
+  accessed_at: '2026-11-02'
+  locator:
+    section: 'Official project: dataset, annotation, access and examples'
+verification:
+  status: verified
+  checked_at: '2026-11-02'
+  source_ids:
+  - official
+  notes: Checked the original descriptions, annotation meaning, public examples and access statements. Full dataset
+    files were not downloaded, and benchmark results have not been curated.
+notes: Included because labels represent human social and communicative purposes, rather than service-domain routing
+  or slot filling. TV dialogue is scripted/performed and should not be described as unscripted natural behavior.
+  The repository's code license must not be assumed to cover television footage.
+example:
+  kind: source_format
+  input: A Superstore video clip and its audio/transcript, identified by season, episode and clip fields in train.tsv/dev.tsv/test.tsv.
+  output: One of 20 intent labels (including Comfort and Ask for help); the official example image below illustrates
+    the multimodal classification task.
+  source_ids:
+  - official
+  sample_url: https://github.com/thuiar/MIntRec
+  source_locator: 'README sections 1, 2(b–c), 4(a): example, taxonomy, annotation and TSV format.'
+  media:
+    kind: image
+    url: https://raw.githubusercontent.com/thuiar/MIntRec/main/figs/example.png
+    alt: Official MIntRec multimodal dialogue and intent example
+    caption: Author-published preview. Refer to the linked original example for its labels and context.
+  checked_at: '2026-11-02'
+family_id: mintrec
+statistics:
+- name: Utterances
+  value: 2224
+  unit: utterances
+  release_id: original
+  scope: Author-described full release
+  source_ids:
+  - official
+- name: Intent categories
+  value: 20
+  unit: classes
+  release_id: original
+  scope: Author-described full release
+  source_ids:
+  - official
+related_datasets:
+- mintrec2

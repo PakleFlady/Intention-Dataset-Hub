@@ -8,7 +8,7 @@
 
 ## Daily activities
 
-[Assembly101](datasets/assembly101.md), [Ego-Exo4D](datasets/ego-exo4d.md), [Ego4D](datasets/ego4d.md), [EGTEA Gaze+](datasets/egtea-gaze-plus.md), [EPIC-KITCHENS-100](datasets/epic-kitchens-100.md), [Intentonomy](datasets/intentonomy.md), [IntentQA](datasets/intentqa.md), [SAGA: Goals, Actions and Plans](datasets/saga-goals.md)
+[Assembly101](datasets/assembly101.md), [Ego-Exo4D](datasets/ego-exo4d.md), [Ego4D](datasets/ego4d.md), [EGTEA Gaze+](datasets/egtea-gaze-plus.md), [EPIC-KITCHENS-100](datasets/epic-kitchens-100.md), [Intend to Move (I2M)](datasets/i2m.md), [Intentonomy](datasets/intentonomy.md), [IntentQA](datasets/intentqa.md), [SAGA: Goals, Actions and Plans](datasets/saga-goals.md)
 
 ## Driver behavior
 
@@ -16,7 +16,7 @@
 
 ## Embodied interaction
 
-[Ego-Exo4D](datasets/ego-exo4d.md), [PHASE](datasets/phase.md)
+[Ego-Exo4D](datasets/ego-exo4d.md), [Intend to Move (I2M)](datasets/i2m.md), [PHASE](datasets/phase.md)
 
 ## Human-object interaction
 
@@ -32,4 +32,4 @@
 
 ## Social interaction
 
-[Intentonomy](datasets/intentonomy.md), [IntentQA](datasets/intentqa.md), [JRDB-Social](datasets/jrdb-social.md), [PHASE](datasets/phase.md), [SAGA: Goals, Actions and Plans](datasets/saga-goals.md)
+[DeceptionDecoded](datasets/deceptiondecoded.md), [Intend to Move (I2M)](datasets/i2m.md), [Intentonomy](datasets/intentonomy.md), [IntentQA](datasets/intentqa.md), [JRDB-Social](datasets/jrdb-social.md), [MIntRec](datasets/mintrec.md), [MIntRec2.0](datasets/mintrec2.md), [PHASE](datasets/phase.md), [SAGA: Goals, Actions and Plans](datasets/saga-goals.md), [XMEI-dataset](datasets/xmei-dataset.md)

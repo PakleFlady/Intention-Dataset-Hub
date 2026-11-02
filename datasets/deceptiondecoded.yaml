@@ -1,0 +1,116 @@
+schema_version: '0.1'
+id: deceptiondecoded
+name: DeceptionDecoded
+year: 2025
+description: Image-caption news pairs with reference articles and simulated creator desires and editing plans. Intent-guided
+  generation supplies misleadingness targets; these are constructed communicative intentions, not measurements of
+  real journalists' motives.
+intention_relevance: explicit
+intention_definition: Image-caption news pairs with reference articles and simulated creator desires and editing
+  plans. Intent-guided generation supplies misleadingness targets; these are constructed communicative intentions,
+  not measurements of real journalists' motives.
+domains:
+- social_interaction
+intention_types:
+- communicative
+tasks:
+- intention_recognition
+- intention_reasoning
+modalities:
+- rgb
+- text
+data_formats:
+- image
+- text
+- structured_annotation
+data_origin: mixed
+annotations:
+- id: intention
+  semantic: intention
+  description: Binary creator-intent misleadingness and six text/image manipulation classes; tasks additionally
+    examine misleading-source attribution and creator-desire inference.
+  provenance: model_generated
+  scope: Author-described dataset release
+  source_ids:
+  - official
+  - card
+  - paper
+releases:
+- id: original
+  label: Original author-described release
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  notes: No immutable annotation version was identified; benchmark protocols must resolve the precise files.
+access:
+  status: restricted
+  url: https://github.com/jiayingwu19/DeceptionDecoded
+  conditions: Hugging Face gated access requires accepting author terms and sharing account details. The gate specifies
+    non-commercial research and prohibits redistribution; no gated files were retrieved.
+  checked_at: '2026-11-02'
+  source_ids:
+  - official
+  - card
+  - paper
+licenses:
+- component: dataset images and annotations
+  status: unknown
+  name: CC BY 4.0 badge with additional restrictive access terms; reconciliation unresolved
+  url: https://huggingface.co/datasets/jiayingwu19/DeceptionDecoded
+  source_ids:
+  - card
+sources:
+- id: official
+  type: official_project
+  title: 'Official project: dataset, annotation, access and examples'
+  url: https://github.com/jiayingwu19/DeceptionDecoded
+  accessed_at: '2026-11-02'
+  locator:
+    section: 'Official project: dataset, annotation, access and examples'
+- id: card
+  type: official_documentation
+  title: 'Dataset card: gate terms, six classes and Data Format'
+  url: https://huggingface.co/datasets/jiayingwu19/DeceptionDecoded
+  accessed_at: '2026-11-02'
+  locator:
+    section: 'Dataset card: gate terms, six classes and Data Format'
+- id: paper
+  type: paper
+  title: 'Original 2025 paper: intent-guided construction and tasks'
+  url: https://arxiv.org/abs/2505.15489
+  accessed_at: '2026-11-02'
+  locator:
+    section: 'Original 2025 paper: intent-guided construction and tasks'
+verification:
+  status: verified
+  checked_at: '2026-11-02'
+  source_ids:
+  - official
+  - card
+  - paper
+  notes: Checked the original descriptions, annotation meaning, public examples and access statements. Full dataset
+    files were not downloaded, and benchmark results have not been curated.
+notes: First public paper appeared in May 2025; the conference version is ICLR 2026. The dataset card displays CC
+  BY 4.0 metadata while its access terms impose additional restrictions; licensing is recorded as unresolved rather
+  than treating the badge as unrestricted permission.
+example:
+  kind: source_format
+  input: 'Official dataset-card sample id 0: caption ''Authorities were unprepared for the large turnout at the
+    Capitol Hill demonstration'', paired with data/orig_images/0.jpg and reference article data/news_articles/0.txt.'
+  output: 'label: 0 (non-misleading); fine_grained_label: edit_t (non-misleading text edit). The sample''s image
+    is behind the dataset access gate and is not embedded here.'
+  source_ids:
+  - card
+  sample_url: https://huggingface.co/datasets/jiayingwu19/DeceptionDecoded
+  source_locator: Dataset card, Data Format, sample instance id 0.
+  checked_at: '2026-11-02'
+statistics:
+- name: Image-caption pairs
+  value: 12000
+  unit: pairs
+  release_id: original
+  scope: Author-described full release
+  source_ids:
+  - official
+  - card
+  - paper

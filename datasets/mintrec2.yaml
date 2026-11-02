@@ -1,0 +1,122 @@
+schema_version: '0.1'
+id: mintrec2
+name: MIntRec2.0
+year: 2024
+description: Observer-labeled communicative purposes in audiovisual TV dialogue, with 30 intent categories covering
+  expressed attitudes and interpersonal goals. Labels describe portrayed social interaction, not the actors' private
+  intentions.
+intention_relevance: explicit
+intention_definition: Observer-labeled communicative purposes in audiovisual TV dialogue, with 30 intent categories
+  covering expressed attitudes and interpersonal goals. Labels describe portrayed social interaction, not the actors'
+  private intentions.
+domains:
+- social_interaction
+intention_types:
+- communicative
+tasks:
+- intention_recognition
+modalities:
+- rgb
+- audio
+- text
+data_formats:
+- video
+- text
+- structured_annotation
+data_origin: real
+annotations:
+- id: intention
+  semantic: intention
+  description: One of 30 fine-grained communicative-intent classes per utterance. Includes speaker identity, multi-turn
+    context and an out-of-scope tag.
+  provenance: observer_judgment
+  scope: Author-described dataset release
+  source_ids:
+  - official
+releases:
+- id: original
+  label: Original author-described release
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  notes: No immutable annotation version was identified; benchmark protocols must resolve the precise files.
+access:
+  status: open
+  url: https://github.com/thuiar/MIntRec2.0
+  conditions: Official README links Google Drive downloads for annotations, audiovisual features and raw clips.
+    Full archives were not downloaded; source TV-media rights remain with their owners.
+  checked_at: '2026-11-02'
+  source_ids:
+  - official
+licenses:
+- component: released dataset annotations and features
+  status: known
+  name: CC BY-NC-SA 4.0
+  url: https://zenodo.org/records/8041676
+  source_ids:
+  - release
+- component: underlying television footage
+  status: unknown
+  source_ids:
+  - official
+sources:
+- id: official
+  type: official_project
+  title: 'Official project: dataset, annotation, access and examples'
+  url: https://github.com/thuiar/MIntRec2.0
+  accessed_at: '2026-11-02'
+  locator:
+    section: 'Official project: dataset, annotation, access and examples'
+- id: release
+  type: official_data
+  title: 'Zenodo release v3: data files and license'
+  url: https://zenodo.org/records/8041676
+  accessed_at: '2026-11-02'
+  locator:
+    section: 'Zenodo release v3: data files and license'
+verification:
+  status: verified
+  checked_at: '2026-11-02'
+  source_ids:
+  - official
+  notes: Checked the original descriptions, annotation meaning, public examples and access statements. Full dataset
+    files were not downloaded, and benchmark results have not been curated.
+notes: 'Included because labels represent human social and communicative purposes, rather than service-domain routing
+  or slot filling. TV dialogue is scripted/performed and should not be described as unscripted natural behavior.
+  Distinct from MIntRec: new taxonomy, dialogue context, speakers and out-of-scope data.'
+example:
+  kind: source_format
+  input: An utterance's text, audio and speaker video within an ordered multi-party dialogue, with speaker identity.
+  output: One of 30 intent labels (including Comfort and Ask for help) or the out-of-scope category; the official
+    example image below shows labeled dialogue turns.
+  source_ids:
+  - official
+  sample_url: https://github.com/thuiar/MIntRec2.0
+  source_locator: README, Example, Dataset Description and Benchmark Framework.
+  media:
+    kind: image
+    url: https://raw.githubusercontent.com/thuiar/MIntRec2.0/master/figs/example.png
+    alt: Official MIntRec2.0 multimodal dialogue and intent example
+    caption: Author-published preview. Refer to the linked original example for its labels and context.
+  checked_at: '2026-11-02'
+family_id: mintrec
+statistics:
+- name: Utterances
+  value: 15040
+  unit: utterances
+  release_id: original
+  scope: Author-described full release
+  source_ids:
+  - official
+- name: Intent categories
+  value: 30
+  unit: classes
+  release_id: original
+  scope: Author-described full release
+  source_ids:
+  - official
+related_datasets:
+- mintrec
+aliases:
+- MIntRec2
+- MIntRec 2.0

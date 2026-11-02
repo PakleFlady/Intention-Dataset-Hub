@@ -1,0 +1,134 @@
+schema_version: '0.1'
+id: i2m
+name: Intend to Move (I2M)
+year: 2025
+description: Two-person motion captured in staged home environments with time-aligned textual goals. Participants
+  follow designed scenarios; annotators align goals to video and motion, so the labels reflect experimental intentions
+  rather than spontaneous self-reports.
+intention_relevance: explicit
+intention_definition: Two-person motion captured in staged home environments with time-aligned textual goals. Participants
+  follow designed scenarios; annotators align goals to video and motion, so the labels reflect experimental intentions
+  rather than spontaneous self-reports.
+domains:
+- daily_activities
+- social_interaction
+- embodied_interaction
+intention_types:
+- task_goal
+- collaborative
+tasks:
+- goal_recognition
+- trajectory_prediction
+modalities:
+- rgb
+- depth
+- pose
+- text
+data_formats:
+- video
+- time_series
+- text
+- structured_annotation
+data_origin: real
+annotations:
+- id: intention
+  semantic: intention
+  description: Timestamped participant-specific intention text spanning long-term activities, short-term needs,
+    environmental responses and partner interactions.
+  provenance: experiment_assigned
+  scope: Author-described dataset release
+  source_ids:
+  - official
+  - paper
+  - project
+releases:
+- id: original
+  label: Original author-described release
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  notes: No immutable annotation version was identified; benchmark protocols must resolve the precise files.
+access:
+  status: unavailable
+  url: https://github.com/ummaaa/IntendToMove
+  conditions: The official repository currently says data and code will be released soon. The public project and
+    paper are accessible; a downloadable dataset was not found.
+  checked_at: '2026-11-02'
+  source_ids:
+  - official
+  - paper
+  - project
+licenses:
+- component: dataset media and annotations
+  status: unknown
+  source_ids:
+  - official
+sources:
+- id: official
+  type: official_project
+  title: 'Official project: dataset, annotation, access and examples'
+  url: https://github.com/ummaaa/IntendToMove
+  accessed_at: '2026-11-02'
+  locator:
+    section: 'Official project: dataset, annotation, access and examples'
+- id: paper
+  type: paper
+  title: 'Sections 3.1–3.4 and Figure 2: collection, annotation and intended uses'
+  url: https://papers.nips.cc/paper_files/paper/2025/file/0743b22dad0ac0ffe0d194153568f641-Paper-Datasets_and_Benchmarks_Track.pdf
+  accessed_at: '2026-11-02'
+  locator:
+    section: 'Sections 3.1–3.4 and Figure 2: collection, annotation and intended uses'
+- id: project
+  type: official_project
+  title: Project Data Examples
+  url: https://ummaaa.github.io/intend-to-move/
+  accessed_at: '2026-11-02'
+  locator:
+    section: Project Data Examples
+verification:
+  status: verified
+  checked_at: '2026-11-02'
+  source_ids:
+  - official
+  - paper
+  - project
+  notes: Checked the original descriptions, annotation meaning, public examples and access statements. Full dataset
+    files were not downloaded, and benchmark results have not been curated.
+notes: The published benchmark predicts future human motion; goal inference is an intended research use. Scene point
+  clouds and meshes are also provided in the described release. The preview image is a separate author example,
+  not asserted to be Figure 2's exact frame.
+example:
+  kind: source_figure
+  input: The paired human motion, RGB-D views and scene geometry in the paper's Figure 2, at frame 0 for participant
+    p1.
+  output: 'Intention text: ''The person plans to clean the room with her partner.'' This is a depicted annotation,
+    not a downloaded data row.'
+  source_ids:
+  - paper
+  sample_url: https://papers.nips.cc/paper_files/paper/2025/file/0743b22dad0ac0ffe0d194153568f641-Paper-Datasets_and_Benchmarks_Track.pdf#page=5
+  source_locator: Figure 2(d), frame_id 0, subject p1.
+  media:
+    kind: image
+    url: https://ummaaa.github.io/intend-to-move/static/images/Seq004_1.png
+    alt: Official I2M example of synchronized human motion and home scene
+    caption: Author-published preview. Refer to the linked original example for its labels and context.
+  checked_at: '2026-11-02'
+statistics:
+- name: Motion duration
+  value: 10.1
+  unit: hours
+  release_id: original
+  scope: Author-described full release
+  source_ids:
+  - official
+  - paper
+  - project
+- name: Sequences
+  value: 215
+  unit: sequences
+  release_id: original
+  scope: Author-described full release
+  source_ids:
+  - official
+  - paper
+  - project

@@ -16,7 +16,7 @@
 
 ## Goal recognition
 
-[SAGA: Goals, Actions and Plans](datasets/saga-goals.md)
+[Intend to Move (I2M)](datasets/i2m.md), [SAGA: Goals, Actions and Plans](datasets/saga-goals.md)
 
 ## Human-object interaction prediction
 
@@ -28,12 +28,12 @@
 
 ## Intention reasoning
 
-[IntentQA](datasets/intentqa.md), [SAGA: Goals, Actions and Plans](datasets/saga-goals.md)
+[DeceptionDecoded](datasets/deceptiondecoded.md), [IntentQA](datasets/intentqa.md), [SAGA: Goals, Actions and Plans](datasets/saga-goals.md), [XMEI-dataset](datasets/xmei-dataset.md)
 
 ## Intention recognition
 
-[Intentonomy](datasets/intentonomy.md), [PHASE](datasets/phase.md), [PIE](datasets/pie.md)
+[DeceptionDecoded](datasets/deceptiondecoded.md), [Intentonomy](datasets/intentonomy.md), [MIntRec](datasets/mintrec.md), [MIntRec2.0](datasets/mintrec2.md), [PHASE](datasets/phase.md), [PIE](datasets/pie.md), [XMEI-dataset](datasets/xmei-dataset.md)
 
 ## Trajectory prediction
 
-[Ego4D](datasets/ego4d.md), [JAAD](datasets/jaad.md), [LOKI: Long Term and Key Intentions](datasets/loki-traffic.md), [MoGaze](datasets/mogaze.md), [PIE](datasets/pie.md)
+[Ego4D](datasets/ego4d.md), [Intend to Move (I2M)](datasets/i2m.md), [JAAD](datasets/jaad.md), [LOKI: Long Term and Key Intentions](datasets/loki-traffic.md), [MoGaze](datasets/mogaze.md), [PIE](datasets/pie.md)

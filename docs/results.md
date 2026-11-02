@@ -31,13 +31,18 @@ A missing value means that no result has passed this repository's source and pro
 
 | Dataset | Status |
 | --- | --- |
+| [DeceptionDecoded](datasets/deceptiondecoded.md) | No verified result protocol yet |
 | [Ego-Exo4D](datasets/ego-exo4d.md) | No verified result protocol yet |
 | [Ego4D](datasets/ego4d.md) | No verified result protocol yet |
 | [EGTEA Gaze+](datasets/egtea-gaze-plus.md) | No verified result protocol yet |
 | [EPIC-KITCHENS-100](datasets/epic-kitchens-100.md) | Protocol documented; result conditions or scores still pending |
 | [HARMONIC](datasets/harmonic.md) | No verified result protocol yet |
+| [Intend to Move (I2M)](datasets/i2m.md) | No verified result protocol yet |
 | [JRDB-Social](datasets/jrdb-social.md) | No verified result protocol yet |
 | [LOKI: Long Term and Key Intentions](datasets/loki-traffic.md) | No verified result protocol yet |
+| [MIntRec](datasets/mintrec.md) | No verified result protocol yet |
+| [MIntRec2.0](datasets/mintrec2.md) | No verified result protocol yet |
 | [MoGaze](datasets/mogaze.md) | No verified result protocol yet |
 | [PHASE](datasets/phase.md) | No verified result protocol yet |
 | [SAGA: Goals, Actions and Plans](datasets/saga-goals.md) | No verified result protocol yet |
+| [XMEI-dataset](datasets/xmei-dataset.md) | No verified result protocol yet |

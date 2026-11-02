@@ -7,17 +7,22 @@ Only records checked against cited original sources appear here.
 | --- | --- | --- | --- | --- | --- | --- |
 | [Assembly101](datasets/assembly101.md) | 2022 | daily_activities, human_object_interaction | implicit | action_anticipation | rgb, pose | open |
 | [Brain4Cars](datasets/brain4cars.md) | 2015 | driver_behavior, autonomous_driving | implicit | action_anticipation | rgb, vehicle_telemetry | unknown |
+| [DeceptionDecoded](datasets/deceptiondecoded.md) | 2025 | social_interaction | explicit | intention_recognition, intention_reasoning | rgb, text | restricted |
 | [Ego-Exo4D](datasets/ego-exo4d.md) | 2024 | daily_activities, embodied_interaction | related |  | rgb, audio, text, imu, gaze, pose | registration |
 | [Ego4D](datasets/ego4d.md) | 2021 | daily_activities, human_object_interaction | implicit | action_anticipation, future_activity_prediction, trajectory_prediction, human_object_interaction_prediction | rgb, audio, trajectory, object_state | registration |
 | [EGTEA Gaze+](datasets/egtea-gaze-plus.md) | 2018 | daily_activities, human_object_interaction | implicit | action_anticipation | rgb, audio, gaze | unknown |
 | [EPIC-KITCHENS-100](datasets/epic-kitchens-100.md) | 2020 | daily_activities, human_object_interaction | implicit | action_anticipation | rgb, audio, optical_flow, object_state | registration |
 | [HARMONIC](datasets/harmonic.md) | 2021 | human_robot_interaction, human_object_interaction | related |  | rgb, gaze, pose, object_state | open |
+| [Intend to Move (I2M)](datasets/i2m.md) | 2025 | daily_activities, social_interaction, embodied_interaction | explicit | goal_recognition, trajectory_prediction | rgb, depth, pose, text | unavailable |
 | [Intentonomy](datasets/intentonomy.md) | 2021 | daily_activities, social_interaction | explicit | intention_recognition | rgb | open |
 | [IntentQA](datasets/intentqa.md) | 2023 | daily_activities, social_interaction | explicit | intention_reasoning | rgb, text | open |
 | [JAAD](datasets/jaad.md) | 2017 | pedestrian, autonomous_driving | implicit | behavior_prediction, trajectory_prediction | rgb, trajectory, vehicle_telemetry | open |
 | [JRDB-Social](datasets/jrdb-social.md) | 2024 | social_interaction, human_robot_interaction | related |  | rgb, lidar, trajectory | registration |
 | [LOKI: Long Term and Key Intentions](datasets/loki-traffic.md) | 2021 | pedestrian, autonomous_driving | explicit | intention_prediction, trajectory_prediction | rgb, trajectory, object_state, lidar | request |
+| [MIntRec](datasets/mintrec.md) | 2022 | social_interaction | explicit | intention_recognition | rgb, audio, text | open |
+| [MIntRec2.0](datasets/mintrec2.md) | 2024 | social_interaction | explicit | intention_recognition | rgb, audio, text | open |
 | [MoGaze](datasets/mogaze.md) | 2020 | human_robot_interaction, human_object_interaction | related | trajectory_prediction | pose, gaze, object_state | open |
 | [PHASE](datasets/phase.md) | 2021 | social_interaction, embodied_interaction | explicit | intention_recognition, behavior_prediction | trajectory, object_state | open |
 | [PIE](datasets/pie.md) | 2019 | pedestrian, autonomous_driving | explicit | intention_recognition, behavior_prediction, trajectory_prediction | rgb, trajectory, vehicle_telemetry | open |
 | [SAGA: Goals, Actions and Plans](datasets/saga-goals.md) | 2024 | daily_activities, social_interaction | explicit | goal_recognition, intention_reasoning | text | open |
+| [XMEI-dataset](datasets/xmei-dataset.md) | 2026 | social_interaction | explicit | intention_recognition, intention_reasoning | rgb, audio, text | unknown |

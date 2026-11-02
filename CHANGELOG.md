@@ -2,6 +2,9 @@
 
 ## Unreleased research preview
 
+- Added XMEI-dataset, Intend to Move (I2M), DeceptionDecoded, MIntRec and MIntRec2.0, with original sources, input/output examples, access gaps and annotation-provenance notes checked on 2026-11-02.
+- Grouped the two MIntRec releases as one dataset family; retained distinct taxonomies and release records. No unreviewed benchmark scores were added.
+
 - Added a generated, snapshot-scoped best-value overview with explicit gaps for datasets lacking verified results; dataset pages now show their verified metric values.
 - Curated Assembly101 multi-view validation action, object, and verb recalls and Brain4Cars original five-fold maneuver precision/recall, each with protocol-specific source locators.
 - Added source-linked input/output examples to all dataset pages, with author-published visual previews where available and clear distinction between illustrative examples and exact source records.

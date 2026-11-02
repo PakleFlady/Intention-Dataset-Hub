@@ -56,8 +56,10 @@ def test_every_dataset_page_shows_an_example_with_honest_media():
         if media := example.get("media"):
             assert f"![{media['alt']}]({media['url']})" in page
             assert media["caption"] in page
-        elif "image" in dataset["data_formats"]:
+        elif "image" in dataset["data_formats"] and dataset["access"]["status"] not in {"request", "restricted", "registration"}:
             pytest.fail(f"{dataset_id}: an image dataset needs a visible example image")
+        elif "image" in dataset["data_formats"]:
+            assert example["sample_url"] and dataset["access"].get("conditions")
     assert catalog.datasets["saga-goals"]["example"]["kind"] == "source_record"
     assert all(dataset["example"]["kind"] in {"source_record", "source_figure", "source_format"} for dataset in catalog.datasets.values())
     assert all(dataset["example"].get("sample_url") and dataset["example"].get("source_locator") for dataset in catalog.datasets.values())

@@ -1,0 +1,117 @@
+schema_version: '0.1'
+id: xmei-dataset
+name: XMEI-dataset
+year: 2026
+description: Multimodal dialogue samples with emotion and communicative-intent labels plus explanations of their
+  relationship. Rationales are model-generated and human-refined interpretations, not participants' self-reported
+  mental states.
+intention_relevance: explicit
+intention_definition: Multimodal dialogue samples with emotion and communicative-intent labels plus explanations
+  of their relationship. Rationales are model-generated and human-refined interpretations, not participants' self-reported
+  mental states.
+domains:
+- social_interaction
+intention_types:
+- communicative
+tasks:
+- intention_recognition
+- intention_reasoning
+modalities:
+- rgb
+- audio
+- text
+data_formats:
+- video
+- text
+- structured_annotation
+data_origin: real
+annotations:
+- id: intention
+  semantic: intention
+  description: Seven emotion and nine intent categories, with emotion_reason, intent_reason and joint explanation
+    fields; generated rationales undergo human refinement.
+  provenance: model_generated
+  scope: Author-described dataset release
+  source_ids:
+  - official
+  - paper
+releases:
+- id: original
+  label: Original author-described release
+  annotation_version: author-release-unspecified
+  source_ids:
+  - official
+  notes: No immutable annotation version was identified; benchmark protocols must resolve the precise files.
+access:
+  status: unknown
+  url: https://github.com/OrangeYeah1027/JX4MEI
+  conditions: The official repository documents the dataset and expected train.json/val.json layout, but no direct
+    dataset download was found during this check.
+  checked_at: '2026-11-02'
+  source_ids:
+  - official
+  - paper
+licenses:
+- component: dataset media and annotations
+  status: unknown
+  source_ids:
+  - official
+sources:
+- id: official
+  type: official_project
+  title: 'Official project: dataset, annotation, access and examples'
+  url: https://github.com/OrangeYeah1027/JX4MEI
+  accessed_at: '2026-11-02'
+  locator:
+    section: 'Official project: dataset, annotation, access and examples'
+- id: paper
+  type: paper
+  title: 'ACL 2026 Findings paper: abstract and dataset construction'
+  url: https://aclanthology.org/2026.findings-acl.1012/
+  accessed_at: '2026-11-02'
+  locator:
+    section: 'ACL 2026 Findings paper: abstract and dataset construction'
+verification:
+  status: verified
+  checked_at: '2026-11-02'
+  source_ids:
+  - official
+  - paper
+  notes: Checked the original descriptions, annotation meaning, public examples and access statements. Full dataset
+    files were not downloaded, and benchmark results have not been curated.
+notes: Includes social communicative purposes, so it falls within the language-task inclusion boundary. Annotation
+  generation is recorded separately from the origin of the audiovisual observations. Dataset license and downloadable
+  release remain unresolved.
+example:
+  kind: source_figure
+  input: The official irony demo combines the utterance 'not an edible arrangement' with a humorous costume and
+    supportive vocal delivery.
+  output: The author's demo identifies emotion Happy and intent Consoling, with an explanation that humor softens
+    criticism and comforts the listener.
+  source_ids:
+  - official
+  sample_url: https://github.com/OrangeYeah1027/JX4MEI#-demo
+  source_locator: README, Demo and Analysis; docs/images/demo.png.
+  media:
+    kind: image
+    url: https://raw.githubusercontent.com/OrangeYeah1027/JX4MEI/main/docs/images/demo.png
+    alt: Official XMEI dialogue demo with emotion and intention explanations
+    caption: Author-published preview. Refer to the linked original example for its labels and context.
+  checked_at: '2026-11-02'
+statistics:
+- name: Samples
+  value: 15461
+  unit: samples
+  release_id: original
+  scope: Author-described full release
+  source_ids:
+  - official
+  - paper
+- name: Intent categories
+  value: 9
+  unit: classes
+  release_id: original
+  scope: Author-described full release
+  source_ids:
+  - official
+  - paper

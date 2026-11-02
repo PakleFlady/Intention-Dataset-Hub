@@ -4,7 +4,11 @@
 
 ## Audio
 
-[Ego-Exo4D](datasets/ego-exo4d.md), [Ego4D](datasets/ego4d.md), [EGTEA Gaze+](datasets/egtea-gaze-plus.md), [EPIC-KITCHENS-100](datasets/epic-kitchens-100.md)
+[Ego-Exo4D](datasets/ego-exo4d.md), [Ego4D](datasets/ego4d.md), [EGTEA Gaze+](datasets/egtea-gaze-plus.md), [EPIC-KITCHENS-100](datasets/epic-kitchens-100.md), [MIntRec](datasets/mintrec.md), [MIntRec2.0](datasets/mintrec2.md), [XMEI-dataset](datasets/xmei-dataset.md)
+
+## Depth
+
+[Intend to Move (I2M)](datasets/i2m.md)
 
 ## Gaze
 
@@ -28,15 +32,15 @@
 
 ## Pose
 
-[Assembly101](datasets/assembly101.md), [Ego-Exo4D](datasets/ego-exo4d.md), [HARMONIC](datasets/harmonic.md), [MoGaze](datasets/mogaze.md)
+[Assembly101](datasets/assembly101.md), [Ego-Exo4D](datasets/ego-exo4d.md), [HARMONIC](datasets/harmonic.md), [Intend to Move (I2M)](datasets/i2m.md), [MoGaze](datasets/mogaze.md)
 
 ## RGB
 
-[Assembly101](datasets/assembly101.md), [Brain4Cars](datasets/brain4cars.md), [Ego-Exo4D](datasets/ego-exo4d.md), [Ego4D](datasets/ego4d.md), [EGTEA Gaze+](datasets/egtea-gaze-plus.md), [EPIC-KITCHENS-100](datasets/epic-kitchens-100.md), [HARMONIC](datasets/harmonic.md), [Intentonomy](datasets/intentonomy.md), [IntentQA](datasets/intentqa.md), [JAAD](datasets/jaad.md), [JRDB-Social](datasets/jrdb-social.md), [LOKI: Long Term and Key Intentions](datasets/loki-traffic.md), [PIE](datasets/pie.md)
+[Assembly101](datasets/assembly101.md), [Brain4Cars](datasets/brain4cars.md), [DeceptionDecoded](datasets/deceptiondecoded.md), [Ego-Exo4D](datasets/ego-exo4d.md), [Ego4D](datasets/ego4d.md), [EGTEA Gaze+](datasets/egtea-gaze-plus.md), [EPIC-KITCHENS-100](datasets/epic-kitchens-100.md), [HARMONIC](datasets/harmonic.md), [Intend to Move (I2M)](datasets/i2m.md), [Intentonomy](datasets/intentonomy.md), [IntentQA](datasets/intentqa.md), [JAAD](datasets/jaad.md), [JRDB-Social](datasets/jrdb-social.md), [LOKI: Long Term and Key Intentions](datasets/loki-traffic.md), [MIntRec](datasets/mintrec.md), [MIntRec2.0](datasets/mintrec2.md), [PIE](datasets/pie.md), [XMEI-dataset](datasets/xmei-dataset.md)
 
 ## Text
 
-[Ego-Exo4D](datasets/ego-exo4d.md), [IntentQA](datasets/intentqa.md), [SAGA: Goals, Actions and Plans](datasets/saga-goals.md)
+[DeceptionDecoded](datasets/deceptiondecoded.md), [Ego-Exo4D](datasets/ego-exo4d.md), [Intend to Move (I2M)](datasets/i2m.md), [IntentQA](datasets/intentqa.md), [MIntRec](datasets/mintrec.md), [MIntRec2.0](datasets/mintrec2.md), [SAGA: Goals, Actions and Plans](datasets/saga-goals.md), [XMEI-dataset](datasets/xmei-dataset.md)
 
 ## Trajectory
 
