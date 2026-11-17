@@ -1,0 +1,179 @@
+schema_version: '0.1'
+id: mintrec2-mmla-sft-2025
+dataset_id: mintrec2
+release_id: original
+annotation_version: author-release-unspecified
+task: intention_recognition
+original_task_name: multimodal intent recognition
+target_id: intention
+protocol:
+  name: MMLA SFT 2025 — comparison audit pending
+  source_ids:
+  - mmla
+  notes: Pin the paper-evaluated annotation files, per-model frame sampling/truncation, inference label extraction
+    and run aggregation before comparison; published training YAML alone does not identify the complete evaluation
+    configuration. SFT and multi-task IT must remain separate.
+split:
+  name: 'MMLA Table 1: 6,165 train / 1,106 validation / 2,033 test; 30 in-scope classes'
+  source_ids:
+  - mmla
+sample_selection:
+  description: Source-specific classification cohort; exact file-level alignment to the recorded dataset release
+    remains to be confirmed.
+  source_ids:
+  - mmla
+inputs:
+  modalities: &id001
+  - rgb
+  - text
+  representation: Published model inputs; see configuration and source.
+  available_information: Utterance video and transcript.
+temporal:
+  observation_window:
+    kind: unknown
+    anchor: supplied clip
+    description: Exact inference frame selection and truncation have not completed source audit.
+  anticipation_gap:
+    kind: not_applicable
+    anchor: classification target
+    description: Recognition of intent in the supplied clip.
+  prediction_horizon:
+    kind: not_applicable
+    anchor: classification target
+    description: Classification rather than timed forecasting.
+training_policy:
+  external_data: unknown
+  pretraining: allowed
+  extra_supervision: unknown
+  ensemble: unknown
+  source_ids:
+  - mmla
+  notes: Pin the paper-evaluated annotation files, per-model frame sampling/truncation, inference label extraction
+    and run aggregation before comparison; published training YAML alone does not identify the complete evaluation
+    configuration. SFT and multi-task IT must remain separate.
+evaluation:
+  description: Paper-reported classification accuracy; no cross-paper ranking.
+  aggregation: Paper-reported test accuracy; run aggregation audit pending
+  parameters:
+    regime: mmla-sft-2025
+  source_ids:
+  - mmla
+metrics:
+- id: accuracy
+  name: Accuracy
+  direction: higher
+  unit: percent
+  definition: Percentage of correctly classified test samples.
+  aggregation: overall
+  evaluation_subset: 'MMLA Table 1: 6,165 train / 1,106 validation / 2,033 test; 30 in-scope classes'
+  valid_range:
+  - 0
+  - 100
+  source_ids:
+  - mmla
+sources:
+- id: mmla
+  type: paper
+  title: 'Can Large Language Models Help Multimodal Language Analysis? MMLA: A Comprehensive Benchmark'
+  url: https://arxiv.org/html/2504.16427v2
+  accessed_at: '2026-11-17'
+  locator:
+    table: Table 3
+    section: Experimental setup and results
+verification:
+  status: pending
+  checked_at: '2026-11-17'
+  source_ids:
+  - mmla
+  notes: Reported numbers and method category checked against the original paper. Pin the paper-evaluated annotation
+    files, per-model frame sampling/truncation, inference label extraction and run aggregation before comparison;
+    published training YAML alone does not identify the complete evaluation configuration. SFT and multi-task IT
+    must remain separate.
+results:
+- id: qwen2_vl_72b
+  method_id: qwen2_vl_72b
+  model_class: llm_vlm
+  classification_notes: Generative LLM/VLM participates in inference.
+  configuration:
+    description: Qwen2-VL-72B; mmla-sft-2025
+    modalities: *id001
+    external_data: Audit pending
+    pretraining: Published foundation model checkpoints
+    ensemble: null
+    evaluation_parameters:
+      regime: mmla-sft-2025
+    notes: Single named configuration transcribed; ensemble and exact inference implementation still require confirmation.
+  scores:
+    accuracy:
+      value: 67.39
+      source_ids:
+      - mmla
+      locator: &id002
+        table: Table 3
+        row: Qwen2-VL-72B
+        column: MIntRec2.0 / ACC (%)
+  source_ids:
+  - mmla
+  protocol_match:
+    status: unclear
+    source_ids:
+    - mmla
+    locator: *id002
+    notes: Pin the paper-evaluated annotation files, per-model frame sampling/truncation, inference label extraction
+      and run aggregation before comparison; published training YAML alone does not identify the complete evaluation
+      configuration. SFT and multi-task IT must remain separate.
+  verification:
+    status: pending
+    checked_at: '2026-11-17'
+    source_ids:
+    - mmla
+    notes: Reported numbers and method category checked against the original paper. Pin the paper-evaluated annotation
+      files, per-model frame sampling/truncation, inference label extraction and run aggregation before comparison;
+      published training YAML alone does not identify the complete evaluation configuration. SFT and multi-task
+      IT must remain separate.
+  status: active
+  baseline_origin: none
+- id: llava_ov_72b
+  method_id: llava_ov_72b
+  model_class: llm_vlm
+  classification_notes: Generative LLM/VLM participates in inference.
+  configuration:
+    description: LLaVA-OV-72B; mmla-sft-2025
+    modalities: *id001
+    external_data: Audit pending
+    pretraining: Published foundation model checkpoints
+    ensemble: null
+    evaluation_parameters:
+      regime: mmla-sft-2025
+    notes: Single named configuration transcribed; ensemble and exact inference implementation still require confirmation.
+  scores:
+    accuracy:
+      value: 66.01
+      source_ids:
+      - mmla
+      locator: &id003
+        table: Table 3
+        row: LLaVA-OV-72B
+        column: MIntRec2.0 / ACC (%)
+  source_ids:
+  - mmla
+  protocol_match:
+    status: unclear
+    source_ids:
+    - mmla
+    locator: *id003
+    notes: Pin the paper-evaluated annotation files, per-model frame sampling/truncation, inference label extraction
+      and run aggregation before comparison; published training YAML alone does not identify the complete evaluation
+      configuration. SFT and multi-task IT must remain separate.
+  verification:
+    status: pending
+    checked_at: '2026-11-17'
+    source_ids:
+    - mmla
+    notes: Reported numbers and method category checked against the original paper. Pin the paper-evaluated annotation
+      files, per-model frame sampling/truncation, inference label extraction and run aggregation before comparison;
+      published training YAML alone does not identify the complete evaluation configuration. SFT and multi-task
+      IT must remain separate.
+  status: active
+  baseline_origin: none
+snapshots: []

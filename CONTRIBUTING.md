@@ -28,3 +28,9 @@ python -m pytest
 ```
 
 Commit both YAML and generated Markdown. CI compares them and checks local links. Network errors in external resources should be reported in a Broken Link issue rather than silently changing access status.
+# Model categories and bilingual overview
+
+Every Result must include `model_class` and `classification_notes` supported by its source configuration. See [classification rules](docs/model-classification.md). Conventional, LLM/VLM and training-assisted hybrid results have separate winner calculations; unknown categories cannot rank. Keep zero-shot, SFT and multi-task IT protocols separate.
+
+`README.md` is the Chinese landing page and `README.en.md` is the English version. Edit their introductory prose directly; regenerate both overview blocks with `python scripts/generate_docs.py`. Do not translate stable YAML IDs or link anchors. Keep media archives and local playback outputs out of contributions; see [media policy](docs/media-policy.md).
+

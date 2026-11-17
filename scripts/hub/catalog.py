@@ -165,6 +165,10 @@ def _check_temporal(parameter: dict, catalog: Catalog, path: Path, label: str) -
 
 
 def rankable(benchmark: dict, result: dict) -> bool:
+    if result.get("model_class") not in {"conventional", "llm_vlm", "hybrid"}:
+        return False
+    if result.get("configuration", {}).get("ensemble") is None:
+        return False
     if benchmark.get("verification", {}).get("status") != "verified":
         return False
     if result.get("status") != "active" or result.get("verification", {}).get("status") != "verified" or result.get("protocol_match", {}).get("status") != "confirmed":

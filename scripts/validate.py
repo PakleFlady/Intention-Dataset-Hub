@@ -7,7 +7,7 @@ from hub.catalog import load_catalog
 
 
 TEXT_SUFFIXES = {".md", ".yaml", ".yml", ".json", ".py", ".toml", ".txt", ".cff"}
-SKIP_DIRS = {".git", ".deps", ".venv", ".pytest_cache", ".pytest_tmp", "__pycache__"}
+SKIP_DIRS = {".git", ".deps", ".venv", ".pytest_cache", ".pytest_tmp", "__pycache__", "local-data", "github-update"}
 
 
 def encoding_errors(root: Path) -> list[str]:

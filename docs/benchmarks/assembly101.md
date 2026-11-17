@@ -4,9 +4,13 @@
 
 Results are comparable only within the same protocol section. A code link is not an independent reproduction.
 
-## ICIP 2023 Assembly101 validation, all-view fused anticipation
-
 <a id="assembly101-icip2023-val-multiview"></a>
+
+Task-specific classifiers and predictors, including BERT encoders, without generative LLM/VLM assistance.
+
+## ICIP 2023 Assembly101 validation, all-view fused anticipation — Conventional / task-specific models
+
+<a id="assembly101-icip2023-val-multiview-conventional"></a>
 
 **Task:** `action_anticipation` (original: Action anticipation)  
 **Dataset release:** `v1` · **Annotation version:** `author-release-unspecified`  
@@ -67,4 +71,6 @@ Results are comparable only within the same protocol section. A code link is not
 - **goal_paper**: [Action Anticipation with Goal Consistency](https://gall.cv-uni-bonn.de/download/jgall_latentanticipation_icip23.pdf) — section: 4.3 Results, table: 1
 - **goal_code**: [Goal Consistency author implementation and Assembly101 instructions](https://github.com/olga-zats/goal_consistency) — section: Assembly101
 
-**Protocol verified:** 2026-10-08 · [official_code](https://github.com/assembly-101/assembly101-action-anticipation/tree/main/tempAgg-action-anticipation), [goal_paper](https://gall.cv-uni-bonn.de/download/jgall_latentanticipation_icip23.pdf), [goal_code](https://github.com/olga-zats/goal_consistency)
+**Protocol status:** verified · checked 2026-10-08 · [official_code](https://github.com/assembly-101/assembly101-action-anticipation/tree/main/tempAgg-action-anticipation), [goal_paper](https://gall.cv-uni-bonn.de/download/jgall_latentanticipation_icip23.pdf), [goal_code](https://github.com/olga-zats/goal_consistency)
+
+Validation split, all-view fusion, TSM features, one-second anticipation and Table 1 multi-view values were checked against the original author materials. No implementation was run.

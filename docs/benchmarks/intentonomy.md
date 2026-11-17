@@ -4,9 +4,13 @@
 
 Results are comparable only within the same protocol section. A code link is not an independent reproduction.
 
-## Author repository test-set RGB baseline cohort
-
 <a id="intentonomy-author-test-rgb"></a>
+
+Task-specific classifiers and predictors, including BERT encoders, without generative LLM/VLM assistance.
+
+## Author repository test-set RGB baseline cohort — Conventional / task-specific models
+
+<a id="intentonomy-author-test-rgb-conventional"></a>
 
 **Task:** `intention_recognition` (original: Intentonomy intent classification)  
 **Dataset release:** `v1` · **Annotation version:** `author-release-unspecified`  
@@ -61,4 +65,6 @@ Results are comparable only within the same protocol section. A code link is not
 
 - **author_readme**: [Intentonomy author repository baseline results](https://github.com/KMnP/intentonomy) — section: Baseline results; Test set results
 
-**Protocol verified:** 2026-09-30 · [author_readme](https://github.com/KMnP/intentonomy)
+**Protocol status:** verified · checked 2026-09-30 · [author_readme](https://github.com/KMnP/intentonomy)
+
+Original protocol details checked; no independent implementation reproduction.

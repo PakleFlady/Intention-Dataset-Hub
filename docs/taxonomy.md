@@ -99,3 +99,12 @@ Machine values are defined in [taxonomy.yaml](../taxonomy.yaml). Domains are fla
 | `multi_camera` | Multi-camera | Multiple synchronized or complementary cameras. | — |
 | `vehicle_mounted` | Vehicle-mounted | Camera or sensor carried by a vehicle. | — |
 | `wearable` | Wearable | Sensor worn by a participant. | — |
+
+## Model Classes
+
+| ID | Meaning | Definition | Parent |
+| --- | --- | --- | --- |
+| `conventional` | Conventional / task-specific models | Task-specific classifiers and predictors, including BERT encoders, without generative LLM/VLM assistance. | — |
+| `hybrid` | LLM-assisted training / hybrid models | LLM/VLM-generated supervision or distillation is used in training, while inference uses a conventional model. | — |
+| `llm_vlm` | LLM / VLM models | A generative language or vision-language foundation model participates in inference, including small foundation models and tool pipelines. | — |
+| `unknown` | Unclassified models | Evidence does not yet establish the model category. These results cannot enter best-value calculations. | — |

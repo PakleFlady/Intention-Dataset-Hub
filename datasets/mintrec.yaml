@@ -43,16 +43,33 @@ releases:
 access:
   status: open
   url: https://github.com/thuiar/MIntRec
-  conditions: Official README links Google Drive downloads for annotations, audiovisual features and raw clips.
-    Full archives were not downloaded; source TV-media rights remain with their owners.
-  checked_at: '2026-11-02'
+  conditions: Official downloads are available. A local copy was inventoried (2,224 MP4s); no media is mirrored
+    by this Hub. Local availability and publisher license metadata do not establish underlying TV-footage redistribution
+    rights.
+  checked_at: '2026-11-17'
   source_ids:
   - official
+  - mmla_card
 licenses:
-- component: dataset media and annotations
+- component: Official repository software
+  status: known
+  name: MIT
+  url: https://github.com/thuiar/MIntRec/blob/6bc239695df342c22c324bb3a76789fa295ff999/LICENSE
+  source_ids:
+  - code_license
+- component: MMLA repack metadata / annotations (publisher declaration)
+  status: known
+  name: CC BY 4.0 as declared by MMLA; separate MIntRec card declares CC BY-SA 4.0
+  url: https://huggingface.co/datasets/THUIAR/MMLA-Datasets/blob/ff135d32adaac2c3d5b0268e88a7ce6af200f544/README.md
+  source_ids:
+  - mmla_card
+  - mintrec_card
+- component: 'Underlying Superstore television footage: independent redistribution rights'
   status: unknown
   source_ids:
   - official
+  - mmla_card
+  - mintrec_card
 sources:
 - id: official
   type: official_project
@@ -61,31 +78,70 @@ sources:
   accessed_at: '2026-11-02'
   locator:
     section: 'Official project: dataset, annotation, access and examples'
+- id: mmla_annotation
+  type: official_data
+  title: MMLA author-released MIntRec test annotations
+  url: https://huggingface.co/datasets/THUIAR/MMLA-Datasets/blob/ff135d32adaac2c3d5b0268e88a7ce6af200f544/MIntRec/test.tsv
+  commit: ff135d32adaac2c3d5b0268e88a7ce6af200f544
+  accessed_at: '2026-11-17'
+  locator:
+    file: MIntRec/test.tsv
+    row: S06_E04_70 (first data row)
+- id: mmla_card
+  type: license
+  title: 'MMLA dataset card: declared CC BY 4.0'
+  url: https://huggingface.co/datasets/THUIAR/MMLA-Datasets/blob/ff135d32adaac2c3d5b0268e88a7ce6af200f544/README.md
+  accessed_at: '2026-11-17'
+  locator:
+    section: YAML license field
+- id: mintrec_card
+  type: license
+  title: 'MIntRec dataset card: declared CC BY-SA 4.0'
+  url: https://huggingface.co/datasets/THU-IAR/MIntRec
+  accessed_at: '2026-11-17'
+  locator:
+    section: License
+- id: code_license
+  type: license
+  title: MIntRec code MIT license
+  url: https://github.com/thuiar/MIntRec/blob/6bc239695df342c22c324bb3a76789fa295ff999/LICENSE
+  accessed_at: '2026-11-17'
+  locator:
+    file: LICENSE
 verification:
   status: verified
   checked_at: '2026-11-02'
   source_ids:
   - official
   notes: Checked the original descriptions, annotation meaning, public examples and access statements. Full dataset
-    files were not downloaded, and benchmark results have not been curated.
+    files were not downloaded, and benchmark results have not been curated. On 2026-11-17 the example was matched
+    by official annotation ID to a local filename; component license declarations were reviewed separately.
 notes: Included because labels represent human social and communicative purposes, rather than service-domain routing
   or slot filling. TV dialogue is scripted/performed and should not be described as unscripted natural behavior.
-  The repository's code license must not be assumed to cover television footage.
+  The repository's code license must not be assumed to cover television footage. The official cards contain differing
+  license declarations; see [media handling and local playback](../media-policy.md). The one-row annotation excerpt
+  is attributed to THUIAR/MMLA-Datasets under its declared CC BY 4.0; label whitespace is normalized. External media
+  is not covered by this Hub's license.
 example:
-  kind: source_format
-  input: A Superstore video clip and its audio/transcript, identified by season, episode and clip fields in train.tsv/dev.tsv/test.tsv.
-  output: One of 20 intent labels (including Comfort and Ask for help); the official example image below illustrates
-    the multimodal classification task.
+  kind: source_record
+  input: 'Video/audio file MIntRec_S06_E04_70.mp4 with the official transcript: "you''re gonna go back and work
+    on that register".'
+  output: 'Official fine-grained intent label: arrange. This is an observer-assigned communicative purpose, not
+    a direct measurement of the actor''s private intent.'
   source_ids:
-  - official
-  sample_url: https://github.com/thuiar/MIntRec
-  source_locator: 'README sections 1, 2(b–c), 4(a): example, taxonomy, annotation and TSV format.'
+  - mmla_annotation
+  - mmla_card
+  sample_url: https://huggingface.co/datasets/THUIAR/MMLA-Datasets/blob/ff135d32adaac2c3d5b0268e88a7ce6af200f544/MIntRec/test.tsv
+  source_locator: MIntRec/test.tsv, first data row; id S06_E04_70. Whitespace around label trimmed for display.
+    Matched to the same basename in the local video directory; video bytes were not independently matched to the
+    archive publisher.
+  checked_at: '2026-11-17'
   media:
     kind: image
     url: https://raw.githubusercontent.com/thuiar/MIntRec/main/figs/example.png
-    alt: Official MIntRec multimodal dialogue and intent example
-    caption: Author-published preview. Refer to the linked original example for its labels and context.
-  checked_at: '2026-11-02'
+    alt: Official MIntRec task illustration, separate from the identified local record
+    caption: General author-published task illustration; NOT a frame from S06_E04_70. See the linked annotation
+      and the local playback guide for that record.
 family_id: mintrec
 statistics:
 - name: Utterances

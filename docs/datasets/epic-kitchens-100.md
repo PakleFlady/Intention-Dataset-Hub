@@ -52,7 +52,7 @@ See the source for current download conditions; raw files were not downloaded fo
 
 ## Benchmarks
 
-- [EK100 challenge test action anticipation](../benchmarks/epic-kitchens-100.md#ek100-2021-test-action-anticipation) — `action_anticipation`
+- [EK100 challenge test action anticipation](../benchmarks/epic-kitchens-100.md#ek100-2021-test-action-anticipation) — `action_anticipation`; protocol verified
 
 ## Best verified values in recorded snapshots
 

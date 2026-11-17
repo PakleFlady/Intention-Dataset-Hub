@@ -15,3 +15,10 @@
 - Open gaps: independent second-pass review of every seed entry; broader direct HRI and daily-intention coverage; more protocol-matched independent methods. See [coverage notes](docs/coverage.md).
 
 The public repository URL is recorded in `CITATION.cff`. No DOI has been assigned.
+## 2026-11-17
+
+- Made the default README Chinese with an English README link; both generated overviews share the same catalog facts.
+- Separated conventional, LLM/VLM, training-assisted hybrid and unclassified results in browsing, result tables and snapshot winner calculations.
+- Added nine source-reported values across MIntRec, MIntRec2.0 and IntentQA. Seven candidate comparison settings retain explicit audit gaps and are not ranked.
+- Matched an official MIntRec annotation ID to a local MP4 filename, added local-only playback, and recorded conflicting publisher license declarations without mirroring TV media.
+

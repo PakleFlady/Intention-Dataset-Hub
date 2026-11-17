@@ -5,6 +5,7 @@ from pathlib import Path
 
 from hub.catalog import load_catalog
 from hub.render import GENERATED, check_local_links, render_all, update_readme
+from hub.localization import chinese_overview
 
 
 def main() -> int:
@@ -20,7 +21,9 @@ def main() -> int:
     output, overview = render_all(catalog)
     readme_path = root / "README.md"
     try:
-        readme = update_readme(readme_path.read_text(encoding="utf-8"), overview)
+        readme = update_readme(readme_path.read_text(encoding="utf-8"), chinese_overview(overview))
+        english_path = root / "README.en.md"
+        output[english_path] = update_readme(english_path.read_text(encoding="utf-8"), overview)
     except (OSError, ValueError) as exc:
         print(f"ERROR: README.md: {exc}")
         return 1
@@ -37,6 +40,8 @@ def main() -> int:
     managed = {root / "docs/datasets.md", root / "docs/benchmarks.md", root / "docs/results.md", root / "docs/by-domain.md", root / "docs/by-task.md", root / "docs/by-modality.md", root / "docs/taxonomy.md"}
     managed.update((root / "docs/datasets").glob("*.md"))
     managed.update((root / "docs/benchmarks").glob("*.md"))
+    managed.update((root / "docs").glob("results-*.md"))
+    managed.add(root / "docs/by-model-class.md")
     for path in managed - output.keys():
         if path.exists() and path.read_text(encoding="utf-8").startswith(GENERATED):
             if args.check:

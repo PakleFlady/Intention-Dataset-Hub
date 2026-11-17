@@ -15,9 +15,8 @@ split:
   source_ids:
   - paper
 sample_selection:
-  description: 323 high-visibility clips after excluding 23 lower-resolution/adverse-weather/night clips;
-    JAAD_all includes additional bystander pedestrians; 0.8 sequence overlap, 16 observed frames and 30–60-frame
-    time-to-event.
+  description: 323 high-visibility clips after excluding 23 lower-resolution/adverse-weather/night clips; JAAD_all
+    includes additional bystander pedestrians; 0.8 sequence overlap, 16 observed frames and 30–60-frame time-to-event.
   source_ids:
   - paper
 inputs:
@@ -25,8 +24,8 @@ inputs:
   - rgb
   - trajectory
   - vehicle_telemetry
-  representation: RGB context, pedestrian bounding boxes and qualitative JAAD ego-vehicle speed labels;
-    author model also extracts pose from RGB.
+  representation: RGB context, pedestrian bounding boxes and qualitative JAAD ego-vehicle speed labels; author model
+    also extracts pose from RGB.
   available_information: Only the 16-frame observed pedestrian segment; no post-event frames supplied.
 temporal:
   observation_window:
@@ -156,6 +155,9 @@ results:
     notes: Checked against the identified primary source; results were not independently reproduced.
   status: active
   baseline_origin: protocol_authors
+  model_class: conventional
+  classification_notes: The cited configuration uses task-specific encoders/predictors; no generative LLM/VLM inference
+    or generated supervision is declared in this comparison cohort.
 - id: temporal_attention
   method_id: pcpa
   configuration:
@@ -197,6 +199,9 @@ results:
     notes: Checked against the identified primary source; results were not independently reproduced.
   status: active
   baseline_origin: protocol_authors
+  model_class: conventional
+  classification_notes: The cited configuration uses task-specific encoders/predictors; no generative LLM/VLM inference
+    or generated supervision is declared in this comparison cohort.
 - id: modality_attention
   method_id: pcpa
   configuration:
@@ -238,11 +243,13 @@ results:
     notes: Checked against the identified primary source; results were not independently reproduced.
   status: active
   baseline_origin: protocol_authors
+  model_class: conventional
+  classification_notes: The cited configuration uses task-specific encoders/predictors; no generative LLM/VLM inference
+    or generated supervision is declared in this comparison cohort.
 - id: combined_attention
   method_id: pcpa
   configuration:
-    description: PCPA with temp. + mod. attention on JAAD_all; author model features held within Table
-      3 cohort.
+    description: PCPA with temp. + mod. attention on JAAD_all; author model features held within Table 3 cohort.
     modalities:
     - rgb
     - trajectory
@@ -280,6 +287,9 @@ results:
     notes: Checked against the identified primary source; results were not independently reproduced.
   status: active
   baseline_origin: protocol_authors
+  model_class: conventional
+  classification_notes: The cited configuration uses task-specific encoders/predictors; no generative LLM/VLM inference
+    or generated supervision is declared in this comparison cohort.
 snapshots:
 - id: paper_snapshot_2026_09_30
   checked_at: '2026-09-30'
@@ -291,5 +301,4 @@ snapshots:
   - temporal_attention
   - modality_attention
   - combined_attention
-  coverage_notes: Four PCPA attention configurations in WACV 2021 Table 3 JAAD_all column; one method
-    family only.
+  coverage_notes: Four PCPA attention configurations in WACV 2021 Table 3 JAAD_all column; one method family only.

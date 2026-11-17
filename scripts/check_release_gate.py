@@ -10,6 +10,7 @@ import argparse
 from pathlib import Path
 
 from hub.catalog import Catalog, load_catalog, rankable
+from hub.model_classes import MODEL_CLASSES, model_class
 
 
 THRESHOLDS = {"preview": (5, 2), "reduced": (15, 3), "full": (15, 5)}
@@ -23,10 +24,11 @@ def assess(catalog: Catalog) -> tuple[int, set[str]]:
             continue
         method_families = {m["id"]: m.get("model_family") for m in catalog.methods.get(benchmark["dataset_id"], {}).get("methods", [])}
         snapshot_ids = {result_id for snapshot in benchmark["snapshots"] for result_id in snapshot["result_ids"]}
-        families = {method_families.get(result["method_id"]) for result in benchmark["results"] if result["id"] in snapshot_ids and rankable(benchmark, result)}
-        families.discard(None)
-        if len(families) >= 2:
-            complete.add(benchmark["dataset_id"])
+        for category in MODEL_CLASSES:
+            families = {method_families.get(result["method_id"]) for result in benchmark["results"] if result["id"] in snapshot_ids and rankable(benchmark, result) and model_class(result) == category}
+            families.discard(None)
+            if len(families) >= 2:
+                complete.add(benchmark["dataset_id"])
     return datasets, complete
 
 

@@ -6,21 +6,21 @@ Observer-labeled communicative purposes in audiovisual TV dialogue, with 20 inte
 
 ## Example input and output
 
-Author-published documentation example. It shows the data or task format, not a verified annotation row.
+Author-released annotation record. The input and label below refer to the same identified record.
 
-**Input:** A Superstore video clip and its audio/transcript, identified by season, episode and clip fields in train.tsv/dev.tsv/test.tsv.
+**Input:** Video/audio file MIntRec_S06_E04_70.mp4 with the official transcript: "you're gonna go back and work on that register".
 
-**Output / label:** One of 20 intent labels (including Comfort and Ask for help); the official example image below illustrates the multimodal classification task.
+**Output / label:** Official fine-grained intent label: arrange. This is an observer-assigned communicative purpose, not a direct measurement of the actor's private intent.
 
-![Official MIntRec multimodal dialogue and intent example](https://raw.githubusercontent.com/thuiar/MIntRec/main/figs/example.png)
+![Official MIntRec task illustration, separate from the identified local record](https://raw.githubusercontent.com/thuiar/MIntRec/main/figs/example.png)
 
-*Author-published preview. Refer to the linked original example for its labels and context.*
+*General author-published task illustration; NOT a frame from S06_E04_70. See the linked annotation and the local playback guide for that record.*
 
-[Open the original example](https://github.com/thuiar/MIntRec)
+[Open the original example](https://huggingface.co/datasets/THUIAR/MMLA-Datasets/blob/ff135d32adaac2c3d5b0268e88a7ce6af200f544/MIntRec/test.tsv)
 
-**Location in source:** README sections 1, 2(b–c), 4(a): example, taxonomy, annotation and TSV format.
+**Location in source:** MIntRec/test.tsv, first data row; id S06_E04_70. Whitespace around label trimmed for display. Matched to the same basename in the local video directory; video bytes were not independently matched to the archive publisher.
 
-**Example evidence:** [official](https://github.com/thuiar/MIntRec)
+**Example evidence:** [mmla_annotation](https://huggingface.co/datasets/THUIAR/MMLA-Datasets/blob/ff135d32adaac2c3d5b0268e88a7ce6af200f544/MIntRec/test.tsv), [mmla_card](https://huggingface.co/datasets/THUIAR/MMLA-Datasets/blob/ff135d32adaac2c3d5b0268e88a7ce6af200f544/README.md)
 
 ## Intention in this dataset
 
@@ -42,13 +42,15 @@ Observer-labeled communicative purposes in audiovisual TV dialogue, with 20 inte
 
 ## Access and rights
 
-**Access:** open · [entry point](https://github.com/thuiar/MIntRec) · checked 2026-11-02 · [official](https://github.com/thuiar/MIntRec)
+**Access:** open · [entry point](https://github.com/thuiar/MIntRec) · checked 2026-11-17 · [official](https://github.com/thuiar/MIntRec), [mmla_card](https://huggingface.co/datasets/THUIAR/MMLA-Datasets/blob/ff135d32adaac2c3d5b0268e88a7ce6af200f544/README.md)
 
-Official README links Google Drive downloads for annotations, audiovisual features and raw clips. Full archives were not downloaded; source TV-media rights remain with their owners.
+Official downloads are available. A local copy was inventoried (2,224 MP4s); no media is mirrored by this Hub. Local availability and publisher license metadata do not establish underlying TV-footage redistribution rights.
 
 | Component | License status | License | Evidence |
 | --- | --- | --- | --- |
-| dataset media and annotations | unknown | — | [official](https://github.com/thuiar/MIntRec) |
+| Official repository software | known | [MIT](https://github.com/thuiar/MIntRec/blob/6bc239695df342c22c324bb3a76789fa295ff999/LICENSE) | [code_license](https://github.com/thuiar/MIntRec/blob/6bc239695df342c22c324bb3a76789fa295ff999/LICENSE) |
+| MMLA repack metadata / annotations (publisher declaration) | known | [CC BY 4.0 as declared by MMLA; separate MIntRec card declares CC BY-SA 4.0](https://huggingface.co/datasets/THUIAR/MMLA-Datasets/blob/ff135d32adaac2c3d5b0268e88a7ce6af200f544/README.md) | [mmla_card](https://huggingface.co/datasets/THUIAR/MMLA-Datasets/blob/ff135d32adaac2c3d5b0268e88a7ce6af200f544/README.md), [mintrec_card](https://huggingface.co/datasets/THU-IAR/MIntRec) |
+| Underlying Superstore television footage: independent redistribution rights | unknown | — | [official](https://github.com/thuiar/MIntRec), [mmla_card](https://huggingface.co/datasets/THUIAR/MMLA-Datasets/blob/ff135d32adaac2c3d5b0268e88a7ce6af200f544/README.md), [mintrec_card](https://huggingface.co/datasets/THU-IAR/MIntRec) |
 
 ## Reported statistics
 
@@ -59,7 +61,9 @@ Official README links Google Drive downloads for annotations, audiovisual featur
 
 ## Benchmarks
 
-No verified benchmark protocol is currently documented.
+- [MMLA IT 2025 — comparison audit pending](../benchmarks/mintrec.md#mintrec-mmla-it-2025) — `intention_recognition`; protocol pending
+- [MMLA SFT 2025 — comparison audit pending](../benchmarks/mintrec.md#mintrec-mmla-sft-2025) — `intention_recognition`; protocol pending
+- [MVCL DAF PLUSPLUS 2025 — comparison audit pending](../benchmarks/mintrec.md#mintrec-mvcl-daf-plusplus-2025) — `intention_recognition`; protocol pending
 
 ## Best verified values in recorded snapshots
 
@@ -71,9 +75,13 @@ No protocol-matched result has passed verification yet.
 ## Sources
 
 - **official**: [Official project: dataset, annotation, access and examples](https://github.com/thuiar/MIntRec) — section: Official project: dataset, annotation, access and examples; checked 2026-11-02
+- **mmla_annotation**: [MMLA author-released MIntRec test annotations](https://huggingface.co/datasets/THUIAR/MMLA-Datasets/blob/ff135d32adaac2c3d5b0268e88a7ce6af200f544/MIntRec/test.tsv) — file: MIntRec/test.tsv, row: S06_E04_70 (first data row); checked 2026-11-17
+- **mmla_card**: [MMLA dataset card: declared CC BY 4.0](https://huggingface.co/datasets/THUIAR/MMLA-Datasets/blob/ff135d32adaac2c3d5b0268e88a7ce6af200f544/README.md) — section: YAML license field; checked 2026-11-17
+- **mintrec_card**: [MIntRec dataset card: declared CC BY-SA 4.0](https://huggingface.co/datasets/THU-IAR/MIntRec) — section: License; checked 2026-11-17
+- **code_license**: [MIntRec code MIT license](https://github.com/thuiar/MIntRec/blob/6bc239695df342c22c324bb3a76789fa295ff999/LICENSE) — file: LICENSE; checked 2026-11-17
 
 **Dataset metadata verified:** 2026-11-02 · [official](https://github.com/thuiar/MIntRec)
 
 ## Limits and notes
 
-Included because labels represent human social and communicative purposes, rather than service-domain routing or slot filling. TV dialogue is scripted/performed and should not be described as unscripted natural behavior. The repository's code license must not be assumed to cover television footage.
+Included because labels represent human social and communicative purposes, rather than service-domain routing or slot filling. TV dialogue is scripted/performed and should not be described as unscripted natural behavior. The repository's code license must not be assumed to cover television footage. The official cards contain differing license declarations; see [media handling and local playback](../media-policy.md). The one-row annotation excerpt is attributed to THUIAR/MMLA-Datasets under its declared CC BY 4.0; label whitespace is normalized. External media is not covered by this Hub's license.

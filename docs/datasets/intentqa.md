@@ -48,15 +48,16 @@ See the source for current download conditions; raw files were not downloaded fo
 
 ## Benchmarks
 
-- [ICCV 2023 BERT video-and-text no-GPT test cohort](../benchmarks/intentqa.md#intentqa-iccv2023-no-gpt-test) — `intention_reasoning`
+- [ICCV 2023 BERT video-and-text no-GPT test cohort](../benchmarks/intentqa.md#intentqa-iccv2023-no-gpt-test) — `intention_reasoning`; protocol verified
+- [XCAVIR GPT4 2026 — comparison audit pending](../benchmarks/intentqa.md#intentqa-xcavir-gpt4-2026) — `intention_reasoning`; protocol pending
 
 ## Best verified values in recorded snapshots
 
 These values apply only to the linked comparison protocol and snapshot; they are not a claim of current field-wide SOTA.
 
-| Protocol | Metric | Best value | Method | Checked |
-| --- | --- | --- | --- | --- |
-| [ICCV 2023 BERT video-and-text no-GPT test cohort](../benchmarks/intentqa.md#intentqa-iccv2023-no-gpt-test) | Total test accuracy | 54.5 percent | Context-aware IntentQA model | 2026-09-30 |
+| Protocol | Model category | Metric | Best within category | Method | Checked |
+| --- | --- | --- | --- | --- | --- |
+| [ICCV 2023 BERT video-and-text no-GPT test cohort](../benchmarks/intentqa.md#intentqa-iccv2023-no-gpt-test) | Conventional / task-specific models | Total test accuracy | 54.5 percent | Context-aware IntentQA model | 2026-09-30 |
 
 
 ## Sources

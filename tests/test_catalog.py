@@ -25,7 +25,7 @@ def sandbox(tmp_path: Path, docs: bool = False) -> Path:
     if docs:
         shutil.copytree(ROOT / "scripts", tmp_path / "scripts", ignore=shutil.ignore_patterns("__pycache__"))
         shutil.copytree(ROOT / "docs", tmp_path / "docs")
-        for filename in ("README.md", "CONTRIBUTING.md", "CHANGELOG.md", "CITATION.cff", "LICENSE", "LICENSE-CONTENT"):
+        for filename in ("README.md", "README.en.md", "CONTRIBUTING.md", "CHANGELOG.md", "CITATION.cff", "LICENSE", "LICENSE-CONTENT"):
             shutil.copy2(ROOT / filename, tmp_path / filename)
     return tmp_path
 
@@ -214,3 +214,55 @@ def test_github_issue_forms_are_valid_yaml_with_unique_fields():
         form = yaml.safe_load(path.read_text(encoding="utf-8"))
         fields = [field["id"] for field in form["body"]]
         assert form["name"] and len(fields) == len(set(fields))
+
+
+def test_model_categories_have_independent_winners_and_unknown_is_not_ranked():
+    b = copy.deepcopy(load_catalog(ROOT).benchmarks["pie-intention-loc-iccv2019"])
+    snapshot, metric = b["snapshots"][0], b["metrics"][0]
+    conventional = _best(b, snapshot, metric)[0]["id"]
+    llm = copy.deepcopy(b["results"][0])
+    llm.update(id="llm_result", model_class="llm_vlm")
+    llm["scores"][metric["id"]]["value"] = 0.99
+    b["results"].append(llm)
+    snapshot["result_ids"].append(llm["id"])
+    assert {r["id"] for r in _best(b, snapshot, metric)} == {conventional, "llm_result"}
+    assert [r["id"] for r in _best(b, snapshot, metric, "conventional")] == [conventional]
+    metric["direction"] = "lower"
+    assert _best(b, snapshot, metric, "llm_vlm")[0]["id"] == "llm_result"
+    llm["model_class"] = "unknown"
+    assert not rankable(b, llm)
+    assert not _best(b, snapshot, metric, "unknown")
+
+
+def test_pending_reports_are_visible_but_do_not_create_best_values():
+    catalog = load_catalog(ROOT)
+    pages, _ = render_all(catalog)
+    page = pages[ROOT / "docs/results-llm-vlm.md"]
+    assert "86.29" in page and "Source-reported values — not ranked" in page
+    b = catalog.benchmarks["mintrec-mmla-it-2025"]
+    assert not rankable(b, b["results"][0])
+    assert not _best(b, {"result_ids": [b["results"][0]["id"]]}, b["metrics"][0])
+
+
+def test_chinese_overview_preserves_links_and_counts():
+    from scripts.hub.localization import chinese_overview
+    import re
+    _, english = render_all(load_catalog(ROOT))
+    chinese = chinese_overview(english)
+    assert "数据集精选" in chinese and "评测与结果覆盖" in chinese
+    assert re.findall(r"\]\(([^)]+)\)", chinese) == re.findall(r"\]\(([^)]+)\)", english)
+    assert re.findall(r"\d+", chinese) == re.findall(r"\d+", english)
+    assert "\ufffd" not in chinese
+
+
+def test_local_preview_matches_one_record_and_does_not_copy_media(tmp_path):
+    from scripts.preview_mintrec import make_preview
+    video = tmp_path / "MIntRec_S06_E04_70.mp4"
+    video.write_bytes(b"test fixture; not playable")
+    annotations = tmp_path / "test.tsv"
+    annotations.write_text("id\ttext\tlabel\nS06_E04_70\tA < B\t arrange\n", encoding="utf-8")
+    page = make_preview(tmp_path, annotations, "S06_E04_70")
+    assert video.as_uri() in page and "A &lt; B" in page and ">arrange<" in page
+    assert len(list(tmp_path.iterdir())) == 2
+    with pytest.raises(ValueError):
+        make_preview(tmp_path, annotations, "../../secret")

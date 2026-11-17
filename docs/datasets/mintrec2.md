@@ -60,7 +60,9 @@ Official README links Google Drive downloads for annotations, audiovisual featur
 
 ## Benchmarks
 
-No verified benchmark protocol is currently documented.
+- [MMLA IT 2025 — comparison audit pending](../benchmarks/mintrec2.md#mintrec2-mmla-it-2025) — `intention_recognition`; protocol pending
+- [MMLA SFT 2025 — comparison audit pending](../benchmarks/mintrec2.md#mintrec2-mmla-sft-2025) — `intention_recognition`; protocol pending
+- [MVCL DAF PLUSPLUS 2025 — comparison audit pending](../benchmarks/mintrec2.md#mintrec2-mvcl-daf-plusplus-2025) — `intention_recognition`; protocol pending
 
 ## Best verified values in recorded snapshots
 

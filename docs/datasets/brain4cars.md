@@ -48,17 +48,17 @@ Official project page timed out during this review; current dataset download sta
 
 ## Benchmarks
 
-- [ICCV 2015 five-fold all-maneuver HMM cohort](../benchmarks/brain4cars.md#brain4cars-iccv2015-all-maneuvers-cv) — `action_anticipation`
+- [ICCV 2015 five-fold all-maneuver HMM cohort](../benchmarks/brain4cars.md#brain4cars-iccv2015-all-maneuvers-cv) — `action_anticipation`; protocol verified
 
 ## Best verified values in recorded snapshots
 
 These values apply only to the linked comparison protocol and snapshot; they are not a claim of current field-wide SOTA.
 
-| Protocol | Metric | Best value | Method | Checked |
-| --- | --- | --- | --- | --- |
-| [ICCV 2015 five-fold all-maneuver HMM cohort](../benchmarks/brain4cars.md#brain4cars-iccv2015-all-maneuvers-cv) | All-maneuver precision | 77.4 percent | AIO-HMM | 2026-10-08 |
-| [ICCV 2015 five-fold all-maneuver HMM cohort](../benchmarks/brain4cars.md#brain4cars-iccv2015-all-maneuvers-cv) | All-maneuver recall | 71.2 percent | IOHMM | 2026-10-08 |
-| [ICCV 2015 five-fold all-maneuver HMM cohort](../benchmarks/brain4cars.md#brain4cars-iccv2015-all-maneuvers-cv) | All-maneuver recall | 71.2 percent | AIO-HMM | 2026-10-08 |
+| Protocol | Model category | Metric | Best within category | Method | Checked |
+| --- | --- | --- | --- | --- | --- |
+| [ICCV 2015 five-fold all-maneuver HMM cohort](../benchmarks/brain4cars.md#brain4cars-iccv2015-all-maneuvers-cv) | Conventional / task-specific models | All-maneuver precision | 77.4 percent | AIO-HMM | 2026-10-08 |
+| [ICCV 2015 five-fold all-maneuver HMM cohort](../benchmarks/brain4cars.md#brain4cars-iccv2015-all-maneuvers-cv) | Conventional / task-specific models | All-maneuver recall | 71.2 percent | IOHMM | 2026-10-08 |
+| [ICCV 2015 five-fold all-maneuver HMM cohort](../benchmarks/brain4cars.md#brain4cars-iccv2015-all-maneuvers-cv) | Conventional / task-specific models | All-maneuver recall | 71.2 percent | AIO-HMM | 2026-10-08 |
 
 
 ## Sources

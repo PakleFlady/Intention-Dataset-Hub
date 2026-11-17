@@ -1,0 +1,134 @@
+schema_version: '0.1'
+id: mintrec-mvcl-daf-plusplus-2025
+dataset_id: mintrec
+release_id: original
+annotation_version: author-release-unspecified
+task: intention_recognition
+original_task_name: multimodal intent recognition
+target_id: intention
+protocol:
+  name: MVCL DAF PLUSPLUS 2025 — comparison audit pending
+  source_ids:
+  - mvcl
+  notes: Resolve split file identity, feature preprocessing and in-scope/out-of-scope filtering, especially for
+    MIntRec2.0. Table 1 averages 10 seeds (0–9); do not combine with single-run scores.
+split:
+  name: Exact split files pending verification
+  source_ids:
+  - mvcl
+sample_selection:
+  description: Source-specific classification cohort; exact file-level alignment to the recorded dataset release
+    remains to be confirmed.
+  source_ids:
+  - mvcl
+inputs:
+  modalities: &id001
+  - rgb
+  - audio
+  - text
+  representation: Published model inputs; see configuration and source.
+  available_information: Utterance video and transcript.
+temporal:
+  observation_window:
+    kind: unknown
+    anchor: supplied clip
+    description: Exact inference frame selection and truncation have not completed source audit.
+  anticipation_gap:
+    kind: not_applicable
+    anchor: classification target
+    description: Recognition of intent in the supplied clip.
+  prediction_horizon:
+    kind: not_applicable
+    anchor: classification target
+    description: Classification rather than timed forecasting.
+training_policy:
+  external_data: unknown
+  pretraining: allowed
+  extra_supervision: unknown
+  ensemble: unknown
+  source_ids:
+  - mvcl
+  notes: Resolve split file identity, feature preprocessing and in-scope/out-of-scope filtering, especially for
+    MIntRec2.0. Table 1 averages 10 seeds (0–9); do not combine with single-run scores.
+evaluation:
+  description: Paper-reported classification accuracy; no cross-paper ranking.
+  aggregation: Mean over seeds 0–9
+  parameters:
+    regime: mvcl-daf-plusplus-2025
+  source_ids:
+  - mvcl
+metrics:
+- id: accuracy
+  name: Accuracy
+  direction: higher
+  unit: percent
+  definition: Percentage of correctly classified test samples.
+  aggregation: overall
+  evaluation_subset: Exact split files pending verification
+  valid_range:
+  - 0
+  - 100
+  source_ids:
+  - mvcl
+sources:
+- id: mvcl
+  type: paper
+  title: 'MVCL-DAF++: Enhancing Multimodal Intent Recognition via Prototype-Aware Contrastive Alignment and Coarse-to-Fine
+    Dynamic Attention Fusion'
+  url: https://arxiv.org/html/2509.17446v1
+  accessed_at: '2026-11-17'
+  locator:
+    table: Table 1
+    section: Experimental setup and results
+verification:
+  status: pending
+  checked_at: '2026-11-17'
+  source_ids:
+  - mvcl
+  notes: Reported numbers and method category checked against the original paper. Resolve split file identity, feature
+    preprocessing and in-scope/out-of-scope filtering, especially for MIntRec2.0. Table 1 averages 10 seeds (0–9);
+    do not combine with single-run scores.
+results:
+- id: mvcl_daf_plusplus
+  method_id: mvcl_daf_plusplus
+  model_class: conventional
+  classification_notes: BERT pooling, acoustic LSTM and task-specific fusion classifier; no generative LLM/VLM stage
+    described (Section 2.1).
+  configuration:
+    description: MVCL-DAF++ (Ours); mvcl-daf-plusplus-2025
+    modalities: *id001
+    external_data: Audit pending
+    pretraining: BERT and original multimodal feature encoders
+    ensemble: null
+    evaluation_parameters:
+      regime: mvcl-daf-plusplus-2025
+    notes: Single named configuration transcribed; ensemble and exact inference implementation still require confirmation.
+  scores:
+    accuracy:
+      value: 76.18
+      source_ids:
+      - mvcl
+      locator: &id002
+        table: Table 1
+        row: MVCL-DAF++ (Ours)
+        column: MIntRec / ACC (%)
+  source_ids:
+  - mvcl
+  protocol_match:
+    status: unclear
+    source_ids:
+    - mvcl
+    locator: *id002
+    notes: Resolve split file identity, feature preprocessing and in-scope/out-of-scope filtering, especially for
+      MIntRec2.0. Table 1 averages 10 seeds (0–9); do not combine with single-run scores.
+  verification:
+    status: pending
+    checked_at: '2026-11-17'
+    source_ids:
+    - mvcl
+    notes: Reported numbers and method category checked against the original paper. Resolve split file identity,
+      feature preprocessing and in-scope/out-of-scope filtering, especially for MIntRec2.0. Table 1 averages 10
+      seeds (0–9); do not combine with single-run scores.
+  status: active
+  baseline_origin: none
+snapshots: []

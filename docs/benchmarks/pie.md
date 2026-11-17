@@ -4,9 +4,13 @@
 
 Results are comparable only within the same protocol section. A code link is not an independent reproduction.
 
-## PIE ICCV 2019 intention estimation, location-only inputs
-
 <a id="pie-intention-loc-iccv2019"></a>
+
+Task-specific classifiers and predictors, including BERT encoders, without generative LLM/VLM assistance.
+
+## PIE ICCV 2019 intention estimation, location-only inputs — Conventional / task-specific models
+
+<a id="pie-intention-loc-iccv2019-conventional"></a>
 
 **Task:** `intention_recognition` (original: pedestrian intention estimation)  
 **Dataset release:** `v1` · **Annotation version:** `author-release-unspecified`  
@@ -60,4 +64,6 @@ Results are comparable only within the same protocol section. A code link is not
 - **paper**: [PIE: A Large-Scale Dataset and Models for Pedestrian Intention Estimation and Trajectory Prediction](https://openaccess.thecvf.com/content_ICCV_2019/papers/Rasouli_PIE_A_Large-Scale_Dataset_and_Models_for_Pedestrian_Intention_Estimation_ICCV_2019_paper.pdf) — section: 5.2 Pedestrian intention estimation, table: Table 2
 - **annotations**: [PIE annotation guide](https://github.com/aras62/PIE/blob/master/annotations/README.md) — section: Action versus intention note
 
-**Protocol verified:** 2026-09-30 · [paper](https://openaccess.thecvf.com/content_ICCV_2019/papers/Rasouli_PIE_A_Large-Scale_Dataset_and_Models_for_Pedestrian_Intention_Estimation_ICCV_2019_paper.pdf), [annotations](https://github.com/aras62/PIE/blob/master/annotations/README.md)
+**Protocol status:** verified · checked 2026-09-30 · [paper](https://openaccess.thecvf.com/content_ICCV_2019/papers/Rasouli_PIE_A_Large-Scale_Dataset_and_Models_for_Pedestrian_Intention_Estimation_ICCV_2019_paper.pdf), [annotations](https://github.com/aras62/PIE/blob/master/annotations/README.md)
+
+Compared Table 2 target, split, modality and observation window against the paper; labels are observer intention judgments, not actual crossing actions.

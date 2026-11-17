@@ -3,6 +3,18 @@ description: Submit a protocol or a paper/leaderboard result for review.
 title: 'Benchmark update: '
 labels: ['benchmark-update']
 body:
+  - type: dropdown
+    id: model_class
+    attributes:
+      label: Model category (result configuration)
+      options: [conventional, llm_vlm, hybrid, unknown]
+    validations: {required: true}
+  - type: textarea
+    id: classification_evidence
+    attributes:
+      label: Evidence for model category
+      description: Explain any generative LLM/VLM used at inference, or generated supervision/distillation used only in training. Parameter count alone is not the boundary.
+    validations: {required: true}
   - type: input
     id: dataset
     attributes: {label: Dataset ID and exact release / annotation version}

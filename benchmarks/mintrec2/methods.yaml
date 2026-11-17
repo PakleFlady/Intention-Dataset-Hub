@@ -1,0 +1,52 @@
+schema_version: '0.1'
+dataset_id: mintrec2
+methods:
+- id: qwen2_vl_72b
+  name: Qwen2-VL-72B
+  reference:
+    type: paper
+    title: 'Can Large Language Models Help Multimodal Language Analysis? MMLA: A Comprehensive Benchmark'
+    url: https://arxiv.org/html/2504.16427v2
+    year: 2025
+  source_ids:
+  - mmla
+  model_family: qwen2_vl_72b
+- id: llava_ov_72b
+  name: LLaVA-OV-72B
+  reference:
+    type: paper
+    title: 'Can Large Language Models Help Multimodal Language Analysis? MMLA: A Comprehensive Benchmark'
+    url: https://arxiv.org/html/2504.16427v2
+    year: 2025
+  source_ids:
+  - mmla
+  model_family: llava_ov_72b
+- id: mvcl_daf_plusplus
+  name: MVCL-DAF++ (Ours)
+  reference:
+    type: paper
+    title: 'MVCL-DAF++: Enhancing Multimodal Intent Recognition via Prototype-Aware Contrastive Alignment and Coarse-to-Fine
+      Dynamic Attention Fusion'
+    url: https://arxiv.org/html/2509.17446v1
+    year: 2025
+  source_ids:
+  - mvcl
+  model_family: mvcl_daf_plusplus
+sources:
+- id: mmla
+  type: paper
+  title: 'Can Large Language Models Help Multimodal Language Analysis? MMLA: A Comprehensive Benchmark'
+  url: https://arxiv.org/html/2504.16427v2
+  accessed_at: '2026-11-17'
+  locator:
+    table: Table 3
+    section: Experimental setup and results
+- id: mvcl
+  type: paper
+  title: 'MVCL-DAF++: Enhancing Multimodal Intent Recognition via Prototype-Aware Contrastive Alignment and Coarse-to-Fine
+    Dynamic Attention Fusion'
+  url: https://arxiv.org/html/2509.17446v1
+  accessed_at: '2026-11-17'
+  locator:
+    table: Table 1
+    section: Experimental setup and results

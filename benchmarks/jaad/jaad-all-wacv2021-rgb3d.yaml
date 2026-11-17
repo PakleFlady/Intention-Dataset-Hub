@@ -15,15 +15,15 @@ split:
   source_ids:
   - paper
 sample_selection:
-  description: Same 323 high-visibility JAAD_all clips, 177/29/117 split, 0.8 overlap and 30–60-frame
-    time-to-event; Table 2 RGB-only C3D and I3D rows.
+  description: Same 323 high-visibility JAAD_all clips, 177/29/117 split, 0.8 overlap and 30–60-frame time-to-event;
+    Table 2 RGB-only C3D and I3D rows.
   source_ids:
   - paper
 inputs:
   modalities:
   - rgb
-  representation: Stack of 16 observed RGB frames; no optical flow, pose, bounding-box values or vehicle
-    labels supplied as separate features.
+  representation: Stack of 16 observed RGB frames; no optical flow, pose, bounding-box values or vehicle labels
+    supplied as separate features.
   available_information: Only RGB frames up to the 30–60-frame time-to-event cutoff.
 temporal:
   observation_window:
@@ -51,8 +51,8 @@ training_policy:
   extra_supervision: allowed
   source_ids:
   - paper
-  notes: Within-paper C3D and I3D RGB baselines use the WACV benchmark training procedure; pretrained
-    video backbones are permitted and disclosed per model.
+  notes: Within-paper C3D and I3D RGB baselines use the WACV benchmark training procedure; pretrained video backbones
+    are permitted and disclosed per model.
   ensemble: forbidden
 evaluation:
   description: Binary crossing action classification on JAAD_all, Table 2 RGB-only 3D convolution rows.
@@ -111,8 +111,8 @@ verification:
   checked_at: '2026-09-30'
   source_ids:
   - paper
-  notes: Exact JAAD_all split, sample timing, RGB variants and Table 2 cells checked in the original WACV
-    benchmark paper.
+  notes: Exact JAAD_all split, sample timing, RGB variants and Table 2 cells checked in the original WACV benchmark
+    paper.
 results:
 - id: c3d_rgb
   method_id: c3d
@@ -158,8 +158,7 @@ results:
       table: Table 2
       row: C3D / RGB
       column: JAAD_all
-    notes: RGB variant and JAAD_all column checked in the original WACV 2021 comparison; optical-flow
-      I3D row excluded.
+    notes: RGB variant and JAAD_all column checked in the original WACV 2021 comparison; optical-flow I3D row excluded.
   verification:
     status: verified
     checked_at: '2026-09-30'
@@ -167,6 +166,9 @@ results:
     notes: Checked against the identified primary source; results were not independently reproduced.
   status: active
   baseline_origin: protocol_authors
+  model_class: conventional
+  classification_notes: The cited configuration uses task-specific encoders/predictors; no generative LLM/VLM inference
+    or generated supervision is declared in this comparison cohort.
 - id: i3d_rgb_rgb
   method_id: i3d_rgb
   configuration:
@@ -211,8 +213,7 @@ results:
       table: Table 2
       row: I3D / RGB
       column: JAAD_all
-    notes: RGB variant and JAAD_all column checked in the original WACV 2021 comparison; optical-flow
-      I3D row excluded.
+    notes: RGB variant and JAAD_all column checked in the original WACV 2021 comparison; optical-flow I3D row excluded.
   verification:
     status: verified
     checked_at: '2026-09-30'
@@ -220,6 +221,9 @@ results:
     notes: Checked against the identified primary source; results were not independently reproduced.
   status: active
   baseline_origin: protocol_authors
+  model_class: conventional
+  classification_notes: The cited configuration uses task-specific encoders/predictors; no generative LLM/VLM inference
+    or generated supervision is declared in this comparison cohort.
 snapshots:
 - id: paper_snapshot_2026_09_30
   checked_at: '2026-09-30'
@@ -229,5 +233,5 @@ snapshots:
   result_ids:
   - c3d_rgb
   - i3d_rgb_rgb
-  coverage_notes: Only two RGB-only 3D convolution baselines in WACV 2021 Table 2 JAAD_all; no claim about
-    other modalities or later papers.
+  coverage_notes: Only two RGB-only 3D convolution baselines in WACV 2021 Table 2 JAAD_all; no claim about other
+    modalities or later papers.

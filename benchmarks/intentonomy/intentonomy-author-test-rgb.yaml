@@ -15,8 +15,8 @@ split:
   source_ids:
   - author_readme
 sample_selection:
-  description: Use the three baseline rows listed under Test set results in the author README; this record
-    includes two RGB-inference rows and excludes the hashtag-input row.
+  description: Use the three baseline rows listed under Test set results in the author README; this record includes
+    two RGB-inference rows and excludes the hashtag-input row.
   source_ids:
   - author_readme
 inputs:
@@ -143,6 +143,9 @@ results:
     notes: Checked against the identified primary source; results were not independently reproduced.
   status: active
   baseline_origin: dataset_authors
+  model_class: conventional
+  classification_notes: The cited configuration uses task-specific encoders/predictors; no generative LLM/VLM inference
+    or generated supervision is declared in this comparison cohort.
 - id: visual_loc_test
   method_id: visual_loc
   configuration:
@@ -182,6 +185,9 @@ results:
     notes: Checked against the identified primary source; results were not independently reproduced.
   status: active
   baseline_origin: dataset_authors
+  model_class: conventional
+  classification_notes: The cited configuration uses task-specific encoders/predictors; no generative LLM/VLM inference
+    or generated supervision is declared in this comparison cohort.
 snapshots:
 - id: paper_snapshot_2026_09_30
   checked_at: '2026-09-30'
@@ -191,5 +197,5 @@ snapshots:
   result_ids:
   - visual_test
   - visual_loc_test
-  coverage_notes: Two RGB-inference author baseline configurations from README test table; paper Table
-    2 uses different figures and is not merged.
+  coverage_notes: Two RGB-inference author baseline configurations from README test table; paper Table 2 uses different
+    figures and is not merged.

@@ -15,8 +15,8 @@ split:
   source_ids:
   - paper
 sample_selection:
-  description: Pedestrian tracks sampled with 0.5 overlap; report the two location-only Table 2 rows,
-    not later crossing-action results.
+  description: Pedestrian tracks sampled with 0.5 overlap; report the two location-only Table 2 rows, not later
+    crossing-action results.
   source_ids:
   - paper
 inputs:
@@ -45,8 +45,8 @@ training_policy:
   extra_supervision: forbidden
   source_ids:
   - paper
-  notes: Location-only rows do not report external dataset training; paper permits ImageNet features for
-    separate image-based rows, which are excluded.
+  notes: Location-only rows do not report external dataset training; paper permits ImageNet features for separate
+    image-based rows, which are excluded.
   ensemble: forbidden
 evaluation:
   description: Binary classification of author intention labels.
@@ -101,8 +101,8 @@ verification:
   source_ids:
   - paper
   - annotations
-  notes: Compared Table 2 target, split, modality and observation window against the paper; labels are
-    observer intention judgments, not actual crossing actions.
+  notes: Compared Table 2 target, split, modality and observation window against the paper; labels are observer
+    intention judgments, not actual crossing actions.
 results:
 - id: lstm_loc
   method_id: lstm
@@ -138,6 +138,9 @@ results:
     notes: Checked against the identified primary source; results were not independently reproduced.
   status: active
   baseline_origin: dataset_authors
+  model_class: conventional
+  classification_notes: The cited configuration uses task-specific encoders/predictors; no generative LLM/VLM inference
+    or generated supervision is declared in this comparison cohort.
 - id: lstm_ed_loc
   method_id: lstm_ed
   configuration:
@@ -172,6 +175,9 @@ results:
     notes: Checked against the identified primary source; results were not independently reproduced.
   status: active
   baseline_origin: dataset_authors
+  model_class: conventional
+  classification_notes: The cited configuration uses task-specific encoders/predictors; no generative LLM/VLM inference
+    or generated supervision is declared in this comparison cohort.
 snapshots:
 - id: paper_snapshot_2026_09_30
   checked_at: '2026-09-30'
@@ -181,5 +187,5 @@ snapshots:
   result_ids:
   - lstm_loc
   - lstm_ed_loc
-  coverage_notes: Only the two location-only baselines in original paper Table 2; no claim of exhaustive
-    literature coverage.
+  coverage_notes: Only the two location-only baselines in original paper Table 2; no claim of exhaustive literature
+    coverage.

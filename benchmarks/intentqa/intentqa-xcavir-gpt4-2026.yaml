@@ -1,0 +1,134 @@
+schema_version: '0.1'
+id: intentqa-xcavir-gpt4-2026
+dataset_id: intentqa
+release_id: v1
+annotation_version: author-release-unspecified
+task: intention_reasoning
+original_task_name: video intent reasoning
+target_id: intent_qa
+protocol:
+  name: XCAVIR GPT4 2026 — comparison audit pending
+  source_ids:
+  - xcavir
+  notes: Verify the GPT-4 endpoint/version, prompt and caption-generation configuration and exact test release.
+    Keep main-set accuracy separate from Contrast Performance Decline and contrast-subset scores; do not merge into
+    the 2023 no-GPT cohort.
+split:
+  name: Main set; exclude five contrast subsets
+  source_ids:
+  - xcavir
+sample_selection:
+  description: Source-specific classification cohort; exact file-level alignment to the recorded dataset release
+    remains to be confirmed.
+  source_ids:
+  - xcavir
+inputs:
+  modalities: &id001
+  - rgb
+  - text
+  representation: Published model inputs; see configuration and source.
+  available_information: Video, question and candidate answers; captions and classifier confidences passed to GPT-4.
+temporal:
+  observation_window:
+    kind: unknown
+    anchor: supplied clip
+    description: Exact inference frame selection and truncation have not completed source audit.
+  anticipation_gap:
+    kind: not_applicable
+    anchor: classification target
+    description: Recognition of intent in the supplied clip.
+  prediction_horizon:
+    kind: not_applicable
+    anchor: classification target
+    description: Classification rather than timed forecasting.
+training_policy:
+  external_data: unknown
+  pretraining: allowed
+  extra_supervision: unknown
+  ensemble: unknown
+  source_ids:
+  - xcavir
+  notes: Verify the GPT-4 endpoint/version, prompt and caption-generation configuration and exact test release.
+    Keep main-set accuracy separate from Contrast Performance Decline and contrast-subset scores; do not merge into
+    the 2023 no-GPT cohort.
+evaluation:
+  description: Paper-reported classification accuracy; no cross-paper ranking.
+  aggregation: Paper-reported test accuracy; run aggregation audit pending
+  parameters:
+    regime: xcavir-gpt4-2026
+  source_ids:
+  - xcavir
+metrics:
+- id: accuracy
+  name: Accuracy
+  direction: higher
+  unit: percent
+  definition: Percentage of correctly classified test samples.
+  aggregation: overall
+  evaluation_subset: Main set; exclude five contrast subsets
+  valid_range:
+  - 0
+  - 100
+  source_ids:
+  - xcavir
+sources:
+- id: xcavir
+  type: paper
+  title: 'IntentQA: Intent Question Answering in Videos by Cognitive Context Reasoning'
+  url: https://arxiv.org/html/2608.23330v1
+  accessed_at: '2026-11-17'
+  locator:
+    table: Table V, model 7-2
+    section: Experimental setup and results
+verification:
+  status: pending
+  checked_at: '2026-11-17'
+  source_ids:
+  - xcavir
+  notes: Reported numbers and method category checked against the original paper. Verify the GPT-4 endpoint/version,
+    prompt and caption-generation configuration and exact test release. Keep main-set accuracy separate from Contrast
+    Performance Decline and contrast-subset scores; do not merge into the 2023 no-GPT cohort.
+results:
+- id: xcavir_gpt4
+  method_id: xcavir_gpt4
+  model_class: llm_vlm
+  classification_notes: Generative LLM/VLM participates in inference.
+  configuration:
+    description: Ours full (GPT-4); xcavir-gpt4-2026
+    modalities: *id001
+    external_data: Audit pending
+    pretraining: Published foundation model checkpoints
+    ensemble: null
+    evaluation_parameters:
+      regime: xcavir-gpt4-2026
+    notes: Single named configuration transcribed; ensemble and exact inference implementation still require confirmation.
+  scores:
+    accuracy:
+      value: 64.81
+      source_ids:
+      - xcavir
+      locator: &id002
+        table: Table V, model 7-2
+        row: Ours full (GPT-4)
+        column: Main set Total / ACC (%)
+  source_ids:
+  - xcavir
+  protocol_match:
+    status: unclear
+    source_ids:
+    - xcavir
+    locator: *id002
+    notes: Verify the GPT-4 endpoint/version, prompt and caption-generation configuration and exact test release.
+      Keep main-set accuracy separate from Contrast Performance Decline and contrast-subset scores; do not merge
+      into the 2023 no-GPT cohort.
+  verification:
+    status: pending
+    checked_at: '2026-11-17'
+    source_ids:
+    - xcavir
+    notes: Reported numbers and method category checked against the original paper. Verify the GPT-4 endpoint/version,
+      prompt and caption-generation configuration and exact test release. Keep main-set accuracy separate from Contrast
+      Performance Decline and contrast-subset scores; do not merge into the 2023 no-GPT cohort.
+  status: active
+  baseline_origin: none
+snapshots: []

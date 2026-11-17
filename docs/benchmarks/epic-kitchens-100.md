@@ -4,9 +4,11 @@
 
 Results are comparable only within the same protocol section. A code link is not an independent reproduction.
 
+<a id="ek100-2021-test-action-anticipation"></a>
+
 ## EK100 challenge test action anticipation
 
-<a id="ek100-2021-test-action-anticipation"></a>
+<a id="ek100-2021-test-action-anticipation-protocol"></a>
 
 **Task:** `action_anticipation` (original: Action Anticipation Challenge)  
 **Dataset release:** `v100` · **Annotation version:** `official-2020`  
@@ -43,4 +45,6 @@ No verified baseline recommendation yet.
 
 - **official**: [EPIC-KITCHENS-100 2021 challenge details](https://epic-kitchens.github.io/2020-100) — section: Action Anticipation
 
-**Protocol verified:** 2026-09-30 · [official](https://epic-kitchens.github.io/2020-100)
+**Protocol status:** verified · checked 2026-09-30 · [official](https://epic-kitchens.github.io/2020-100)
+
+Official 2021 test protocol documented; training policy and specific inference modality require per-result confirmation, so no result is ranked yet.

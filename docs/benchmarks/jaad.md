@@ -4,9 +4,13 @@
 
 Results are comparable only within the same protocol section. A code link is not an independent reproduction.
 
-## WACV 2021 JAAD_all PCPA attention comparison
-
 <a id="jaad-all-wacv2021-pcpa"></a>
+
+Task-specific classifiers and predictors, including BERT encoders, without generative LLM/VLM assistance.
+
+## WACV 2021 JAAD_all PCPA attention comparison — Conventional / task-specific models
+
+<a id="jaad-all-wacv2021-pcpa-conventional"></a>
 
 **Task:** `behavior_prediction` (original: pedestrian crossing action prediction)  
 **Dataset release:** `jaad_2_0` · **Annotation version:** `JAAD_2.0`  
@@ -62,11 +66,17 @@ Results are comparable only within the same protocol section. A code link is not
 
 - **paper**: [Benchmark for Evaluating Pedestrian Action Prediction](https://openaccess.thecvf.com/content/WACV2021/papers/Kotseruba_Benchmark_for_Evaluating_Pedestrian_Action_Prediction_WACV_2021_paper.pdf) — section: 3 Benchmark; 6 Proposed model, table: Table 3
 
-**Protocol verified:** 2026-09-30 · [paper](https://openaccess.thecvf.com/content/WACV2021/papers/Kotseruba_Benchmark_for_Evaluating_Pedestrian_Action_Prediction_WACV_2021_paper.pdf)
+**Protocol status:** verified · checked 2026-09-30 · [paper](https://openaccess.thecvf.com/content/WACV2021/papers/Kotseruba_Benchmark_for_Evaluating_Pedestrian_Action_Prediction_WACV_2021_paper.pdf)
 
-## WACV 2021 JAAD_all RGB 3D convolution comparison
+Original protocol details checked; no independent implementation reproduction.
 
 <a id="jaad-all-wacv2021-rgb3d"></a>
+
+Task-specific classifiers and predictors, including BERT encoders, without generative LLM/VLM assistance.
+
+## WACV 2021 JAAD_all RGB 3D convolution comparison — Conventional / task-specific models
+
+<a id="jaad-all-wacv2021-rgb3d-conventional"></a>
 
 **Task:** `behavior_prediction` (original: pedestrian crossing action prediction)  
 **Dataset release:** `jaad_2_0` · **Annotation version:** `JAAD_2.0`  
@@ -121,4 +131,6 @@ Results are comparable only within the same protocol section. A code link is not
 
 - **paper**: [Benchmark for Evaluating Pedestrian Action Prediction](https://openaccess.thecvf.com/content/WACV2021/papers/Kotseruba_Benchmark_for_Evaluating_Pedestrian_Action_Prediction_WACV_2021_paper.pdf) — section: 3 Benchmark; 4 Baselines; 5 Evaluation, table: Table 2
 
-**Protocol verified:** 2026-09-30 · [paper](https://openaccess.thecvf.com/content/WACV2021/papers/Kotseruba_Benchmark_for_Evaluating_Pedestrian_Action_Prediction_WACV_2021_paper.pdf)
+**Protocol status:** verified · checked 2026-09-30 · [paper](https://openaccess.thecvf.com/content/WACV2021/papers/Kotseruba_Benchmark_for_Evaluating_Pedestrian_Action_Prediction_WACV_2021_paper.pdf)
+
+Exact JAAD_all split, sample timing, RGB variants and Table 2 cells checked in the original WACV benchmark paper.

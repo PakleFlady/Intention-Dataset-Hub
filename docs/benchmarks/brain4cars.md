@@ -4,9 +4,13 @@
 
 Results are comparable only within the same protocol section. A code link is not an independent reproduction.
 
-## ICCV 2015 five-fold all-maneuver HMM cohort
-
 <a id="brain4cars-iccv2015-all-maneuvers-cv"></a>
+
+Task-specific classifiers and predictors, including BERT encoders, without generative LLM/VLM assistance.
+
+## ICCV 2015 five-fold all-maneuver HMM cohort — Conventional / task-specific models
+
+<a id="brain4cars-iccv2015-all-maneuvers-cv-conventional"></a>
 
 **Task:** `action_anticipation` (original: Maneuver anticipation)  
 **Dataset release:** `v1` · **Annotation version:** `author-release-unspecified`  
@@ -63,4 +67,6 @@ Results are comparable only within the same protocol section. A code link is not
 - **original_paper**: [Brain4Cars ICCV 2015 author paper](https://brain4cars.com/pdfs/brain4cars.pdf) — section: VI Experiment, table: I
 - **author_code**: [Brain4Cars ICCV 2015 author implementation](https://github.com/asheshjain399/ICCV2015_Brain4Cars) — section: README
 
-**Protocol verified:** 2026-10-08 · [original_paper](https://brain4cars.com/pdfs/brain4cars.pdf), [author_code](https://github.com/asheshjain399/ICCV2015_Brain4Cars)
+**Protocol status:** verified · checked 2026-10-08 · [original_paper](https://brain4cars.com/pdfs/brain4cars.pdf), [author_code](https://github.com/asheshjain399/ICCV2015_Brain4Cars)
+
+Table I all-maneuver precision, recall and fold definition checked against author paper. Reported mean time-to-maneuver is kept in configuration notes, not conflated with the protocol prediction horizon. No independent reproduction.

@@ -55,3 +55,6 @@ verification:
 results: []
 snapshots: []
 
+# Result records require model_class: conventional | llm_vlm | hybrid | unknown
+# and classification_notes explaining the cited configuration. See docs/model-classification.md.
+# ensemble: null means unresolved and cannot enter rankings.

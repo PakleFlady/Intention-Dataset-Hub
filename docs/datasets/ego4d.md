@@ -52,7 +52,7 @@ See the source for current download conditions; raw files were not downloaded fo
 
 ## Benchmarks
 
-No verified benchmark protocol is currently documented.
+- [Ego4D 2022 LTA challenge Z=20 K=5](../benchmarks/ego4d.md#ego4d-2022-lta-test) — `future_activity_prediction`; protocol pending
 
 ## Best verified values in recorded snapshots
 

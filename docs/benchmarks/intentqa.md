@@ -4,9 +4,13 @@
 
 Results are comparable only within the same protocol section. A code link is not an independent reproduction.
 
-## ICCV 2023 BERT video-and-text no-GPT test cohort
-
 <a id="intentqa-iccv2023-no-gpt-test"></a>
+
+Task-specific classifiers and predictors, including BERT encoders, without generative LLM/VLM assistance.
+
+## ICCV 2023 BERT video-and-text no-GPT test cohort — Conventional / task-specific models
+
+<a id="intentqa-iccv2023-no-gpt-test-conventional"></a>
 
 **Task:** `intention_reasoning` (original: context-aware video intent reasoning)  
 **Dataset release:** `v1` · **Annotation version:** `author-release-unspecified`  
@@ -60,4 +64,59 @@ Results are comparable only within the same protocol section. A code link is not
 
 - **paper**: [IntentQA: Context-aware Video Intent Reasoning](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_IntentQA_Context-aware_Video_Intent_Reasoning_ICCV_2023_paper.pdf) — table: Tables 2 and 3, section: 5 Experiments
 
-**Protocol verified:** 2026-09-30 · [paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_IntentQA_Context-aware_Video_Intent_Reasoning_ICCV_2023_paper.pdf)
+**Protocol status:** verified · checked 2026-09-30 · [paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_IntentQA_Context-aware_Video_Intent_Reasoning_ICCV_2023_paper.pdf)
+
+Original paper Tables 2 and 3 checked for target, split, BERT text representation, video input and no-GPT comparison scope.
+
+<a id="intentqa-xcavir-gpt4-2026"></a>
+
+A generative language or vision-language foundation model participates in inference, including small foundation models and tool pipelines.
+
+## XCAVIR GPT4 2026 — comparison audit pending — LLM / VLM models
+
+<a id="intentqa-xcavir-gpt4-2026-llm-vlm"></a>
+
+**Task:** `intention_reasoning` (original: video intent reasoning)  
+**Dataset release:** `v1` · **Annotation version:** `author-release-unspecified`  
+**Target:** `intent_qa` · **Split:** Main set; exclude five contrast subsets
+
+### Comparison setting
+
+| Dimension | Value |
+| --- | --- |
+| Sample selection | Source-specific classification cohort; exact file-level alignment to the recorded dataset release remains to be confirmed. |
+| Inputs | rgb, text; Video, question and candidate answers; captions and classifier confidences passed to GPT-4. |
+| Representation | Published model inputs; see configuration and source. |
+| Observation window | unknown |
+| Anticipation gap | not applicable |
+| Prediction horizon | not applicable |
+| Training policy | external_data: unknown, pretraining: allowed, extra_supervision: unknown, ensemble: unknown |
+| Evaluation | Paper-reported classification accuracy; no cross-paper ranking.; Paper-reported test accuracy; run aggregation audit pending |
+
+### Metrics
+
+| Metric | Definition | Direction | Unit | Subset | Evidence |
+| --- | --- | --- | --- | --- | --- |
+| `accuracy` | Percentage of correctly classified test samples. | higher | percent | Main set; exclude five contrast subsets | [xcavir](https://arxiv.org/html/2608.23330v1) |
+
+### Verified, protocol-matched results
+
+No result has yet passed the protocol and source verification gate. This page does not claim a best result.
+
+### Not ranked
+
+| Result | Reported scores | Reason / evidence |
+| --- | --- | --- |
+| xcavir_gpt4 | accuracy: 64.81 | verification=pending; protocol=unclear; status=active. Verify the GPT-4 endpoint/version, prompt and caption-generation configuration and exact test release. Keep main-set accuracy separate from Contrast Performance Decline and contrast-subset scores; do not merge into the 2023 no-GPT cohort. [xcavir](https://arxiv.org/html/2608.23330v1) |
+
+### Baseline starting points
+
+No verified baseline recommendation yet.
+
+### Sources
+
+- **xcavir**: [IntentQA: Intent Question Answering in Videos by Cognitive Context Reasoning](https://arxiv.org/html/2608.23330v1) — table: Table V, model 7-2, section: Experimental setup and results
+
+**Protocol status:** pending · checked 2026-11-17 · [xcavir](https://arxiv.org/html/2608.23330v1)
+
+Reported numbers and method category checked against the original paper. Verify the GPT-4 endpoint/version, prompt and caption-generation configuration and exact test release. Keep main-set accuracy separate from Contrast Performance Decline and contrast-subset scores; do not merge into the 2023 no-GPT cohort.

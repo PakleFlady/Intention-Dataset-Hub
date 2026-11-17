@@ -59,16 +59,16 @@ See the source for current download conditions; raw files were not downloaded fo
 
 ## Benchmarks
 
-- [PIE ICCV 2019 intention estimation, location-only inputs](../benchmarks/pie.md#pie-intention-loc-iccv2019) — `intention_recognition`
+- [PIE ICCV 2019 intention estimation, location-only inputs](../benchmarks/pie.md#pie-intention-loc-iccv2019) — `intention_recognition`; protocol verified
 
 ## Best verified values in recorded snapshots
 
 These values apply only to the linked comparison protocol and snapshot; they are not a claim of current field-wide SOTA.
 
-| Protocol | Metric | Best value | Method | Checked |
-| --- | --- | --- | --- | --- |
-| [PIE ICCV 2019 intention estimation, location-only inputs](../benchmarks/pie.md#pie-intention-loc-iccv2019) | Accuracy | 0.67 ratio | LSTM encoder-decoder (loc) | 2026-09-30 |
-| [PIE ICCV 2019 intention estimation, location-only inputs](../benchmarks/pie.md#pie-intention-loc-iccv2019) | F1 | 0.76 ratio | LSTM encoder-decoder (loc) | 2026-09-30 |
+| Protocol | Model category | Metric | Best within category | Method | Checked |
+| --- | --- | --- | --- | --- | --- |
+| [PIE ICCV 2019 intention estimation, location-only inputs](../benchmarks/pie.md#pie-intention-loc-iccv2019) | Conventional / task-specific models | Accuracy | 0.67 ratio | LSTM encoder-decoder (loc) | 2026-09-30 |
+| [PIE ICCV 2019 intention estimation, location-only inputs](../benchmarks/pie.md#pie-intention-loc-iccv2019) | Conventional / task-specific models | F1 | 0.76 ratio | LSTM encoder-decoder (loc) | 2026-09-30 |
 
 
 ## Sources

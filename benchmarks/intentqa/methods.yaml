@@ -32,6 +32,16 @@ methods:
   source_ids:
   - vgt_original
   - paper
+- id: xcavir_gpt4
+  name: Ours full (GPT-4)
+  reference:
+    type: paper
+    title: 'IntentQA: Intent Question Answering in Videos by Cognitive Context Reasoning'
+    url: https://arxiv.org/html/2608.23330v1
+    year: 2026
+  source_ids:
+  - xcavir
+  model_family: xcavir_gpt4
 sources:
 - id: paper
   type: paper
@@ -48,3 +58,11 @@ sources:
   accessed_at: '2026-09-30'
   locator:
     section: Model; Experiments
+- id: xcavir
+  type: paper
+  title: 'IntentQA: Intent Question Answering in Videos by Cognitive Context Reasoning'
+  url: https://arxiv.org/html/2608.23330v1
+  accessed_at: '2026-11-17'
+  locator:
+    table: Table V, model 7-2
+    section: Experimental setup and results
